@@ -4,7 +4,7 @@
   <title><![CDATA[Category: SMS | ]]></title>
   <link href="http://cheshireoctopus.github.io/blog/categories/sms/atom.xml" rel="self"/>
   <link href="http://cheshireoctopus.github.io/"/>
-  <updated>2013-10-22T23:58:21-04:00</updated>
+  <updated>2013-10-23T00:08:39-04:00</updated>
   <id>http://cheshireoctopus.github.io/</id>
   <author>
     <name><![CDATA[Chandler Moisen]]></name>
@@ -54,7 +54,7 @@ pane on the Twilio dashboard &ndash; pictured below &ndash; provide them for you
 <p><strong>1:</strong> First, create the Rails application, in this case thought-provokingly named &lsquo;twilio_app&rsquo;. We don&rsquo;t need the index.html that Rails so graciously provides &ndash;
  toss it, you don&rsquo;t need that noise.</p>
 
-<pre><code>rails g new twilio_app
+<pre><code>rails new twilio_app
 rm public/index.html
 </code></pre>
 
@@ -66,8 +66,8 @@ and add it in the Gemfile. Make sure to bundle!</p>
 gem 'twilio-ruby'
 </code></pre>
 
-<p><strong>3:</strong> Next, we will generate a controller which will be responsbile for making sense of our app&rsquo;s request and produce the appropriate output. <strong>Note:</strong> this
-method of controller generation creates a bunch of extra files you do not need for this application.</p>
+<p><strong>3:</strong> Next, we will generate a controller which will be responsbile for making sense of our app&rsquo;s requests and producing the appropriate output. <strong>Note:</strong> this
+method of controller generation creates a bunch of extra files you do not need for this application, but it&rsquo;s easy.</p>
 
 <pre><code>rails g controller twilio
 </code></pre>
@@ -101,7 +101,7 @@ controller has access to. Make sure this file is located in the following direct
 
 <p><img class="center" src="/images/Twilio/Index.png" title="&lsquo;Index.html page&rsquo; &lsquo;Index.html page&rsquo;" ></p>
 
-<p><strong>6:</strong> Now, we&rsquo;ve made our view and controller, let&rsquo;s connect them via routes.rb. Clear out the comments in the <strong>routes.rb</strong> file, build a root path that directs to <strong>index.html.erb</strong>, and then another path that will post the information from the form we just built to the <strong>send_sms</strong> method in the Twilio controller.</p>
+<p><strong>6:</strong> Now that we&rsquo;ve made our view and controller, let&rsquo;s connect them via <strong>routes.rb</strong>. Clear out the comments in the <strong>routes.rb</strong> file, build a root path that directs to <strong>index.html.erb</strong>, and then another path that will post the information from the form we just built to the <strong>send_sms</strong> method in the Twilio controller.</p>
 
 <pre><code>TwilioApp::Application.routes.draw do
 
