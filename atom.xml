@@ -4,7 +4,7 @@
   <title><![CDATA[]]></title>
   <link href="http://cheshireoctopus.github.io/atom.xml" rel="self"/>
   <link href="http://cheshireoctopus.github.io/"/>
-  <updated>2013-10-23T09:37:44-04:00</updated>
+  <updated>2013-10-23T09:39:12-04:00</updated>
   <id>http://cheshireoctopus.github.io/</id>
   <author>
     <name><![CDATA[Chandler Moisen]]></name>
@@ -153,7 +153,7 @@ end
 
 <p>If everything works out, you should be able to send SMS messages from your browser!</p>
 
-<p><img class="center" src="http://cheshireoctopus.github.io/images/Twilio/Number.png" title="Twilio Number" alt="Twilio Number"></p>
+<p><img class="center" src="http://cheshireoctopus.github.io/images/Twilio/cat.png" title="Twilio Cat" alt="Twilio Cat"></p>
 
 <h2>Caveats</h2>
 
