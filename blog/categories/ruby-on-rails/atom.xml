@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby on Rails | ]]></title>
   <link href="http://cheshireoctopus.github.io/blog/categories/ruby-on-rails/atom.xml" rel="self"/>
   <link href="http://cheshireoctopus.github.io/"/>
-  <updated>2013-10-24T11:37:34-04:00</updated>
+  <updated>2013-10-25T11:16:16-04:00</updated>
   <id>http://cheshireoctopus.github.io/</id>
   <author>
     <name><![CDATA[Chandler Moisen]]></name>
@@ -54,48 +54,74 @@ pane on the Twilio dashboard &ndash; pictured below &ndash; provide them for you
 <p><strong>1:</strong> First, create the Rails application, in this case thought-provokingly named &lsquo;twilio_app&rsquo;. We don&rsquo;t need the index.html that Rails so graciously provides &ndash;
  toss it, you don&rsquo;t need that noise.</p>
 
-<pre><code>rails new twilio_app
-rm public/index.html
-</code></pre>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Terminal </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rails new twilio_app
+</span><span class='line'>rm public/index.html</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><strong>2:</strong> Twilio compiled a gem which makes Rails integration realtively painless. Check out the <a href="http://twilio-ruby.readthedocs.org/en/latest/">documentation</a>
 and add it in the Gemfile. Make sure to bundle!</p>
 
-<pre><code>#Gemfile
-
-gem 'twilio-ruby'
-</code></pre>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Gemfile </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gem</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">twilio</span><span class="o">-</span><span class="n">ruby</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><strong>3:</strong> Next, we will generate a controller which will be responsbile for making sense of our app&rsquo;s requests and producing the appropriate output. <strong>Note:</strong> this
 method of controller generation creates a bunch of extra files you do not need for this application, but it&rsquo;s easy.</p>
 
-<pre><code>rails g controller twilio
-</code></pre>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Terminal </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rails g controller twilio</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><strong>4</strong>: In the controller you just created, add a method &lsquo;send_sms&rsquo; which will send the SMS&rsquo;s. We will come back to this in a moment.</p>
 
-<pre><code>class TwilioController &lt; ApplicationController
-
-  def send_sms
-  end
-
-end
-</code></pre>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>twilio_controller.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">TwilioController</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="no">ApplicationController</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  def send_sms</span>
+</span><span class='line'><span class="sr">  end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><strong>5:</strong> We&rsquo;re making headway on the back-end, but we need do some barebones front-end functionality. Create a file <strong>&lsquo;index.html.erb&rsquo;</strong> that your Twilio
 controller has access to. Make sure this file is located in the following directory: <strong>twilio_app/app/views/layouts</strong>. In this file we are going to create a simple form which will allow the user to input a phone number and a message. Make sure the form&rsquo;s action directs to <strong>&lsquo;/send_sms&rsquo;</strong> and the method is
  <strong>&lsquo;POST&rsquo;</strong>.</p>
 
-<pre><code>#index.html.erb
-
-&lt;h1&gt;TWILIO!!!&lt;/h1&gt;
-
-&lt;%= form_tag('/send_sms', method: 'POST') do %&gt;
-&lt;input type="text" placeholder="enter number" name="number"&gt;
-&lt;input type="text" placeholder="enter message here" name="message"&gt;
-&lt;button type="submit"&gt;Submit&lt;/button&gt;
-&lt;% end %&gt;
-</code></pre>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>index.html.erb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='erb'><span class='line'><span class="x">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="x">&lt;pre&gt;&lt;code&gt;&amp;lt;h1&amp;gt;TWILIO!!!&amp;lt;/h1&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="x">&amp;lt;%= form_tag(&#39;/send_sms&#39;, method: &#39;POST&#39;) do %&amp;gt;</span>
+</span><span class='line'><span class="x">&amp;lt;input type=&quot;text&quot; placeholder=&quot;enter number&quot; name=&quot;number&quot;&amp;gt;</span>
+</span><span class='line'><span class="x">&amp;lt;input type=&quot;text&quot; placeholder=&quot;enter message here&quot; name=&quot;message&quot;&amp;gt;</span>
+</span><span class='line'><span class="x">&amp;lt;button type=&quot;submit&quot;&amp;gt;Submit&amp;lt;/button&amp;gt;</span>
+</span><span class='line'><span class="x">&amp;lt;% end %&amp;gt;</span>
+</span><span class='line'><span class="x">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="x">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Your <strong>index.html.erb</strong> should look like this:</p>
 
@@ -103,36 +129,71 @@ controller has access to. Make sure this file is located in the following direct
 
 <p><strong>6:</strong> Now that we&rsquo;ve made our view and controller, let&rsquo;s connect them via <strong>routes.rb</strong>. Clear out the comments in the <strong>routes.rb</strong> file, build a root path that directs to <strong>index.html.erb</strong>, and then another path that will post the information from the form we just built to the <strong>send_sms</strong> method in the Twilio controller.</p>
 
-<pre><code>TwilioApp::Application.routes.draw do
-
-  root :to =&gt; 'twilio#index'
-  post '/send_sms' =&gt; 'twilio#send_sms'
-
-end
-</code></pre>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>routes.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="ss">TwilioApp</span><span class="p">:</span><span class="ss">:Application</span><span class="o">.</span><span class="n">routes</span><span class="o">.</span><span class="n">draw</span> <span class="k">do</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  root :to =&gt; &amp;lsquo;twilio#index&amp;rsquo;</span>
+</span><span class='line'><span class="sr">  post &amp;lsquo;/sen</span><span class="n">d_sms</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="o">=&gt;</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">twilio</span><span class="c1">#send_sms&amp;rsquo;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><strong>7:</strong> Alright, last step. Do you still remember your <strong>ACCOUNT SID</strong>, <strong>AUTH TOKEN</strong>, and <strong>Twilio phone number</strong>? We&rsquo;re going to add these to our Twilio controller&rsquo;s <strong>send_sms</strong> method to enable our application to send texts.</p>
 
 <p>I&rsquo;ll show you my code, then walk you through it line by line.</p>
 
-<pre><code>1 class TwilioController &lt; ApplicationController
-2
-3  def send_sms
-4   message = params[:message]
-5   number = params[:number]
-6   account_sid = 'XXXyour account sid should be hereXXX'
-7   auth_token = 'XXXyour auth token should be hereXXX'
-8
-9   @client = Twilio::REST::Client.new account_sid, auth_token
-10
-11  @message = @client.account.messages.create({:to =&gt; "+1"+"#{number}",
-12                                  :from =&gt; "+12813308004",
-13                                   :body =&gt; "#{message}"})
-14   redirect_to '/'
-15  end
-16
-17 end
-</code></pre>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>twilio_controller.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;1 class TwilioController &amp;lt; ApplicationController</span>
+</span><span class='line'><span class="sr">2</span>
+</span><span class='line'><span class="sr">3  def send_sms</span>
+</span><span class='line'><span class="sr">4   message = params[:message]</span>
+</span><span class='line'><span class="sr">5   number = params[:number]</span>
+</span><span class='line'><span class="sr">6   account_sid = &#39;XXXyour account sid should be hereXXX&#39;</span>
+</span><span class='line'><span class="sr">7   auth_token = &#39;XXXyour auth token should be hereXXX&#39;</span>
+</span><span class='line'><span class="sr">8</span>
+</span><span class='line'><span class="sr">9   @client = Twilio::REST::Client.new account_sid, auth_token</span>
+</span><span class='line'><span class="sr">10</span>
+</span><span class='line'><span class="sr">11  @message = @client.account.messages.create({:to =&amp;gt; &quot;+1&quot;+&quot;</span><span class="si">#{</span><span class="n">number</span><span class="si">}</span><span class="sr">&quot;,</span>
+</span><span class='line'><span class="sr">12                                  :from =&amp;gt; &quot;+12813308004&quot;,</span>
+</span><span class='line'><span class="sr">13                                   :body =&amp;gt; &quot;</span><span class="si">#{</span><span class="n">message</span><span class="si">}</span><span class="sr">&quot;})</span>
+</span><span class='line'><span class="sr">14   redirect_to &#39;/</span><span class="err">&#39;</span>
+</span><span class='line'><span class="mi">15</span>  <span class="k">end</span>
+</span><span class='line'><span class="mi">16</span>
+</span><span class='line'><span class="mi">17</span> <span class="k">end</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <ul>
 <li><strong>1:</strong> Opens the TwilioController</li>
