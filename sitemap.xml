@@ -2,15 +2,21 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://cheshireoctopus.github.io/blog/2013/10/22/twilio-on-rails-sms-basics/</loc>
-        <lastmod>2013-10-25T11:15:54-04:00</lastmod>
+        <lastmod>2014-01-23T16:21:44-05:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://cheshireoctopus.github.io/blog/2014/01/23/mailchimp-plus-gibbon-plus-rails-create-a-basic-sign-up-form/
+        </loc>
+        <lastmod>2014-01-23T19:26:01-05:00</lastmod>
     </url>
     <url>
         <loc>http://cheshireoctopus.github.io/blog/archives/</loc>
-        <lastmod>2013-10-25T11:15:54-04:00</lastmod>
+        <lastmod>2014-01-23T19:26:01-05:00</lastmod>
     </url>
     <url>
         <loc>http://cheshireoctopus.github.io/</loc>
-        <lastmod>2013-10-25T11:15:54-04:00</lastmod>
+        <lastmod>2014-01-23T19:26:01-05:00</lastmod>
     </url>
     <url>
         <loc>http://cheshireoctopus.github.io/robots.txt</loc>

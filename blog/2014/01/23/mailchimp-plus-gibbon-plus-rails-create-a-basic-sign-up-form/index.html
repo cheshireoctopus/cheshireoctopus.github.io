@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>MailChimp + Gibbon + Rails: Basic Mailing List Setup - </title>
+  <meta name="author" content="Chandler Moisen">
+
+  
+  <meta name="description" content="You&rsquo;ve made it to the big time when you want to start a mailing list. There are many ESP&rsquo;s (email service providers) out there, each &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://cheshireoctopus.github.io/blog/2014/01/23/mailchimp-plus-gibbon-plus-rails-create-a-basic-sign-up-form">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-38902038-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/"></a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:cheshireoctopus.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">MailChimp + Gibbon + Rails: Basic Mailing List Setup</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-23T15:57:00-05:00" pubdate data-updated="true">Jan 23<span>rd</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img class="center" src="/images/mailchimp/logo.png" title="MailChimp Logo" alt="MailChimp Logo"></p>
+
+<p>You&rsquo;ve made it to the big time when you want to start a mailing list. There are many ESP&rsquo;s (email service providers) out there, each with respective strengths and weaknesses. I&rsquo;d recommend checking into <a href="http://mailchimp.com">MailChimp</a> as they provide an &ldquo;entrepreneur&rsquo;s plan&rdquo; that allows you to send 12,000 emails a month to 2,000 subscribers &ndash; <strong>for free, for life</strong>. And because I have no experience with any other ESP&hellip;</p>
+
+<p>This tutorial will cover MailChimp&rsquo;s integration with Rails using the <a href="https://github.com/amro/gibbon">Gibbon</a> gem. We will be building a simple Rails application that will display a form to collects users&#8217; email addresses and add them to a MailChimp email list.</p>
+
+<!-- more -->
+
+
+<p>It is assumed that you possess a basic/intermediate understanding of Ruby (v. 1.9.3) and Rails (v. 4.0.2).</p>
+
+<p><strong>Note</strong>: this tutorial covers MailChimp&rsquo;s V2 of their API.</p>
+
+<h2>Part One: MailChimp</h2>
+
+<p>Before we jump into Rails, we need to do three things: 1) obtain our API key, 2) make an email list with MailChimp; 3) obtain that list&rsquo;s ID.</p>
+
+<p>1) Once logged into your MailChimp account, look to the left, select your name, and then &ldquo;Account Settings&rdquo; in the popup menu. Next, click the &ldquo;Extras&rdquo; dropdown and select &ldquo;API Keys&rdquo;. Voilla, you have your API key.</p>
+
+<p>2) To generate an email list, select &ldquo;Lists&rdquo; from the menu on the left. In the top-right corner, click &ldquo;Create List&rdquo; to begin the process. Hint: it&rsquo;s relatively straight forward.</p>
+
+<p>3) To get the ID of the list you just created, select &ldquo;List&rdquo; from the menu on the left. This displays a list of lists&hellip;Click on the name of your new list, then the &ldquo;Settings&rdquo; dropdown, and select &ldquo;List name &amp; defaults&rdquo;. Now you have your list ID. Super.</p>
+
+<h2>Part Two: Rails</h2>
+
+<p>The Rails integration involves five steps: 1) adding the Gibbon gem to your gemfile; 2) creating an intializer file; 3) generating a controller and 4) a view; and 5) configuring your routes.</p>
+
+<p>1) Add the Gibbon gem to your gemfile and run <code>bundle</code> in your terminal. <a href="https://github.com/amro/gibbon">Gibbon is an API wrapper for MailChimp&rsquo;s Primary and Export APIs</a>, or, in other words, <a href="http://apidocs.mailchimp.com/">a chunk of code you can drop into your project and work with quickly</a>. There are quite a few MailChimp API Wrappers spanning a variety of languages. Rails has <a href="http://apidocs.mailchimp.com/api/downloads/#ruby-rails">three wrappers</a> specifc to the V2 API.</p>
+
+<figure class='code'><figcaption><span>Gemfile </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="n">gem</span> <span class="s1">&#39;gibbon&#39;</span><span class="p">,</span> <span class="ss">git</span><span class="p">:</span> <span class="s1">&#39;git://github.co/amro/gibbon.git&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Take note: <a href="http://lizhubertz.com/post/60499344852/using-the-mailchimp-api-and-gibbon-gem-with-ruby-on">other</a> <a href="http://mrgeorgegray.com/workflow/getting-a-grip-on-gibbon/">tutorials</a> reported issues running the correct version of the gem. If you encounter a similar problem, try adding <strong>git: &lsquo;git://github.co/amro/gibbon.git&rsquo;</strong> to your gemfile so it points to the gem&rsquo;s repository.</p>
+
+<p>2) Create a new initializer file, <strong>&lsquo;gibbon.rb&rsquo;</strong>, in <strong>&lsquo;config/initializers&rsquo;</strong> to declare your MailChimp API key and two other variables. Setting <strong>throws_exception</strong> to <strong>false</strong> will give you a pretty hash in the event of an error.</p>
+
+<figure class='code'><figcaption><span>config/initializers/gibbon.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="ss">Gibbon</span><span class="p">:</span><span class="ss">:API</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="s2">&quot;YOUR-API-KEY&quot;</span>
+</span><span class='line'>  <span class="ss">Gibbon</span><span class="p">:</span><span class="ss">:API</span><span class="o">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="mi">15</span>
+</span><span class='line'>  <span class="ss">Gibbon</span><span class="p">:</span><span class="ss">:API</span><span class="o">.</span><span class="n">throws_exceptions</span> <span class="o">=</span> <span class="kp">false</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3) Generate a controller <strong>&lsquo;emailapi&rsquo;</strong> to handle MailChimp&rsquo;s API calls and create a method <strong>&lsquo;subscribe&rsquo;</strong> that will be responsible for taking users&#8217; email input and pushing it to your mailing list.</p>
+
+<figure class='code'><figcaption><span>app/controllers/emailapi_controller.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">index</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">subscribe</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="vi">@list_id</span> <span class="o">=</span> <span class="s2">&quot;YOUR-LIST-ID&quot;</span>
+</span><span class='line'>    <span class="n">gb</span> <span class="o">=</span> <span class="ss">Gibbon</span><span class="p">:</span><span class="ss">:API</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">gb</span><span class="o">.</span><span class="n">lists</span><span class="o">.</span><span class="n">subscribe</span><span class="p">({</span>
+</span><span class='line'>      <span class="ss">:id</span> <span class="o">=&gt;</span> <span class="vi">@list_id</span><span class="p">,</span>
+</span><span class='line'>      <span class="ss">:email</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:email</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:email</span><span class="o">][</span><span class="ss">:address</span><span class="o">]</span><span class="p">}</span>
+</span><span class='line'>      <span class="p">})</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The variables <code>@list_id</code> and <code>gb</code> are respectively defined as the ID of the list you created (from Part One, remember?) and an instance of the API wrapper. The latter is pulling from the <strong>&lsquo;app/config/initializers/gibbon.rb&rsquo;</strong>.</p>
+
+<p>Next, we make an API call &ndash; <code>.lists.subscribe()</code> &ndash; on the instance itself. This call takes a hash as an argument, and in this hash, we pass two parameters: <code>:id</code>, associated with the ID of your list, and <code>:email</code>, associated with the user&rsquo;s email (this will become clearer after we construct the view).</p>
+
+<p>4) Having completed the controller, let&rsquo;s make the corresponding view. Create a file <strong>&lsquo;index.html.erb&rsquo;</strong> in <strong>&lsquo;/app/views/emailapi&rsquo;</strong>.</p>
+
+<figure class='code'><figcaption><span>app/views/emailapi/index.html.erb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='erb'><span class='line'><span class="x">&lt;h1&gt;Get My Awesome News Letter&lt;/h1&gt;</span>
+</span><span class='line'><span class="x">&lt;p&gt;Give me your email and keep up to date on my cat&#39;s thoughts.&lt;/p&gt;</span>
+</span><span class='line'><span class="cp">&lt;%=</span> <span class="n">form_tag</span><span class="p">(</span><span class="s1">&#39;/emailapi/subscribe&#39;</span><span class="p">,</span> <span class="nb">method</span><span class="p">:</span> <span class="s2">&quot;post&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="s2">&quot;subscribe&quot;</span><span class="p">,</span> <span class="ss">remote</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span> <span class="k">do</span> <span class="cp">-%&gt;</span><span class="x"></span>
+</span><span class='line'><span class="x">   </span><span class="cp">&lt;%=</span> <span class="n">email_field</span><span class="p">(</span><span class="ss">:email</span><span class="p">,</span> <span class="ss">:address</span><span class="p">,</span> <span class="p">{</span><span class="nb">id</span><span class="p">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="ss">placeholder</span><span class="p">:</span> <span class="s2">&quot;email address&quot;</span><span class="p">})</span> <span class="cp">%&gt;</span><span class="x"></span>
+</span><span class='line'><span class="x">   </span><span class="cp">&lt;%=</span> <span class="n">submit_tag</span><span class="p">(</span><span class="s2">&quot;Sign me up!&quot;</span><span class="p">)</span> <span class="cp">%&gt;</span><span class="x"></span>
+</span><span class='line'><span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span><span class="x"></span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Beneath the <code>&lt;h1&gt;</code> and <code>&lt;p&gt;</code> html elements, use a Rails helper <code>form_tag</code> to create the sign up form. Pass in four paramaters: 1) the action the form is going to take, or where the form will be submitted; 2) the HTML method defining how the action will occur, in this case <code>post</code>; 3) the form&rsquo;s ID; 4) set <code>remote</code> to <code>true</code>, allowing unobtrusive JS drivers to modify the the form&rsquo;s behavior.</p>
+
+<p>Lastly the, <code>submit_tag</code> method creates our <code>&lt;input&gt;</code> tags. Our form is rendered in HTML as seen below:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;h1&gt;</span>Get My Awesome News Letter<span class="nt">&lt;/h1&gt;</span>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>Give me your email and keep up to date on my cat&#39;s thoughts.<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'><span class="nt">&lt;form</span> <span class="na">accept-charset=</span><span class="s">&quot;UTF-8&quot;</span> <span class="na">action=</span><span class="s">&quot;/emailapi/subscribe&quot;</span> <span class="na">data-remote=</span><span class="s">&quot;true&quot;</span> <span class="na">id=</span><span class="s">&quot;subscribe&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;&lt;div</span> <span class="na">style=</span><span class="s">&quot;margin:0;padding:0;display:inline&quot;</span><span class="nt">&gt;&lt;input</span> <span class="na">name=</span><span class="s">&quot;utf8&quot;</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">value=</span><span class="s">&quot;&amp;#x2713;&quot;</span> <span class="nt">/&gt;&lt;/div&gt;</span>   <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;email&quot;</span> <span class="na">name=</span><span class="s">&quot;email[address]&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;email address&quot;</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>   <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;commit&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">value=</span><span class="s">&quot;Sign me up!&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'><span class="nt">&lt;/form&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To learn more about forms, check out the <a href="http://api.rubyonrails.org/classes/ActionView/Helpers/FormHelper.html">documentation</a>.</p>
+
+<p>For more information on the subscribe API call, check out the <a href="http://apidocs.mailchimp.com/api/2.0/lists/subscribe.php">official documentation</a>.</p>
+
+<p>5) Last, set your routes in <strong>&lsquo;config/routes.rb&rsquo;</strong>.</p>
+
+<figure class='code'><figcaption><span>config/routes.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">root</span> <span class="s1">&#39;emailapi#index&#39;</span>
+</span><span class='line'><span class="n">post</span> <span class="s1">&#39;emailapi/subscribe&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;emailapi#subscribe&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Conclusion</h2>
+
+<p>Alright, you should be good to go. Keep in mind, this tutorial barely scratches the surface of MailChimp + Rails + Gibbon.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Chandler Moisen</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-23T15:57:00-05:00" pubdate data-updated="true">Jan 23<span>rd</span>, 2014</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://cheshireoctopus.github.io/blog/2014/01/23/mailchimp-plus-gibbon-plus-rails-create-a-basic-sign-up-form/" data-via="" data-counturl="http://cheshireoctopus.github.io/blog/2014/01/23/mailchimp-plus-gibbon-plus-rails-create-a-basic-sign-up-form/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/10/22/twilio-on-rails-sms-basics/" title="Previous Post: Twilio on Rails: SMS Basics">&laquo; Twilio on Rails: SMS Basics</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/01/23/mailchimp-plus-gibbon-plus-rails-create-a-basic-sign-up-form/">MailChimp + Gibbon + Rails: Basic Mailing List Setup</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/22/twilio-on-rails-sms-basics/">Twilio on Rails: SMS Basics</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Chandler Moisen -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
