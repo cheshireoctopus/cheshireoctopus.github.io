@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: http://cheshireoctopus.github.io/sitemap.xml 

@@ -1,0 +1,24 @@
+{
+  "name": "cheshireoctopus.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "marked": "^0.3.6",
+    "pug": "^2.0.0-rc.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheshireoctopus/cheshireoctopus.github.io.git"
+  },
+  "author": "Chandler Moisen <chandlermoisen@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cheshireoctopus/cheshireoctopus.github.io/issues"
+  },
+  "homepage": "https://github.com/cheshireoctopus/cheshireoctopus.github.io#readme"
+}
