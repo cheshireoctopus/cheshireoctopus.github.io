@@ -7,14 +7,17 @@ const mkdirp = Promise.promisifyAll(require('mkdirp'))
 const pug = require('pug')
 const marked = require('marked')
 
-const PATH_TO_SRC = path.join(__dirname, '..', 'src')
-const PATH_TO_BLOG = path.join(__dirname, '..', 'blog')
-const PATH_TO_TEMPLATE = path.join(__dirname, '..', 'views', 'post.pug')
+const PATH_TO_ROOT = path.join(__dirname, '..')
+const PATH_TO_SRC = path.join(PATH_TO_ROOT, 'src')
+const PATH_TO_BLOG = path.join(PATH_TO_ROOT, 'blog')
+const PATH_TO_TEMPLATE = path.join(PATH_TO_ROOT, 'views', 'post.pug')
 const postTemplate = pug.compileFile(PATH_TO_TEMPLATE)
+
+const postsCollection = []
 
 fs.readdirAsync(PATH_TO_SRC)
 	.then(posts => {
-		return Promise.all(posts, post => {
+		return Promise.map(posts, post => {
 			const srcPostPath = `${PATH_TO_SRC}/${post}`
 			const destPostPath = `${PATH_TO_BLOG}/${post}.html`
 
@@ -32,9 +35,18 @@ fs.readdirAsync(PATH_TO_SRC)
 							markdownContent: md,
 						})
 
+						postsCollection.push({
+							date: data.date,
+							title: data.title,
+							html: marked(md),
+						})
+
 						fs.writeFileAsync(destPostPath, postHTML)
 					})
 				})
 		})
 	})
-	.then(files => console.log(`Congratulations - generated ${files.length} file(s).`))
+	.then(() => {
+		fs.writeFileAsync(`${PATH_TO_ROOT}/posts.json`, JSON.stringify(postsCollection))
+			.then(() => console.log(`Congratulations - generated ${postsCollection.length} file(s).`))
+	})
