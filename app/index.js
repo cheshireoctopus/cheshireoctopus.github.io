@@ -1,8 +1,8 @@
 import { createElement } from 'react'
 import { render } from 'react-dom'
-import App from './components/app.jsx'
+import Index from './components/index.jsx'
 
-const app = createElement(App)
+const app = createElement(Index)
 const el = document.querySelector('.root')
 
 render(app, el)
