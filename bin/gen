@@ -3,7 +3,7 @@
 const Promise = require('bluebird')
 const fs = Promise.promisifyAll(require('fs'))
 const path = require('path')
-const mkdirp = require('mkdirp')
+const mkdirp = Promise.promisifyAll(require('mkdirp'))
 const pug = require('pug')
 const marked = require('marked')
 
@@ -12,27 +12,29 @@ const PATH_TO_BLOG = path.join(__dirname, '..', 'blog')
 const PATH_TO_TEMPLATE = path.join(__dirname, '..', 'views', 'post.pug')
 const postTemplate = pug.compileFile(PATH_TO_TEMPLATE)
 
-fs.readdir(PATH_TO_SRC, (err, posts) => {
-	posts.forEach(post => {
-		const srcPostPath = `${PATH_TO_SRC}/${post}`
-		const destPostPath = `${PATH_TO_BLOG}/${post}.html`
+fs.readdirAsync(PATH_TO_SRC)
+	.then(posts => {
+		return Promise.all(posts, post => {
+			const srcPostPath = `${PATH_TO_SRC}/${post}`
+			const destPostPath = `${PATH_TO_BLOG}/${post}.html`
 
-		mkdirp(PATH_TO_BLOG, () => {
-			fs.readdir(srcPostPath, (err, files) => {
-				const readJSON = fs.readFileAsync(`${srcPostPath}/data.json`, 'utf8')
-				const readMD = fs.readFileAsync(`${srcPostPath}/post.md`, 'utf8')
-				Promise.join(readJSON, readMD, (json, md) => {
-					const data = JSON.parse(json)
-					const postHTML = postTemplate({
-						date: data.date,
-						title: data.title,
-						marked: marked,
-						markdownContent: md,
+			return fs.readdirAsync(srcPostPath)
+				.then(files => {
+					const readJSON = fs.readFileAsync(`${srcPostPath}/data.json`, 'utf8')
+					const readMD = fs.readFileAsync(`${srcPostPath}/post.md`, 'utf8')
+
+					return Promise.join(readJSON, readMD, (json, md) => {
+						const data = JSON.parse(json)
+						const postHTML = postTemplate({
+							date: data.date,
+							title: data.title,
+							marked: marked,
+							markdownContent: md,
+						})
+
+						fs.writeFileAsync(destPostPath, postHTML)
 					})
-
-					fs.writeFile(destPostPath, postHTML)
 				})
-			})
 		})
 	})
-})
+	.then(files => console.log(`Congratulations - generated ${files.length} file(s).`))
