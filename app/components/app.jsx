@@ -1,5 +1,6 @@
 import React, { PropTypes, Component, PureComponent } from 'react'
-import { Link, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
+import Header from './header.jsx'
 import Home from './home.jsx'
 import Projects from './projects.jsx'
 import CV from './cv.jsx'
@@ -13,9 +14,7 @@ export default class App extends Component {
 	render() {
 		return (
 			<div>
-				<Link to="/">Home</Link>
-				<Link to="/projects">Projects</Link>
-				<Link to="/cv">Curriculum Vitae</Link>
+				<Header />
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route path="/projects" component={Projects} />
