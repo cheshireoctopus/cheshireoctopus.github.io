@@ -8,9 +8,8 @@ const pug = require('pug')
 const marked = require('marked')
 
 const PATH_TO_ROOT = path.join(__dirname, '..')
-const PATH_TO_SRC = path.join(PATH_TO_ROOT, 'src')
-const PATH_TO_BLOG = path.join(PATH_TO_ROOT, 'blog')
 const PATH_TO_APP = path.join(PATH_TO_ROOT, 'app')
+const PATH_TO_SRC = path.join(PATH_TO_APP, 'src')
 const PATH_TO_TEMPLATE = path.join(PATH_TO_ROOT, 'views', 'post.pug')
 const postTemplate = pug.compileFile(PATH_TO_TEMPLATE)
 
@@ -20,34 +19,27 @@ fs.readdirAsync(PATH_TO_SRC)
 	.then(posts => {
 		return Promise.map(posts, post => {
 			const srcPostPath = `${PATH_TO_SRC}/${post}`
-			const destPostPath = `${PATH_TO_BLOG}/${post}.html`
 
 			return fs.readdirAsync(srcPostPath)
 				.then(files => {
 					const readJSON = fs.readFileAsync(`${srcPostPath}/data.json`, 'utf8')
 					const readMD = fs.readFileAsync(`${srcPostPath}/post.md`, 'utf8')
+					const readIMG = fs.readdirAsync(`${srcPostPath}/img`)
 
-					return Promise.join(readJSON, readMD, (json, md) => {
+					return Promise.join(readJSON, readMD, readIMG, (json, md, imgs) => {
 						const data = JSON.parse(json)
-						const postHTML = postTemplate({
-							date: data.date,
-							title: data.title,
-							marked: marked,
-							markdownContent: md,
-						})
 
 						postsCollection.push({
 							date: data.date,
+							topics: data.topics,
 							title: data.title,
 							html: marked(md),
 						})
-
-						fs.writeFileAsync(destPostPath, postHTML)
 					})
 				})
 		})
 	})
 	.then(() => {
 		fs.writeFileAsync(`${PATH_TO_APP}/posts.json`, JSON.stringify(postsCollection))
-			.then(() => console.log(`Congratulations - generated ${postsCollection.length} file(s).`))
+			.then(() => console.log(`Congratulations - generated posts.`))
 	})

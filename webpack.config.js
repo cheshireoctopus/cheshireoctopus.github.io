@@ -17,7 +17,7 @@ module.exports = {
 						['es2015', { modules: false }],
 						'react',
 					],
-					plugins: ['babel-plugin-transform-runtime'],
+					plugins: ['babel-plugin-transform-runtime', 'transform-class-properties'],
 				},
 			},
 			{
