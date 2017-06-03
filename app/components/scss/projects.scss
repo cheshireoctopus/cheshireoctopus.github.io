@@ -5,16 +5,44 @@
 }
 
 .projects-nav {
+	margin-top: 70px;
 	flex-basis: 25%;
 	flex-shrink: 0;
+	margin-right: 10px;
 }
 
 .projects-nav-item {
 	cursor: pointer;
-	padding: 10px 0;
+	padding-bottom: 3px;
+	margin-bottom: 15px;
 	border-bottom: 2px solid white;
+	font-size: 18px;
 
 	&:hover, &.selected {
+		font-weight: 700;
 		border-bottom: 2px dotted $turquoise;
 	}
+}
+
+.projects-selected-title {
+	font-size: 30px;
+}
+
+.projects-selected-blurb {
+	color: $gray;
+}
+
+.project-selected-img {
+	width: 100%;
+	margin-bottom: 15px;
+	border: 1px solid $black;
+}
+
+.project-selected-about {
+	margin-bottom: 15px;
+}
+
+.project-selected-url {
+	display: block;
+	color: $pink;
 }

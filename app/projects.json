@@ -1,11 +1,11 @@
 [
 	{
-		"title":"General Assembly: Class Portal",
+		"title":"General Assembly Class Portal",
 		"one_liner":"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
 		"about":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus beatae est maiores voluptas nisi repudiandae soluta, earum nobis cupiditate at porro similique atque molestiae maxime dolore hic, unde rerum impedit.",
 		"github":"https://github.com/cheshireoctopus/gafewd",
 		"url":"http://gafewd.surge.sh",
-		"imgSrc":"img/gafewd.png"
+		"imgSrc":"gafewd.png"
 	},
 	{
 		"title":"Accelerators. Visualized.",
@@ -13,7 +13,7 @@
 		"about":"Provides a visual perspective of the top-50 startup accelerators in the U.S (circa 2013). The applcation utilizes the D3.js library to show which U.S. cities contain the largest number of accelerator-backed companies, their respective funding, exits, and more.",
 		"github":"https://github.com/cheshireoctopus/seedvisualization",
 		"url":"https://accelvis.herokuapp.com/",
-		"imgSrc":"img/accelvis.png"
+		"imgSrc":"accelvis.png"
 	},
 	{
 		"title":"Babson. Visualized.",
@@ -21,21 +21,21 @@
 		"about":"This application visualizes my alma mater's Fall 2014 student body by home country.",
 		"github":"https://github.com/cheshireoctopus/Babo",
 		"url":"http://babsonvisualized.com",
-		"imgSrc":"img/babson.png"
+		"imgSrc":"babson.png"
 	},
 	{
 		"title":"Brand New Noise",
 		"one_liner":"E-commerce landing page for Brooklyn-based startup.",
 		"about":"Built an e-commerce landing page for Brooklyn-based startup Brand New Noise. Eventually building in Shopify functionality.",
 		"url":"http://brandnewnoise.com",
-		"imgSrc":"img/bnn.png"
+		"imgSrc":"bnn.png"
 	},
 	{
 		"title":"Kylie Minogue - Sexercize.tv",
 		"one_liner":"Mobile website for Kylie Minogue's lastest Albumn, 'Sexercize'",
 		"about":"Built under direction of Black and Black Creative, a Brooklyn-based creative agency, constructed the mobile website for Kylie Minogue's albumn, Sexercize, using jQuery Mobile.",
 		"url":"http://sexercize.tv",
-		"imgSrc":"img/sexercize.png"
+		"imgSrc":"sexercize.png"
 	},
 	{
 		"title":"Need an Idea?",
@@ -43,6 +43,6 @@
 		"about":"Out of ideas for generating revenue at your startup? Have no fear - let 'Need an Idea' do the heavy lifting for you! Built with CEO's looking to secure Series-B funding in mind, this application utilizes the Ruby 'Faker' gem to construct intelligent phrases - with just enough obfuscation - that are sure to impress investors. With 2,000+ ideas, the possibilites are endless. Works great for consultants and MBA students too!",
 		"github":"https://github.com/cheshireoctopus/bs",
 		"url":"https://needanidea.herokuapp.com/",
-		"imgSrc":"img/needanidea.png"
+		"imgSrc":"needanidea.png"
 	}
 ]

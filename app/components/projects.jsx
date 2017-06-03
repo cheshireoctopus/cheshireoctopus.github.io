@@ -10,7 +10,6 @@ export default class Projects extends PureComponent {
 	render() {
 		return (
 			<div>
-				<h1>Projects</h1>
 				<div className="projects-container">
 					{this.renderProjectNav()}
 					{this.renderSelectedProject()}
@@ -28,7 +27,7 @@ export default class Projects extends PureComponent {
 					className={`projects-nav-item ${isSelected && 'selected'}`}
 					onClick={() => this.handleSelectProject(idx)}
 				>
-					{project.title}
+					- {project.title}
 				</div>
 			)
 		})
@@ -45,14 +44,16 @@ export default class Projects extends PureComponent {
 			url,
 			imgSrc
 		} = projects[this.state.selectedProjectIdx]
+		const imgPath = `public/img/projects/${imgSrc}`
 
 		return (
 			<div className="projects-selected-container">
 				<div className="projects-selected-title">{title}</div>
 				<div className="projects-selected-blurb">{one_liner}</div>
-				<img src={imgSrc} />
+				<hr />
+				<img className="project-selected-img" src={imgPath} />
 				<div className="project-selected-about">{about}</div>
-				<div className="project-selected-url">{url}</div>
+				<a className="project-selected-url" href={url}>{url}</a>
 			</div>
 		)
 	}
