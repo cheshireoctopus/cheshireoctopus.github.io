@@ -1,1 +1,66 @@
-[]
+{"projects":
+	[
+		{
+			"title":"Accelerators. Visualized.",
+			"oneliner":"US Seed-Accelerator Funding Visualzed with D3.js",
+			"technologies":["Ruby on Rails","HTML5 + CSS3","D3.js","Javascript + jQuery + Ajax","PostgreSQL"],
+			"about":"Accelerators. Visualized. provides a visual perspective of the top-50 startup accelerators in the U.S. The applcation utilizes the D3.js library to show which U.S. cities contain the largest number of accelerator-backed companies, their respective funding, exit evaluations, and more.",
+			"github":"https://github.com/cheshireoctopus/seedvisualization",
+			"url":"https://accelvis.herokuapp.com/",
+			"img":"img/accelvis.png"
+		},
+		{
+			"title":"Babson. Visualized.",
+			"oneliner":"Babson College's Student Body Visualized with D3.js",
+			"technologies":["HTML5 + CSS3","D3.js","Javascript + jQuery + Ajax"],
+			"about":"This application visualizes my alma mater's Fall 2014 student body by home country.",
+			"github":"https://github.com/cheshireoctopus/Babo",
+			"url":"http://babsonvisualized.com",
+			"img":"img/babson.png"
+		},
+		{
+			"title":"Brand New Noise",
+			"oneliner":"E-commerce landing page for Brooklyn-based startup.",
+			"technologies":["HTML5 + CSS3","Javascript + jQuery", "Instafeed.js"],
+			"about":"Built an e-commerce landing page for Brooklyn-based startup Brand New Noise. Eventually building in Shopify functionality.",
+			"url":"http://brandnewnoise.com",
+			"img":"img/bnn.png"
+		},
+		{
+			"title":"Kylie Minogue - Sexercize.tv",
+			"oneliner":"Mobile website for Kylie Minogue's lastest Albumn, 'Sexercize'",
+			"technologies":["HTML5 + CSS3","jQuery Mobile"],
+			"about":"Built under direction of Black and Black Creative, a Brooklyn-based creative agency, constructed the mobile website for Kylie Minogue's albumn, Sexercize, using jQuery Mobile.",
+			"github":"",
+			"url":"http://sexercize.tv",
+			"img":"img/sexercize.png"
+		},
+		{
+			"title":"Need an Idea?",
+			"oneliner":"Formidable Business Strategies at the Click of a Button",
+			"technologies":["Ruby on Rails","HTML5 + CSS3","Javascript + jQuery + Ajax","PostgreSQL"],
+			"about":"Out of ideas for generating revenue at your startup? Have no fear - let 'Need an Idea' do the heavy lifting for you! Built with CEO's looking to secure Series-B funding in mind, this application utilizes the Ruby 'Faker' gem to construct intelligent phrases - with just enough obfuscation - that are sure to impress investors. With 2,000+ ideas, the possibilites are endless. Works great for consultants and MBA students too!",
+			"github":"https://github.com/cheshireoctopus/bs",
+			"url":"https://needanidea.herokuapp.com/",
+			"img":"img/needanidea.png"
+		},
+		{
+			"title":"TMTOTXT",
+			"oneliner":"Film Recommendations via SMS",
+			"technologies":["Ruby on Rails","HTML5 + CSS3","Javascript + jQuery + Ajax","PostgreSQL","Twilio API","Rotten Tomatoes API"],
+			"about":"Built with two teammates over four days, TMTOTXT is a web application delivering curated film recommendations directly to your phone via SMS - no app required. Users simply add their favorite actors via the web app and TMTOTXT will then recommend recently released films based on the user's preferences. Recommendations are sourced from Rotten Tomatoes and are pushed to the user via SMS through a service provided by Twilio.",
+			"github":"https://github.com/mattmarcello/tmto_text",
+			"url":"http://tmtotxt.herokuapp.com/",
+			"img":"img/tmtotxt.png"
+		},
+		{
+			"title":"SPATIA.LY",
+			"oneliner":"Discover Architecture",
+			"technologies":["Ruby on Rails","HTML5 + CSS3","Javascript","PostgreSQL","Google Maps API"],
+			"about":"A simple CRUD app for architecture aficionados to discover buildings in your city and those around the world.",
+			"github":"https://github.com/cheshireoctopus/spatialy",
+			"url":"https://spatially.herokuapp.com/",
+			"img":"img/spatially.png"
+		}
+	]
+}
