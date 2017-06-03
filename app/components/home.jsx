@@ -15,7 +15,9 @@ export default class Home extends PureComponent {
 	renderAboutMe() {
 		return (
 			<div className="home-about-me">
-				Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus. Quisque velit nisi, pretium ut lacinia in, elementum id enim.
+				Hello, my name is Chandler.
+
+				I am blah blah blah
 			</div>
 		)
 	}

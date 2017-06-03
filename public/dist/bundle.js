@@ -12318,107 +12318,54 @@ module.exports = [
 /* 146 */
 /***/ (function(module, exports) {
 
-module.exports = {
-	"projects": [
-		{
-			"title": "Accelerators. Visualized.",
-			"oneliner": "US Seed-Accelerator Funding Visualzed with D3.js",
-			"technologies": [
-				"Ruby on Rails",
-				"HTML5 + CSS3",
-				"D3.js",
-				"Javascript + jQuery + Ajax",
-				"PostgreSQL"
-			],
-			"about": "Accelerators. Visualized. provides a visual perspective of the top-50 startup accelerators in the U.S. The applcation utilizes the D3.js library to show which U.S. cities contain the largest number of accelerator-backed companies, their respective funding, exit evaluations, and more.",
-			"github": "https://github.com/cheshireoctopus/seedvisualization",
-			"url": "https://accelvis.herokuapp.com/",
-			"img": "img/accelvis.png"
-		},
-		{
-			"title": "Babson. Visualized.",
-			"oneliner": "Babson College's Student Body Visualized with D3.js",
-			"technologies": [
-				"HTML5 + CSS3",
-				"D3.js",
-				"Javascript + jQuery + Ajax"
-			],
-			"about": "This application visualizes my alma mater's Fall 2014 student body by home country.",
-			"github": "https://github.com/cheshireoctopus/Babo",
-			"url": "http://babsonvisualized.com",
-			"img": "img/babson.png"
-		},
-		{
-			"title": "Brand New Noise",
-			"oneliner": "E-commerce landing page for Brooklyn-based startup.",
-			"technologies": [
-				"HTML5 + CSS3",
-				"Javascript + jQuery",
-				"Instafeed.js"
-			],
-			"about": "Built an e-commerce landing page for Brooklyn-based startup Brand New Noise. Eventually building in Shopify functionality.",
-			"url": "http://brandnewnoise.com",
-			"img": "img/bnn.png"
-		},
-		{
-			"title": "Kylie Minogue - Sexercize.tv",
-			"oneliner": "Mobile website for Kylie Minogue's lastest Albumn, 'Sexercize'",
-			"technologies": [
-				"HTML5 + CSS3",
-				"jQuery Mobile"
-			],
-			"about": "Built under direction of Black and Black Creative, a Brooklyn-based creative agency, constructed the mobile website for Kylie Minogue's albumn, Sexercize, using jQuery Mobile.",
-			"github": "",
-			"url": "http://sexercize.tv",
-			"img": "img/sexercize.png"
-		},
-		{
-			"title": "Need an Idea?",
-			"oneliner": "Formidable Business Strategies at the Click of a Button",
-			"technologies": [
-				"Ruby on Rails",
-				"HTML5 + CSS3",
-				"Javascript + jQuery + Ajax",
-				"PostgreSQL"
-			],
-			"about": "Out of ideas for generating revenue at your startup? Have no fear - let 'Need an Idea' do the heavy lifting for you! Built with CEO's looking to secure Series-B funding in mind, this application utilizes the Ruby 'Faker' gem to construct intelligent phrases - with just enough obfuscation - that are sure to impress investors. With 2,000+ ideas, the possibilites are endless. Works great for consultants and MBA students too!",
-			"github": "https://github.com/cheshireoctopus/bs",
-			"url": "https://needanidea.herokuapp.com/",
-			"img": "img/needanidea.png"
-		},
-		{
-			"title": "TMTOTXT",
-			"oneliner": "Film Recommendations via SMS",
-			"technologies": [
-				"Ruby on Rails",
-				"HTML5 + CSS3",
-				"Javascript + jQuery + Ajax",
-				"PostgreSQL",
-				"Twilio API",
-				"Rotten Tomatoes API"
-			],
-			"about": "Built with two teammates over four days, TMTOTXT is a web application delivering curated film recommendations directly to your phone via SMS - no app required. Users simply add their favorite actors via the web app and TMTOTXT will then recommend recently released films based on the user's preferences. Recommendations are sourced from Rotten Tomatoes and are pushed to the user via SMS through a service provided by Twilio.",
-			"github": "https://github.com/mattmarcello/tmto_text",
-			"url": "http://tmtotxt.herokuapp.com/",
-			"img": "img/tmtotxt.png"
-		},
-		{
-			"title": "SPATIA.LY",
-			"oneliner": "Discover Architecture",
-			"technologies": [
-				"Ruby on Rails",
-				"HTML5 + CSS3",
-				"Javascript",
-				"PostgreSQL",
-				"Google Maps API"
-			],
-			"about": "A simple CRUD app for architecture aficionados to discover buildings in your city and those around the world.",
-			"github": "https://github.com/cheshireoctopus/spatialy",
-			"url": "https://spatially.herokuapp.com/",
-			"img": "img/spatially.png"
-		}
-	]
-};
+module.exports = [
+	{
+		"title": "General Assembly: Class Portal",
+		"one_liner": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+		"about": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus beatae est maiores voluptas nisi repudiandae soluta, earum nobis cupiditate at porro similique atque molestiae maxime dolore hic, unde rerum impedit.",
+		"github": "https://github.com/cheshireoctopus/gafewd",
+		"url": "http://gafewd.surge.sh",
+		"imgSrc": "img/gafewd.png"
+	},
+	{
+		"title": "Accelerators. Visualized.",
+		"one_liner": "US Seed-Accelerator Funding Visualzed with D3.js",
+		"about": "Provides a visual perspective of the top-50 startup accelerators in the U.S (circa 2013). The applcation utilizes the D3.js library to show which U.S. cities contain the largest number of accelerator-backed companies, their respective funding, exits, and more.",
+		"github": "https://github.com/cheshireoctopus/seedvisualization",
+		"url": "https://accelvis.herokuapp.com/",
+		"imgSrc": "img/accelvis.png"
+	},
+	{
+		"title": "Babson. Visualized.",
+		"one_liner": "Babson College's Student Body Visualized with D3.js",
+		"about": "This application visualizes my alma mater's Fall 2014 student body by home country.",
+		"github": "https://github.com/cheshireoctopus/Babo",
+		"url": "http://babsonvisualized.com",
+		"imgSrc": "img/babson.png"
+	},
+	{
+		"title": "Brand New Noise",
+		"one_liner": "E-commerce landing page for Brooklyn-based startup.",
+		"about": "Built an e-commerce landing page for Brooklyn-based startup Brand New Noise. Eventually building in Shopify functionality.",
+		"url": "http://brandnewnoise.com",
+		"imgSrc": "img/bnn.png"
+	},
+	{
+		"title": "Kylie Minogue - Sexercize.tv",
+		"one_liner": "Mobile website for Kylie Minogue's lastest Albumn, 'Sexercize'",
+		"about": "Built under direction of Black and Black Creative, a Brooklyn-based creative agency, constructed the mobile website for Kylie Minogue's albumn, Sexercize, using jQuery Mobile.",
+		"url": "http://sexercize.tv",
+		"imgSrc": "img/sexercize.png"
+	},
+	{
+		"title": "Need an Idea?",
+		"one_liner": "Formidable Business Strategies at the Click of a Button",
+		"about": "Out of ideas for generating revenue at your startup? Have no fear - let 'Need an Idea' do the heavy lifting for you! Built with CEO's looking to secure Series-B funding in mind, this application utilizes the Ruby 'Faker' gem to construct intelligent phrases - with just enough obfuscation - that are sure to impress investors. With 2,000+ ideas, the possibilites are endless. Works great for consultants and MBA students too!",
+		"github": "https://github.com/cheshireoctopus/bs",
+		"url": "https://needanidea.herokuapp.com/",
+		"imgSrc": "img/needanidea.png"
+	}
+];
 
 /***/ }),
 /* 147 */
@@ -12710,7 +12657,7 @@ var Home = function (_PureComponent) {
 			return __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
 				'div',
 				{ className: 'home-about-me' },
-				'Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus. Quisque velit nisi, pretium ut lacinia in, elementum id enim.'
+				'Hello, my name is Chandler. I am blah blah blah'
 			);
 		}
 	}]);
@@ -12804,10 +12751,13 @@ Post.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_possibleConstructorReturn___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_possibleConstructorReturn__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_inherits__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_inherits___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_inherits__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__projects_json__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__projects_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__projects_json__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__scss_projects_scss__ = __webpack_require__(334);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__scss_projects_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__scss_projects_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__projects_json__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__projects_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__projects_json__);
+
 
 
 
@@ -12820,24 +12770,115 @@ var Projects = function (_PureComponent) {
 	__WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_inherits___default()(Projects, _PureComponent);
 
 	function Projects() {
+		var _ref;
+
+		var _temp, _this, _ret;
+
 		__WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_classCallCheck___default()(this, Projects);
 
-		return __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_possibleConstructorReturn___default()(this, (Projects.__proto__ || __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_get_prototype_of___default()(Projects)).apply(this, arguments));
+		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+			args[_key] = arguments[_key];
+		}
+
+		return _ret = (_temp = (_this = __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_possibleConstructorReturn___default()(this, (_ref = Projects.__proto__ || __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_get_prototype_of___default()(Projects)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+			selectedProjectIdx: 0
+		}, _temp), __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_possibleConstructorReturn___default()(_this, _ret);
 	}
 
 	__WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_createClass___default()(Projects, [{
 		key: 'render',
 		value: function render() {
-			return __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
-				'h1',
+			return __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+				'div',
 				null,
-				'Projects'
+				__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+					'h1',
+					null,
+					'Projects'
+				),
+				__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+					'div',
+					{ className: 'projects-container' },
+					this.renderProjectNav(),
+					this.renderSelectedProject()
+				)
 			);
+		}
+	}, {
+		key: 'renderProjectNav',
+		value: function renderProjectNav() {
+			var _this2 = this;
+
+			var projectTitles = __WEBPACK_IMPORTED_MODULE_7__projects_json___default.a.map(function (project, idx) {
+				var isSelected = _this2.state.selectedProjectIdx === idx;
+				return __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+					'div',
+					{
+						key: idx,
+						className: 'projects-nav-item ' + (isSelected && 'selected'),
+						onClick: function onClick() {
+							return _this2.handleSelectProject(idx);
+						}
+					},
+					project.title
+				);
+			});
+
+			return __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+				'div',
+				{ className: 'projects-nav' },
+				projectTitles
+			);
+		}
+	}, {
+		key: 'renderSelectedProject',
+		value: function renderSelectedProject() {
+			var _projects$state$selec = __WEBPACK_IMPORTED_MODULE_7__projects_json___default.a[this.state.selectedProjectIdx],
+			    title = _projects$state$selec.title,
+			    one_liner = _projects$state$selec.one_liner,
+			    about = _projects$state$selec.about,
+			    github = _projects$state$selec.github,
+			    url = _projects$state$selec.url,
+			    imgSrc = _projects$state$selec.imgSrc;
+
+
+			return __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+				'div',
+				{ className: 'projects-selected-container' },
+				__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+					'div',
+					{ className: 'projects-selected-title' },
+					title
+				),
+				__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+					'div',
+					{ className: 'projects-selected-blurb' },
+					one_liner
+				),
+				__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement('img', { src: imgSrc }),
+				__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+					'div',
+					{ className: 'project-selected-about' },
+					about
+				),
+				__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+					'div',
+					{ className: 'project-selected-url' },
+					url
+				)
+			);
+		}
+	}, {
+		key: 'handleSelectProject',
+		value: function handleSelectProject(idx) {
+			this.setState({
+				selectedProjectIdx: idx
+			});
 		}
 	}]);
 
 	return Projects;
-}(__WEBPACK_IMPORTED_MODULE_5_react__["PureComponent"]);
+}(__WEBPACK_IMPORTED_MODULE_6_react__["PureComponent"]);
 
 /* harmony default export */ __webpack_exports__["a"] = (Projects);
 
@@ -28247,6 +28288,53 @@ var valueEqual = function valueEqual(a, b) {
 };
 
 exports.default = valueEqual;
+
+/***/ }),
+/* 331 */,
+/* 332 */,
+/* 333 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(41)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".projects-container {\n  display: flex; }\n\n.projects-nav {\n  flex-basis: 25%;\n  flex-shrink: 0; }\n\n.projects-nav-item {\n  cursor: pointer;\n  padding: 10px 0;\n  border-bottom: 2px solid white; }\n  .projects-nav-item:hover, .projects-nav-item.selected {\n    border-bottom: 2px dotted #19DFDF; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 334 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(333);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(48)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./projects.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./projects.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);
