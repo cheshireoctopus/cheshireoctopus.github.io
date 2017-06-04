@@ -9,7 +9,7 @@ const marked = require('marked')
 
 const PATH_TO_ROOT = path.join(__dirname, '..')
 const PATH_TO_APP = path.join(PATH_TO_ROOT, 'app')
-const PATH_TO_SRC = path.join(PATH_TO_APP, 'src')
+const PATH_TO_SRC = path.join(PATH_TO_ROOT, 'public', 'blog')
 const PATH_TO_TEMPLATE = path.join(PATH_TO_ROOT, 'views', 'post.pug')
 const postTemplate = pug.compileFile(PATH_TO_TEMPLATE)
 
@@ -24,9 +24,8 @@ fs.readdirAsync(PATH_TO_SRC)
 				.then(files => {
 					const readJSON = fs.readFileAsync(`${srcPostPath}/data.json`, 'utf8')
 					const readMD = fs.readFileAsync(`${srcPostPath}/post.md`, 'utf8')
-					const readIMG = fs.readdirAsync(`${srcPostPath}/img`)
 
-					return Promise.join(readJSON, readMD, readIMG, (json, md, imgs) => {
+					return Promise.join(readJSON, readMD, (json, md, imgs) => {
 						const data = JSON.parse(json)
 
 						postsCollection.push({

@@ -21,7 +21,6 @@ export default class App extends Component {
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route path="/projects" component={Projects} />
-						<Route path="/cv" component={CV} />
 						<Route component={NoMatch}/>
 					</Switch>
 				</div>

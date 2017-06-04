@@ -1,6 +1,6 @@
 import './scss/header.scss'
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 export default () => {
 	return (
@@ -13,9 +13,9 @@ export default () => {
 				<NavLink className="header-nav-link" exact activeClassName="active" to="/projects">
 					<span className="icon ion-code"></span> Projects
 				</NavLink>
-				<NavLink className="header-nav-link" exact activeClassName="active" to="/cv">
+				<a href="public/resume.pdf" className="header-nav-link">
 					<span className="icon ion-document-text"></span> CV
-				</NavLink>
+				</a>
 			</nav>
 		</header>
 	)

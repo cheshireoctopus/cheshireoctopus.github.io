@@ -12297,20 +12297,17 @@ module.exports = __webpack_require__(236);
 
 module.exports = [
 	{
-		"date": "2017-05-24T02:39:41.548Z",
+		"html": ""
+	},
+	{
+		"date": "10/22/2013",
 		"topics": [
-			"new",
-			"post",
-			"example"
+			"ruby on rails",
+			"twilio",
+			"sms"
 		],
-		"title": "Example Post",
-		"html": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam omnis aliquam alias! Possimus blanditiis officiis, in vitae, molestias maxime repellat doloremque rem autem libero, quos, eligendi culpa assumenda totam aspernatur.</p>\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim tempora inventore neque ipsa eius, ab ratione beatae velit dolor possimus quod doloremque sunt quidem consequatur, nobis temporibus aut asperiores, repudiandae!</p>\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi quidem hic, magni voluptates iste. Inventore ex nemo quam non fuga, numquam, incidunt soluta, eum aliquam obcaecati illo accusantium modi enim.</p>\n<ul>\n<li>An</li>\n<li>Unordered</li>\n<li>List</li>\n</ul>\n<ol>\n<li>An</li>\n<li>Ordered</li>\n<li>List</li>\n</ol>\n<p>A <a href=\"http://chandlermoisen.com\">link</a> to <a href=\"http://chandlermoisen.com\">http://chandlermoisen.com</a></p>\n"
-	},
-	{
-		"html": ""
-	},
-	{
-		"html": ""
+		"title": "Twilio on Rails: SMS Basics",
+		"html": "<p><img src=\"public/blog/twilio_on_rails_sms_basics/img/logo.png\" alt=\"twilio logo\"></p>\n<p><a href=\"https://www.twilio.com/\">Twilio</a> is an awesome platform that makes it super easy to add SMS, voice, and VOIP functionality to your web applications.</p>\n<p>This tutorial will show you how to set up an extremely simple Ruby on Rails application that uses Twilio to send SMS messages from your browser. It’s probably best that you have a basic understanding of RoR.</p>\n<hr>\n<h2 id=\"code\">Code</h2>\n<h4 id=\"twilio-setup\">Twilio Setup</h4>\n<ol>\n<li><p><a href=\"https://www.twilio.com/try-twilio\">Sign up</a> for free using a telephone number that you have access to – preferably your cell – as you will have to verify your account via SMS.</p>\n</li>\n<li><p>Twilio will automatically generate a telephone number for you. In my experience, these generated numbers are issued with the same area code as the original number you signed up with. <strong>Note:</strong> you can customize your number if you so wish.</p>\n</li>\n</ol>\n<p>After you’ve made it through the login, you should be welcomed with this screen:</p>\n<p><img src=\"public/blog/twilio_on_rails_sms_basics/img/twilio1.png\" alt=\"twilio home\"></p>\n<p>Make a note of both the <strong>ACCOUNT SID</strong> and the <strong>AUTH TOKEN</strong> – you will need both of these later. To see the latter, click on the lock to view it.</p>\n<ol>\n<li>I like to save my Twilio numbers in my cell because I have a terrible memory. As you can guess, I often forget to do even that. Visiting the ‘Numbers’ pane on the Twilio dashboard – pictured below – provide them for you.</li>\n</ol>\n<p><img src=\"public/blog/twilio_on_rails_sms_basics/img/number.png\" alt=\"twilio number\"></p>\n<h4 id=\"rails-setup\">Rails Setup</h4>\n<ol>\n<li>First, create the Rails application, in this case thought-provokingly named ‘twilio_app’. We don’t need the <code>index.html</code> that Rails so graciously provides – toss it, you don’t need that noise.</li>\n</ol>\n<pre><code class=\"lang-shell\">rails new twilio_app\nrm public/index.html\n</code></pre>\n<ol>\n<li>Twilio compiled a gem which makes Rails integration realtively painless. Check out the <a href=\"http://twilio-ruby.readthedocs.io/en/latest/\">documentation</a> and add it in the Gemfile. Make sure to bundle!</li>\n</ol>\n<pre><code class=\"lang-ruby\">#Gemfile\n\ngem &#39;twilio-ruby&#39;\n</code></pre>\n<ol>\n<li>Next, we will generate a controller which will be responsbile for making sense of our app’s requests and producing the appropriate output. <strong>Note:</strong> this method of controller generation creates a bunch of extra files you do not need for this application, but it’s easy.</li>\n</ol>\n<pre><code class=\"lang-ssh\">rails g controller twilio\n</code></pre>\n<ol>\n<li>In the controller you just created, add a method <code>send_sms</code> which will send the SMS’s. We will come back to this in a moment.</li>\n</ol>\n<pre><code class=\"lang-ruby\">#twilio_controller.rb\n\nclass TwilioController &lt; ApplicationController\n\n  def send_sms\n  end\n\nend\n</code></pre>\n<ol>\n<li>We’re making headway on the backend, but we need do some barebones frontend functionality. Create a file <code>index.html.erb</code> that your Twilio controller has access to. Make sure this file is located in the following directory: <code>twilio_app/app/views/layouts</code>. In this file we are going to create a simple form which will allow the user to input a phone number and a message. Make sure the form’s action directs to <code>/send_sms</code> and the method is <code>POST</code>.</li>\n</ol>\n<pre><code class=\"lang-erb\">#index.html.erb\n\n&lt;h1&gt;TWILIO!!!&lt;/h1&gt;\n\n&lt;%= form_tag(&#39;/send_sms&#39;, method: &#39;POST&#39;) do %&gt;\n    &lt;input type=&quot;text&quot; placeholder=&quot;enter number&quot; name=&quot;number&quot;&gt;\n    &lt;input type=&quot;text&quot; placeholder=&quot;enter message here&quot; name=&quot;message&quot;&gt;\n    &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;\n&lt;% end %&gt;\n</code></pre>\n<p>Your <code>index.html.erb</code> should look like this:</p>\n<p><img src=\"public/blog/twilio_on_rails_sms_basics/img/index.png\" alt=\"index.html.erb page\"></p>\n<ol>\n<li>Now that we’ve made our view and controller, let’s connect them via <code>routes.rb</code>. Clear out the comments in the <code>routes.rb</code> file, build a root path that directs to <code>index.html.erb</code>, and then another path that will post the information from the form we just built to the <code>send_sms</code> method in the Twilio controller.</li>\n</ol>\n<pre><code class=\"lang-ruby\">#routes.rb\n\nTwilioApp::Application.routes.draw do\n\n  root :to =&gt; &#39;twilio#index&#39;\n  post &#39;/send_sms&#39; =&gt; &#39;twilio#send_sms&#39;\n\nend\n</code></pre>\n<p>7: Alright, last step. Do you still remember your <strong>ACCOUNT SID</strong>, <strong>AUTH TOKEN</strong>, and <strong>Twilio phone number</strong>? We’re going to add these to our Twilio controller’s <code>send_sms</code> method to enable our application to send texts.</p>\n<p>I’ll show you my code, then walk you through it line by line.</p>\n<pre><code class=\"lang-ruby\">#twilio_controller.rb\n\nclass TwilioController &lt; ApplicationController\n\n    def send_sms\n        message = params[:message]\n        number = params[:number]\n        account_sid = &#39;XXXyour account sid should be hereXXX&#39;\n        auth_token = &#39;XXXyour auth token should be hereXXX&#39;\n\n        @client = Twilio::REST::Client.new account_sid, auth_token\n        @message = @client.account.messages.create({\n            :to =&gt; &quot;+1&quot;+&quot;#{number}&quot;,\n            :from =&gt; &quot;+12813308004&quot;,\n            :body =&gt; &quot;#{message}&quot;\n        })\n        redirect_to &#39;/&#39;\n    end\n\nend\n</code></pre>\n<p>Line 1: Opens the TwilioController</p>\n<p>Line 3: Defines the <code>send_sms</code> method</p>\n<p>Line 4: Takes the message input from the form in <code>index.html.erb</code> as a paramater and assigns it to the variable ‘message’</p>\n<p>Line 5: Takes the number input from the form in <code>index.html.erb</code> as a paramater and assigns it to the variable <code>number</code></p>\n<p>Line 6: Stores your <strong>ACCOUNT_SID</strong> as a variable</p>\n<p>Line 7: Stores your <strong>AUTH_TOKEN</strong> as a variable</p>\n<p>Line 9: Instatiates a Twilio Rest Client as <code>@client</code>, which stores the authentication parameters on lines 6 and 7 (account_sid and auth_token, respectively), and enables the <code>send_sms</code> method to make HTTP request to Twilio. <a href=\"http://www.rubydoc.info/github/twilio/twilio-ruby/Twilio/REST/Client\">More info…</a></p>\n<p>Line 11-13: Creates a message, stored as the variable <code>@message</code>, which takes a hash as an argument. The hash should include: <code>:to</code>, <code>:from</code>, and <code>:body</code>. <code>:to</code> interpolates the variable number, and represents the recipeint of the SMS. <code>:from</code> should be your Twilio number stored in the following format: <code>+12813308004</code>. <code>:body</code> interpolates the message variable which contains the message entered on <code>index.html.erb</code>.</p>\n<p>Line 14: After the SMS is processed and sent, this redirects the user back to the root directory, or, in our case, <code>index.html.erb</code>.</p>\n<hr>\n<h2 id=\"outcome\">Outcome</h2>\n<p>Assuming the code is correct, run the application locally and send yourself a message.</p>\n<p>If everything works out, you should be able to send SMS messages from your browser!</p>\n<p><img src=\"public/blog/twilio_on_rails_sms_basics/img/example.png\" alt=\"twilio cat\"></p>\n<hr>\n<h2 id=\"caveats\">Caveats</h2>\n<p>As this application was developed using Twilio’s free service, you can only send texts to the phone number that you verified your Twilio account with. To mess with your friends, activate your Twilio account by adding a credit card. Individual texts cost less than $.01.</p>\n<hr>\n<h2 id=\"next-steps\">Next Steps</h2>\n<p>One day I will write a follow up, but for now, check out this <a href=\"https://github.com/crtr0/twilio-rails-demo\">github repo</a> for an idea of where else you can take Twilio and Rails.</p>\n"
 	}
 ];
 
@@ -12438,7 +12435,6 @@ var App = function (_Component) {
 						null,
 						__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_9__home_jsx__["a" /* default */] }),
 						__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_react_router_dom__["c" /* Route */], { path: '/projects', component: __WEBPACK_IMPORTED_MODULE_10__projects_jsx__["a" /* default */] }),
-						__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_react_router_dom__["c" /* Route */], { path: '/cv', component: __WEBPACK_IMPORTED_MODULE_11__cv_jsx__["a" /* default */] }),
 						__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_react_router_dom__["c" /* Route */], { component: NoMatch })
 					)
 				),
@@ -12499,7 +12495,7 @@ var CV = function (_PureComponent) {
 	return CV;
 }(__WEBPACK_IMPORTED_MODULE_5_react__["PureComponent"]);
 
-/* harmony default export */ __webpack_exports__["a"] = (CV);
+/* unused harmony default export */ var _unused_webpack_default_export = (CV);
 
 /***/ }),
 /* 149 */
@@ -12592,8 +12588,8 @@ var Footer = function (_PureComponent) {
 				' Projects'
 			),
 			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-				__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["d" /* NavLink */],
-				{ className: 'header-nav-link', exact: true, activeClassName: 'active', to: '/cv' },
+				'a',
+				{ href: 'public/resume.pdf', className: 'header-nav-link' },
 				__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('span', { className: 'icon ion-document-text' }),
 				' CV'
 			)
@@ -13745,7 +13741,7 @@ exports = module.exports = __webpack_require__(35)(undefined);
 
 
 // module
-exports.push([module.i, ".post-container {\n  padding: 15px;\n  margin-bottom: 30px;\n  border-bottom: 1px solid black; }\n\n.post-title {\n  font-size: 30px;\n  font-weight: bold; }\n\n.post-date {\n  color: #dedede; }\n", ""]);
+exports.push([module.i, ".post-container {\n  padding: 15px;\n  margin-bottom: 30px;\n  border-bottom: 1px solid black;\n  max-width: 900px; }\n  .post-container img {\n    max-width: 100%; }\n\n.post-title {\n  font-size: 30px;\n  font-weight: bold; }\n\n.post-date {\n  color: #dedede; }\n", ""]);
 
 // exports
 
@@ -13759,7 +13755,7 @@ exports = module.exports = __webpack_require__(35)(undefined);
 
 
 // module
-exports.push([module.i, ".projects-container {\n  display: flex; }\n\n.projects-nav {\n  margin-top: 70px;\n  flex-basis: 25%;\n  flex-shrink: 0;\n  margin-right: 10px; }\n\n.projects-nav-item {\n  cursor: pointer;\n  padding-bottom: 3px;\n  margin-bottom: 15px;\n  border-bottom: 2px solid white;\n  font-size: 18px; }\n  .projects-nav-item:hover, .projects-nav-item.selected {\n    font-weight: 700;\n    border-bottom: 2px dotted #19DFDF; }\n\n.projects-selected-title {\n  font-size: 30px; }\n\n.projects-selected-blurb {\n  color: #A0A0A0; }\n\n.project-selected-img {\n  width: 100%;\n  margin-bottom: 15px;\n  border: 1px solid #191919; }\n\n.project-selected-about {\n  margin-bottom: 15px; }\n\n.project-selected-url {\n  display: block;\n  color: #ef8beb; }\n", ""]);
+exports.push([module.i, ".projects-container {\n  display: flex; }\n\n.projects-nav {\n  margin-top: 70px;\n  flex-basis: 25%;\n  flex-shrink: 0;\n  margin-right: 10px; }\n\n.projects-nav-item {\n  cursor: pointer;\n  padding-bottom: 3px;\n  margin-bottom: 15px;\n  border-bottom: 2px solid white;\n  font-size: 18px; }\n  .projects-nav-item:hover, .projects-nav-item.selected {\n    font-weight: 700; }\n\n.projects-selected-container {\n  flex-basis: 75%; }\n\n.projects-selected-title {\n  font-size: 30px; }\n\n.projects-selected-blurb {\n  color: #A0A0A0; }\n\n.project-selected-img {\n  width: 100%;\n  margin-bottom: 15px;\n  border: 1px solid #191919; }\n\n.project-selected-about {\n  margin-bottom: 15px; }\n\n.project-selected-url {\n  display: block;\n  color: #ef8beb; }\n", ""]);
 
 // exports
 
