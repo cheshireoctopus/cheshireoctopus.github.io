@@ -28,7 +28,9 @@ Make a note of both the __ACCOUNT SID__ and the __AUTH TOKEN__ – you will need
 
 1. First, create the Rails application, in this case thought-provokingly named ‘twilio_app’. We don’t need the `index.html` that Rails so graciously provides – toss it, you don’t need that noise.
 
-```shell
+```bash
+#bash
+
 rails new twilio_app
 rm public/index.html
 ```
@@ -43,7 +45,9 @@ gem 'twilio-ruby'
 
 3. Next, we will generate a controller which will be responsbile for making sense of our app’s requests and producing the appropriate output. __Note:__ this method of controller generation creates a bunch of extra files you do not need for this application, but it’s easy.
 
-```ssh
+```bash
+#bash
+
 rails g controller twilio
 ```
 
@@ -63,7 +67,7 @@ end
 5. We’re making headway on the backend, but we need do some barebones frontend functionality. Create a file `index.html.erb` that your Twilio controller has access to. Make sure this file is located in the following directory: `twilio_app/app/views/layouts`. In this file we are going to create a simple form which will allow the user to input a phone number and a message. Make sure the form’s action directs to `/send_sms` and the method is `POST`.
 
 ```erb
-#index.html.erb
+<%# index.html.erb %>
 
 <h1>TWILIO!!!</h1>
 
