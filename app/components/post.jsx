@@ -1,23 +1,25 @@
 import './scss/post.scss'
-import forEach from 'lodash/forEach'
-import { default as React, PropTypes, PureComponent } from 'react'
+import { default as React, PureComponent, PropTypes } from 'react'
+import find from 'lodash/find'
+import posts from './../posts.json'
 
 export default class Post extends PureComponent {
 	static propTypes = {
-		date: PropTypes.string.isRequired,
-		title: PropTypes.string.isRequired,
-		topics: PropTypes.array.isRequired,
-		html: PropTypes.string.isRequired,
+		location: PropTypes.shape({
+			pathname: PropTypes.string,
+		})
 	}
 
 	render() {
-		const formattedDate = formatDate(this.props.date)
-		const htmlPreview = buildHtmlPreview(this.props.html)
+		const { pathname } = this.props.location
+		const postTitle = pathname.replace(/\/blog\//, '')
+		const post = find(posts, { urlTitle: postTitle })
+		const formattedDate = formatDate(post.date)
 		return (
 			<div className="post-container">
-				<div className="post-title">{this.props.title}</div>
+				<div className="post-title">{post.title}</div>
 				<div className="post-date">{formattedDate}</div>
-				<div className="post-body" dangerouslySetInnerHTML={{ __html: htmlPreview}} />
+				<div className="post-body" dangerouslySetInnerHTML={{ __html: post.html}} />
 			</div>
 		)
 	}
@@ -29,21 +31,4 @@ function formatDate(dateStr) {
 	const month = date.getMonth() + 1
 	const day = date.getDate() <= 10 ? `0${date.getDate()}` : date.getDate()
 	return `@${year}-${month}-${day}`
-}
-
-function buildHtmlPreview(htmlStr) {
-	const div = document.createElement('div')
-	let previewHtml = ''
-	let previewCount = 0
-	div.innerHTML = htmlStr
-
-	if (!div.innerHTML) return ''
-
-	for (var i = 0; previewCount < 3; i++) {
-		const child = div.children[i]
-		previewHtml += child.outerHTML
-		if (child.innerHTML) previewCount += 1
-	}
-
-	return previewHtml
 }

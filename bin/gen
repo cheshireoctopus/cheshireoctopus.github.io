@@ -31,13 +31,13 @@ marked.setOptions({
 
 fs.readdirAsync(PATH_TO_SRC)
 	.then(posts => {
-		return Promise.map(posts, post => {
-			const srcPostPath = `${PATH_TO_SRC}/${post}`
+		return Promise.map(posts, postDir => {
+			const srcPostDir = `${PATH_TO_SRC}/${postDir}`
 
-			return fs.readdirAsync(srcPostPath)
+			return fs.readdirAsync(srcPostDir)
 				.then(files => {
-					const readJSON = fs.readFileAsync(`${srcPostPath}/data.json`, 'utf8')
-					const readMD = fs.readFileAsync(`${srcPostPath}/post.md`, 'utf8')
+					const readJSON = fs.readFileAsync(`${srcPostDir}/data.json`, 'utf8')
+					const readMD = fs.readFileAsync(`${srcPostDir}/post.md`, 'utf8')
 
 					return Promise.join(readJSON, readMD, (json, md, imgs) => {
 						const data = JSON.parse(json)
@@ -46,6 +46,7 @@ fs.readdirAsync(PATH_TO_SRC)
 							date: data.date,
 							topics: data.topics,
 							title: data.title,
+							urlTitle: postDir,
 							html: marked(md),
 						})
 					})

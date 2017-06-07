@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import Post from './post.jsx'
+import PostPreview from './post_preview.jsx'
 import posts from '../posts.json'
 
 export default class Home extends PureComponent {
@@ -7,7 +7,7 @@ export default class Home extends PureComponent {
 		return (
 			<div>
 				{this.renderAboutMe()}
-				{posts.map(post => <Post {...post} /> )}
+				{posts.map(post => <PostPreview {...post} /> )}
 			</div>
 		)
 	}
