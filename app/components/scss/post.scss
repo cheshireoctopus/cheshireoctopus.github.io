@@ -1,0 +1,17 @@
+@import './variables.scss';
+
+.post-body {
+	line-height: 25px;
+
+	pre, p {
+		margin-bottom: 25px;
+	}
+
+	p code {
+		background: $white;
+		color: $black;
+		border: 1px solid $gray;
+		border-radius: 2px;
+		padding: 0 3px;
+	}
+}

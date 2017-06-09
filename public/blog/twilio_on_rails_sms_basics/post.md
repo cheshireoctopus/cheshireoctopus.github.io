@@ -6,13 +6,11 @@ This tutorial will show you how to set up an extremely simple Ruby on Rails appl
 
 ----
 
-## Code
+## Twilio Setup
 
-#### Twilio Setup
+__1:__ [Sign up](https://www.twilio.com/try-twilio) for free using a telephone number that you have access to – preferably your cell – as you will have to verify your account via SMS.
 
-1. [Sign up](https://www.twilio.com/try-twilio) for free using a telephone number that you have access to – preferably your cell – as you will have to verify your account via SMS.
-
-2. Twilio will automatically generate a telephone number for you. In my experience, these generated numbers are issued with the same area code as the original number you signed up with. __Note:__ you can customize your number if you so wish.
+__2:__ Twilio will automatically generate a telephone number for you. In my experience, these generated numbers are issued with the same area code as the original number you signed up with. __Note:__ you can customize your number if you so wish.
 
 After you’ve made it through the login, you should be welcomed with this screen:
 
@@ -20,13 +18,15 @@ After you’ve made it through the login, you should be welcomed with this scree
 
 Make a note of both the __ACCOUNT SID__ and the __AUTH TOKEN__ – you will need both of these later. To see the latter, click on the lock to view it.
 
-3. I like to save my Twilio numbers in my cell because I have a terrible memory. As you can guess, I often forget to do even that. Visiting the ‘Numbers’ pane on the Twilio dashboard – pictured below – provide them for you.
+__3:__ I like to save my Twilio numbers in my cell because I have a terrible memory. As you can guess, I often forget to do even that. Visiting the ‘Numbers’ pane on the Twilio dashboard – pictured below – provide them for you.
 
 ![twilio number](public/blog/twilio_on_rails_sms_basics/img/number.png)
 
-#### Rails Setup
+----
 
-1. First, create the Rails application, in this case thought-provokingly named ‘twilio_app’. We don’t need the `index.html` that Rails so graciously provides – toss it, you don’t need that noise.
+## Rails Setup
+
+__1:__ First, create the Rails application, in this case thought-provokingly named ‘twilio_app’. We don’t need the `index.html` that Rails so graciously provides – toss it, you don’t need that noise.
 
 ```bash
 #bash
@@ -35,7 +35,7 @@ rails new twilio_app
 rm public/index.html
 ```
 
-2. Twilio compiled a gem which makes Rails integration realtively painless. Check out the [documentation](http://twilio-ruby.readthedocs.io/en/latest/) and add it in the Gemfile. Make sure to bundle!
+__2:__ Twilio compiled a gem which makes Rails integration realtively painless. Check out the [documentation](http://twilio-ruby.readthedocs.io/en/latest/) and add it in the Gemfile. Make sure to bundle!
 
 ```ruby
 #Gemfile
@@ -43,7 +43,7 @@ rm public/index.html
 gem 'twilio-ruby'
 ```
 
-3. Next, we will generate a controller which will be responsbile for making sense of our app’s requests and producing the appropriate output. __Note:__ this method of controller generation creates a bunch of extra files you do not need for this application, but it’s easy.
+__3:__ Next, we will generate a controller which will be responsbile for making sense of our app’s requests and producing the appropriate output. __Note:__ this method of controller generation creates a bunch of extra files you do not need for this application, but it’s easy.
 
 ```bash
 #bash
@@ -51,7 +51,7 @@ gem 'twilio-ruby'
 rails g controller twilio
 ```
 
-4. In the controller you just created, add a method `send_sms` which will send the SMS’s. We will come back to this in a moment.
+__4:__ In the controller you just created, add a method `send_sms` which will send the SMS’s. We will come back to this in a moment.
 
 ```ruby
 #twilio_controller.rb
@@ -64,7 +64,7 @@ class TwilioController < ApplicationController
 end
 ```
 
-5. We’re making headway on the backend, but we need do some barebones frontend functionality. Create a file `index.html.erb` that your Twilio controller has access to. Make sure this file is located in the following directory: `twilio_app/app/views/layouts`. In this file we are going to create a simple form which will allow the user to input a phone number and a message. Make sure the form’s action directs to `/send_sms` and the method is `POST`.
+__5:__ We’re making headway on the backend, but we need do some barebones frontend functionality. Create a file `index.html.erb` that your Twilio controller has access to. Make sure this file is located in the following directory: `twilio_app/app/views/layouts`. In this file we are going to create a simple form which will allow the user to input a phone number and a message. Make sure the form’s action directs to `/send_sms` and the method is `POST`.
 
 ```erb
 <%# index.html.erb %>
@@ -82,7 +82,7 @@ Your `index.html.erb` should look like this:
 
 ![index.html.erb page](public/blog/twilio_on_rails_sms_basics/img/index.png)
 
-6. Now that we’ve made our view and controller, let’s connect them via `routes.rb`. Clear out the comments in the `routes.rb` file, build a root path that directs to `index.html.erb`, and then another path that will post the information from the form we just built to the `send_sms` method in the Twilio controller.
+__6:__ Now that we’ve made our view and controller, let’s connect them via `routes.rb`. Clear out the comments in the `routes.rb` file, build a root path that directs to `index.html.erb`, and then another path that will post the information from the form we just built to the `send_sms` method in the Twilio controller.
 
 ```ruby
 #routes.rb
@@ -94,7 +94,7 @@ TwilioApp::Application.routes.draw do
 
 end
 ```
-7: Alright, last step. Do you still remember your __ACCOUNT SID__, __AUTH TOKEN__, and __Twilio phone number__? We’re going to add these to our Twilio controller’s `send_sms` method to enable our application to send texts.
+__7:__ Alright, last step. Do you still remember your __ACCOUNT SID__, __AUTH TOKEN__, and __Twilio phone number__? We’re going to add these to our Twilio controller’s `send_sms` method to enable our application to send texts.
 
 I’ll show you my code, then walk you through it line by line.
 
@@ -121,23 +121,23 @@ class TwilioController < ApplicationController
 end
 ```
 
-Line 1: Opens the TwilioController
+__Line 1:__ Opens the TwilioController
 
-Line 3: Defines the `send_sms` method
+__Line 3:__ Defines the `send_sms` method
 
-Line 4: Takes the message input from the form in `index.html.erb` as a paramater and assigns it to the variable ‘message’
+__Line 4:__ Takes the message input from the form in `index.html.erb` as a paramater and assigns it to the variable ‘message’
 
-Line 5: Takes the number input from the form in `index.html.erb` as a paramater and assigns it to the variable `number`
+__Line 5:__ Takes the number input from the form in `index.html.erb` as a paramater and assigns it to the variable `number`
 
-Line 6: Stores your __ACCOUNT_SID__ as a variable
+__Line 6:__ Stores your __ACCOUNT_SID__ as a variable
 
-Line 7: Stores your __AUTH_TOKEN__ as a variable
+__Line 7:__ Stores your __AUTH_TOKEN__ as a variable
 
-Line 9: Instatiates a Twilio Rest Client as `@client`, which stores the authentication parameters on lines 6 and 7 (account_sid and auth_token, respectively), and enables the `send_sms` method to make HTTP request to Twilio. [More info…](http://www.rubydoc.info/github/twilio/twilio-ruby/Twilio/REST/Client)
+__Line 9:__ Instatiates a Twilio Rest Client as `@client`, which stores the authentication parameters on lines 6 and 7 (account_sid and auth_token, respectively), and enables the `send_sms` method to make HTTP request to Twilio. [More info…](http://www.rubydoc.info/github/twilio/twilio-ruby/Twilio/REST/Client)
 
-Line 11-13: Creates a message, stored as the variable `@message`, which takes a hash as an argument. The hash should include: `:to`, `:from`, and `:body`. `:to` interpolates the variable number, and represents the recipeint of the SMS. `:from` should be your Twilio number stored in the following format: `+12813308004`. `:body` interpolates the message variable which contains the message entered on `index.html.erb`.
+__Line 11-13:__ Creates a message, stored as the variable `@message`, which takes a hash as an argument. The hash should include: `:to`, `:from`, and `:body`. `:to` interpolates the variable number, and represents the recipeint of the SMS. `:from` should be your Twilio number stored in the following format: `+12813308004`. `:body` interpolates the message variable which contains the message entered on `index.html.erb`.
 
-Line 14: After the SMS is processed and sent, this redirects the user back to the root directory, or, in our case, `index.html.erb`.
+__Line 14:__ After the SMS is processed and sent, this redirects the user back to the root directory, or, in our case, `index.html.erb`.
 
 ----
 

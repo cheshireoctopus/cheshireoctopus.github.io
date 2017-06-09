@@ -18,6 +18,7 @@ export default class PostPreview extends PureComponent {
 			<div className="post-container">
 				<div className="post-title">{this.props.title}</div>
 				<div className="post-date">{formattedDate}</div>
+				<hr />
 				<div className="post-body" dangerouslySetInnerHTML={{ __html: htmlPreview}} />
 				<Link to={`/blog/${this.props.urlTitle}`}>
 					<button>More...</button>
