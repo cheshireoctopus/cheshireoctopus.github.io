@@ -19,6 +19,7 @@ export default class Post extends PureComponent {
 			<div className="post-container">
 				<div className="post-title">{post.title}</div>
 				<div className="post-date">{formattedDate}</div>
+				<hr/>
 				<div className="post-body" dangerouslySetInnerHTML={{ __html: post.html}} />
 			</div>
 		)

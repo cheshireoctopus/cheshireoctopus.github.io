@@ -1,15 +1,15 @@
 [
 	{
 		"title":"General Assembly Class Portal",
-		"one_liner":"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-		"about":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus beatae est maiores voluptas nisi repudiandae soluta, earum nobis cupiditate at porro similique atque molestiae maxime dolore hic, unde rerum impedit.",
+		"one_liner":"Web portal for classes at General Assembly",
+		"about":"Built with Maria Stegner, this easily-extendable class portal can be adapted for teaching any part/full-time class at General Assembly.",
 		"github":"https://github.com/cheshireoctopus/gafewd",
 		"url":"http://gafewd.surge.sh",
 		"imgSrc":"gafewd.png"
 	},
 	{
 		"title":"Accelerators. Visualized.",
-		"one_liner":"US Seed-Accelerator Funding Visualzed with D3.js",
+		"one_liner":"US seed-accelerator funding visualzed with D3.js",
 		"about":"Provides a visual perspective of the top-50 startup accelerators in the U.S (circa 2013). The applcation utilizes the D3.js library to show which U.S. cities contain the largest number of accelerator-backed companies, their respective funding, exits, and more.",
 		"github":"https://github.com/cheshireoctopus/seedvisualization",
 		"url":"https://accelvis.herokuapp.com/",
@@ -17,8 +17,8 @@
 	},
 	{
 		"title":"Babson. Visualized.",
-		"one_liner":"Babson College's Student Body Visualized with D3.js",
-		"about":"This application visualizes my alma mater's Fall 2014 student body by home country.",
+		"one_liner":"Babson College's student body visualized with D3.js",
+		"about":"This application visualizes my alma mater's Fall 2014 undergradute and graduate student bodies by home country.",
 		"github":"https://github.com/cheshireoctopus/Babo",
 		"url":"http://babsonvisualized.com",
 		"imgSrc":"babson.png"
@@ -39,7 +39,7 @@
 	},
 	{
 		"title":"Need an Idea?",
-		"one_liner":"Formidable Business Strategies at the Click of a Button",
+		"one_liner":"Formidable business strategies at the click of a button",
 		"about":"Out of ideas for generating revenue at your startup? Have no fear - let 'Need an Idea' do the heavy lifting for you! Built with CEO's looking to secure Series-B funding in mind, this application utilizes the Ruby 'Faker' gem to construct intelligent phrases - with just enough obfuscation - that are sure to impress investors. With 2,000+ ideas, the possibilites are endless. Works great for consultants and MBA students too!",
 		"github":"https://github.com/cheshireoctopus/bs",
 		"url":"https://needanidea.herokuapp.com/",
