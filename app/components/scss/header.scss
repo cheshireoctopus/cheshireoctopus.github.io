@@ -16,7 +16,7 @@
 	color: $pink;
 	padding: 5px;
 
-	&.active {
+	&.active, &:hover {
 		border-bottom: 2px dotted $turquoise;
 	}
 }

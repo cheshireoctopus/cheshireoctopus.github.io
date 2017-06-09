@@ -14,14 +14,17 @@ export default class PostPreview extends PureComponent {
 	render() {
 		const formattedDate = formatDate(this.props.date)
 		const htmlPreview = buildHtmlPreview(this.props.html)
+		const postURL = `/blog/${this.props.urlTitle}`
 		return (
 			<div className="post-container">
-				<div className="post-title">{this.props.title}</div>
+				<Link to={postURL} className="post-link">
+					<div className="post-title">{this.props.title}</div>
+				</Link>
 				<div className="post-date">{formattedDate}</div>
 				<hr />
 				<div className="post-body" dangerouslySetInnerHTML={{ __html: htmlPreview}} />
-				<Link to={`/blog/${this.props.urlTitle}`}>
-					<button>More...</button>
+				<Link to={postURL}>
+					<button className="post-more-btn">Read More...</button>
 				</Link>
 			</div>
 		)

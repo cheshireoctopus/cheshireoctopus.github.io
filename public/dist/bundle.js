@@ -13858,7 +13858,45 @@ var Home = function (_PureComponent) {
 			return __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
 				'div',
 				{ className: 'home-about-me' },
-				'Hello, my name is Chandler. I am blah blah blah'
+				__WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+					'p',
+					null,
+					'Hello, my name is Chandler - I am a technologist and educator.'
+				),
+				__WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+					'p',
+					null,
+					'By day, I help develop the frontend at ',
+					__WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+						'a',
+						{ href: 'https://percolate.com/' },
+						'Percolate'
+					),
+					', The System of Record for Marketing; I moonlight as a part-time web development instructor, having taught at ',
+					__WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+						'a',
+						{ href: 'https://generalassemb.ly/' },
+						'General Assembly'
+					),
+					' and ',
+					__WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+						'a',
+						{ href: 'https://www.fullstackacademy.com/' },
+						'Fullstack Academy'
+					),
+					'.'
+				),
+				__WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+					'p',
+					null,
+					'Once upon a time I gave tours at the world-famous ',
+					__WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement(
+						'a',
+						{ href: 'https://www.harpoonbrewery.com/' },
+						'Harpoon Brewery'
+					),
+					'.'
+				)
 			);
 		}
 	}]);
@@ -13887,10 +13925,12 @@ var Home = function (_PureComponent) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__scss_post_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__scss_post_scss__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_lodash_find__ = __webpack_require__(333);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_lodash_find___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_lodash_find__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__posts_json__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__posts_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__posts_json__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_router_dom__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_lodash_find__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_lodash_find___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_lodash_find__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__posts_json__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__posts_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__posts_json__);
+
 
 
 
@@ -13916,11 +13956,17 @@ var Post = function (_PureComponent) {
 			var pathname = this.props.location.pathname;
 
 			var postTitle = pathname.replace(/\/blog\//, '');
-			var post = __WEBPACK_IMPORTED_MODULE_7_lodash_find___default()(__WEBPACK_IMPORTED_MODULE_8__posts_json___default.a, { urlTitle: postTitle });
+			var post = __WEBPACK_IMPORTED_MODULE_8_lodash_find___default()(__WEBPACK_IMPORTED_MODULE_9__posts_json___default.a, { urlTitle: postTitle });
 			var formattedDate = formatDate(post.date);
 			return __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
 				'div',
 				{ className: 'post-container' },
+				__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+					__WEBPACK_IMPORTED_MODULE_7_react_router_dom__["d" /* Link */],
+					{ to: '/', className: 'post-home-link' },
+					__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement('span', { className: 'icon ion-ios-arrow-back' }),
+					' Back'
+				),
 				__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
 					'div',
 					{ className: 'post-title' },
@@ -13999,13 +14045,18 @@ var PostPreview = function (_PureComponent) {
 		value: function render() {
 			var formattedDate = formatDate(this.props.date);
 			var htmlPreview = buildHtmlPreview(this.props.html);
+			var postURL = '/blog/' + this.props.urlTitle;
 			return __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
 				'div',
 				{ className: 'post-container' },
 				__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
-					'div',
-					{ className: 'post-title' },
-					this.props.title
+					__WEBPACK_IMPORTED_MODULE_7_react_router_dom__["d" /* Link */],
+					{ to: postURL, className: 'post-link' },
+					__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+						'div',
+						{ className: 'post-title' },
+						this.props.title
+					)
 				),
 				__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
 					'div',
@@ -14016,11 +14067,11 @@ var PostPreview = function (_PureComponent) {
 				__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement('div', { className: 'post-body', dangerouslySetInnerHTML: { __html: htmlPreview } }),
 				__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
 					__WEBPACK_IMPORTED_MODULE_7_react_router_dom__["d" /* Link */],
-					{ to: '/blog/' + this.props.urlTitle },
+					{ to: postURL },
 					__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
 						'button',
-						null,
-						'More...'
+						{ className: 'post-more-btn' },
+						'Read More...'
 					)
 				)
 			);
@@ -15021,7 +15072,7 @@ exports = module.exports = __webpack_require__(24)(undefined);
 
 
 // module
-exports.push([module.i, ".app-container {\n  padding-top: 30px;\n  max-width: 1280px;\n  margin: 0 auto;\n  display: flex;\n  justify-content: center; }\n", ""]);
+exports.push([module.i, ".app-container {\n  padding-top: 15px;\n  max-width: 1280px;\n  margin: 0 auto; }\n", ""]);
 
 // exports
 
@@ -15049,7 +15100,7 @@ exports = module.exports = __webpack_require__(24)(undefined);
 
 
 // module
-exports.push([module.i, ".header-container {\n  display: flex;\n  justify-content: space-between;\n  padding: 20px;\n  font-size: 20px;\n  background: #191919;\n  color: #ef8beb;\n  border-bottom: 4px solid #ef8beb; }\n\n.header-nav-link {\n  text-decoration: none;\n  margin-left: 30px;\n  color: #ef8beb;\n  padding: 5px; }\n  .header-nav-link.active {\n    border-bottom: 2px dotted #19DFDF; }\n", ""]);
+exports.push([module.i, ".header-container {\n  display: flex;\n  justify-content: space-between;\n  padding: 20px;\n  font-size: 20px;\n  background: #191919;\n  color: #ef8beb;\n  border-bottom: 4px solid #ef8beb; }\n\n.header-nav-link {\n  text-decoration: none;\n  margin-left: 30px;\n  color: #ef8beb;\n  padding: 5px; }\n  .header-nav-link.active, .header-nav-link:hover {\n    border-bottom: 2px dotted #19DFDF; }\n", ""]);
 
 // exports
 
@@ -15077,7 +15128,7 @@ exports = module.exports = __webpack_require__(24)(undefined);
 
 
 // module
-exports.push([module.i, ".post-body {\n  line-height: 25px; }\n  .post-body pre, .post-body p {\n    margin-bottom: 25px; }\n  .post-body p code {\n    background: #fff;\n    color: #191919;\n    border: 1px solid #A0A0A0;\n    border-radius: 2px;\n    padding: 0 3px; }\n", ""]);
+exports.push([module.i, ".post-home-link {\n  color: #191919;\n  text-decoration: none;\n  font-size: 18px;\n  margin-bottom: 15px; }\n  .post-home-link.icon {\n    margin-right: 15px; }\n  .post-home-link:hover {\n    color: #ef8beb; }\n\n.post-body {\n  line-height: 25px; }\n  .post-body pre, .post-body p {\n    margin-bottom: 25px; }\n  .post-body p code {\n    background: #fff;\n    color: #191919;\n    border: 1px solid #A0A0A0;\n    border-radius: 2px;\n    padding: 0 3px; }\n", ""]);
 
 // exports
 
@@ -15091,7 +15142,7 @@ exports = module.exports = __webpack_require__(24)(undefined);
 
 
 // module
-exports.push([module.i, ".post-container {\n  padding: 15px;\n  margin-bottom: 30px;\n  max-width: 900px; }\n\n.post-image-container {\n  text-align: center;\n  margin-bottom: 30px; }\n  .post-image-container img {\n    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 4px 0px;\n    border-radius: 5px;\n    border: #fff 10px solid;\n    max-width: 100%; }\n\n.post-title {\n  font-size: 50px;\n  font-weight: bold; }\n\n.post-date {\n  color: #A0A0A0; }\n", ""]);
+exports.push([module.i, ".post-container {\n  padding: 15px;\n  margin-bottom: 30px;\n  max-width: 900px;\n  margin: 0 auto; }\n\n.post-image-container {\n  text-align: center;\n  margin-bottom: 30px; }\n  .post-image-container img {\n    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 4px 0px;\n    border-radius: 5px;\n    border: #fff 10px solid;\n    max-width: 100%; }\n\n.post-title {\n  font-size: 50px;\n  font-weight: bold; }\n\n.post-date {\n  color: #A0A0A0; }\n\n.post-link {\n  text-decoration: none;\n  color: #191919; }\n  .post-link:hover {\n    color: #ef8beb; }\n\n.post-more-btn {\n  color: #fff;\n  border: none;\n  text-transform: uppercase;\n  font-size: 18px;\n  padding: 10px;\n  cursor: pointer;\n  background: #191919;\n  font-family: inconsolata; }\n  .post-more-btn:hover {\n    background: #ef8beb; }\n", ""]);
 
 // exports
 

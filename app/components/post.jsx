@@ -1,5 +1,6 @@
 import './scss/post.scss'
 import { default as React, PureComponent, PropTypes } from 'react'
+import { Link } from 'react-router-dom'
 import find from 'lodash/find'
 import posts from './../posts.json'
 
@@ -17,6 +18,9 @@ export default class Post extends PureComponent {
 		const formattedDate = formatDate(post.date)
 		return (
 			<div className="post-container">
+				<Link to="/" className="post-home-link">
+					<span className="icon ion-ios-arrow-back"></span> Back
+				</Link>
 				<div className="post-title">{post.title}</div>
 				<div className="post-date">{formattedDate}</div>
 				<hr/>
