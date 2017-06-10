@@ -2,12 +2,13 @@
 
 A stupid simple static app converting markdown to HTML.
 
-Blog posts are stored as individual directories in `src`. each post directory contains two files:
+Blog posts are stored as individual directories in `public/blog/`; each post directory contains:
 
 - `data.json`
 - `post.md`
+- `img/`
 
-`data.json` contains post-specific metadata (`title`, `date`, `topics`), while `post.md` contains the post content.
+`data.json` contains post-specific metadata (`title`, `date`, `topics`), while `post.md` contains the related markdown content; `img/` holds the post's images.
 
-To convert the markdown files in `src` to HTML, run `./bin/gen` from root - these posts will be written to `blog`.
+Running `./bin/gen` from root parses through each post directory in `public/blog/`, transforms the `post.md` file into HTML, and then adds this string under the key `html` to the relative `data.json` object. Each JSON object is then pushed to an array and is outputted at `app/posts.json` for use inside the React app.
 
