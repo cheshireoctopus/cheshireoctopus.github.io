@@ -11,6 +11,10 @@ export default class Post extends PureComponent {
 		})
 	}
 
+	componentWillMount() {
+		window.scrollTo(0,0)
+	}
+
 	render() {
 		const { pathname } = this.props.location
 		const postTitle = pathname.replace(/\/blog\//, '')
