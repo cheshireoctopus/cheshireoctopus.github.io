@@ -10,6 +10,10 @@
 	border-bottom: 4px solid $pink;
 }
 
+.header-title {
+	font-size: 25px;
+}
+
 .header-nav-link {
 	text-decoration: none;
 	margin-left: 30px;
@@ -21,4 +25,20 @@
 	}
 }
 
+@media (max-width: 700px) {
+	.header-container {
+		flex-direction: column;
+		text-align: center;
+	}
 
+	.header-nav-links-container {
+		margin-top: 15px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.header-nav-link {
+		border-bottom: 2px solid $black;
+		margin-left: 0
+	}
+}

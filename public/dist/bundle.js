@@ -13779,7 +13779,7 @@ var Footer = function (_PureComponent) {
 		),
 		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 			'nav',
-			null,
+			{ className: 'header-nav-links-container' },
 			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 				__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["e" /* NavLink */],
 				{ className: 'header-nav-link', exact: true, activeClassName: 'active', to: '/' },
@@ -15083,7 +15083,7 @@ exports = module.exports = __webpack_require__(24)(undefined);
 
 
 // module
-exports.push([module.i, ".app-container {\n  padding-top: 15px;\n  max-width: 1280px;\n  margin: 0 auto; }\n", ""]);
+exports.push([module.i, ".app-container {\n  padding: 30px;\n  padding-top: 15px;\n  max-width: 1280px;\n  margin: 0 auto; }\n", ""]);
 
 // exports
 
@@ -15111,7 +15111,7 @@ exports = module.exports = __webpack_require__(24)(undefined);
 
 
 // module
-exports.push([module.i, ".header-container {\n  display: flex;\n  justify-content: space-between;\n  padding: 20px;\n  font-size: 20px;\n  background: #191919;\n  color: #ef8beb;\n  border-bottom: 4px solid #ef8beb; }\n\n.header-nav-link {\n  text-decoration: none;\n  margin-left: 30px;\n  color: #ef8beb;\n  padding: 5px; }\n  .header-nav-link.active, .header-nav-link:hover {\n    border-bottom: 2px dotted #19DFDF; }\n", ""]);
+exports.push([module.i, ".header-container {\n  display: flex;\n  justify-content: space-between;\n  padding: 20px;\n  font-size: 20px;\n  background: #191919;\n  color: #ef8beb;\n  border-bottom: 4px solid #ef8beb; }\n\n.header-title {\n  font-size: 25px; }\n\n.header-nav-link {\n  text-decoration: none;\n  margin-left: 30px;\n  color: #ef8beb;\n  padding: 5px; }\n  .header-nav-link.active, .header-nav-link:hover {\n    border-bottom: 2px dotted #19DFDF; }\n\n@media (max-width: 700px) {\n  .header-container {\n    flex-direction: column;\n    text-align: center; }\n  .header-nav-links-container {\n    margin-top: 15px;\n    display: flex;\n    justify-content: space-between; }\n  .header-nav-link {\n    border-bottom: 2px solid #191919;\n    margin-left: 0; } }\n", ""]);
 
 // exports
 
@@ -15167,7 +15167,7 @@ exports = module.exports = __webpack_require__(24)(undefined);
 
 
 // module
-exports.push([module.i, ".projects-container {\n  display: flex; }\n\n.projects-nav {\n  margin-top: 70px;\n  flex-basis: 25%;\n  flex-shrink: 0;\n  margin-right: 10px; }\n\n.projects-nav-item {\n  cursor: pointer;\n  padding-bottom: 3px;\n  margin-bottom: 15px;\n  border-bottom: 2px solid white;\n  font-size: 18px; }\n  .projects-nav-item:hover, .projects-nav-item.selected {\n    font-weight: 700; }\n\n.projects-selected-container {\n  flex-basis: 75%; }\n\n.projects-selected-title {\n  font-size: 30px; }\n\n.projects-selected-blurb {\n  color: #A0A0A0; }\n\n.project-selected-img {\n  width: 100%;\n  margin-bottom: 15px;\n  border: 1px solid #191919; }\n\n.project-selected-about {\n  margin-bottom: 15px; }\n\n.project-selected-url {\n  display: block;\n  color: #ef8beb; }\n", ""]);
+exports.push([module.i, ".projects-container {\n  display: flex; }\n\n.projects-nav {\n  margin-top: 70px;\n  flex-basis: 25%;\n  flex-shrink: 0;\n  margin-right: 10px; }\n\n.projects-nav-item {\n  cursor: pointer;\n  padding-bottom: 3px;\n  margin-bottom: 15px;\n  border-bottom: 2px solid white;\n  font-size: 18px; }\n  .projects-nav-item:hover, .projects-nav-item.selected {\n    font-weight: 700; }\n\n.projects-selected-container {\n  flex-basis: 75%; }\n\n.projects-selected-title {\n  font-size: 30px; }\n\n.projects-selected-blurb {\n  color: #A0A0A0; }\n\n.project-selected-img {\n  width: 100%;\n  margin-bottom: 15px;\n  border: 1px solid #191919; }\n\n.project-selected-about {\n  margin-bottom: 15px; }\n\n.project-selected-url {\n  display: block;\n  color: #ef8beb; }\n\n@media (max-width: 1080px) {\n  .projects-nav {\n    margin-top: 0;\n    margin: 0 auto; }\n  .projects-container {\n    flex-direction: column; }\n  .projects-selected-container {\n    border-top: 4px solid #191919;\n    width: 85%;\n    margin: 0 auto; } }\n", ""]);
 
 // exports
 
@@ -32702,7 +32702,7 @@ exports = module.exports = __webpack_require__(24)(undefined);
 
 
 // module
-exports.push([module.i, ".home-container {\n  max-width: 900px;\n  margin: 0 auto; }\n\n.home-about-me {\n  font-size: 25px;\n  margin-bottom: 30px;\n  border-bottom: 20px solid #191919; }\n", ""]);
+exports.push([module.i, ".home-container {\n  max-width: 900px;\n  margin: 0 auto; }\n\n.home-about-me {\n  font-size: 25px;\n  margin-bottom: 30px;\n  border-bottom: 20px solid #191919; }\n  .home-about-me p:first-of-type {\n    margin-top: 0; }\n\n@media (max-width: 1080px) {\n  .home-about-me {\n    font-size: 20px; } }\n", ""]);
 
 // exports
 

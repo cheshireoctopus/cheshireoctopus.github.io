@@ -6,7 +6,7 @@ export default () => {
 	return (
 		<header className="header-container">
 			<div className="header-title">Chandler Moisen</div>
-			<nav>
+			<nav className="header-nav-links-container">
 				<NavLink className="header-nav-link" exact activeClassName="active" to="/">
 					<span className="icon ion-compose"></span> Writing
 				</NavLink>

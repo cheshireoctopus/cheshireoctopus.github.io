@@ -49,3 +49,20 @@
 	display: block;
 	color: $pink;
 }
+
+@media (max-width: 1080px) {
+	.projects-nav {
+		margin-top: 0;
+		margin: 0 auto;
+	}
+
+	.projects-container {
+		flex-direction: column;
+	}
+
+	.projects-selected-container {
+		border-top: 4px solid $black;
+		width: 85%;
+		margin: 0 auto;
+	}
+}
