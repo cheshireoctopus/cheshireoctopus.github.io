@@ -1,0 +1,27 @@
+@import './variables.scss';
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: inconsolata;
+	font-size: 18px;
+	min-height: 100%;
+	position: relative;
+	padding-bottom: 15px;
+}
+
+a {
+	text-decoration: none;
+	color: $turquoise;
+
+	&:hover {
+		color: $pink;
+	}
+}
