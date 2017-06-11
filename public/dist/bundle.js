@@ -8862,7 +8862,7 @@ module.exports = [
 		],
 		"title": "MailChimp + Gibbon + Rails: Basic Mailing List Setup",
 		"urlTitle": "mailchimp_plug_gibbon_plus_rails_create_a_basic_sign_up_form",
-		"html": "<p><div class=\"post-image-container\"><img src=\"public/blog/mailchimp_plug_gibbon_plus_rails_create_a_basic_sign_up_form/img/logo.png\" alt=\"mailchip logo\"/></div></p>\n<p>You’ve made it to the big time when you want to start a mailing list. There are many ESP’s (email service providers) out there, each with respective strengths and weaknesses. I’d recommend checking into <a href=\"https://mailchimp.com/\">MailChimp</a> as they provide an “entrepreneur’s plan” that allows you to send 12,000 emails a month to 2,000 subscribers – __for free, for life.-- And because I have no experience with any other ESP…</p>\n<p>This tutorial will cover MailChimp’s integration with Rails using the <a href=\"https://github.com/amro/gibbon\">Gibbon</a> gem. We will be building a simple Rails application that will display a form to collects users’ email addresses and add them to a MailChimp email list.</p>\n<p>It is assumed that you possess a basic/intermediate understanding of Ruby (v. 1.9.3) and Rails (v. 4.0.2).</p>\n<p><strong>Note:</strong> this tutorial covers MailChimp’s V2 of their API.</p>\n<hr>\n<h2 id=\"part-one-mailchimp\">Part One: MailChimp</h2>\n<p>Before we jump into Rails, we need to do three things: 1) obtain our API key, 2) make an email list with MailChimp; 3) obtain that list’s ID.</p>\n<p><strong>1)</strong> Once logged into your MailChimp account, look to the left, select your name, and then “Account Settings” in the popup menu. Next, click the “Extras” dropdown and select “API Keys”. Voilla, you have your API key.</p>\n<p><strong>2)</strong> To generate an email list, select “Lists” from the menu on the left. In the top-right corner, click “Create List” to begin the process. Hint: it’s relatively straight forward.</p>\n<p><strong>3)</strong> To get the ID of the list you just created, select “List” from the menu on the left. This displays a list of lists…Click on the name of your new list, then the “Settings” dropdown, and select “List name &amp; defaults”. Now you have your list ID. Super.</p>\n<hr>\n<h2 id=\"part-two-rails\">Part Two: Rails</h2>\n<p>The Rails integration involves five steps: 1) adding the Gibbon gem to your gemfile; 2) creating an intializer file; 3) generating a controller and 4) a view; and 5) configuring your routes.</p>\n<p><strong>1)</strong> Add the Gibbon gem to your gemfile and run bundle in your terminal. <a href=\"https://github.com/amro/gibbon\">Gibbon is an API wrapper for MailChimp’s Primary and Export APIs</a>, or, in other words, a chunk of code you can drop into your project and work with quickly. There are quite a few MailChimp API Wrappers spanning a variety of languages.</p>\n<pre><code class=\"hljs ruby\"><span class=\"hljs-comment\">#Gemfile</span>\n\n\ngem <span class=\"hljs-string\">'gibbon'</span>, <span class=\"hljs-symbol\">git:</span> <span class=\"hljs-string\">'git://github.co/amro/gibbon.git'</span></code></pre><p>Take note: other <a href=\"http://mrgeorgegray.com/workflow/getting-a-grip-on-gibbon/\">tutorials</a> reported issues running the correct version of the gem. If you encounter a similar problem, try adding <code>git: ‘git://github.co/amro/gibbon.git’</code> to your gemfile so it points to the gem’s repository.</p>\n<p><strong>2)</strong> Create a new initializer file, ‘gibbon.rb’, in ‘config/initializers’ to declare your MailChimp API key and two other variables. Setting throws_exception to false will give you a pretty hash in the event of an error.</p>\n<pre><code class=\"hljs ruby\"><span class=\"hljs-comment\">#config/initializers/gibbon.rb</span>\n\nGibbon::API.api_key = <span class=\"hljs-string\">\"YOUR-API-KEY\"</span>\nGibbon::API.timeout = <span class=\"hljs-number\">15</span>\nGibbon::API.throws_exceptions = <span class=\"hljs-literal\">false</span></code></pre><p><strong>3)</strong> Generate a controller <code>emailapi</code> to handle MailChimp’s API calls and create a method <code>subscribe</code> that will be responsible for taking users’ email input and pushing it to your mailing list.</p>\n<pre><code class=\"hljs ruby\"><span class=\"hljs-comment\">#app/controllers/emailapi_controller.rb</span>\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">index</span></span>\n<span class=\"hljs-keyword\">end</span>\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">subscribe</span></span>\n\n    @list_id = <span class=\"hljs-string\">\"YOUR-LIST-ID\"</span>\n    gb = Gibbon::API.new\n\n    gb.lists.subscribe({\n      <span class=\"hljs-symbol\">:id</span> =&gt; @list_id,\n      <span class=\"hljs-symbol\">:email</span> =&gt; {<span class=\"hljs-symbol\">:email</span> =&gt; params[<span class=\"hljs-symbol\">:email</span>][<span class=\"hljs-symbol\">:address</span>]}\n      })\n\n<span class=\"hljs-keyword\">end</span></code></pre><p>The variables <code>@list_id</code> and <code>gb</code> are respectively defined as the ID of the list you created (from Part One, remember?) and an instance of the API wrapper. The latter is pulling from the <code>app/config/initializers/gibbon.rb</code>.</p>\n<p>Next, we make an API call – <code>.lists.subscribe()</code> – on the instance itself. This call takes a hash as an argument, and in this hash, we pass two parameters: <code>:id</code>, associated with the ID of your list, and <code>:email</code>, associated with the user’s email (this will become clearer after we construct the view).</p>\n<p><strong>4)</strong> Having completed the controller, let’s make the corresponding view. Create a file <code>index.html.erb</code> in <code>/app/views/emailapi</code>.</p>\n<pre><code class=\"hljs ruby\">#app/views/emailapi/index.html.erb\n\n&lt;h1&gt;Get My Awesome News Letter&lt;/h1&gt;\n&lt;p&gt;Give me your email and keep up to date on my cat's thoughts.&lt;/p&gt;\n&lt;%= form_tag('/emailapi/subscribe', method: \"post\", id: \"subscribe\", remote: \"true\") do -%&gt;\n   &lt;%= email_field(:email, :address, {id: \"email\", placeholder: \"email address\"}) %&gt;\n   &lt;%= submit_tag(\"Sign me up!\") %&gt;\n&lt;% end %&gt;</code></pre><p>Beneath the <code>&lt;h1&gt;</code> and <code>&lt;p&gt;</code> html elements, use a Rails helper <code>form_tag</code> to create the sign up form. Pass in four paramaters:</p>\n<ol>\n<li>The action the form is going to take, or where the form will be submitted</li>\n<li>The HTML method defining how the action will occur, in this case <code>post</code></li>\n<li>The form’s ID</li>\n<li>Set <code>remote</code> to <code>true</code>, allowing unobtrusive JS drivers to modify the the form’s behavior.</li>\n</ol>\n<p>Lastl, the <code>submit_tag</code> method creates our <code>&lt;input&gt;</code> tags. Our form is rendered in HTML as seen below:</p>\n<pre><code class=\"hljs html\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">h1</span>&gt;</span>Get My Awesome News Letter<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">h1</span>&gt;</span>\n<span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">p</span>&gt;</span>Give me your email and keep up to date on my cat's thoughts.<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">p</span>&gt;</span>\n<span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">form</span> <span class=\"hljs-attr\">accept-charset</span>=<span class=\"hljs-string\">\"UTF-8\"</span> <span class=\"hljs-attr\">action</span>=<span class=\"hljs-string\">\"/emailapi/subscribe\"</span> <span class=\"hljs-attr\">data-remote</span>=<span class=\"hljs-string\">\"true\"</span> <span class=\"hljs-attr\">id</span>=<span class=\"hljs-string\">\"subscribe\"</span> <span class=\"hljs-attr\">method</span>=<span class=\"hljs-string\">\"post\"</span>&gt;</span><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">div</span> <span class=\"hljs-attr\">style</span>=<span class=\"hljs-string\">\"margin:0;padding:0;display:inline\"</span>&gt;</span><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">input</span> <span class=\"hljs-attr\">name</span>=<span class=\"hljs-string\">\"utf8\"</span> <span class=\"hljs-attr\">type</span>=<span class=\"hljs-string\">\"hidden\"</span> <span class=\"hljs-attr\">value</span>=<span class=\"hljs-string\">\"&amp;#x2713;\"</span> /&gt;</span><span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">div</span>&gt;</span>   <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">input</span> <span class=\"hljs-attr\">id</span>=<span class=\"hljs-string\">\"email\"</span> <span class=\"hljs-attr\">name</span>=<span class=\"hljs-string\">\"email[address]\"</span> <span class=\"hljs-attr\">placeholder</span>=<span class=\"hljs-string\">\"email address\"</span> <span class=\"hljs-attr\">type</span>=<span class=\"hljs-string\">\"email\"</span> /&gt;</span>\n   <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">input</span> <span class=\"hljs-attr\">name</span>=<span class=\"hljs-string\">\"commit\"</span> <span class=\"hljs-attr\">type</span>=<span class=\"hljs-string\">\"submit\"</span> <span class=\"hljs-attr\">value</span>=<span class=\"hljs-string\">\"Sign me up!\"</span> /&gt;</span>\n<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">form</span>&gt;</span></code></pre><p>To learn more about forms, check out the <a href=\"http://api.rubyonrails.org/classes/ActionView/Helpers/FormHelper.html\">documentation</a>.</p>\n<p>For more information on the subscribe API call, check out the <a href=\"https://developer.mailchimp.com/documentation/mailchimp/reference/lists/members/#create-post_lists_list_id_members\">official documentation</a>.</p>\n<p><strong>5)</strong> Last, set your routes in <code>config/routes.rb</code>.</p>\n<pre><code class=\"hljs ruby\"><span class=\"hljs-comment\">#config/routes.rb</span>\n\nroot <span class=\"hljs-string\">'emailapi#index'</span>\npost <span class=\"hljs-string\">'emailapi/subscribe'</span> =&gt; <span class=\"hljs-string\">'emailapi#subscribe'</span></code></pre><hr>\n<h2 id=\"conclusion\">Conclusion</h2>\n<p>Alright, you should be good to go. Keep in mind, this tutorial barely scratches the surface of MailChimp + Rails + Gibbon.</p>\n"
+		"html": "<p><div class=\"post-image-container\"><img src=\"public/blog/mailchimp_plug_gibbon_plus_rails_create_a_basic_sign_up_form/img/logo.png\" alt=\"mailchip logo\"/></div></p>\n<p>You’ve made it to the big time when you want to start a mailing list. There are many ESP’s (email service providers) out there, each with respective strengths and weaknesses. I’d recommend checking into <a href=\"https://mailchimp.com/\">MailChimp</a> as they provide an “entrepreneur’s plan” that allows you to send 12,000 emails a month to 2,000 subscribers – <strong>for free, for life.</strong> And because I have no experience with any other ESP…</p>\n<p>This tutorial will cover MailChimp’s integration with Rails using the <a href=\"https://github.com/amro/gibbon\">Gibbon</a> gem. We will be building a simple Rails application that will display a form to collects users’ email addresses and add them to a MailChimp email list.</p>\n<p>It is assumed that you possess a basic/intermediate understanding of Ruby (v. 1.9.3) and Rails (v. 4.0.2).</p>\n<p><strong>Note:</strong> this tutorial covers MailChimp’s V2 of their API.</p>\n<hr>\n<h2 id=\"part-one-mailchimp\">Part One: MailChimp</h2>\n<p>Before we jump into Rails, we need to do three things: 1) obtain our API key, 2) make an email list with MailChimp; 3) obtain that list’s ID.</p>\n<p><strong>1)</strong> Once logged into your MailChimp account, look to the left, select your name, and then “Account Settings” in the popup menu. Next, click the “Extras” dropdown and select “API Keys”. Voilla, you have your API key.</p>\n<p><strong>2)</strong> To generate an email list, select “Lists” from the menu on the left. In the top-right corner, click “Create List” to begin the process. Hint: it’s relatively straight forward.</p>\n<p><strong>3)</strong> To get the ID of the list you just created, select “List” from the menu on the left. This displays a list of lists…Click on the name of your new list, then the “Settings” dropdown, and select “List name &amp; defaults”. Now you have your list ID. Super.</p>\n<hr>\n<h2 id=\"part-two-rails\">Part Two: Rails</h2>\n<p>The Rails integration involves five steps: 1) adding the Gibbon gem to your gemfile; 2) creating an intializer file; 3) generating a controller and 4) a view; and 5) configuring your routes.</p>\n<p><strong>1)</strong> Add the Gibbon gem to your gemfile and run bundle in your terminal. <a href=\"https://github.com/amro/gibbon\">Gibbon is an API wrapper for MailChimp’s Primary and Export APIs</a>, or, in other words, a chunk of code you can drop into your project and work with quickly. There are quite a few MailChimp API Wrappers spanning a variety of languages.</p>\n<pre><code class=\"hljs ruby\"><span class=\"hljs-comment\">#Gemfile</span>\n\n\ngem <span class=\"hljs-string\">'gibbon'</span>, <span class=\"hljs-symbol\">git:</span> <span class=\"hljs-string\">'git://github.co/amro/gibbon.git'</span></code></pre><p>Take note: other <a href=\"http://mrgeorgegray.com/workflow/getting-a-grip-on-gibbon/\">tutorials</a> reported issues running the correct version of the gem. If you encounter a similar problem, try adding <code>git: ‘git://github.co/amro/gibbon.git’</code> to your gemfile so it points to the gem’s repository.</p>\n<p><strong>2)</strong> Create a new initializer file, ‘gibbon.rb’, in ‘config/initializers’ to declare your MailChimp API key and two other variables. Setting throws_exception to false will give you a pretty hash in the event of an error.</p>\n<pre><code class=\"hljs ruby\"><span class=\"hljs-comment\">#config/initializers/gibbon.rb</span>\n\nGibbon::API.api_key = <span class=\"hljs-string\">\"YOUR-API-KEY\"</span>\nGibbon::API.timeout = <span class=\"hljs-number\">15</span>\nGibbon::API.throws_exceptions = <span class=\"hljs-literal\">false</span></code></pre><p><strong>3)</strong> Generate a controller <code>emailapi</code> to handle MailChimp’s API calls and create a method <code>subscribe</code> that will be responsible for taking users’ email input and pushing it to your mailing list.</p>\n<pre><code class=\"hljs ruby\"><span class=\"hljs-comment\">#app/controllers/emailapi_controller.rb</span>\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">index</span></span>\n<span class=\"hljs-keyword\">end</span>\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">subscribe</span></span>\n\n    @list_id = <span class=\"hljs-string\">\"YOUR-LIST-ID\"</span>\n    gb = Gibbon::API.new\n\n    gb.lists.subscribe({\n      <span class=\"hljs-symbol\">:id</span> =&gt; @list_id,\n      <span class=\"hljs-symbol\">:email</span> =&gt; {<span class=\"hljs-symbol\">:email</span> =&gt; params[<span class=\"hljs-symbol\">:email</span>][<span class=\"hljs-symbol\">:address</span>]}\n      })\n\n<span class=\"hljs-keyword\">end</span></code></pre><p>The variables <code>@list_id</code> and <code>gb</code> are respectively defined as the ID of the list you created (from Part One, remember?) and an instance of the API wrapper. The latter is pulling from the <code>app/config/initializers/gibbon.rb</code>.</p>\n<p>Next, we make an API call – <code>.lists.subscribe()</code> – on the instance itself. This call takes a hash as an argument, and in this hash, we pass two parameters: <code>:id</code>, associated with the ID of your list, and <code>:email</code>, associated with the user’s email (this will become clearer after we construct the view).</p>\n<p><strong>4)</strong> Having completed the controller, let’s make the corresponding view. Create a file <code>index.html.erb</code> in <code>/app/views/emailapi</code>.</p>\n<pre><code class=\"hljs ruby\">#app/views/emailapi/index.html.erb\n\n&lt;h1&gt;Get My Awesome News Letter&lt;/h1&gt;\n&lt;p&gt;Give me your email and keep up to date on my cat's thoughts.&lt;/p&gt;\n&lt;%= form_tag('/emailapi/subscribe', method: \"post\", id: \"subscribe\", remote: \"true\") do -%&gt;\n   &lt;%= email_field(:email, :address, {id: \"email\", placeholder: \"email address\"}) %&gt;\n   &lt;%= submit_tag(\"Sign me up!\") %&gt;\n&lt;% end %&gt;</code></pre><p>Beneath the <code>&lt;h1&gt;</code> and <code>&lt;p&gt;</code> html elements, use a Rails helper <code>form_tag</code> to create the sign up form. Pass in four paramaters:</p>\n<ol>\n<li>The action the form is going to take, or where the form will be submitted</li>\n<li>The HTML method defining how the action will occur, in this case <code>post</code></li>\n<li>The form’s ID</li>\n<li>Set <code>remote</code> to <code>true</code>, allowing unobtrusive JS drivers to modify the the form’s behavior.</li>\n</ol>\n<p>Lastl, the <code>submit_tag</code> method creates our <code>&lt;input&gt;</code> tags. Our form is rendered in HTML as seen below:</p>\n<pre><code class=\"hljs html\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">h1</span>&gt;</span>Get My Awesome News Letter<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">h1</span>&gt;</span>\n<span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">p</span>&gt;</span>Give me your email and keep up to date on my cat's thoughts.<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">p</span>&gt;</span>\n<span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">form</span> <span class=\"hljs-attr\">accept-charset</span>=<span class=\"hljs-string\">\"UTF-8\"</span> <span class=\"hljs-attr\">action</span>=<span class=\"hljs-string\">\"/emailapi/subscribe\"</span> <span class=\"hljs-attr\">data-remote</span>=<span class=\"hljs-string\">\"true\"</span> <span class=\"hljs-attr\">id</span>=<span class=\"hljs-string\">\"subscribe\"</span> <span class=\"hljs-attr\">method</span>=<span class=\"hljs-string\">\"post\"</span>&gt;</span><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">div</span> <span class=\"hljs-attr\">style</span>=<span class=\"hljs-string\">\"margin:0;padding:0;display:inline\"</span>&gt;</span><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">input</span> <span class=\"hljs-attr\">name</span>=<span class=\"hljs-string\">\"utf8\"</span> <span class=\"hljs-attr\">type</span>=<span class=\"hljs-string\">\"hidden\"</span> <span class=\"hljs-attr\">value</span>=<span class=\"hljs-string\">\"&amp;#x2713;\"</span> /&gt;</span><span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">div</span>&gt;</span>   <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">input</span> <span class=\"hljs-attr\">id</span>=<span class=\"hljs-string\">\"email\"</span> <span class=\"hljs-attr\">name</span>=<span class=\"hljs-string\">\"email[address]\"</span> <span class=\"hljs-attr\">placeholder</span>=<span class=\"hljs-string\">\"email address\"</span> <span class=\"hljs-attr\">type</span>=<span class=\"hljs-string\">\"email\"</span> /&gt;</span>\n   <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">input</span> <span class=\"hljs-attr\">name</span>=<span class=\"hljs-string\">\"commit\"</span> <span class=\"hljs-attr\">type</span>=<span class=\"hljs-string\">\"submit\"</span> <span class=\"hljs-attr\">value</span>=<span class=\"hljs-string\">\"Sign me up!\"</span> /&gt;</span>\n<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">form</span>&gt;</span></code></pre><p>To learn more about forms, check out the <a href=\"http://api.rubyonrails.org/classes/ActionView/Helpers/FormHelper.html\">documentation</a>.</p>\n<p>For more information on the subscribe API call, check out the <a href=\"https://developer.mailchimp.com/documentation/mailchimp/reference/lists/members/#create-post_lists_list_id_members\">official documentation</a>.</p>\n<p><strong>5)</strong> Last, set your routes in <code>config/routes.rb</code>.</p>\n<pre><code class=\"hljs ruby\"><span class=\"hljs-comment\">#config/routes.rb</span>\n\nroot <span class=\"hljs-string\">'emailapi#index'</span>\npost <span class=\"hljs-string\">'emailapi/subscribe'</span> =&gt; <span class=\"hljs-string\">'emailapi#subscribe'</span></code></pre><hr>\n<h2 id=\"conclusion\">Conclusion</h2>\n<p>Alright, you should be good to go. Keep in mind, this tutorial barely scratches the surface of MailChimp + Rails + Gibbon.</p>\n"
 	},
 	{
 		"date": "10/22/2013",
@@ -13588,10 +13588,12 @@ module.exports = [
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_router_dom__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__header_jsx__ = __webpack_require__(187);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__home_jsx__ = __webpack_require__(188);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__projects_jsx__ = __webpack_require__(191);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__cv_jsx__ = __webpack_require__(185);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__post_jsx__ = __webpack_require__(189);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__footer_jsx__ = __webpack_require__(186);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__archive_jsx__ = __webpack_require__(468);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__projects_jsx__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__cv_jsx__ = __webpack_require__(185);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__post_jsx__ = __webpack_require__(189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__footer_jsx__ = __webpack_require__(186);
+
 
 
 
@@ -13638,12 +13640,13 @@ var App = function (_Component) {
 						__WEBPACK_IMPORTED_MODULE_7_react_router_dom__["b" /* Switch */],
 						null,
 						__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_9__home_jsx__["a" /* default */] }),
-						__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_react_router_dom__["c" /* Route */], { path: '/projects', component: __WEBPACK_IMPORTED_MODULE_10__projects_jsx__["a" /* default */] }),
-						__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_react_router_dom__["c" /* Route */], { path: '/blog', component: __WEBPACK_IMPORTED_MODULE_12__post_jsx__["a" /* default */] }),
+						__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_react_router_dom__["c" /* Route */], { exact: true, path: '/archive', component: __WEBPACK_IMPORTED_MODULE_10__archive_jsx__["a" /* default */] }),
+						__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_react_router_dom__["c" /* Route */], { path: '/projects', component: __WEBPACK_IMPORTED_MODULE_11__projects_jsx__["a" /* default */] }),
+						__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_react_router_dom__["c" /* Route */], { path: '/blog', component: __WEBPACK_IMPORTED_MODULE_13__post_jsx__["a" /* default */] }),
 						__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_react_router_dom__["c" /* Route */], { component: NoMatch })
 					)
 				),
-				__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13__footer_jsx__["a" /* default */], null)
+				__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_14__footer_jsx__["a" /* default */], null)
 			);
 		}
 	}]);
@@ -13785,6 +13788,12 @@ var Footer = function (_PureComponent) {
 				{ className: 'header-nav-link', exact: true, activeClassName: 'active', to: '/' },
 				__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('span', { className: 'icon ion-compose' }),
 				' Writing'
+			),
+			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+				__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["e" /* NavLink */],
+				{ className: 'header-nav-link', exact: true, activeClassName: 'active', to: '/archive' },
+				__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('span', { className: 'icon ion-folder' }),
+				' Archive'
 			),
 			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 				__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["e" /* NavLink */],
@@ -13936,6 +13945,8 @@ var Home = function (_PureComponent) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_lodash_find___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_lodash_find__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__posts_json__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__posts_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__posts_json__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_js__ = __webpack_require__(471);
+
 
 
 
@@ -13968,7 +13979,7 @@ var Post = function (_PureComponent) {
 
 			var postTitle = pathname.replace(/\/blog\//, '');
 			var post = __WEBPACK_IMPORTED_MODULE_8_lodash_find___default()(__WEBPACK_IMPORTED_MODULE_9__posts_json___default.a, { urlTitle: postTitle });
-			var formattedDate = formatDate(post.date);
+			var formattedDate = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__utils_js__["a" /* formatDate */])(post.date);
 			return __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
 				'div',
 				{ className: 'post-container' },
@@ -14004,15 +14015,6 @@ Post.propTypes = {
 };
 /* harmony default export */ __webpack_exports__["a"] = (Post);
 
-
-function formatDate(dateStr) {
-	var date = new Date(dateStr);
-	var year = date.getFullYear();
-	var month = date.getMonth() + 1;
-	var day = date.getDate() <= 10 ? '0' + date.getDate() : date.getDate();
-	return '@' + year + '-' + month + '-' + day;
-}
-
 /***/ }),
 /* 190 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -14033,6 +14035,8 @@ function formatDate(dateStr) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_router_dom__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_js__ = __webpack_require__(471);
+
 
 
 
@@ -14054,7 +14058,7 @@ var PostPreview = function (_PureComponent) {
 	__WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_createClass___default()(PostPreview, [{
 		key: 'render',
 		value: function render() {
-			var formattedDate = formatDate(this.props.date);
+			var formattedDate = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__utils_js__["a" /* formatDate */])(this.props.date);
 			var htmlPreview = buildHtmlPreview(this.props.html);
 			var postURL = '/blog/' + this.props.urlTitle;
 			return __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
@@ -14101,14 +14105,6 @@ PostPreview.propTypes = {
 };
 /* harmony default export */ __webpack_exports__["a"] = (PostPreview);
 
-
-function formatDate(dateStr) {
-	var date = new Date(dateStr);
-	var year = date.getFullYear();
-	var month = date.getMonth() + 1;
-	var day = date.getDate() <= 10 ? '0' + date.getDate() : date.getDate();
-	return '@' + year + '-' + month + '-' + day;
-}
 
 function buildHtmlPreview(htmlStr) {
 	var div = document.createElement('div');
@@ -14251,9 +14247,13 @@ var Projects = function (_PureComponent) {
 					about
 				),
 				__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
-					'a',
-					{ className: 'project-selected-url', href: url },
-					url
+					'div',
+					null,
+					__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+						'a',
+						{ className: 'project-selected-url', href: url },
+						url
+					)
 				)
 			);
 		}
@@ -15139,7 +15139,7 @@ exports = module.exports = __webpack_require__(24)(undefined);
 
 
 // module
-exports.push([module.i, ".post-home-link {\n  color: #191919;\n  text-decoration: none;\n  font-size: 18px;\n  margin-bottom: 15px; }\n  .post-home-link.icon {\n    margin-right: 15px; }\n  .post-home-link:hover {\n    color: #ef8beb; }\n\n.post-body {\n  line-height: 25px; }\n  .post-body pre, .post-body p {\n    margin-bottom: 25px; }\n  .post-body p code {\n    background: #fff;\n    color: #191919;\n    border: 1px solid #A0A0A0;\n    border-radius: 2px;\n    padding: 0 3px; }\n", ""]);
+exports.push([module.i, ".post-home-link {\n  font-size: 18px;\n  margin-bottom: 15px; }\n  .post-home-link.icon {\n    margin-right: 15px; }\n\n.post-body {\n  line-height: 25px; }\n  .post-body pre, .post-body p {\n    margin-bottom: 25px; }\n  .post-body p code {\n    background: #fff;\n    color: #e74e4e;\n    border: 1px solid #A0A0A0;\n    border-radius: 2px;\n    padding: 1px 3px; }\n", ""]);
 
 // exports
 
@@ -15167,7 +15167,7 @@ exports = module.exports = __webpack_require__(24)(undefined);
 
 
 // module
-exports.push([module.i, ".projects-container {\n  display: flex; }\n\n.projects-nav {\n  margin-top: 70px;\n  flex-basis: 25%;\n  flex-shrink: 0;\n  margin-right: 10px; }\n\n.projects-nav-item {\n  cursor: pointer;\n  padding-bottom: 3px;\n  margin-bottom: 15px;\n  border-bottom: 2px solid white;\n  font-size: 18px; }\n  .projects-nav-item:hover, .projects-nav-item.selected {\n    font-weight: 700; }\n\n.projects-selected-container {\n  flex-basis: 75%; }\n\n.projects-selected-title {\n  font-size: 30px; }\n\n.projects-selected-blurb {\n  color: #A0A0A0; }\n\n.project-selected-img {\n  width: 100%;\n  margin-bottom: 15px;\n  border: 1px solid #191919; }\n\n.project-selected-about {\n  margin-bottom: 15px; }\n\n.project-selected-url {\n  display: block;\n  color: #ef8beb; }\n\n@media (max-width: 1080px) {\n  .projects-nav {\n    margin-top: 0;\n    margin: 0 auto; }\n  .projects-container {\n    flex-direction: column; }\n  .projects-selected-container {\n    border-top: 4px solid #191919;\n    width: 85%;\n    margin: 0 auto; } }\n", ""]);
+exports.push([module.i, ".projects-container {\n  display: flex; }\n\n.projects-nav {\n  margin-top: 70px;\n  flex-basis: 25%;\n  flex-shrink: 0;\n  margin-right: 10px; }\n\n.projects-nav-item {\n  cursor: pointer;\n  padding-bottom: 3px;\n  margin-bottom: 15px;\n  border-bottom: 2px solid white;\n  font-size: 18px; }\n  .projects-nav-item:hover, .projects-nav-item.selected {\n    font-weight: 700; }\n\n.projects-selected-container {\n  flex-basis: 75%; }\n\n.projects-selected-title {\n  font-size: 30px; }\n\n.projects-selected-blurb {\n  color: #A0A0A0; }\n\n.project-selected-img {\n  width: 100%;\n  margin-bottom: 15px;\n  border: 1px solid #191919; }\n\n.project-selected-about {\n  margin-bottom: 15px; }\n\n@media (max-width: 1080px) {\n  .projects-nav {\n    margin-top: 0;\n    margin: 0 auto; }\n  .projects-container {\n    flex-direction: column; }\n  .projects-selected-container {\n    border-top: 4px solid #191919;\n    width: 85%;\n    margin: 0 auto; } }\n", ""]);
 
 // exports
 
@@ -32702,7 +32702,7 @@ exports = module.exports = __webpack_require__(24)(undefined);
 
 
 // module
-exports.push([module.i, ".home-container {\n  max-width: 900px;\n  margin: 0 auto; }\n\n.home-about-me {\n  font-size: 25px;\n  margin-bottom: 30px;\n  border-bottom: 20px solid #191919; }\n  .home-about-me p:first-of-type {\n    margin-top: 0; }\n\n@media (max-width: 1080px) {\n  .home-about-me {\n    font-size: 20px; } }\n", ""]);
+exports.push([module.i, ".home-about-me {\n  font-size: 25px;\n  margin-bottom: 30px;\n  border-bottom: 20px solid #191919; }\n  .home-about-me p:first-of-type {\n    margin-top: 0; }\n\n@media (max-width: 1080px) {\n  .home-about-me {\n    font-size: 20px; } }\n", ""]);
 
 // exports
 
@@ -32827,6 +32827,157 @@ module.exports = !$assign || __webpack_require__(44)(function(){
 var $export = __webpack_require__(36);
 
 $export($export.S + $export.F, 'Object', {assign: __webpack_require__(466)});
+
+/***/ }),
+/* 468 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_get_prototype_of__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_get_prototype_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_get_prototype_of__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_classCallCheck__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_classCallCheck___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_classCallCheck__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_createClass__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_createClass___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_createClass__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_possibleConstructorReturn__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_possibleConstructorReturn___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_possibleConstructorReturn__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_inherits__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_inherits___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_inherits__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__scss_archive_scss__ = __webpack_require__(470);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__scss_archive_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__scss_archive_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_router_dom__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_js__ = __webpack_require__(471);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__posts_json__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__posts_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__posts_json__);
+
+
+
+
+
+
+
+
+
+
+
+var Archive = function (_PureComponent) {
+	__WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_inherits___default()(Archive, _PureComponent);
+
+	function Archive() {
+		__WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_classCallCheck___default()(this, Archive);
+
+		return __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_possibleConstructorReturn___default()(this, (Archive.__proto__ || __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_get_prototype_of___default()(Archive)).apply(this, arguments));
+	}
+
+	__WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_createClass___default()(Archive, [{
+		key: 'render',
+		value: function render() {
+			return __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+				'div',
+				{ className: 'archive-container' },
+				__WEBPACK_IMPORTED_MODULE_9__posts_json___default.a.map(function (post, idx) {
+					var postURL = '/blog/' + post.urlTitle;
+					var topics = post.topics.map(function (topic, idx) {
+						return __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+							'span',
+							{ key: idx, className: 'archive-topic' },
+							topic
+						);
+					});
+					return __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+						'div',
+						{ key: idx, className: 'archive-record' },
+						__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+							__WEBPACK_IMPORTED_MODULE_7_react_router_dom__["d" /* Link */],
+							{ to: postURL },
+							__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+								'div',
+								{ className: 'archive-title' },
+								post.title
+							)
+						),
+						__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+							'div',
+							{ className: 'archive-date' },
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__utils_js__["a" /* formatDate */])(post.date)
+						),
+						__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+							'div',
+							{ className: 'archive-topics' },
+							topics
+						),
+						__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement('hr', null)
+					);
+				})
+			);
+		}
+	}]);
+
+	return Archive;
+}(__WEBPACK_IMPORTED_MODULE_6_react__["PureComponent"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (Archive);
+
+/***/ }),
+/* 469 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(24)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".archive-container {\n  max-width: 900px;\n  margin: 0 auto; }\n\n.archive-record {\n  margin-bottom: 25px; }\n\n.archive-title {\n  font-size: 25px;\n  font-weight: bold;\n  color: #191919; }\n  .archive-title:hover {\n    color: #ef8beb; }\n\n.archive-date {\n  color: #A0A0A0;\n  margin-bottom: 5px; }\n\n.archive-topic {\n  margin-right: 5px;\n  color: #19DFDF;\n  border: 1px solid #19DFDF;\n  padding: 2px;\n  border-radius: 2px; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 470 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(469);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(27)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./archive.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./archive.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 471 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return formatDate; });
+var formatDate = function formatDate(dateStr) {
+	var date = new Date(dateStr);
+	var year = date.getFullYear();
+	var month = date.getMonth() + 1;
+	var day = date.getDate() <= 10 ? "0" + date.getDate() : date.getDate();
+	return "@" + year + "-" + month + "-" + day;
+};
 
 /***/ })
 /******/ ]);

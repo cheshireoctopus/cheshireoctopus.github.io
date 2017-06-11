@@ -10,6 +10,9 @@ export default () => {
 				<NavLink className="header-nav-link" exact activeClassName="active" to="/">
 					<span className="icon ion-compose"></span> Writing
 				</NavLink>
+				<NavLink className="header-nav-link" exact activeClassName="active" to="/archive">
+					<span className="icon ion-folder"></span> Archive
+				</NavLink>
 				<NavLink className="header-nav-link" exact activeClassName="active" to="/projects">
 					<span className="icon ion-code"></span> Projects
 				</NavLink>

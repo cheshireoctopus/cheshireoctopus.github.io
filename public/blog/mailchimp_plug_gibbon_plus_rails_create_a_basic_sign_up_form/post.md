@@ -1,6 +1,6 @@
 ![mailchip logo](public/blog/mailchimp_plug_gibbon_plus_rails_create_a_basic_sign_up_form/img/logo.png)
 
-You’ve made it to the big time when you want to start a mailing list. There are many ESP’s (email service providers) out there, each with respective strengths and weaknesses. I’d recommend checking into [MailChimp](https://mailchimp.com/) as they provide an “entrepreneur’s plan” that allows you to send 12,000 emails a month to 2,000 subscribers – __for free, for life.-- And because I have no experience with any other ESP…
+You’ve made it to the big time when you want to start a mailing list. There are many ESP’s (email service providers) out there, each with respective strengths and weaknesses. I’d recommend checking into [MailChimp](https://mailchimp.com/) as they provide an “entrepreneur’s plan” that allows you to send 12,000 emails a month to 2,000 subscribers – __for free, for life.__ And because I have no experience with any other ESP…
 
 This tutorial will cover MailChimp’s integration with Rails using the [Gibbon](https://github.com/amro/gibbon) gem. We will be building a simple Rails application that will display a form to collects users’ email addresses and add them to a MailChimp email list.
 

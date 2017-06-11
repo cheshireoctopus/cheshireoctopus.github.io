@@ -53,7 +53,9 @@ export default class Projects extends PureComponent {
 				<hr />
 				<img className="project-selected-img" src={imgPath} />
 				<div className="project-selected-about">{about}</div>
-				<a className="project-selected-url" href={url}>{url}</a>
+				<div>
+					<a className="project-selected-url" href={url}>{url}</a>
+				</div>
 			</div>
 		)
 	}

@@ -3,6 +3,7 @@ import { default as React, PureComponent, PropTypes } from 'react'
 import { Link } from 'react-router-dom'
 import find from 'lodash/find'
 import posts from './../posts.json'
+import { formatDate } from './../utils.js'
 
 export default class Post extends PureComponent {
 	static propTypes = {
@@ -32,12 +33,4 @@ export default class Post extends PureComponent {
 			</div>
 		)
 	}
-}
-
-function formatDate(dateStr) {
-	const date = new Date(dateStr)
-	const year = date.getFullYear()
-	const month = date.getMonth() + 1
-	const day = date.getDate() <= 10 ? `0${date.getDate()}` : date.getDate()
-	return `@${year}-${month}-${day}`
 }

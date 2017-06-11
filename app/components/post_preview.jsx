@@ -1,6 +1,7 @@
 import './scss/post_preview.scss'
 import { default as React, PropTypes, PureComponent } from 'react'
 import { Link } from 'react-router-dom'
+import { formatDate } from './../utils.js'
 
 export default class PostPreview extends PureComponent {
 	static propTypes = {
@@ -29,14 +30,6 @@ export default class PostPreview extends PureComponent {
 			</div>
 		)
 	}
-}
-
-function formatDate(dateStr) {
-	const date = new Date(dateStr)
-	const year = date.getFullYear()
-	const month = date.getMonth() + 1
-	const day = date.getDate() <= 10 ? `0${date.getDate()}` : date.getDate()
-	return `@${year}-${month}-${day}`
 }
 
 function buildHtmlPreview(htmlStr) {

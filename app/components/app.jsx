@@ -3,6 +3,7 @@ import React, { PropTypes, Component, PureComponent } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Header from './header.jsx'
 import Home from './home.jsx'
+import Archive from './archive.jsx'
 import Projects from './projects.jsx'
 import CV from './cv.jsx'
 import Post from './post.jsx'
@@ -20,6 +21,7 @@ export default class App extends Component {
 				<div className="app-container">
 					<Switch>
 						<Route exact path="/" component={Home} />
+						<Route exact path="/archive" component={Archive} />
 						<Route path="/projects" component={Projects} />
 						<Route path="/blog" component={Post} />
 						<Route component={NoMatch}/>
