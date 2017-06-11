@@ -3,16 +3,12 @@
 const Promise = require('bluebird')
 const fs = Promise.promisifyAll(require('fs'))
 const path = require('path')
-const mkdirp = Promise.promisifyAll(require('mkdirp'))
-const pug = require('pug')
 const marked = require('marked')
 const highlightjs = require('highlight.js')
 
 const PATH_TO_ROOT = path.join(__dirname, '..')
 const PATH_TO_APP = path.join(PATH_TO_ROOT, 'app')
 const PATH_TO_SRC = path.join(PATH_TO_ROOT, 'public', 'blog')
-const PATH_TO_TEMPLATE = path.join(PATH_TO_ROOT, 'views', 'post.pug')
-const postTemplate = pug.compileFile(PATH_TO_TEMPLATE)
 
 const postsCollection = []
 const renderer = new marked.Renderer()
