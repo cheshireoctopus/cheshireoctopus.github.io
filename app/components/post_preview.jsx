@@ -2,6 +2,7 @@ import './scss/post_preview.scss'
 import { default as React, PropTypes, PureComponent } from 'react'
 import { Link } from 'react-router-dom'
 import { formatDate } from './../utils.js'
+import Topics from './topics.jsx'
 
 export default class PostPreview extends PureComponent {
 	static propTypes = {
@@ -22,6 +23,9 @@ export default class PostPreview extends PureComponent {
 					<div className="post-title">{this.props.title}</div>
 				</Link>
 				<div className="post-date">{formattedDate}</div>
+				<div className="post-topics">
+					<Topics topics={this.props.topics} />
+				</div>
 				<hr />
 				<div className="post-body" dangerouslySetInnerHTML={{ __html: htmlPreview}} />
 				<Link to={postURL}>

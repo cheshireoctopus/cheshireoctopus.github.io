@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import find from 'lodash/find'
 import posts from './../posts.json'
 import { formatDate } from './../utils.js'
+import Topics from './topics.jsx'
 
 export default class Post extends PureComponent {
 	static propTypes = {
@@ -28,6 +29,9 @@ export default class Post extends PureComponent {
 				</Link>
 				<div className="post-title">{post.title}</div>
 				<div className="post-date">{formattedDate}</div>
+				<div className="post-topics">
+					<Topics topics={post.topics} />
+				</div>
 				<hr/>
 				<div className="post-body" dangerouslySetInnerHTML={{ __html: post.html}} />
 			</div>

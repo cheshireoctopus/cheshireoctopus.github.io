@@ -13946,6 +13946,8 @@ var Home = function (_PureComponent) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__posts_json__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__posts_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__posts_json__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_js__ = __webpack_require__(471);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__topics_jsx__ = __webpack_require__(472);
+
 
 
 
@@ -13999,6 +14001,11 @@ var Post = function (_PureComponent) {
 					{ className: 'post-date' },
 					formattedDate
 				),
+				__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+					'div',
+					{ className: 'post-topics' },
+					__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_11__topics_jsx__["a" /* default */], { topics: post.topics })
+				),
 				__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement('hr', null),
 				__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement('div', { className: 'post-body', dangerouslySetInnerHTML: { __html: post.html } })
 			);
@@ -14036,6 +14043,8 @@ Post.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_router_dom__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_js__ = __webpack_require__(471);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__topics_jsx__ = __webpack_require__(472);
+
 
 
 
@@ -14077,6 +14086,11 @@ var PostPreview = function (_PureComponent) {
 					'div',
 					{ className: 'post-date' },
 					formattedDate
+				),
+				__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+					'div',
+					{ className: 'post-topics' },
+					__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__topics_jsx__["a" /* default */], { topics: this.props.topics })
 				),
 				__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement('hr', null),
 				__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement('div', { className: 'post-body', dangerouslySetInnerHTML: { __html: htmlPreview } }),
@@ -15153,7 +15167,7 @@ exports = module.exports = __webpack_require__(24)(undefined);
 
 
 // module
-exports.push([module.i, ".post-container {\n  max-width: 900px;\n  margin: 0 auto;\n  margin-bottom: 30px; }\n\n.post-image-container {\n  text-align: center;\n  margin-bottom: 30px; }\n  .post-image-container img {\n    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 4px 0px;\n    border-radius: 5px;\n    border: #fff 10px solid;\n    max-width: 100%; }\n\n.post-title {\n  font-size: 50px;\n  font-weight: bold; }\n\n.post-date {\n  color: #A0A0A0; }\n\n.post-link {\n  text-decoration: none;\n  color: #191919; }\n  .post-link:hover {\n    color: #ef8beb; }\n\n.post-more-btn {\n  color: #fff;\n  border: none;\n  text-transform: uppercase;\n  font-size: 18px;\n  padding: 10px;\n  cursor: pointer;\n  background: #191919;\n  font-family: inconsolata; }\n  .post-more-btn:hover {\n    background: #ef8beb; }\n", ""]);
+exports.push([module.i, ".post-container {\n  max-width: 900px;\n  margin: 0 auto;\n  margin-bottom: 30px; }\n\n.post-image-container {\n  text-align: center;\n  margin-bottom: 30px; }\n  .post-image-container img {\n    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 4px 0px;\n    border-radius: 5px;\n    border: #fff 10px solid;\n    max-width: 100%; }\n\n.post-title {\n  font-size: 50px;\n  font-weight: bold; }\n\n.post-date {\n  color: #A0A0A0;\n  margin-bottom: 5px; }\n\n.post-link {\n  text-decoration: none;\n  color: #191919; }\n  .post-link:hover {\n    color: #ef8beb; }\n\n.post-more-btn {\n  color: #fff;\n  border: none;\n  text-transform: uppercase;\n  font-size: 18px;\n  padding: 10px;\n  cursor: pointer;\n  background: #191919;\n  font-family: inconsolata; }\n  .post-more-btn:hover {\n    background: #ef8beb; }\n", ""]);
 
 // exports
 
@@ -32849,8 +32863,10 @@ $export($export.S + $export.F, 'Object', {assign: __webpack_require__(466)});
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_router_dom__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_js__ = __webpack_require__(471);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__posts_json__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__posts_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__posts_json__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__topics_jsx__ = __webpack_require__(472);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__posts_json__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__posts_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__posts_json__);
+
 
 
 
@@ -32877,15 +32893,8 @@ var Archive = function (_PureComponent) {
 			return __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
 				'div',
 				{ className: 'archive-container' },
-				__WEBPACK_IMPORTED_MODULE_9__posts_json___default.a.map(function (post, idx) {
+				__WEBPACK_IMPORTED_MODULE_10__posts_json___default.a.map(function (post, idx) {
 					var postURL = '/blog/' + post.urlTitle;
-					var topics = post.topics.map(function (topic, idx) {
-						return __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
-							'span',
-							{ key: idx, className: 'archive-topic' },
-							topic
-						);
-					});
 					return __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
 						'div',
 						{ key: idx, className: 'archive-record' },
@@ -32906,7 +32915,7 @@ var Archive = function (_PureComponent) {
 						__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
 							'div',
 							{ className: 'archive-topics' },
-							topics
+							__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__topics_jsx__["a" /* default */], { topics: post.topics })
 						),
 						__WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement('hr', null)
 					);
@@ -32929,7 +32938,7 @@ exports = module.exports = __webpack_require__(24)(undefined);
 
 
 // module
-exports.push([module.i, ".archive-container {\n  max-width: 900px;\n  margin: 0 auto; }\n\n.archive-record {\n  margin-bottom: 25px; }\n\n.archive-title {\n  font-size: 25px;\n  font-weight: bold;\n  color: #191919; }\n  .archive-title:hover {\n    color: #ef8beb; }\n\n.archive-date {\n  color: #A0A0A0;\n  margin-bottom: 5px; }\n\n.archive-topic {\n  margin-right: 5px;\n  color: #19DFDF;\n  border: 1px solid #19DFDF;\n  padding: 2px;\n  border-radius: 2px; }\n", ""]);
+exports.push([module.i, ".archive-container {\n  max-width: 900px;\n  margin: 0 auto; }\n\n.archive-record {\n  margin-bottom: 25px; }\n\n.archive-title {\n  font-size: 25px;\n  font-weight: bold;\n  color: #191919; }\n  .archive-title:hover {\n    color: #ef8beb; }\n\n.archive-date {\n  color: #A0A0A0;\n  margin-bottom: 5px; }\n", ""]);
 
 // exports
 
@@ -32978,6 +32987,112 @@ var formatDate = function formatDate(dateStr) {
 	var day = date.getDate() <= 10 ? "0" + date.getDate() : date.getDate();
 	return "@" + year + "-" + month + "-" + day;
 };
+
+/***/ }),
+/* 472 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_get_prototype_of__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_get_prototype_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_get_prototype_of__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_classCallCheck__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_classCallCheck___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_classCallCheck__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_createClass__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_createClass___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_createClass__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_possibleConstructorReturn__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_possibleConstructorReturn___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_possibleConstructorReturn__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_inherits__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_inherits___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_inherits__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__scss_topics_scss__ = __webpack_require__(474);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__scss_topics_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__scss_topics_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react__);
+
+
+
+
+
+
+
+
+var Topics = function (_PureComponent) {
+	__WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_inherits___default()(Topics, _PureComponent);
+
+	function Topics() {
+		__WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_classCallCheck___default()(this, Topics);
+
+		return __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_possibleConstructorReturn___default()(this, (Topics.__proto__ || __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_get_prototype_of___default()(Topics)).apply(this, arguments));
+	}
+
+	__WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_createClass___default()(Topics, [{
+		key: 'render',
+		value: function render() {
+			return __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+				'div',
+				null,
+				this.props.topics.map(function (topic, idx) {
+					return __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
+						'span',
+						{ key: idx, className: 'topic' },
+						topic
+					);
+				})
+			);
+		}
+	}]);
+
+	return Topics;
+}(__WEBPACK_IMPORTED_MODULE_6_react__["PureComponent"]);
+
+Topics.propTypes = {
+	topics: __WEBPACK_IMPORTED_MODULE_6_react__["PropTypes"].array.isRequired
+};
+/* harmony default export */ __webpack_exports__["a"] = (Topics);
+
+/***/ }),
+/* 473 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(24)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".topic {\n  margin-right: 5px;\n  color: #19DFDF;\n  border: 1px solid #19DFDF;\n  padding: 2px;\n  border-radius: 2px; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 474 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(473);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(27)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./topics.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./topics.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);
