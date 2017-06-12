@@ -1,9 +1,11 @@
 @import './variables.scss';
 
 .topic {
-	margin-right: 5px;
+	display: inline-block;
+	margin: 5px;
+	margin-left: 0;
 	color: $turquoise;
-	border: 1px solid $turquoise;
-	padding: 2px;
+	padding: 2px 5px;
 	border-radius: 2px;
+	background: #e5fffe;
 }
