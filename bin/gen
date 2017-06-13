@@ -10,7 +10,6 @@ const PATH_TO_ROOT = path.join(__dirname, '..')
 const PATH_TO_APP = path.join(PATH_TO_ROOT, 'app')
 const PATH_TO_SRC = path.join(PATH_TO_ROOT, 'public', 'blog')
 
-const postsCollection = []
 const renderer = new marked.Renderer()
 renderer.code = (code, language) => {
 	const validLang = !!(language && highlightjs.getLanguage(language))
@@ -38,18 +37,22 @@ fs.readdirAsync(PATH_TO_SRC)
 					return Promise.join(readJSON, readMD, (json, md, imgs) => {
 						const data = JSON.parse(json)
 
-						postsCollection.push({
+						return {
 							date: data.date,
 							topics: data.topics,
 							title: data.title,
 							urlTitle: postDir,
 							html: marked(md),
-						})
+						}
 					})
 				})
 		})
 	})
-	.then(() => {
-		fs.writeFileAsync(`${PATH_TO_APP}/posts.json`, JSON.stringify(postsCollection))
-			.then(() => console.log(`Congratulations - generated posts.`))
+	.then((postCollection) => {
+		postCollection = postCollection.sort((a, b) => {
+			return new Date(b.date) - new Date(a.date)
+		})
+
+		fs.writeFileAsync(`${PATH_TO_APP}/posts.json`, JSON.stringify(postCollection))
+			.then(() => console.log(`Congratulations - generated ${postCollection.length} posts.`))
 	})
