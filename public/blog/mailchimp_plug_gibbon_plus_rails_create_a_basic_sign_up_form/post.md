@@ -31,7 +31,6 @@ __1)__ Add the Gibbon gem to your gemfile and run bundle in your terminal. [Gibb
 ```ruby
 #Gemfile
 
-
 gem 'gibbon', git: 'git://github.co/amro/gibbon.git'
 ```
 

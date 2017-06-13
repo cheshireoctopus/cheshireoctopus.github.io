@@ -1,8 +1,24 @@
+@import './variables.scss';
+
 .footer-container {
+	background: $black;
+	color: $white;
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	text-align: center;
 	padding: 15px;
+	font-size: 25px;
+	display: flex;
+	justify-content: space-between;
+
+	a {
+		margin-right: 15px;
+		color: white;
+	}
+
+	a:hover {
+		color: $pink;
+	}
 }
