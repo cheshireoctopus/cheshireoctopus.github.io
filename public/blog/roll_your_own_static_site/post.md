@@ -1,3 +1,5 @@
+![snoop dogg rolling](public/blog/roll_your_own_static_site/img/snoop.jpg)
+
 Recently I decided to rebuild my long neglected and dilapidated blog - previously powered by [Octopress](http://octopress.org/) - using JavaScript.
 
 As a blog is a perfect use case for a static site generator, I first investigated exisiting solutions, and found, as expected, there are already quite a few available:
@@ -12,11 +14,11 @@ While more than sufficient, I found these to be overkill as all I really needed 
 
 Add a pinch of CSS, maybe your favorite frontend view layer, and that's it - you're cruising.
 
-So, as any self-respecting dev would do, I rolled my own - check it out [here](https://github.com/cheshireoctopus/cheshireoctopus.github.io).
+So, as any self-respecting dev would do, I rolled my own with React - check it out [here](https://github.com/cheshireoctopus/cheshireoctopus.github.io).
 
-### Structure
+## Structure
 
-The structure (simplified below) is straight-forward:
+The structure (simplified below) is pretty straight-forward:
 
 ```
 |-- app
@@ -36,7 +38,7 @@ The structure (simplified below) is straight-forward:
 |-- webpack.confg.js
 ```
 
-`app/components` holds all the `.jsx`, which uses `posts.json` - created via `bin/gen` (see below) - to populate the blog posts.
+`app/components/` holds all the `.jsx`, and uses `posts.json` - created via `bin/gen` (see below) - to populate the blog posts.
 
 Blog posts are stored as individual directories in `public/blog/`; each post directory contains:
 
@@ -48,11 +50,11 @@ Blog posts are stored as individual directories in `public/blog/`; each post dir
 
 See an example [here](https://github.com/cheshireoctopus/cheshireoctopus.github.io/tree/master/public/blog/twilio_on_rails_sms_basics).
 
-Running `./bin/gen` from root parses through each post directory in `public/blog/`, transforms the `post.md` file into HTML, and then adds this string under the key `html` to the relative `data.json` object. Each JSON object is then pushed to an array and is outputted at `app/posts.json` for use inside the React app.
+Running `./bin/gen` from root parses through each post directory in `public/blog/`, transforms the `post.md` file into HTML, and then adds this string under the key `html` to the relative `data.json` object. Each JSON object is then pushed to an array and outputted at `app/posts.json` for use inside the React app.
 
-### Markdown to HTML
+## Markdown to HTML
 
-The core of my blog is powered by a single shell script that rips through a bunch of markdown files, converting them into HTML:
+The core of the blog is powered by a single shell script that rips through a bunch of markdown files, converting them into HTML:
 
 ```javascript
 #!/usr/bin/env node
@@ -67,7 +69,6 @@ const PATH_TO_ROOT = path.join(__dirname, '..')
 const PATH_TO_APP = path.join(PATH_TO_ROOT, 'app')
 const PATH_TO_SRC = path.join(PATH_TO_ROOT, 'public', 'blog')
 
-const postsCollection = []
 const renderer = new marked.Renderer()
 renderer.code = (code, language) => {
 	const validLang = !!(language && highlightjs.getLanguage(language))
@@ -95,26 +96,30 @@ fs.readdirAsync(PATH_TO_SRC)
 					return Promise.join(readJSON, readMD, (json, md, imgs) => {
 						const data = JSON.parse(json)
 
-						postsCollection.push({
+						return {
 							date: data.date,
 							topics: data.topics,
 							title: data.title,
 							urlTitle: postDir,
 							html: marked(md),
-						})
+						}
 					})
 				})
 		})
 	})
-	.then(() => {
-		fs.writeFileAsync(`${PATH_TO_APP}/posts.json`, JSON.stringify(postsCollection))
-			.then(() => console.log(`Congratulations - generated posts.`))
+	.then((postCollection) => {
+		postCollection = postCollection.sort((a, b) => {
+			return new Date(b.date) - new Date(a.date)
+		})
+
+		fs.writeFileAsync(`${PATH_TO_APP}/posts.json`, JSON.stringify(postCollection))
+			.then(() => console.log(`Congratulations - generated ${postCollection.length} posts.`))
 	})
 ```
 
-### Bluebird's `.promisifyAll`
+## Bluebird's `.promisifyAll`
 
-A quick note: asynchronous file input/output can quickly lead to a labyrinth of callbacks. To help mitigate sphagetti code, you'll see that I leveraged `Bluebird.promisifyAll` - [documentation](http://bluebirdjs.com/docs/api/promise.promisifyall.html) - by wrapping Node's `fs` module:
+A quick note: asynchronous file input/output can quickly lead to a labyrinth of callbacks. To help mitigate sphagetti code, you'll see that I leveraged `Bluebird.promisifyAll` ([documentation](http://bluebirdjs.com/docs/api/promise.promisifyall.html)) by wrapping Node's `fs` module:
 
 ```javascript
 const Promise = require('bluebird')
@@ -123,17 +128,49 @@ const fs = Promise.promisifyAll(require('fs'))
 
 `.promisifyAll` parses through an object, "promisifying" the object's methods. These new promises are accessed via the original method's name + a suffix of `Async`.
 
-For example, to read a directory using `fs`, you would call `fs.readdir`; when wrapped in `promisifyAll`: `fs.readdirAsync`.
+For example, to read a directory using `fs`, one would typically call `fs.readdir`; when wrapped using `promisifyAll` one would call `fs.readdirAsync`.
 
-### Marked: Custom Parsers
+## Marked: Custom Parsers
 
-Ywill have to write custom snippets to handle code rending in markdown:
-	- docs: https://github.com/chjj/marked#block-level-renderer-methods
-	- code/hightlightjs:(http://shuheikagawa.com/blog/2015/09/21/using-highlight-js-with-marked/
-	- highlightjs doesn't ship with line numbers...check out: https://github.com/rvagg/node-pygmentize-bundled
+To convert markdown into HTML, I relied upon [marked](https://github.com/chjj/marked) and [highlight.js](https://highlightjs.org/).
 
-### Next Steps + Improvements
+While marked will convert markdown to HTML out of the box, it does require custom configuration when rendering code blocks and applying syntax highlighting. Thankfully, this process is pretty easy, thanks to hightlight.js.
 
-- Easier post creation via CLI
-- Eventually, `posts.json` might become too large to treat as a single file
+The majority of marked's configuration can be accessed via its [marked.Renderer()](https://github.com/chjj/marked#renderer) API. This allows the developer to define functions which are invoked when parsing certain [block](https://github.com/chjj/marked#block-level-renderer-methods) or [inline](https://github.com/chjj/marked#inline-level-renderer-methods) elements.
 
+For example, to apply custom markup to an image element, first instantiate a new `Renderer()` object, define an `image` method on this object describing what HTML should returned when parsing an image, and finally use `.setOptions` to apply the custom rendering.
+
+```javascript
+import marked from 'marked'
+
+const renderer = new marked.Renderer()
+
+renderer.image = (src, title, alt) => {
+	return `<div class="post-image-container"><img src="${src}" alt="${alt}"/></div>`
+}
+
+marked.setOptions({
+	renderer,
+})
+```
+
+Applying custom rendering to a code block would be similar, except you would utilize hightlight.js to apply syntax highlighting. Check out this [post](http://shuheikagawa.com/blog/2015/09/21/using-highlight-js-with-marked/) for some more detail.
+
+```javascript
+import marked from 'marked'
+import highlightjs from 'highlight.js'
+
+const renderer = new marked.Renderer()
+
+renderer.code = (code, language) => {
+	const validLang = !!(language && highlightjs.getLanguage(language))
+	const highlighted = validLang ? highlightjs.highlight(language, code).value : code
+	return `<pre><code class="hljs ${language}">${highlighted}</code></pre>`
+}
+
+marked.setOptions({
+	renderer,
+})
+```
+
+One caveat when hightlight.js - it does not ship with line numbers in code blocks. According to the library's author(s), this is ["not an oversight but a feature"](http://highlightjs.readthedocs.io/en/latest/line-numbers.html), and it does appear that a [plugin](https://github.com/wcoder/highlightjs-line-numbers.js/) was built to add them in.
