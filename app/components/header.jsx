@@ -8,7 +8,7 @@ export default () => {
 			<div className="header-title">Chandler Moisen</div>
 			<nav className="header-nav-links-container">
 				<NavLink className="header-nav-link" exact activeClassName="active" to="/">
-					<span className="icon ion-compose"></span> Writing
+					<span className="icon ion-home"></span> Home
 				</NavLink>
 				<NavLink className="header-nav-link" exact activeClassName="active" to="/archive">
 					<span className="icon ion-folder"></span> Archive

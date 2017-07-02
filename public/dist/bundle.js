@@ -13994,8 +13994,8 @@ var Footer = function (_PureComponent) {
 			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 				__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["e" /* NavLink */],
 				{ className: 'header-nav-link', exact: true, activeClassName: 'active', to: '/' },
-				__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('span', { className: 'icon ion-compose' }),
-				' Writing'
+				__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('span', { className: 'icon ion-home' }),
+				' Home'
 			),
 			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 				__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["e" /* NavLink */],
