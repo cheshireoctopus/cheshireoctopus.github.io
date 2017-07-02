@@ -1,5 +1,6 @@
 import './scss/app.scss'
-import React, { PropTypes, Component, PureComponent } from 'react'
+import React, { Component, PureComponent } from 'react'
+import PropTypes from 'prop-types'
 import { Route, Switch } from 'react-router-dom'
 import Header from './header.jsx'
 import Home from './home.jsx'

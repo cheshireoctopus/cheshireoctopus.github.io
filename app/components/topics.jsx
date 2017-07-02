@@ -1,5 +1,6 @@
 import './scss/topics.scss'
-import { default as React, PropTypes, PureComponent } from 'react'
+import { default as React, PureComponent } from 'react'
+import PropTypes from 'prop-types'
 
 export default class Topics extends PureComponent {
 	static propTypes = {

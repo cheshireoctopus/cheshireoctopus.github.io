@@ -4,6 +4,7 @@
   "description": "A stupid simple static site generator",
   "main": "app/index.js",
   "dependencies": {
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router": "^4.1.1",
