@@ -1,17 +1,15 @@
 import './scss/topics.scss'
-import { default as React, PureComponent } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
-export default class Topics extends PureComponent {
-	static propTypes = {
-		topics: PropTypes.array.isRequired,
-	}
+const Topics = props => (
+	<div>
+		{props.topics.map((topic, idx) => <span key={idx} className="topic">{topic}</span>)}
+	</div>
+)
 
-	render() {
-		return (
-			<div>
-				{this.props.topics.map((topic, idx) => <span key={idx} className="topic">{topic}</span>)}
-			</div>
-		)
-	}
+Topics.propTypes = {
+	topics: PropTypes.array.isRequired,
 }
+
+export default Topics

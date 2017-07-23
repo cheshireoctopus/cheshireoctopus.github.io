@@ -1,5 +1,5 @@
 import './scss/archive.scss'
-import { default as React, PureComponent } from 'react'
+import React, {PureComponent } from 'react'
 import { Link } from 'react-router-dom'
 import { formatDate } from './../utils.js'
 import Topics from './topics.jsx'

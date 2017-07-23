@@ -1,5 +1,5 @@
 import './scss/post_preview.scss'
-import { default as React, PureComponent } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { formatDate } from './../utils.js'
