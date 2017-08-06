@@ -12,9 +12,6 @@ const Header = () => (
 			<NavLink className="header-nav-link" exact activeClassName="active" to="/archive">
 				<span className="icon ion-folder"></span> Archive
 			</NavLink>
-			<NavLink className="header-nav-link" exact activeClassName="active" to="/projects">
-				<span className="icon ion-code"></span> Projects
-			</NavLink>
 			<a href="public/resume.pdf" className="header-nav-link">
 				<span className="icon ion-document-text"></span> CV
 			</a>
