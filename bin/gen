@@ -1,0 +1,58 @@
+#!/usr/bin/env node
+
+const Promise = require('bluebird')
+const fs = Promise.promisifyAll(require('fs'))
+const path = require('path')
+const marked = require('marked')
+const highlightjs = require('highlight.js')
+
+const PATH_TO_ROOT = path.join(__dirname, '..')
+const PATH_TO_APP = path.join(PATH_TO_ROOT, 'app')
+const PATH_TO_SRC = path.join(PATH_TO_ROOT, 'public', 'blog')
+
+const renderer = new marked.Renderer()
+renderer.code = (code, language) => {
+	const validLang = !!(language && highlightjs.getLanguage(language))
+	const highlighted = validLang ? highlightjs.highlight(language, code).value : code
+	return `<pre><code class="hljs ${language}">${highlighted}</code></pre>`
+}
+renderer.image = (src, title, alt) => {
+	return `<div class="post-image-container"><img src="${src}" alt="${alt}"/></div>`
+}
+
+marked.setOptions({
+	renderer,
+})
+
+fs.readdirAsync(PATH_TO_SRC)
+	.then(posts => {
+		return Promise.map(posts, postDir => {
+			const srcPostDir = `${PATH_TO_SRC}/${postDir}`
+
+			return fs.readdirAsync(srcPostDir)
+				.then(files => {
+					const readJSON = fs.readFileAsync(`${srcPostDir}/data.json`, 'utf8')
+					const readMD = fs.readFileAsync(`${srcPostDir}/post.md`, 'utf8')
+
+					return Promise.join(readJSON, readMD, (json, md, imgs) => {
+						const data = JSON.parse(json)
+
+						return {
+							date: data.date,
+							topics: data.topics,
+							title: data.title,
+							urlTitle: postDir,
+							html: marked(md),
+						}
+					})
+				})
+		})
+	})
+	.then((postCollection) => {
+		postCollection = postCollection.sort((a, b) => {
+			return new Date(b.date) - new Date(a.date)
+		})
+
+		fs.writeFileAsync(`${PATH_TO_APP}/posts.json`, JSON.stringify(postCollection))
+			.then(() => console.log(`Congratulations - generated ${postCollection.length} posts.`))
+	})

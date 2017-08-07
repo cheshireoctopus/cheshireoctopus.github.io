@@ -1,57 +1,42 @@
 {
-  "name": "gatsby-starter-blog",
-  "description": "Starter Gatsby Blog",
+  "name": "cheshireoctopus.github.io",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
-  },
+  "description": "A stupid simple static site generator",
+  "main": "app/index.js",
   "dependencies": {
-    "gatsby": "^1.6.5",
-    "gatsby-link": "^1.6.5",
-    "gatsby-plugin-google-analytics": "^1.0.0",
-    "gatsby-plugin-manifest": "^1.0.0",
-    "gatsby-plugin-offline": "^1.0.0",
-    "gatsby-plugin-preact": "^1.0.0",
-    "gatsby-plugin-react-helmet": "^1.0.0",
-    "gatsby-plugin-sharp": "^1.6.0",
-    "gatsby-plugin-typography": "^1.7.2",
-    "gatsby-remark-copy-linked-files": "^1.5.0",
-    "gatsby-remark-images": "^1.5.0",
-    "gatsby-remark-prismjs": "^1.2.0",
-    "gatsby-remark-responsive-iframe": "^1.4.1",
-    "gatsby-remark-smartypants": "^1.4.1",
-    "gatsby-source-filesystem": "^1.4.1",
-    "gatsby-transformer-remark": "^1.6.3",
-    "gatsby-transformer-sharp": "^1.6.0",
-    "lodash": "^4.15.0",
-    "react-responsive-grid": "^0.3.3",
-    "typeface-merriweather": "0.0.25",
-    "typeface-montserrat": "0.0.24",
-    "typography-theme-wordpress-2016": "^0.15.1"
+    "prop-types": "^15.5.10",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1"
   },
   "devDependencies": {
-    "gh-pages": "^0.12.0",
-    "prettier": "^1.5.3"
-  },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "main": "n/a",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "bluebird": "^3.5.0",
+    "css-loader": "^0.28.3",
+    "highlight.js": "^9.12.0",
+    "marked": "^0.3.6",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.18.1",
+    "webpack": "^2.6.1"
   },
   "scripts": {
-    "dev": "gatsby develop",
-    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
-    "develop": "gatsby develop",
-    "build": "gatsby build",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
-  }
+    "dev": "webpack --config webpack.config.js --colors --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheshireoctopus/cheshireoctopus.github.io.git"
+  },
+  "author": "Chandler Moisen <chandlermoisen@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cheshireoctopus/cheshireoctopus.github.io/issues"
+  },
+  "homepage": "https://github.com/cheshireoctopus/cheshireoctopus.github.io#readme"
 }

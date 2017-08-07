@@ -1,0 +1,12 @@
+@import './variables.scss';
+
+.topic {
+	display: inline-block;
+	margin: 5px;
+	margin-left: 0;
+	color: $turquoise;
+	padding: 2px 5px;
+	border-radius: 2px;
+	background: #e5fffe;
+	font-size: 14px;
+}

@@ -1,0 +1,17 @@
+@import './variables.scss';
+
+.home-about-me {
+	font-size: 25px;
+	margin-bottom: 30px;
+	border-bottom: 20px solid $black;
+
+	p:first-of-type {
+		margin-top: 0;
+	}
+}
+
+@media (max-width: 1080px) {
+	.home-about-me {
+		font-size: 20px;
+	}
+}
