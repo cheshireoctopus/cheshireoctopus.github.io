@@ -1,11 +1,8 @@
 {
-  "name": "gatsby-starter-blog",
-  "description": "Starter Gatsby Blog",
+  "name": "blog",
+  "description": "Chandler Moisen's Personal Blog",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
-  },
+  "author": "Chandler Moisen",
   "dependencies": {
     "gatsby": "^1.8.12",
     "gatsby-link": "^1.6.8",
@@ -34,15 +31,10 @@
     "gh-pages": "^0.12.0",
     "prettier": "^1.5.3"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "main": "n/a",
+  "homepage": "https://cheshireoctopus.github.io",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/cheshireoctopus/cheshireoctopus.github.io"
   },
   "scripts": {
     "dev": "gatsby develop",

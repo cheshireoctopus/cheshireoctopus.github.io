@@ -4,7 +4,8 @@ date: "2017-06-12T22:12:03.284Z"
 path: "/roll-your-own-static-site/"
 ---
 
-![snoop dogg rolling](./snoop.png)
+![rolling on friday](./rolling.gif)
+
 
 Recently I decided to rebuild my long neglected and dilapidated blog - previously powered by [Octopress](http://octopress.org/) - using JavaScript.
 
