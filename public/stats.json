@@ -1,0 +1,54 @@
+{
+  "assetsByChunkName": {
+    "path---twilio-on-rails-sms-basics": [
+      "path---twilio-on-rails-sms-basics-b6f79f3b633d8dcfb1d6.js",
+      "path---twilio-on-rails-sms-basics-b6f79f3b633d8dcfb1d6.js.map"
+    ],
+    "component---src-pages-index-js": [
+      "component---src-pages-index-js-868be328f94ac3a5a63b.js",
+      "component---src-pages-index-js-868be328f94ac3a5a63b.js.map"
+    ],
+    "path---": [
+      "path----557518bd178906f8d58a.js",
+      "path----557518bd178906f8d58a.js.map"
+    ],
+    "path---mailchimp-gibbon-rails": [
+      "path---mailchimp-gibbon-rails-d00339ad5b8e2ff470d3.js",
+      "path---mailchimp-gibbon-rails-d00339ad5b8e2ff470d3.js.map"
+    ],
+    "component---node-modules-gatsby-plugin-offline-app-shell-js": [
+      "component---node-modules-gatsby-plugin-offline-app-shell-js-5c4c5a0f7af9dc69d6d7.js",
+      "component---node-modules-gatsby-plugin-offline-app-shell-js-5c4c5a0f7af9dc69d6d7.js.map"
+    ],
+    "component---src-templates-blog-post-js": [
+      "component---src-templates-blog-post-js-d7e1e4ad7664073da55c.js",
+      "component---src-templates-blog-post-js-d7e1e4ad7664073da55c.js.map"
+    ],
+    "component---src-layouts-index-js": [
+      "component---src-layouts-index-js-ee67237fcd773d712c74.js",
+      "component---src-layouts-index-js-ee67237fcd773d712c74.js.map"
+    ],
+    "path---index": [
+      "path---index-c1c81748a25e7c31e757.js",
+      "path---index-c1c81748a25e7c31e757.js.map"
+    ],
+    "path---roll-your-own-static-site": [
+      "path---roll-your-own-static-site-0f914bb861da0c91cb21.js",
+      "path---roll-your-own-static-site-0f914bb861da0c91cb21.js.map"
+    ],
+    "commons": [
+      "commons-4deee803be7b7a7b08db.js",
+      "commons-4deee803be7b7a7b08db.js.map"
+    ],
+    "path---offline-plugin-app-shell-fallback": [
+      "path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js",
+      "path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "app": [
+      "app-5838a1c42218da44cd95.js",
+      "build-js-styles.css",
+      "app-5838a1c42218da44cd95.js.map",
+      "build-js-styles.css.map"
+    ]
+  }
+}
