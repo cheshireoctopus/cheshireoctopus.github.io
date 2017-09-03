@@ -1,8 +1,7 @@
-# gatsby-starter-blog
-Gatsby starter for creating a blog
+# Personal Blog
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-`gatsby new gatsby-blog https://github.com/gatsbyjs/gatsby-starter-blog`
+Served at [http://chandlermoisen.com](http://chandlermoisen.com) by [surge](http://surge.sh).
 
-## Running in development
-`gatsby develop`
+Built using [Gatsby](https://www.gatsbyjs.org/) and the [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog).
+
+Long live React-powered static websites!
