@@ -2,14 +2,14 @@
 title: Roll Your Own Static Site
 date: "2017-06-12T22:12:03.284Z"
 path: "/roll-your-own-static-site/"
+description: "Recently I decided to rebuild my long neglected and dilapidated blog - previously powered by Octopress - using JavaScript."
 ---
 
 ![rolling on friday](./rolling.gif)
 
-
 Recently I decided to rebuild my long neglected and dilapidated blog - previously powered by [Octopress](http://octopress.org/) - using JavaScript.
 
-As a blog is a perfect use case for a static site generator, I first investigated exisiting solutions, and found, as expected, there are already quite a few available:
+As a blog is a perfect use case for a static site generator, I first investigated existing solutions, and found, as expected, there are already quite a few available:
 
 - [Metalsmith](http://www.metalsmith.io/)
 - [Hexo](https://hexo.io/)

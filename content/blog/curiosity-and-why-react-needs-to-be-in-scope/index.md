@@ -2,6 +2,7 @@
 title: Curiosity and Why JSX Requires React in Scope
 date: "2017-09-09"
 path: "/curiosity-and-why-jsx-requires-react-in-scope/"
+description: "This week I listened to Tyler McGinnis's podcast interview with Dan Abramov - creator of Redux, educator, and professional open-sourcer at Facebook."
 ---
 
 ![curious cat](./curious.jpg)
@@ -47,7 +48,7 @@ But why import React at all? It's not like we are actually referring to React an
 
 Right...?
 
-In fact, we are; running the above compent through [Babel's REPL](https://babeljs.io/repl/) returns:
+In fact, we are; running the above component through [Babel's REPL](https://babeljs.io/repl/) returns:
 
 ```javascript
 React.createElement(
