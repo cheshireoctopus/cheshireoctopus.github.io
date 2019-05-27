@@ -2,6 +2,7 @@
 title: JS Class Fields Proposal Stage 3 Update, BabelJS, and Airbnb's JS Style Guide
 date: "2017-09-02"
 path: "/js-class-fields-proposal/"
+description: "In case you haven't heard the news, Daniel Ehrenberg and Jeff Morrison's <a href='https://github.com/tc39/proposal-class-fields'>ESnext class features for JavaScript</a> proposal was moved from <a href='https://github.com/tc39/proposal-class-fields/commit/5a4ff5fa4bf30885188279f6fb8070f2e1903c32'>stage-2 to stage-3</a>."
 ---
 
 ![tc39 process](./tc39_process.jpg)
