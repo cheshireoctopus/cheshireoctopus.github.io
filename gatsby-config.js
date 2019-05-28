@@ -3,6 +3,7 @@ module.exports = {
     title: `Chandler Moisen`,
     author: `Chandler Moisen`,
     description: `Chandler Moisen's Personal Blog`,
+    siteUrl: 'http://chandlermoisen.com',
   },
   plugins: [
     {
@@ -53,13 +54,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Chandler Moisen's Personal Blog`,
+        short_name: `Chandler Moisen`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#000000`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/octopus-icon.png`,
       },
     },
     `gatsby-plugin-offline`,
