@@ -1,6 +1,6 @@
 # Personal Blog
 
-Served at [http://chandlermoisen.com](http://chandlermoisen.com) by [surge](http://surge.sh).
+Served at [https://chandlermoisen.com](https://chandlermoisen.com).
 
 Built using [Gatsby](https://www.gatsbyjs.org/) and the [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog).
 
