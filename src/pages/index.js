@@ -3,29 +3,41 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+
 import { rhythm } from '../utils/typography'
 
 class BlogIndex extends React.Component {
   renderPosts() {
     const { data } = this.props
-    const { posts } = data.allMarkdownRemark.edges
+    const posts = data.allMarkdownRemark.edges
 
     return posts.map(({ node }) => {
-      const title = node.frontmatter.title || node.fields.slug
+      const { slug } = node.fields
+      const { title, date, description, tags } = node.frontmatter
 
       return (
-        <div key={node.fields.slug}>
+        <div key={slug}>
           <h3 style={{ marginBottom: rhythm(1 / 4) }}>
-            <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-              {title}
+            <Link style={{ boxShadow: 'none' }} to={slug}>
+              {title || slug}
             </Link>
           </h3>
-          <small>{node.frontmatter.date}</small>
+          <small>{date}</small>
           <p
             dangerouslySetInnerHTML={{
-              __html: node.frontmatter.description || node.excerpt,
+              __html: description || node.excerpt,
             }}
           />
+          <div>
+            {tags.map(tag => (
+              <span
+                key={tag}
+                className="tag"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
       )
     })
@@ -33,7 +45,7 @@ class BlogIndex extends React.Component {
 
   render() {
     const { data, location } = this.props
-    const siteTitle = data.site.siteMetadata.title
+    const { title: siteTitle } = data.site.siteMetadata
 
     return (
       <Layout location={location} title={siteTitle}>
@@ -64,6 +76,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            tags
           }
         }
       }

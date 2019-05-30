@@ -20,11 +20,12 @@ class Layout extends React.Component {
         >
           <Link
             style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
+              boxShadow: 'none',
+              textDecoration: 'none',
+              color: 'inherit',
+              backgroundImage: 'none',
             }}
-            to={`/`}
+            to={'/'}
           >
             {title}
           </Link>
@@ -34,17 +35,18 @@ class Layout extends React.Component {
       header = (
         <h3
           style={{
-            fontFamily: `Montserrat, sans-serif`,
+            fontFamily: 'Montserrat, sans-serif',
             marginTop: 0,
           }}
         >
           <Link
             style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
+              boxShadow: 'none',
+              textDecoration: 'none',
+              color: 'inherit',
+              backgroundImage: 'none',
             }}
-            to={`/`}
+            to={'/'}
           >
             {title}
           </Link>
@@ -54,9 +56,9 @@ class Layout extends React.Component {
     return (
       <div
         style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: rhythm(24),
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          maxWidth: rhythm(26),
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
@@ -64,7 +66,7 @@ class Layout extends React.Component {
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
-          {` `}
+          {' '}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>

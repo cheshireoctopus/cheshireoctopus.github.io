@@ -3,6 +3,7 @@ title: Twilio on Rails - SMS Basics
 date: "2014-10-22T22:12:03.284Z"
 path: "/twilio-on-rails-sms-basics/"
 description: "This tutorial will show you how to set up an extremely simple Ruby on Rails application that uses Twilio to send SMS messages from your browser. It’s probably best that you have a basic understanding of RoR."
+tags: ["Ruby on Rails"]
 ---
 
 ![twilio logo](./logo.png)

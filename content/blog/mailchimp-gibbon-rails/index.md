@@ -3,6 +3,7 @@ title: MailChimp, Gibbon, and Rails - Basic Mailing List Setup
 date: "2014-01-23T22:12:03.284Z"
 path: "/mailchimp-gibbon-rails/"
 description: "You’ve made it to the big time when you want to start a mailing list. There are many ESP’s (email service providers) out there, each with respective strengths and weaknesses."
+tags: ["Ruby on Rails"]
 ---
 
 ![mailchip logo](./logo.png)
