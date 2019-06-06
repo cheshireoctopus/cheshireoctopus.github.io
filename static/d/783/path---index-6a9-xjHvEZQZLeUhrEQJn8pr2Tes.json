@@ -1,0 +1,1 @@
+{"errors":[{"message":"Unknown argument \"formatString\" on field \"date\" of type \"MarkdownRemarkFrontmatter\".","locations":[{"line":15,"column":16}]}],"pageContext":{"isCreatedByStatefulCreatePages":true}}

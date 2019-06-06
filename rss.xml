@@ -1,4 +1,172 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chandler Moisen]]></title><description><![CDATA[Chandler Moisen's Personal Blog]]></description><link>http://chandlermoisen.com</link><generator>RSS for Node</generator><lastBuildDate>Sun, 02 Jun 2019 16:05:26 GMT</lastBuildDate><item><title><![CDATA[20 Years of Product Management in 25 Minutes]]></title><description><![CDATA[If you have 25 minutes to spare, I highly recommend watching Dave Wascha’s 20 Years of Product Management in 25 Minutes.Wascha is the…]]></description><link>http://chandlermoisen.com/20-years-of-product-management-in-25-minutes/</link><guid isPermaLink="false">http://chandlermoisen.com/20-years-of-product-management-in-25-minutes/</guid><pubDate>Sun, 02 Jun 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;If you have 25 minutes to spare, I highly recommend watching Dave Wascha’s &lt;a href=&quot;https://www.youtube.com/watch?v=i69U0lvi89c&amp;#x26;feature=share&quot;&gt;20 Years of Product Management in 25 Minutes&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chandler Moisen]]></title><description><![CDATA[Chandler Moisen's Personal Blog]]></description><link>http://chandlermoisen.com</link><generator>RSS for Node</generator><lastBuildDate>Thu, 06 Jun 2019 01:12:04 GMT</lastBuildDate><item><title><![CDATA[OMNY Release, Risks, and UX Considerations]]></title><description><![CDATA[For those of us in the center of the universe, the New York City MTA has finally unveiled support for contactless payments.Long awaited…]]></description><link>http://chandlermoisen.com/omny-release-and-risks/</link><guid isPermaLink="false">http://chandlermoisen.com/omny-release-and-risks/</guid><pubDate>Wed, 05 Jun 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;For those of us in the center of the universe, the New York City MTA has finally unveiled &lt;a href=&quot;https://techcrunch.com/2019/05/31/nycs-contactless-subway-turnstiles-open-today-with-apple-google-samsung-and-fitbit-pay-support/&quot;&gt;support for contactless payments&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/caa14994a3baecadded8e32d2cd4aa6d/eb59e/contactless-payment.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 66.48936170212765%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAQCAwX/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQP/2gAMAwEAAhADEAAAAcV1ZskWE0//xAAaEAEBAAIDAAAAAAAAAAAAAAACAQADITEy/9oACAEBAAEFAus1CIv0rj2VM3j/xAAWEQEBAQAAAAAAAAAAAAAAAAARECL/2gAIAQMBAT8BdE//xAAVEQEBAAAAAAAAAAAAAAAAAAAQQf/aAAgBAgEBPwGH/8QAGhAAAwADAQAAAAAAAAAAAAAAAAERAhIhUf/aAAgBAQAGPwKM1syOiyaL4dP/xAAbEAEAAwADAQAAAAAAAAAAAAABABEhMUFRYf/aAAgBAQABPyFLobFeI6Pc5L0+HUC7CufswejAREuln//aAAwDAQACAAMAAAAQBw//xAAXEQEAAwAAAAAAAAAAAAAAAAABEBEh/9oACAEDAQE/EBApkf/EABcRAAMBAAAAAAAAAAAAAAAAAAEQESH/2gAIAQIBAT8Qg0v/xAAcEAEAAgIDAQAAAAAAAAAAAAABABExQSFhgeH/2gAIAQEAAT8Qa/e2oIhZabqFusjBYNEYYYAXRVM+RShQG44+s4Epas//2Q==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;contactless payment&quot;
+        title=&quot;&quot;
+        src=&quot;/static/caa14994a3baecadded8e32d2cd4aa6d/c739e/contactless-payment.jpg&quot;
+        srcset=&quot;/static/caa14994a3baecadded8e32d2cd4aa6d/8ee9c/contactless-payment.jpg 148w,
+/static/caa14994a3baecadded8e32d2cd4aa6d/ebbe7/contactless-payment.jpg 295w,
+/static/caa14994a3baecadded8e32d2cd4aa6d/c739e/contactless-payment.jpg 590w,
+/static/caa14994a3baecadded8e32d2cd4aa6d/5413e/contactless-payment.jpg 885w,
+/static/caa14994a3baecadded8e32d2cd4aa6d/4efde/contactless-payment.jpg 1180w,
+/static/caa14994a3baecadded8e32d2cd4aa6d/eb59e/contactless-payment.jpg 3008w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Long awaited - Chicago has had &lt;a href=&quot;https://www.ventrachicago.com/&quot;&gt;contactless payment since 2013&lt;/a&gt; - the new &lt;a href=&quot;https://new.mta.info/system_modernization/omny&quot;&gt;OMNY&lt;/a&gt; (One Metro New York) payment system went live last Friday across select transit lines.&lt;/p&gt;
+&lt;p&gt;Given the sheer scale of the MTA’s infrastructure and the number of customers it serves, there are a number of learnings to be had from how the MTA is releasing OMNY to the general public.&lt;/p&gt;
+&lt;h2&gt;Phased Approach&lt;/h2&gt;
+&lt;p&gt;Similar to how the MTA overhauled its payment system from 1992 to 2003 as it migrated from tokens to magnetic stripe cards, OMNY is expected to be implemented in phases and not complete until 2023.&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4718544a62ec9905c7856e494cce2f4e/06244/omny-phases.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 77.34597156398104%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAABYlAAAWJQFJUiTwAAADqklEQVQ4y3WU7U8cVRTG959QE2PSpk00UFITYvRLjTHEJjUlmkihxCpIS2klLS1NSqtA6rsYE19ALDQ2YtQq6UKFNhTCwra0sFBQLLFBVl5d2O0yMzuzO7Mzs28/787GfjDxJE/OvTP3Pveec557XIlkgkwmQzqdwrJM4qaBacYfwLJyPh43sGwTO2Fh2/+FSVLwZM2VSqVoaWmhpOQVKipfp7b2KIdrqqk+fMhBVVUlNUeqne8HXnuV0rISyvaX5lC2j/3lZbz0cjFn3zqTIzQMg8rKN9iyZSu7dj3L3r3FFBUVsWfPi8549wu7nXlhYSEFBQXk5eWRn5cvfD47dhSwc+eTbNu2ndJ9pTnCzbDE7F0f7mutXO7/gr7BDkZudXNloI3ega/4ZbCV25NDTEz4mPDdxjc5js+XHXu5NtzprHFfbWN0/AfSGQtXRNFIoxBLzhM117DT97FZRDP96HZAYJn/s+yesHqXoOrDSPnJkMAV1UwWVkfo9hzi6q0G+sdO0zN6jF7vCeHrhK+nd7SenpGTDtwjdbg9xx3/01ANs/5u3DcqGJxsJJEwccmyyt+hWUan2hibuYB3up0vf36ODy4+wUff5vPeN9tpPP8QTR2POHjnwlaaOx6l8euHef/i47i9b/LJpcdovVyIYUZwSZKEbqgoko6qJNBjNqHwMkvLCyiKzF+BG1wf/xDP1OcM+T6m3f08n116SuBp57ArN+s43/cMXQPF/xLKyJEgq2uLLC8tEtUkBj0DTE3NOHmKxmSkTQ0rnhFajDO34OGe3+tENTLdwvT8d/TcPMiAr0HoNCaqvClhWiqGWNzSdJZPm09xvL6Wvr5+spLSYiHuh4OCOEYsrhIIrDkHaKou9kSdRyHLETHXSKasnGz0uMzK+gpnTh2j6mA54fAa4+M+zp17l5nZCeemXd//SHdXpxgl2JQUTp5o4N7870IqNsFQQHwL5QjDImRb2iDl/xXjz9/QVuZE+S2Ghwfp6Gznj/k74rklaG56m6NHakQlDaHBacoPVKBEQqTStvAymhbJEUqyRCadRhyFYHJsLSDyubIgFltE9RAb4VXuzIwJgXsJirHHc52GhlqihuyQqNFNYroi3rOQTZZgbm6OxaUlhyyZSoq8CH5xQNbruiFSIMRu285/SQ4iK9nwTHGHpCCxCawvs76xSvZGTnMIhUIisZKoUlwkOuYgLqDrGtFoRBQn5oSkqsqDDpPtPkZcF91JFMfQnU6VtX8A9avcDmtBir0AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;omny phases&quot;
+        title=&quot;&quot;
+        src=&quot;/static/4718544a62ec9905c7856e494cce2f4e/b9e4f/omny-phases.png&quot;
+        srcset=&quot;/static/4718544a62ec9905c7856e494cce2f4e/cf440/omny-phases.png 148w,
+/static/4718544a62ec9905c7856e494cce2f4e/d2d38/omny-phases.png 295w,
+/static/4718544a62ec9905c7856e494cce2f4e/b9e4f/omny-phases.png 590w,
+/static/4718544a62ec9905c7856e494cce2f4e/f9b6a/omny-phases.png 885w,
+/static/4718544a62ec9905c7856e494cce2f4e/2d849/omny-phases.png 1180w,
+/static/4718544a62ec9905c7856e494cce2f4e/06244/omny-phases.png 2110w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This makes sense as retooling the entire system and enabling it all at once would be prime for disaster.&lt;/p&gt;
+&lt;p&gt;Witness the embarrassment Chicago suffered when it took this very approach with the &lt;a href=&quot;https://www.chicagotribune.com/news/ct-xpm-2013-12-30-chi-ventra-failures-cost-cta-12-million-in-free-rides-20131230-story.html&quot;&gt;launch of its contactless payment system, Ventra&lt;/a&gt;. A computer issue knocked a considerable number of card readers offline and roughly &lt;strong&gt;one million&lt;/strong&gt; rides were given away during the first weeks after launch.&lt;/p&gt;
+&lt;p&gt;Furthermore, Chicago failed to adequately prepare its citizens for the update:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Thousands of Chicago Card customers did not receive Ventra cards in the mail, and many of those who did either didn’t receive activation instructions via email or they misplaced the emails in the long span between receiving the emails and their Ventra cards.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Even worse:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Myriad other problems followed, including customers being double-charged for rides using Ventra cards; deposits to Ventra accounts failing to be properly credited; and Ventra card readers deducting fares from other contactless cards in riders’ wallets or purses.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Thankfully, the MTA has been able to learn from Chicago’s mistakes and is rolling OMNY out much like you’d expect enterprise software to be released:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Small, internal test with a few dozen workers&lt;/li&gt;
+&lt;li&gt;Slightly larger, still internal test with 1,500 workers&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.amny.com/transit/metrocard-replacement-omny-1.29297988&quot;&gt;“Deliberatley small”&lt;/a&gt; public pilot at just a few stations&lt;/li&gt;
+&lt;li&gt;A customer support team has been set up at 511 to handle OMNY-related questions&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;OMNY Risks&lt;/h2&gt;
+&lt;p&gt;It is also interesting to see what risks the MTA has called out surrounding the OMNY release:&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0fba1b53dee98eed4374086111ed1ef4/03686/omny-risks.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 77.19962157048249%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAABYlAAAWJQFJUiTwAAACWElEQVQ4y61TS04bQRCdA5ADEIKzJUKQFdlY8n04ASdA8op9JAcFjC08NrGdOxDJYuMNrGLFSDDfnq/n5/Hnpar9iZIAiygtPU1Pd9WbV69qlPl8jv+1NE2HEgQB2u02VLWBy0YNX9ottK5UqM1LNNQ6qhdnOK9+RvUZXNTOUPn0ETc3PQjHgXJ7e4tCoYDNzdc4OPiAYrGInZ132N9/j93dXWxvF7C1tUV48yQKhbfY2HiFo6MjxHECZTj8gVbritRV0f3aQafTQaPRWKPZbNI9o/UbVFVd39dqNfT7fQhBCv3AXzowQT4ZYT6f/bOHj5oGxXVdjMc58jzHoz6AbZuwbAOWtYBharCFBdcVdG7C8zh+jIeHB/R6Pdzd3aHb7eL+/p5yBRTbtjGbzQkzmPYQnu9iNAoQhr58RvGICDLwNHDMZDKRasrlsvT++PgYh4eH+HZ9Tbk+FCGEJMynESUzSShJmCxOIvw5VkzKq1KpoFQqoV6vI4oi+ESm6/pCIduW5g4cT4PrOVKd5ztSLZNmpDBNE6k0SWJJeHJygr29PZyensI0TTiOgGGYvxTylx+N7zRLFnlGAa69Br8LBt0FgYckjaWPWZbJZxiG8iO6YZBCYUsy7m6cBDJogRRptlDF76yQz3g993dpq5JXvgjqpmlpUgWXHRBWFnCpXL5Pd1FEHkehBMfwhKwJPc/DdEnISQxuCiuK40gmpKSMVb2ENSFveMoHg8Gyi9O/gmdkB59zJU9hOl2MkuwyH1iWJQc2I8/iZEQqIwnex8v9S4jiUPZA1w38BF3eLX88E9PzAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;omny risks&quot;
+        title=&quot;&quot;
+        src=&quot;/static/0fba1b53dee98eed4374086111ed1ef4/b9e4f/omny-risks.png&quot;
+        srcset=&quot;/static/0fba1b53dee98eed4374086111ed1ef4/cf440/omny-risks.png 148w,
+/static/0fba1b53dee98eed4374086111ed1ef4/d2d38/omny-risks.png 295w,
+/static/0fba1b53dee98eed4374086111ed1ef4/b9e4f/omny-risks.png 590w,
+/static/0fba1b53dee98eed4374086111ed1ef4/f9b6a/omny-risks.png 885w,
+/static/0fba1b53dee98eed4374086111ed1ef4/2d849/omny-risks.png 1180w,
+/static/0fba1b53dee98eed4374086111ed1ef4/03686/omny-risks.png 2114w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Beyond addressing out salient technical issues, many kudos to the MTA for having a bullet point dedicated to “Customer experience” and that they are actively working to address something as difficult as “Changing customer habits and expectations”.&lt;/p&gt;
+&lt;h2&gt;Other UX Considerations&lt;/h2&gt;
+&lt;p&gt;Here are a few other UX considerations the MTA should consider while it continues to release OMNY:&lt;/p&gt;
+&lt;h3&gt;Fare Evasion&lt;/h3&gt;
+&lt;p&gt;Just as the magnetic stripe cards put an end to &lt;a href=&quot;https://www.nytimes.com/1983/02/07/nyregion/youths-stealing-subway-tokens-by-sucking-on-turnstile-slots.html&quot;&gt;token sucking&lt;/a&gt;, how will contactless payments impact fare evasion?&lt;/p&gt;
+&lt;!-- &gt; Cubic’s contactless reader can decide whether to let a rider through in 500 milliseconds, according to Brunner. That’s nearly as fast as the blink of an eye, or a heartbeat. The seamlessness of contactless pay will hopefully reduce fare evasion, as well. “People say they jump the turnstile because they swipe the card, realize they don’t have enough fare, and the train’s coming,” said Brunner. “Now that you can pay with your credit card, there’s no problem of ‘Oh, I don’t have any fare, I need to go back to the booth.’” --&gt;
+&lt;h3&gt;“Swipe it forward”&lt;/h3&gt;
+&lt;p&gt;Riders with unlimited weekly/monthly passes have been encouraged to “swipe it forward” for low-income residents when exiting the station - will this practice continue?&lt;/p&gt;
+&lt;h3&gt;Vanity Cards&lt;/h3&gt;
+&lt;p&gt;Lastly: as the magnetic stripe cards are phased out, we will also loose out on hustling for vanity cards:&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/13a48ee6683f103ec1e20d88073081f8/c35de/supreme-metro-card.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAEEAv/EABUBAQEAAAAAAAAAAAAAAAAAAAIE/9oADAMBAAIQAxAAAAGweRXUMU//xAAcEAACAgIDAAAAAAAAAAAAAAABAgADERMEEhT/2gAIAQEAAQUCPIOfQZS/ZNLZ0tKkIX//xAAaEQACAgMAAAAAAAAAAAAAAAAAEQIDEiHw/9oACAEDAQE/AVVzJYvR/8QAFREBAQAAAAAAAAAAAAAAAAAAECH/2gAIAQIBAT8Bp//EAB4QAAIBAwUAAAAAAAAAAAAAAAABAhEhMyMygZGh/9oACAEBAAY/AtjMci6fI9TwyvovKp//xAAaEAEBAQEAAwAAAAAAAAAAAAABEQAhEDFB/9oACAEBAAE/IftA+o4PS0AjiEOO88MKrNbZv//aAAwDAQACAAMAAAAQz9//xAAZEQEAAgMAAAAAAAAAAAAAAAABAEFRYfD/2gAIAQMBAT8QNcEOnZn/xAAXEQEBAQEAAAAAAAAAAAAAAAARAAHw/9oACAECAQE/EHpYl//EAB8QAQEAAgIBBQAAAAAAAAAAAAERACExYUFxkaHB0f/aAAgBAQABPxAjihNnhl46ww2d1/MdqybbTm/ODjjYjC3vFxrVvq98JVbWPAfWf//Z&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;supreme metro card&quot;
+        title=&quot;&quot;
+        src=&quot;/static/13a48ee6683f103ec1e20d88073081f8/c739e/supreme-metro-card.jpg&quot;
+        srcset=&quot;/static/13a48ee6683f103ec1e20d88073081f8/8ee9c/supreme-metro-card.jpg 148w,
+/static/13a48ee6683f103ec1e20d88073081f8/ebbe7/supreme-metro-card.jpg 295w,
+/static/13a48ee6683f103ec1e20d88073081f8/c739e/supreme-metro-card.jpg 590w,
+/static/13a48ee6683f103ec1e20d88073081f8/5413e/supreme-metro-card.jpg 885w,
+/static/13a48ee6683f103ec1e20d88073081f8/4efde/supreme-metro-card.jpg 1180w,
+/static/13a48ee6683f103ec1e20d88073081f8/c35de/supreme-metro-card.jpg 1200w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;There is no way to flex with contactless payments…&lt;/p&gt;
+&lt;!-- ## Initial Response --&gt;
+&lt;!-- * https://www.nydailynews.com/new-york/ny-omny-data-first-weekend-20190603-75yetlc5dbevlhhri4c3ypr2wy-story.html
+* The average time for a tap to register at a turnstile was a half-second
+* Fewer than 5% of riders had to tap twice to get through. As riders get used to tapping instead of swiping MetroCards, the number of double taps will fall, the MTA expects.
+* Unexpected source of data: &quot;It appears to be popular with tourists — an MTA spokesman said the agency tracked taps by riders from Europe, South America, the Middle East and Asia.&quot;
+* Follow up to data: https://www.nytimes.com/1997/08/11/nyregion/what-galls-a-hacker-most-the-metrocard.html?mtrref=undefined --&gt;
+&lt;!-- * Pretax transit benefits?
+&gt; Meanwhile, commuters who sign up for pretax transit benefit programs through their employers learned that the information provided to Ventra isn&apos;t secure. Human resources administrators who tried to log in to their company&apos;s account kept getting other companies&apos; pages.
+* Allow users to use the same payment method across all transit options - subway, rail, or bus
+* Fare-capping policies? Impact on weekly / monthly fares? Sydney&apos;s Opal card removed their weekly option, London&apos;s oyster card, too --&gt;</content:encoded></item><item><title><![CDATA[20 Years of Product Management in 25 Minutes]]></title><description><![CDATA[If you have 25 minutes to spare, I highly recommend watching Dave Wascha’s 20 Years of Product Management in 25 Minutes.Wascha is the…]]></description><link>http://chandlermoisen.com/20-years-of-product-management-in-25-minutes/</link><guid isPermaLink="false">http://chandlermoisen.com/20-years-of-product-management-in-25-minutes/</guid><pubDate>Sun, 02 Jun 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;If you have 25 minutes to spare, I highly recommend watching Dave Wascha’s &lt;a href=&quot;https://www.youtube.com/watch?v=i69U0lvi89c&amp;#x26;feature=share&quot;&gt;20 Years of Product Management in 25 Minutes&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Wascha is the current CPO at &lt;a href=&quot;https://www.photobox.co.uk/&quot;&gt;Photo Box&lt;/a&gt; and began his career as the product manager for &lt;a href=&quot;https://en.wikipedia.org/wiki/Internet_Explorer_4&quot;&gt;IE 4.0&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;His talk, geared towards product managers but applicable to all disciplines across the product organization, encapsulates his learnings from 20 years of successes and failures.&lt;/p&gt;
 &lt;p&gt;Here is a list of personal learnings from it:&lt;/p&gt;
