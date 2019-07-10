@@ -27,6 +27,7 @@ class BlogIndex extends React.Component {
             dangerouslySetInnerHTML={{
               __html: description || node.excerpt,
             }}
+            style={{ marginBottom: rhythm(0.5) }}
           />
           <div>
             {tags.map(tag => (
