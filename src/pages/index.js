@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import TagsRotator from '../components/tags-rotator'
 
 import { rhythm } from '../utils/typography'
 
@@ -46,11 +47,19 @@ class BlogIndex extends React.Component {
 
   render() {
     const { data, location } = this.props
+    const { allMarkdownRemark } = data
     const { title: siteTitle } = data.site.siteMetadata
 
     return (
       <Layout location={location} title={siteTitle}>
         <SEO title="All posts" />
+        <p>👋</p>
+        <p>
+            Hello. I am a software developer in New York City.
+            I am currently working to reduce friction in healthcare
+            delivery at <a href="https://ro.co">Ro</a>.
+          </p>
+        <p>I write about <TagsRotator allMarkdownRemark={allMarkdownRemark} />.</p>
         {this.renderPosts()}
       </Layout>
     )
@@ -67,6 +76,9 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      group(field: frontmatter___tags) {
+        tag: fieldValue
+      }
       edges {
         node {
           excerpt

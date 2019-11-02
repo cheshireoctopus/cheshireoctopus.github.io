@@ -48,7 +48,7 @@ class Layout extends React.Component {
           }}
           to={'/'}
         >
-          {title}
+          Home
         </Link>
       </h3>
     )
