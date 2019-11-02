@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import kebabCase from 'lodash/kebabCase'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -36,7 +37,7 @@ class BlogIndex extends React.Component {
                 key={tag}
                 className="tag"
               >
-                {tag}
+                <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
               </span>
             ))}
           </div>
@@ -53,12 +54,16 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={location} title={siteTitle}>
         <SEO title="All posts" />
-        <p>👋</p>
+        <p style={{ fontSize: '36px' }}>👋</p>
         <p>
-            Hello. I am a software developer in New York City.
-            I am currently working to reduce friction in healthcare
-            delivery at <a href="https://ro.co">Ro</a>.
-          </p>
+          Hello. I am a software developer in New York City working to reduce friction in healthcare
+          delivery at <a href="https://ro.co">Ro</a>.
+        </p>
+        <p>
+          I previously taught web development at <a href="https://generalassemb.ly/instructors/chandler-moisen/2729">General Assembly</a>
+          {' '}
+          and once upon a time gave tours at Harpoon Brewery, in Boston.
+        </p>
         <p>I write about <TagsRotator allMarkdownRemark={allMarkdownRemark} />.</p>
         {this.renderPosts()}
       </Layout>

@@ -1,11 +1,11 @@
-import Typography from "typography"
-import oceanBeachTheme from "typography-theme-ocean-beach"
+import Typography from 'typography'
+import oceanBeachTheme from 'typography-theme-ocean-beach'
 
 oceanBeachTheme.overrideThemeStyles = () => ({
-  "a.gatsby-resp-image-link": {
+  'a.gatsby-resp-image-link': {
     backgroundImage: 'none',
   },
-  "span.tag": {
+  'span.tag': {
     border: '1px solid #950451',
     borderRadius: '2px',
     color: '#950451',
@@ -13,6 +13,9 @@ oceanBeachTheme.overrideThemeStyles = () => ({
     letterSpacing: '0.5px',
     marginRight: '8px',
     padding: '3px 12px',
+  },
+  'span.tag a': {
+    backgroundImage: 'none',
   },
 })
 

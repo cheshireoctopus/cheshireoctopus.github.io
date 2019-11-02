@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
+import kebabCase from 'lodash/kebabCase'
 
 const getTagNames = allMarkdownRemark => {
   return allMarkdownRemark.group.map(obj => obj.tag)
@@ -31,7 +32,7 @@ const TagsRotator = ({ allMarkdownRemark }) => {
     return () => clearInterval(interval)
   })
 
-  return currentTag.tag
+  return <Link to={`/tags/${kebabCase(currentTag.tag)}/`}>{currentTag.tag}</Link>
 }
 
 export default TagsRotator
