@@ -3,7 +3,7 @@ title: Curiosity and Why JSX Requires React in Scope
 date: "2017-09-09"
 path: "/curiosity-and-why-jsx-requires-react-in-scope/"
 description: "This week I listened to Tyler McGinnis's podcast interview with Dan Abramov - creator of Redux, educator, and professional open-sourcer at Facebook."
-tags: ["JavaScript"]
+tags: ["JavaScript", "React"]
 ---
 
 ![curious cat](./curious.jpg)

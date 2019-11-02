@@ -3,7 +3,7 @@ title: Roll Your Own Static Site
 date: "2017-06-12T22:12:03.284Z"
 path: "/roll-your-own-static-site/"
 description: "Recently I decided to rebuild my long neglected and dilapidated blog - previously powered by Octopress - using JavaScript."
-tags: ["JavaScript", "Tutorial"]
+tags: ["JavaScript", "Tutorials"]
 ---
 
 ![rolling on friday](./rolling.gif)

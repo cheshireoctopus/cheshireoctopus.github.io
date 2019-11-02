@@ -42,7 +42,7 @@ to this:
 	}
 ```
 
-However, even as we all eagerly await BabelJS's maintainers to move `transform-class-properties` from the [`stage-2`](https://babeljs.io/docs/plugins/preset-stage-2/) to [`stage-3`](https://babeljs.io/docs/plugins/preset-stage-3/) preset, if you are using [Airbnb's JavaScript Style Guide](https://github.com/airbnb/javascript), you will have to wait a little longer until your linter stops yelling at you for using class properties.
+However, even as we all eagerly await BabelJS's maintainers to move `transform-class-properties` from the `stage-2` to `stage-3` preset, if you are using [Airbnb's JavaScript Style Guide](https://github.com/airbnb/javascript), you will have to wait a little longer until your linter stops yelling at you for using class properties.
 
 [Jordan Harband](https://twitter.com/ljharb), dev at Airbnb, states that we can use the new feature
 
@@ -52,7 +52,7 @@ Bummer.
 
 If, like me, you simply cannot write React components without the new JS class properties, but rely on Jordan and team rest of the team at Airbnb to keep your JS in check, have no fear - a workaround does exist.
 
-Simply add the [`babel-eslint`](https://github.com/babel/babel-eslint) parser - this allows you to use all valid Babel code, even that which might not be supported by ESLint.
+Simply add the `babel-eslint` parser - this allows you to use all valid Babel code, even that which might not be supported by ESLint.
 
 Once installed, updated your `.eslintrc` file with the new parser:
 

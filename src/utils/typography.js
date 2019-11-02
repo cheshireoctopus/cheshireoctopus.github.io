@@ -2,6 +2,9 @@ import Typography from 'typography'
 import oceanBeachTheme from 'typography-theme-ocean-beach'
 
 oceanBeachTheme.overrideThemeStyles = () => ({
+  body: {
+    fontSize: '16px',
+  },
   'a.gatsby-resp-image-link': {
     backgroundImage: 'none',
   },
@@ -17,6 +20,9 @@ oceanBeachTheme.overrideThemeStyles = () => ({
   'span.tag a': {
     backgroundImage: 'none',
   },
+  'code.language-text': {
+    background: 'rgba(255, 229, 100, 0.2)',
+  }
 })
 
 const typography = new Typography(oceanBeachTheme)

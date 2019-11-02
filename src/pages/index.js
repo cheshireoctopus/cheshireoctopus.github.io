@@ -59,11 +59,6 @@ class BlogIndex extends React.Component {
           Hello. I am a software developer in New York City working to reduce friction in healthcare
           delivery at <a href="https://ro.co">Ro</a>.
         </p>
-        <p>
-          I previously taught web development at <a href="https://generalassemb.ly/instructors/chandler-moisen/2729">General Assembly</a>
-          {' '}
-          and once upon a time gave tours at Harpoon Brewery, in Boston.
-        </p>
         <p>I write about <TagsRotator allMarkdownRemark={allMarkdownRemark} />.</p>
         {this.renderPosts()}
       </Layout>
