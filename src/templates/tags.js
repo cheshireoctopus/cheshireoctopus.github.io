@@ -2,7 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
-const Tags = ({ pageContext, data }) => {
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+
+const Tags = ({ pageContext, data, location }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} post${
@@ -10,7 +13,8 @@ const Tags = ({ pageContext, data }) => {
     } tagged with "${tag}"`
 
   return (
-    <div>
+    <Layout location={location} title={tagHeader}>
+      <SEO title={tagHeader} />
       <h1>{tagHeader}</h1>
       <ul>
         {edges.map(({ node }) => {
@@ -24,7 +28,7 @@ const Tags = ({ pageContext, data }) => {
         })}
       </ul>
       <Link to="/tags">All tags</Link>
-    </div>
+    </Layout>
   )
 }
 
