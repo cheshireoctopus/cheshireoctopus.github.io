@@ -9,16 +9,16 @@ In a recent discussion between [Ben Horowitz and Tim Ferris](https://tim.blog/20
 
 > A culture is not a set of beliefs, it's a set of actions.
 
-Culture is paramount in startups - and not just to founders. Employees at early-stage firms are not only attempting to dent the universe through their work, but are also seeking to shape the culture that enables this work. The work reinforces the culture which inturn reinforces the work.
+Culture is paramount in startups - and not just to founders. Employees at early-stage firms are both attempting to dent the universe through their work and seeking to shape the culture that enables this work. The work reinforces the culture which inturn reinforces the work.
 
 Culture becomes a force that gives meaning.
 
-As such, founders should take heed while embarking on retreats to discover (or rediscover) the values of their firms. When company culture becomes a few paragraphs within a Google Doc that no one can find it is certain that the values comprising the culture will be forgotten or mocked. One of the core responsibilities of leadership is to ensure that culture is first-class citizen and that it drive action, not belief.
+As such, founders should take heed while embarking on retreats to discover (or rediscover) the values of their firms. When company culture becomes a few paragraphs within a Google Doc that no one can find it is certain that the values comprising the culture will be forgotten or mocked. One of the core responsibilities of leadership is to ensure that culture is first-class citizen and that it drives action, not belief.
 
 Horowitz goes on:
 
 > If you talk it, and don't do it, then your culture becomes your hypocrisy
 
-More than anyone, the leader's actions are under a microscope. Seemingly trivial behaviors contrary to the values employees are buying into have an outsized demoralizing impact.
+More than anyone, leader's actions are scrutinized under a microscope. Seemingly trivial behaviors contrary to the values employees are buying into have an outsized demoralizing impact.
 
-Again: culture is paramount to startup employees. If the cultural values are not honored by leadership, will employees continue to buy into leadership's vision?
+Again: culture is paramount to startup employees. If cultural values are not honored by leadership, will employees continue to buy into leadership's vision?
