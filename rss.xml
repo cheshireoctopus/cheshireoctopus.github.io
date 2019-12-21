@@ -1,10 +1,78 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chandler Moisen]]></title><description><![CDATA[Chandler Moisen's Personal Blog]]></description><link>http://chandlermoisen.com</link><generator>RSS for Node</generator><lastBuildDate>Sat, 21 Dec 2019 01:03:23 GMT</lastBuildDate><item><title><![CDATA[You Can Filter Like That?]]></title><description><![CDATA[One of the joys of programming is stumbling across novel ways to solve common problems.For example, take the totally banal task of filtering…]]></description><link>http://chandlermoisen.com/you-can-filter-like-that/</link><guid isPermaLink="false">http://chandlermoisen.com/you-can-filter-like-that/</guid><pubDate>Fri, 20 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;One of the joys of programming is stumbling across novel ways to solve common problems.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chandler Moisen]]></title><description><![CDATA[Chandler Moisen's Personal Blog]]></description><link>http://chandlermoisen.com</link><generator>RSS for Node</generator><lastBuildDate>Sat, 21 Dec 2019 19:05:58 GMT</lastBuildDate><item><title><![CDATA[Airtable: Bootstrapping Made Easy]]></title><description><![CDATA[For a new side project, Keming, my partner and I needed to quickly validate interest in our product. To do so, we designed and built a…]]></description><link>http://chandlermoisen.com/airtable-bootstrapping-made-easy/</link><guid isPermaLink="false">http://chandlermoisen.com/airtable-bootstrapping-made-easy/</guid><pubDate>Sat, 21 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/834a2bc4e4814d60a2e7ef3aaa79b7b5/71a9e/airtable-logo.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 43.23094425483504%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAAsSAAALEgHS3X78AAABCElEQVQoz6WQzUqEUBiG7QLmvrqHNl3BQJtqYyCCQm7TXbN026alFKQgMYo/g0gaIVrEjLnwLHImzznfqJNgTpvo2X0vvO85PAx8Q4HWQAn8BaYrNs3dAIzatGeYDMvdUTk0uoDlDcCmnaKkrmtCyGholLQvfy2ePuRDfDtZ6Ef6clV9rmez6yiKkiQxDCMMwyzLNE1zHMc0zaIomt1BWb1Hx5cPcX5wB9MXCKzH07PzK1lWFEVVVUEQRFHkeZ7jOJZlJUkqy3L3kbZMqk1ja47gJMTPa3h/e13lue/7aZoihIIgsCzL8zzXdeM4tm0bYzwQ1ovZ9/lr+NN2D6Gd+D1Iz8gZA/9gCwAB9YXzyB9uAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;airtable logo&quot;
+        title=&quot;&quot;
+        src=&quot;/static/834a2bc4e4814d60a2e7ef3aaa79b7b5/b9e4f/airtable-logo.png&quot;
+        srcset=&quot;/static/834a2bc4e4814d60a2e7ef3aaa79b7b5/cf440/airtable-logo.png 148w,
+/static/834a2bc4e4814d60a2e7ef3aaa79b7b5/d2d38/airtable-logo.png 295w,
+/static/834a2bc4e4814d60a2e7ef3aaa79b7b5/b9e4f/airtable-logo.png 590w,
+/static/834a2bc4e4814d60a2e7ef3aaa79b7b5/71a9e/airtable-logo.png 879w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For a new side project, &lt;a href=&quot;https://keming.io&quot;&gt;Keming&lt;/a&gt;, my partner and I needed to quickly validate interest in our product. To do so, we designed and built a landing page scoped to the following constraints:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Allow users to submit interest and personal data&lt;/li&gt;
+&lt;li&gt;Store this data safely, in an easily &lt;strong&gt;accessible and manipulable&lt;/strong&gt; format&lt;/li&gt;
+&lt;li&gt;Retain control over all styling (no 3rd-party branding should be evident)&lt;/li&gt;
+&lt;li&gt;No server-side code&lt;/li&gt;
+&lt;li&gt;Completely static and easily deployable through &lt;a href=&quot;https://www.netlify.com/&quot;&gt;Netlify&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;As we are bootstrapping Keming, we did not have an immediate requirement for a fully-fledged backend - even a basic &lt;a href=&quot;https://github.com/pallets/flask&quot;&gt;Flask&lt;/a&gt; application felt like overkill. At the same time, we did not want to release with a &lt;a href=&quot;https://www.google.com/forms/about/&quot;&gt;Google Form&lt;/a&gt; as we hypothesized it would put-off our target market.&lt;/p&gt;
+&lt;p&gt;My initial thought was to create a form that submits to the &lt;a href=&quot;https://developers.google.com/sheets/api&quot;&gt;Google Sheets API&lt;/a&gt;. Having consumed Google’s API’s for years, I believed this would be a straight forward experience as the quality of their API design and documentation is typically superb. The &lt;a href=&quot;https://firebase.google.com/docs&quot;&gt;documentation for Firebase&lt;/a&gt; is a salient example. However, I found the Google Sheets API documentation to be lacking and its implementation too complicated for such a simple project.&lt;/p&gt;
+&lt;p&gt;I briefly considered using Firebase as it is my standard for prototyping, but decided against it as. While it does provide an interface for accessing and manipulating data, this data would have to be accessed by non-technical persons and Firebase’s UI-representation for its NoSQL DB can be frightening.&lt;/p&gt;
+&lt;p&gt;Furthermore, I wanted to scratch that itch to use a new API…&lt;/p&gt;
+&lt;h2&gt;Airtable&lt;/h2&gt;
+&lt;p&gt;Enter &lt;a href=&quot;https://airtable.com/&quot;&gt;Airtable&lt;/a&gt;. Thanks to clear API documentation, I had a solution up and running in less than 10 minutes.&lt;/p&gt;
+&lt;p&gt;Here is how easy it was to integrate &lt;a href=&quot;https://www.npmjs.com/package/airtable&quot;&gt;Airtable’s npm package&lt;/a&gt; with a React form:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Form.js&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token constant&quot;&gt;REACT_APP_AIRTABLE_API_KEY&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token constant&quot;&gt;REACT_APP_AIRTABLE_BASE_ID&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; process&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;env
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; base &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Airtable&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  apiKey&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;REACT_APP_AIRTABLE_API_KEY&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;REACT_APP_AIRTABLE_BASE_ID&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;onSubmit&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;MyTable&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      column1Title&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      column2Title&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      column3Title&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;error&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; record&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;error&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token function&quot;&gt;onError&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;error&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token function&quot;&gt;onSuccess&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Thank you, Airtable, for the fantastic developer experience.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[You Can Filter Like That?]]></title><description><![CDATA[One of the joys of programming is stumbling across novel ways to solve common problems.For example, take the totally banal task of filtering…]]></description><link>http://chandlermoisen.com/you-can-filter-like-that/</link><guid isPermaLink="false">http://chandlermoisen.com/you-can-filter-like-that/</guid><pubDate>Fri, 20 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;One of the joys of programming is stumbling across novel ways to solve common problems.&lt;/p&gt;
 &lt;p&gt;For example, take the totally banal task of filtering falsy values from an array.&lt;/p&gt;
 &lt;p&gt;I typically perform this task in one of two ways.&lt;/p&gt;
-&lt;p&gt;Either, passing a function to JavaScript’s &lt;code class=&quot;language-text&quot;&gt;Array.prototype.filter&lt;/code&gt; that simply returns each value in the array and relies on truthiness for filtering:&lt;/p&gt;
+&lt;p&gt;Either, passing a function to JavaScript’s &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter&quot;&gt;Array.prototype.filter&lt;/a&gt; that simply returns each value in the array and relies on truthiness for filtering:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; array &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;undefined&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; filteredArray &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; array&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Or, leveraging a utility like LoDash:&lt;/p&gt;
+&lt;p&gt;Or, leveraging a utility like &lt;a href=&quot;https://lodash.com/docs/4.17.15#compact&quot;&gt;LoDash’s compact&lt;/a&gt;:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; array &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;undefined&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; filteredArray &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; _&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;compact&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;array&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;While both approaches solve the problem, both feel inelegant. In the first example I dislike the redundancy of &lt;code class=&quot;language-text&quot;&gt;(value =&amp;gt; value)&lt;/code&gt;. In the second, I feel guilty reaching for a utility when JavaScript provides native array filtering.&lt;/p&gt;
