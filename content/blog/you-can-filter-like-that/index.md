@@ -13,14 +13,14 @@ I typically perform this task in one of two ways.
 
 Either, passing a function to JavaScript's `Array.prototype.filter` that simply returns each value in the array and relies on truthiness for filtering:
 
-```
+```javascript
 const array = [1, 2, undefined, 4]
 const filteredArray = array.filter(value => value)
 ```
 
 Or, leveraging a utility like LoDash:
 
-```
+```javascript
 const array = [1, 2, undefined, 4]
 const filteredArray = _.compact(array)
 ```
@@ -29,7 +29,7 @@ While both approaches solve the problem, both feel inelegant. In the first examp
 
 This week, I came across a third approach I find much more appealing:
 
-```
+```javascript
 const array = [1, 2, undefined, 4]
 const filteredArray = array.filter(Boolean)
 ```
