@@ -34,5 +34,5 @@ const array = [1, 2, undefined, 4]
 const filteredArray = array.filter(Boolean)
 ```
 
-Native and not redundant!
+Native _and_ not redundant!
 

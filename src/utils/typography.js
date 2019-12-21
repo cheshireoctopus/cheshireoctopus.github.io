@@ -22,6 +22,12 @@ oceanBeachTheme.overrideThemeStyles = () => ({
   },
   'code.language-text': {
     background: 'rgba(255, 229, 100, 0.2)',
+  },
+  'div.gatsby-highlight': {
+    marginBottom: '1.58em',
+  },
+  'div.gatsby-highlight pre.language-text': {
+    margin: '0px',
   }
 })
 
