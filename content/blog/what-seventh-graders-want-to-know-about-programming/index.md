@@ -2,7 +2,7 @@
 title: "What Seventh Graders Want to Know About Programming"
 date: "2019-12-11"
 path: "what-seventh-graders-want-to-know-about-programming"
-tags: ["Education"]
+tags: ["Education", "Programming"]
 ---
 
 Today I had the opportunity to speak with a group of 7th grade students about programming and a career in software engineering.

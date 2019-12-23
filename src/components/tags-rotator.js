@@ -16,7 +16,7 @@ const TagsRotator = ({ allMarkdownRemark }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const { index, tag } = currentTag
+      const { index } = currentTag
       const nextTag = tags[index + 1]
 
       if (nextTag) {
