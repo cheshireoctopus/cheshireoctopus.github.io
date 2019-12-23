@@ -1,4 +1,85 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chandler Moisen]]></title><description><![CDATA[Chandler Moisen's Personal Blog]]></description><link>http://chandlermoisen.com</link><generator>RSS for Node</generator><lastBuildDate>Sat, 21 Dec 2019 19:05:58 GMT</lastBuildDate><item><title><![CDATA[Airtable: Bootstrapping Made Easy]]></title><description><![CDATA[For a new side project, Keming, my partner and I needed to quickly validate interest in our product. To do so, we designed and built a…]]></description><link>http://chandlermoisen.com/airtable-bootstrapping-made-easy/</link><guid isPermaLink="false">http://chandlermoisen.com/airtable-bootstrapping-made-easy/</guid><pubDate>Sat, 21 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chandler Moisen]]></title><description><![CDATA[Chandler Moisen's Personal Blog]]></description><link>http://chandlermoisen.com</link><generator>RSS for Node</generator><lastBuildDate>Mon, 23 Dec 2019 22:01:59 GMT</lastBuildDate><item><title><![CDATA[Saying "No"]]></title><description><![CDATA[When I began my career as a software engineer, I suffered the misconception that software development was a straight-forward, unidirectional…]]></description><link>http://chandlermoisen.com/saying-no/</link><guid isPermaLink="false">http://chandlermoisen.com/saying-no/</guid><pubDate>Mon, 23 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;When I began my career as a software engineer, I suffered the misconception that software development was a straight-forward, unidirectional, two-step system:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Product devises feature&lt;/li&gt;
+&lt;li&gt;Engineering ships feature&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9d1e5ecc679f0e40148468208b0476c3/eb3e8/the-software-development-process.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 161px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 149.68944099378882%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAACXBIWXMAAAsSAAALEgHS3X78AAADbUlEQVRIx71WZ08bQRA9fguf+CehfELCIooi8il/J04QJdQQMC0YsMH0ZsBUU9zufAYlQEJxo4QmjH0vO3OcIwN2EpBy0tPMzr6bm51d77O0HVGwvOPCyu7Cs6EceiFRsmAkCPkoADksPw1HMhRhN/c3IFHmgEjmO/AKeO7s0xA48kNa3VuEGlMRjCrYPt2CGg+mbSiuYus4hK2TEELHv/1gTHBPtnicjgtwwll1Ci7Zhcn1CbQ7LBhdGUHncAdGl0cwOD+A3kkreqesGFpwwObsh33WhqmNSXSNdGJgzs5jsgT/oQ/SfGgaTq8TE2vj6B7tgmWgDeZGM5qtTZzIMmhBVWsV2uyt+NhRi/dNZv5Qp0hY+ekDGrrrUdNWjebeZnh+bOpLVsROKxGZyyerxoJsDdDSqQW0VGOOuNQmJarzCVwhbQrtEg38Bz7d3oPR9Iz4I1zuIR0bJayIgJ8DDyDidCSoqkfn0wjAQ8dGDfuFsw7foefu2GTCLw6re2cF7m8rWTkEShY4ED3UNA1n1yc4vYzh9Cqegfh5BICGN29fo+xVKZK4wfFFVHDj97gxnF0dQ9NSkJDjSSU1tqYyEwpfFOpBDTkfrjAbErcJJpW/LEdJSQn7yWQSud7JWiFN3t7e6gnLy1FcXKxXnUrxXNYK/0tCo3wjoclkQlFRUUbCbElzbkoiofewoqICpaWlGT38502hSuhxOBwoKChAfn4+rFarXqWWesqm6HZ2dg55Uh4kScLY6Ngfj45Eh/Hq5gJXicsHOL/+yaS6xlqYK9+xT7HHuJSDKpdC4QDce0tY21sWNhNr35exurMIf2STsbq7+ICT5goEDjfvNCUc5B+3nAV0cRDkHBzSFk9aUwT5OVpyT1MWxAUa4ouStMTQDYbwSTuMC5bnRZx8g0fzPCesLNonubadQi+GMO4eQ0t/C/qme9ElpKDD0Y6eiR7Wjv6ZPtaMxi8NfPU7XIPoGGqHVcyTNAwvDfHY/XWVNGUGthkbJtzjrCOfbS1sm3qaUC20pL6zjpPanTb+IGlH111S+kCNpZq1qEH4i+qCWLLoYVBoSkBctLQ0QxbJJ80gXxVaQj7NsaZE5TTX4JHPS87QlEf044GWZNGV9Kbwf5KwnP2lvwRrCkmAcuQV/0nWOWAo17/AeIeS+fbX8AtORVKCcWaFIAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;the software development process&quot;
+        title=&quot;&quot;
+        src=&quot;/static/9d1e5ecc679f0e40148468208b0476c3/eb3e8/the-software-development-process.png&quot;
+        srcset=&quot;/static/9d1e5ecc679f0e40148468208b0476c3/cf440/the-software-development-process.png 148w,
+/static/9d1e5ecc679f0e40148468208b0476c3/eb3e8/the-software-development-process.png 161w&quot;
+        sizes=&quot;(max-width: 161px) 100vw, 161px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This misconception led to a series of pernicious beliefs in how I approached daily work.&lt;/p&gt;
+&lt;h3&gt;Pernicious Belief 1: Shipping == Value&lt;/h3&gt;
+&lt;p&gt;Engineering is only responsible for shipping as shipping is the most visible mechanism for realizing an engineering’s value. An engineer’s value to the organization is worthless until they smashed that “Merge pull request” button.&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/18e3b7452093a4626c66a51649fbc0a9/de370/merge-button.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 209px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 24.880382775119617%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABBNAAAQTQFnjAHgAAABVklEQVQY0z2KvUsCcRzG7x+Idocasix7UUmCGhKyoVLPEArEoKmlpSFr0RpaChQLK5pqsFrsfCkz77Qg3w5CiF409S6CNq+m+geefp7m8OF5vs/nS5V/PhCrpZGQcmClPLgm/z0hZWXHtRzf9I1/tpZD8otHvJaB8PsJarO8j870JPT8HPqyZqgyM+gh9JLenZmGJm/DYN7a2pVkU2VNGCCbOmOBOk3IWdBxb4RHOAG18bSH4Ts7/OIptiuHcL564Sr6sPCwDmdxFz7xCIuFVay8eOEmt7vogbvkx9KjC7okDS03C5pfxlCKhqd0DGqN30FbQAdt2Ax9xArDtQPGuAPaEA1DzA5dxARlcAKasFXex6/mMRK1oZ+ZguJ8DIqzUXQR3x7QYqtwAOpZquCimkBYTMpZJ1i9QUhg5WRIRohjhMZep/4TEjhcircyUTEFpsri7fsdf/StFcEa/K3wAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;merge pull request button&quot;
+        title=&quot;&quot;
+        src=&quot;/static/18e3b7452093a4626c66a51649fbc0a9/de370/merge-button.png&quot;
+        srcset=&quot;/static/18e3b7452093a4626c66a51649fbc0a9/cf440/merge-button.png 148w,
+/static/18e3b7452093a4626c66a51649fbc0a9/de370/merge-button.png 209w&quot;
+        sizes=&quot;(max-width: 209px) 100vw, 209px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Pernicious Belief 2: Engineers Are Paid to Code&lt;/h3&gt;
+&lt;p&gt;The majority of an engineer’s time should be spent inside their IDE. After all, this is why engineers are paid: to produce text files full of variables and functions that, taken together, comprise a feature that product determines valuable. Anything beyond the scope of code is the domain of product.&lt;/p&gt;
+&lt;h3&gt;Pernicious Belief 3: Say “Yes”&lt;/h3&gt;
+&lt;p&gt;Pushing back against the straight-forward, unidirectional, two-step system was is to heresy. The product team understands the problem the best and engineering is there to build product’s vision. Engineers are supposed to say “yes”.&lt;/p&gt;
+&lt;h2&gt;The Ease of “Yes”&lt;/h2&gt;
+&lt;p&gt;As a software engineer, you are inclined to code. There is a lot of pressure to ship and “deliver value”. Product is always looking to move forward on their roadmap. Users are always waiting for new features and bug fixes. It becomes extremely easy to say “yes” to everything - especially when you align shipping with value.&lt;/p&gt;
+&lt;p&gt;Yet, there are few pitfalls to being so amenable. By constantly saying “yes” you:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Treat the product organization as a boss instead of a teammate&lt;/li&gt;
+&lt;li&gt;Surrender your personal input on the product’s vision&lt;/li&gt;
+&lt;li&gt;Fail to ask why a feature should be built&lt;/li&gt;
+&lt;li&gt;Most likely ship WRONG features&lt;/li&gt;
+&lt;li&gt;Unintentionally signal your apathy or, worse, laziness&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Such an approach is the path of least resistance when it comes to software development. It is hard to step back, thoroughly assess a proposal, and say “no”.&lt;/p&gt;
+&lt;h2&gt;The Challenge of “No”&lt;/h2&gt;
+&lt;p&gt;It can be difficult for engineers to say “no” to features as they are ostensibly paid to build features. Saying “no” means value will not be delivered; it interferes with product’s roadmap and planning; it might nullify significant design resourcing or another team’s investment.&lt;/p&gt;
+&lt;p&gt;Saying “no” can be difficult especially when senior leadership is driving an initiative. Attempting to stop such organizational momentum probably appears more troublesome than it is worth.&lt;/p&gt;
+&lt;p&gt;It takes confidence to say “no - this feature is not worth it”.&lt;/p&gt;
+&lt;p&gt;But, the first time you do, and successfully argue why, you will want to say it more often. Saying “no” means you have taken an active role in the product roadmap and are asking why features should be built. Saying “no” means you believe the return a feature promises does not justify the cost of its implementation. Saying “no” means you care about your product, your team, and your users.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Airtable: Bootstrapping Made Easy]]></title><description><![CDATA[For a new side project, Keming, my partner and I needed to quickly validate interest in our product. To do so, we designed and built a…]]></description><link>http://chandlermoisen.com/airtable-bootstrapping-made-easy/</link><guid isPermaLink="false">http://chandlermoisen.com/airtable-bootstrapping-made-easy/</guid><pubDate>Sat, 21 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/static/834a2bc4e4814d60a2e7ef3aaa79b7b5/71a9e/airtable-logo.png&quot;
     style=&quot;display: block&quot;
