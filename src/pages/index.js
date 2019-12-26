@@ -8,6 +8,21 @@ import TagsRotator from '../components/tags-rotator'
 
 import { rhythm } from '../utils/typography'
 
+const PostTags = ({ tags }) => {
+  tags.sort()
+
+  return tags.map(tag => (
+    <span
+      key={tag}
+      className="tag"
+    >
+      <Link to={`/tags/${kebabCase(tag)}/`}>
+        {tag}
+      </Link>
+    </span>
+  ))
+}
+
 class BlogIndex extends React.Component {
   renderPosts() {
     const { data } = this.props
@@ -32,14 +47,7 @@ class BlogIndex extends React.Component {
             style={{ marginBottom: rhythm(0.5) }}
           />
           <div>
-            {tags.map(tag => (
-              <span
-                key={tag}
-                className="tag"
-              >
-                <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-              </span>
-            ))}
+            <PostTags tags={tags} />
           </div>
         </div>
       )
