@@ -1,4 +1,101 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chandler Moisen]]></title><description><![CDATA[Chandler Moisen's Personal Blog]]></description><link>http://chandlermoisen.com</link><generator>RSS for Node</generator><lastBuildDate>Thu, 26 Dec 2019 00:27:00 GMT</lastBuildDate><item><title><![CDATA[Saying "No"]]></title><description><![CDATA[When I began my career as a software engineer, I suffered the misconception that software development was a straight-forward, unidirectional…]]></description><link>http://chandlermoisen.com/saying-no/</link><guid isPermaLink="false">http://chandlermoisen.com/saying-no/</guid><pubDate>Mon, 23 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;When I began my career as a software engineer, I suffered the misconception that software development was a straight-forward, unidirectional, two-step system:&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chandler Moisen]]></title><description><![CDATA[Chandler Moisen's Personal Blog]]></description><link>http://chandlermoisen.com</link><generator>RSS for Node</generator><lastBuildDate>Thu, 26 Dec 2019 17:48:40 GMT</lastBuildDate><item><title><![CDATA[An Ad-Free Mobile New York Times]]></title><description><![CDATA[tl;dr to enjoy the NYT’s mobile applications ad-free as a paying user, enable a VPN that blocks advertising on your mobile device.I hold a…]]></description><link>http://chandlermoisen.com/ad-free-new-york-times/</link><guid isPermaLink="false">http://chandlermoisen.com/ad-free-new-york-times/</guid><pubDate>Thu, 26 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;tl;dr to enjoy the NYT’s mobile applications ad-free as a paying user, enable a VPN that blocks advertising on your mobile device.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;I hold a love-hate relationship with the New York Times.&lt;/p&gt;
+&lt;p&gt;I respect both the quality of the NYT’s journalism and the &lt;a href=&quot;https://www.nytimes.com/projects/2020-report/index.html&quot;&gt;standards&lt;/a&gt; they hold themselves to as journalists. They are doing an amazing job of delivering digital content via high-visual, &lt;a href=&quot;https://www.nytimes.com/interactive/2018/us/2018-year-in-graphics.html&quot;&gt;innovative experiences&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.nytimes.com/interactive/2019/12/02/nyregion/nyc-subway-map.html&quot;&gt;&lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 82.63322884012538%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAABYlAAAWJQFJUiTwAAAD+0lEQVQ4yx2UWW8TSRSF/f81L/OEGAQiCAghCYnjEMf71nu73Yu7273Zbu9bEkNgZjRP3xQ8lEolXZ17zqlzb0Gv3jDsN6nZEl91h9uBzEV/xLm5p+FNKFsTLtol7hSVsrPETW0WyYBlHrJZ+vi5STLvs5z5ZBOfgmdW6agN/InCIM64jD2kcUY2HYniBeEkJos+s5tKDBcrvnhNrjslspXL7hCy2ofijnjcJew2KYWboMldZorOHayRQ3nqk2QBiXPLwzbg51PI027G8zHneRsh1xp8MK75EKh4C49/Hyf8fRjz/ZDx40EAfvJGVMchcdbD8DpUowPrxYjAvv0taT5RMc07QsckUg0sucZy6WDNBrTGBsbCIj8ErFe/GscUbic6lZmFFfTIUgkl2TPJE9Kwxti9YKh9wmy8Q7l+g9O9xNOvyQa3jLRzYvMzhlVHH7WR1FtsvULhPruiG76nXX8pir9QF+bb6g127R1G9Qz1vo5cKdFpX2HIF6TuDWHQYZwapGOXb5uIfGYTik8KPIWCZl7i6ic0m4JF74Jyt4ohnQqQM2JbJ+n3eNwE4oRsZw7P33Lybcx/33Ph2Vh4PKa7MHFGLSbDFoWB6FwtfqYjV9ENi1IvRu9UcSyF9XrCLI+ZTWMmaUA88phPU9JIx3Fb/BCfMZwY9IIaiX0vWA8Ew+YrGq2PVNUirmdzJmWYQwsnkrEdlywbs9lsmc3mTPOc/cORPO6TBpJgNyXPdLTOJcupR98WksNBm2RQoi1fMxpZNMINTjZlmqoCIGa1mnM8PvLj+SjuB/aCdeBIjGOT3TLgae1ja1+xPINoZArJag1dv6Fj3TEKDLQ0oeJv+SZ8+uVbGjUI+mVCq8ZKNPHUEp5495U72s0iSrdItyvetspuMaQwU1uYRhlNOSMUwJpR4azRJBr22KZdQuktjvwOs/6CUL1gmSp4WpGBWWE4VNDMLn2tI1Q2edqLHLpi7HStSaf7HrV6Qth6TVutIFkmD0ub/XbK4zbFdWukmcZqPcb2RZhFZPJ5SOZ0cXtlfLvN8yGhoLZrVG7PuGn+hWOUmGcSlfYltl1m5haxhb++30MTUqNIQzF6hKHJei6yp9eJxdnmrhgEha2wqTCQ7ml2byjfnRIMDe7dDR8bPp5yj9w9p/H1D3q1P2mKhWAPFHxPQtMquGbtt89Hweq4i8gCBTnpU0hiS0zGGXL9hI7iUFQ97voKlt+gJZiW6+fIjff0qq+pll9RvT+lL5fYryKOItj/PGUCMGazDmmIrBau3R3nHZnT+hVvVZWXhsjTeMXzYy7CXafbPBFL4Q2SecWL2msxTZfI7S/Y/brIZsgwG7FYJhz2iVgsGf8DvyCHckhB7HoAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;new york times subway map&quot;
+        title=&quot;&quot;
+        src=&quot;/static/dcb5b5c8021823b6e2b6ac265a91c352/b9e4f/new-york-times-subway-map.png&quot;
+        srcset=&quot;/static/dcb5b5c8021823b6e2b6ac265a91c352/cf440/new-york-times-subway-map.png 148w,
+/static/dcb5b5c8021823b6e2b6ac265a91c352/d2d38/new-york-times-subway-map.png 295w,
+/static/dcb5b5c8021823b6e2b6ac265a91c352/b9e4f/new-york-times-subway-map.png 590w,
+/static/dcb5b5c8021823b6e2b6ac265a91c352/f9b6a/new-york-times-subway-map.png 885w,
+/static/dcb5b5c8021823b6e2b6ac265a91c352/2d849/new-york-times-subway-map.png 1180w,
+/static/dcb5b5c8021823b6e2b6ac265a91c352/2707f/new-york-times-subway-map.png 3190w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In fact, the reason I pursued software engineering as a career was due to data-driven journalism that was pioneered at the Times by the &lt;a href=&quot;https://d3js.org/&quot;&gt;D3.js library&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Customer Problems vs. Business Problems&lt;/h2&gt;
+&lt;p&gt;That said, the core functionality of their mobile application - to enable readers to comprehend traditional articles - is abysmal.&lt;/p&gt;
+&lt;p&gt;Internet advertisements are to blame.&lt;/p&gt;
+&lt;p&gt;The New York Times &lt;a href=&quot;http://www.nytimes.com/services/mobile/index.html&quot;&gt;mobile application&lt;/a&gt; is one of the few products I use - if not the only product - that bombards &lt;strong&gt;paying users&lt;/strong&gt; with internet advertisements.&lt;/p&gt;
+&lt;p&gt;Just this morning I read an &lt;a href=&quot;https://www.nytimes.com/2019/12/26/nyregion/cruise-ship-exhaust-shore-power-nyc.html&quot;&gt;article&lt;/a&gt; containing &lt;strong&gt;sixteen&lt;/strong&gt; advertisements. One of which, for an article titled “How Cruise Ships Bring 1,200 Tons of Toxic Fumes to Brooklyn a Year”, was particularly ironic: &lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c1fa811f1a092ae6f10961d6b5dbc511/4ca17/awful-new-york-times-ad.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 270px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 177.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,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&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;awful new york times ad&quot;
+        title=&quot;&quot;
+        src=&quot;/static/c1fa811f1a092ae6f10961d6b5dbc511/4ca17/awful-new-york-times-ad.png&quot;
+        srcset=&quot;/static/c1fa811f1a092ae6f10961d6b5dbc511/cf440/awful-new-york-times-ad.png 148w,
+/static/c1fa811f1a092ae6f10961d6b5dbc511/4ca17/awful-new-york-times-ad.png 270w&quot;
+        sizes=&quot;(max-width: 270px) 100vw, 270px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I have written previously about &lt;a href=&quot;/customer-problems-vs-business-problems/&quot;&gt;customer problems vs business problems&lt;/a&gt;. When a business prioritizes its problems at the expense of its customers, the customers’ user experience undoubtedly suffers. This is a textbook case of a product team solving for their business problems instead of their customer problems. The NYT’s digital product team is prioritizing revenue generation through internet advertisements over their readers’ user experience. &lt;/p&gt;
+&lt;p&gt;This egregious level of advertisements makes it difficult for readers to fully comprehend the article they are paying for as their concentration is broken every few paragraphs by advertising that has little-to-no relevance to the true content they are hoping to consume.&lt;/p&gt;
+&lt;p&gt;Nothing worse than making it difficult for paying customers to enjoy distraction-free content.&lt;/p&gt;
+&lt;h2&gt;Banish The Ads&lt;/h2&gt;
+&lt;p&gt;There are a number of ways to banish the ads from the articles you are paying to read:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Use a a web browser with an ad-blocker like &lt;a href=&quot;https://www.eff.org/privacybadger&quot;&gt;Privacy Badger&lt;/a&gt; enabled&lt;/li&gt;
+&lt;li&gt;Use Safari’s &lt;a href=&quot;https://www.nytimes.com/2018/07/03/technology/personaltech/safari-reader-mode.html&quot;&gt;Reader Mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Install a VPN like &lt;a href=&quot;https://nordvpn.com/&quot;&gt;Nord&lt;/a&gt; on your mobile device and make sure you are blocking advertisements in your settings&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/511406645aaa25db3e67f438b56ec798/4ca17/nord-vpn-settings.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 270px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 177.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAkCAIAAAAGkY33AAAACXBIWXMAAAsSAAALEgHS3X78AAAC1UlEQVRIx6WVyXLaQBCG9W655XFyyTvkmqq8Qu5UOTnE1xxSZcdlbIOlADbahXYWLQhDvtFgrLC6nL/EqJnp7vl7mZFimqaqqpqmDYdDhPPz84uLi8vLS8dxfl9dtdvtJElWq9VyuWScz+eDwUDX9W9nZ61WS8nzfFYjTdPxeDyZTMqyzLIMPZYYpaXEYrEoiiLL8iAI4jhWpMsm5IxhWt17tatqvf4Am6dnsKT1H+5UDUGpqoopucxYPQMaYRj6QeCNRlU138xjU+SzKIpQV7CBZFGWeV7w8Fcy3OIC5LYD2//+q2OM4nJeKewGvdsOg9a+vcMRGtJFM4p6UgjvPnx+//HLvFoM7ICYn6IoJFukSuaMTECYJO/uz9j6efPp648H2x/PcmWL20k01YXxosYmmccdQXitijFjp9Pp1kBQa8jId6sIPM+jyASFjqgzXUEzUH3ZMMxucr4LOKKMAsrKah9kYfZiQ4fNBG0qTpLTBmRXHsLsGcKYXu/1erZtczb6/T4yZTsUMyBgFKbTqbKV4ZO0N8xFzPUpyfIdFIfBKjkmOmX5Jqx3hgZtfX1zazvuXffeMM0j0TYhss2L2Hn4QwI5XnXAp3deGzfKS/Je9jyeM0Gb8y3PI1fH1XVb1f4gcDYRTtPGB5zjJBFtmeX8OJepuMymR5p0nTCSzubi+qGt6ibf3DgsrYtTC2UDqNEngvbq30ujMS6b3V41wPFYt6dpWcTJXWfRoYYRxbHreo7rud7I9Tw/CBkdx90fs+O6j0PdZtT1oW6MfB8veGTechxe+EXeKv52qY5jT6m4UxzPs2yHx/fFDnJbMr91H+2hjRtCsh3HtOwgCHXDHDw8wpa103WWH4G9JKvDINviPIvDRUfMZuMJHT5LJ1OeMOEen84PA3tRZ4z9MIqSNIwTxmQ8wRcyDk8bIy3qD1zzKyflVxnTbfSbfF6JF+M34H+N6e2/Cx0ivv+/hDkAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;nord vpn settings&quot;
+        title=&quot;&quot;
+        src=&quot;/static/511406645aaa25db3e67f438b56ec798/4ca17/nord-vpn-settings.png&quot;
+        srcset=&quot;/static/511406645aaa25db3e67f438b56ec798/cf440/nord-vpn-settings.png 148w,
+/static/511406645aaa25db3e67f438b56ec798/4ca17/nord-vpn-settings.png 270w&quot;
+        sizes=&quot;(max-width: 270px) 100vw, 270px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I prefer the third option as this allows me to continue to use the NYT’s mobile applications.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Saying "No"]]></title><description><![CDATA[When I began my career as a software engineer, I suffered the misconception that software development was a straight-forward, unidirectional…]]></description><link>http://chandlermoisen.com/saying-no/</link><guid isPermaLink="false">http://chandlermoisen.com/saying-no/</guid><pubDate>Mon, 23 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;When I began my career as a software engineer, I suffered the misconception that software development was a straight-forward, unidirectional, two-step system:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Product devises feature&lt;/li&gt;
 &lt;li&gt;Engineering ships feature&lt;/li&gt;
