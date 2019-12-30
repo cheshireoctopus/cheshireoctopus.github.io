@@ -26,9 +26,10 @@ oceanBeachTheme.overrideThemeStyles = () => ({
   'div.gatsby-highlight': {
     marginBottom: '1.58em',
   },
-  'div.gatsby-highlight pre.language-text': {
+  'div.gatsby-highlight pre': {
+    borderRadius: '3px',
     margin: '0px',
-  }
+  },
 })
 
 const typography = new Typography(oceanBeachTheme)
