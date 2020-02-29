@@ -85,14 +85,30 @@ class BlogList extends React.Component {
 
     return (
       <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 36 }}>
-        <div>
+        <div style={{ flexBasis: '33%' }}>
           {!isFirstPage && (
             <Link to={prevPage} rel="prev">
               ← Previous Page
             </Link>
           )}
         </div>
-        <div>
+        <div style={{ flexBasis: '33%', justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
+          {Array.from({ length: numPages }, (_, i) => (
+            <Link
+              key={`pagination-number${i + 1}`}
+              to={`/${i === 0 ? '' : i + 1}`}
+              style={{
+                fontWeight: i === currentPage - 1 ? 'bold' : 'normal',
+                fontSize: i === currentPage - 1 ? 24 : 'inherit',
+                marginLeft: i !== 0 && 24,
+                backgroundImage: 'none',
+              }}
+            >
+              {i + 1}
+            </Link>
+          ))}
+        </div>
+        <div style={{ flexBasis: '33%', textAlign: 'right' }}>
           {!isLastPage && (
             <Link to={nextPage} rel="next">
               Next Page →
