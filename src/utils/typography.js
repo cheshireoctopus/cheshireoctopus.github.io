@@ -35,7 +35,7 @@ oceanBeachTheme.overrideThemeStyles = () => ({
 const typography = new Typography(oceanBeachTheme)
 
 // Hot reload typography in development.
-if (process.env.NODE_ENV !== `production`) {
+if (process.env.NODE_ENV !== 'production') {
   typography.injectStyles()
 }
 

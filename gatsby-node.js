@@ -5,6 +5,7 @@ const { createFilePath } = require('gatsby-source-filesystem')
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
+  const blogList = path.resolve('src/templates/blog-list.js')
   const blogPostTemplate = path.resolve('src/templates/blog-post.js')
   const tagTemplate = path.resolve('src/templates/tags.js')
 
@@ -41,7 +42,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // Create blog posts pages.
   const posts = result.data.postsRemark.edges
-
+  
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
@@ -57,6 +58,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
+  // Create tags
   const tags = result.data.tagsGroup.group
 
   tags.forEach(tag => {
@@ -66,6 +68,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: {
         tag: tag.fieldValue,
       },
+    })
+  })
+
+  const postsPerPage = 5
+  const numPages = Math.ceil(posts.length / postsPerPage)
+
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? '/' : `/${i + 1}`,
+      component: blogList,
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+      }
     })
   })
 

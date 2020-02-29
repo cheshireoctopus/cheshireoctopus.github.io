@@ -23,7 +23,29 @@ const PostTags = ({ tags }) => {
   ))
 }
 
-class BlogIndex extends React.Component {
+class BlogList extends React.Component {
+  renderBio() {
+    const { data, pageContext } = this.props
+
+    if (pageContext.currentPage > 1) {
+      return null
+    }
+
+    return (
+      <>
+        <p style={{ fontSize: '36px' }}>👋</p>
+        <p>
+          Hello. I am a software developer in New York City working to reduce friction in healthcare
+            delivery at <a href="https://ro.co">Ro</a>.
+          </p>
+        <p>
+          I am also working on reducing the friction in design hiring at <a href="https://keming.io">Keming.io</a>.
+          </p>
+        <p>I write about <TagsRotator allMarkdownRemark={data.allMarkdownRemark} />.</p>
+      </>
+    )
+  }
+
   renderPosts() {
     const { data } = this.props
     const posts = data.allMarkdownRemark.edges
@@ -54,39 +76,62 @@ class BlogIndex extends React.Component {
     })
   }
 
+  renderPagination() {
+    const { currentPage, numPages } = this.props.pageContext
+    const isFirstPage = currentPage === 1
+    const isLastPage = currentPage === numPages
+    const prevPage = currentPage - 1 === 1 ? "/" : (currentPage - 1).toString()
+    const nextPage = (currentPage + 1).toString()
+
+    return (
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 36 }}>
+        <div>
+          {!isFirstPage && (
+            <Link to={prevPage} rel="prev">
+              ← Previous Page
+            </Link>
+          )}
+        </div>
+        <div>
+          {!isLastPage && (
+            <Link to={nextPage} rel="next">
+              Next Page →
+            </Link>
+          )}
+        </div>
+      </div>
+    )
+  }
+
   render() {
     const { data, location } = this.props
-    const { allMarkdownRemark } = data
     const { title: siteTitle } = data.site.siteMetadata
 
     return (
       <Layout location={location} title={siteTitle}>
         <SEO title="All posts" />
-        <p style={{ fontSize: '36px' }}>👋</p>
-        <p>
-          Hello. I am a software developer in New York City working to reduce friction in healthcare
-          delivery at <a href="https://ro.co">Ro</a>.
-        </p>
-        <p>
-          I am also working on reducing the friction in design hiring at <a href="https://keming.io">Keming.io</a>.
-        </p>
-        <p>I write about <TagsRotator allMarkdownRemark={allMarkdownRemark} />.</p>
+        {this.renderBio()}
         {this.renderPosts()}
+        {this.renderPagination()}
       </Layout>
     )
   }
 }
 
-export default BlogIndex
+export default BlogList
 
 export const pageQuery = graphql`
-  query {
+  query blogPageQuery($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      limit: $limit
+      skip: $skip
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       group(field: frontmatter___tags) {
         tag: fieldValue
       }
