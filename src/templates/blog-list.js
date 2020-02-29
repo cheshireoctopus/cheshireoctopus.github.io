@@ -1,51 +1,15 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import kebabCase from 'lodash/kebabCase'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import TagsRotator from '../components/tags-rotator'
+import Bio from '../components/Bio'
+import PostTags from '../components/PostTags'
+import Pagination from '../components/Pagination'
 
 import { rhythm } from '../utils/typography'
 
-const PostTags = ({ tags }) => {
-  tags.sort()
-
-  return tags.map(tag => (
-    <span
-      key={tag}
-      className="tag"
-    >
-      <Link to={`/tags/${kebabCase(tag)}/`}>
-        {tag}
-      </Link>
-    </span>
-  ))
-}
-
 class BlogList extends React.Component {
-  renderBio() {
-    const { data, pageContext } = this.props
-
-    if (pageContext.currentPage > 1) {
-      return null
-    }
-
-    return (
-      <>
-        <p style={{ fontSize: '36px' }}>👋</p>
-        <p>
-          Hello. I am a software developer in New York City working to reduce friction in healthcare
-            delivery at <a href="https://ro.co">Ro</a>.
-          </p>
-        <p>
-          I am also working on reducing the friction in design hiring at <a href="https://keming.io">Keming.io</a>.
-          </p>
-        <p>I write about <TagsRotator allMarkdownRemark={data.allMarkdownRemark} />.</p>
-      </>
-    )
-  }
-
   renderPosts() {
     const { data } = this.props
     const posts = data.allMarkdownRemark.edges
@@ -76,59 +40,17 @@ class BlogList extends React.Component {
     })
   }
 
-  renderPagination() {
-    const { currentPage, numPages } = this.props.pageContext
-    const isFirstPage = currentPage === 1
-    const isLastPage = currentPage === numPages
-    const prevPage = currentPage - 1 === 1 ? "/" : (currentPage - 1).toString()
-    const nextPage = (currentPage + 1).toString()
-
-    return (
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 36 }}>
-        <div style={{ flexBasis: '33%' }}>
-          {!isFirstPage && (
-            <Link to={prevPage} rel="prev">
-              ← Previous Page
-            </Link>
-          )}
-        </div>
-        <div style={{ flexBasis: '33%', justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
-          {Array.from({ length: numPages }, (_, i) => (
-            <Link
-              key={`pagination-number${i + 1}`}
-              to={`/${i === 0 ? '' : i + 1}`}
-              style={{
-                fontWeight: i === currentPage - 1 ? 'bold' : 'normal',
-                fontSize: i === currentPage - 1 ? 24 : 'inherit',
-                marginLeft: i !== 0 && 24,
-                backgroundImage: 'none',
-              }}
-            >
-              {i + 1}
-            </Link>
-          ))}
-        </div>
-        <div style={{ flexBasis: '33%', textAlign: 'right' }}>
-          {!isLastPage && (
-            <Link to={nextPage} rel="next">
-              Next Page →
-            </Link>
-          )}
-        </div>
-      </div>
-    )
-  }
-
   render() {
-    const { data, location } = this.props
+    const { data, location, pageContext } = this.props
     const { title: siteTitle } = data.site.siteMetadata
+    const isFirstPage = pageContext.currentPage === 1
 
     return (
       <Layout location={location} title={siteTitle}>
         <SEO title="All posts" />
-        {this.renderBio()}
+        {isFirstPage && <Bio tags={data.allMarkdownRemark.group} />}
         {this.renderPosts()}
-        {this.renderPagination()}
+        <Pagination {...pageContext} />
       </Layout>
     )
   }
