@@ -15,20 +15,20 @@ const TagsPage = ({
   },
   location,
 }) => (
-    <Layout location={location} title={title}>
-      <SEO title={title} />
-      <h1>Tags</h1>
-      <ul>
-        {group.map(tag => (
-          <li key={tag.fieldValue}>
-            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-              {tag.fieldValue} ({tag.totalCount})
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </Layout>
-  )
+  <Layout location={location} title={title}>
+    <SEO title={title} />
+    <h1>Tags</h1>
+    <ul>
+      {group.map(tag => (
+        <li key={tag.fieldValue}>
+          <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+            {tag.fieldValue} ({tag.totalCount})
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </Layout>
+)
 
 TagsPage.propTypes = {
   data: PropTypes.shape({
