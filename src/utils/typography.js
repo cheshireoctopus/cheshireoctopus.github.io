@@ -4,6 +4,7 @@ import oceanBeachTheme from 'typography-theme-ocean-beach'
 oceanBeachTheme.overrideThemeStyles = () => ({
   body: {
     fontSize: '16px',
+    border: '3px solid #950451',
   },
   'a.gatsby-resp-image-link': {
     backgroundImage: 'none',

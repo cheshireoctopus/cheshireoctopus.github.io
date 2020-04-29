@@ -7,9 +7,6 @@ tags: ["Engineering", "Leadership"]
 
 When I began my career as a software engineer, I suffered the misconception that software development was a straight-forward, unidirectional, two-step system:
 
-1. Product devises feature
-2. Engineering ships feature
-
 ![the software development process](./the-software-development-process.png)
 
 This misconception led to a series of pernicious beliefs in how I approached daily work.
@@ -26,7 +23,7 @@ The majority of an engineer's time should be spent inside their IDE. After all, 
 
 ### Pernicious Belief 3: Say "Yes"
 
-Pushing back against the straight-forward, unidirectional, two-step system was is to heresy. The product team understands the problem the best and engineering is there to build product's vision. Engineers are supposed to say "yes".
+Pushing back against the straight-forward, unidirectional, two-step system is akin to heresy. The product team understands the problem the best and engineering is there to build product's vision. Engineers are supposed to say "yes".
 
 ## The Ease of "Yes"
 
