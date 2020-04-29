@@ -3,7 +3,9 @@ import { Link } from 'gatsby'
 import kebabCase from 'lodash/kebabCase'
 
 const TagsRotator = ({ tags }) => {
-  const formattedTags = tags.map(obj => obj.tag)
+  const formattedTags = tags
+    .filter(obj => obj.tag !== 'TIL')
+    .map(obj => obj.tag)
   const initialState = {
     index: 0,
     tag: formattedTags[0],
