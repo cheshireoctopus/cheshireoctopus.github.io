@@ -1,4 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chandler Moisen]]></title><description><![CDATA[Chandler Moisen's Personal Blog]]></description><link>http://chandlermoisen.com</link><generator>RSS for Node</generator><lastBuildDate>Wed, 29 Apr 2020 21:50:36 GMT</lastBuildDate><item><title><![CDATA[TIL: Export Named Components]]></title><description><![CDATA[I set aside 30 minutes at the end of each work day to reflect on something that I learned or found interesting during the day. I am making…]]></description><link>http://chandlermoisen.com/til_export_named_components/</link><guid isPermaLink="false">http://chandlermoisen.com/til_export_named_components/</guid><pubDate>Wed, 29 Apr 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;I set aside 30 minutes at the end of each work day to reflect on something that I learned or found interesting during the day. I am making an attempt to write these down.&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chandler Moisen]]></title><description><![CDATA[Chandler Moisen's Personal Blog]]></description><link>http://chandlermoisen.com</link><generator>RSS for Node</generator><lastBuildDate>Thu, 30 Apr 2020 21:37:11 GMT</lastBuildDate><item><title><![CDATA[TIL: The Swiss Cheese Model]]></title><description><![CDATA[I set aside 30 minutes at the end of each work day to reflect on something that I learned or found interesting during the day. I am making…]]></description><link>http://chandlermoisen.com/til_swiss_cheese_model/</link><guid isPermaLink="false">http://chandlermoisen.com/til_swiss_cheese_model/</guid><pubDate>Thu, 30 Apr 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;I set aside 30 minutes at the end of each work day to reflect on something that I learned or found interesting during the day. I am making an attempt to write these down.&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Today I learned about the &lt;a href=&quot;https://en.wikipedia.org/wiki/Swiss_cheese_model&quot;&gt;Swiss cheese model of accident causation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The idea is that you can analyze threats to a system by breaking the system into steps. While each step will undoubtedly have holes representing failures in that particular step of the system, because the next layer of the system does not have a hole in the same place, a threat is not able to pass beyond that  layer.&lt;/p&gt;
+&lt;p&gt;Threats to a system thus arise when layer after layer has a hole in the same place:&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/474d0c1e04e5f136db263019c8f5e438/2a182/swiss_cheese_model_of_accident_causation.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 67.27272727272727%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAARlAAAEZQAGA43XUAAABt0lEQVQ4y42TC2urQBCF/f//o3D/RilcLn3dUvuCpjTRGh+pur41mpyeGZJgbUo7sLjozplvzo4WJpFlGaIwxCqKkOc51l2HsiwP3zebjT63262u6d6Sw9dXl7i8OIe79JAag5fZDMakaJoGVVUhTRLEcXwoMo690D4sqVgzsVhFSO9sxEGAfnfImc8RkjZjkTfXZRGjBSS6tkVH+jGhLGus3lL0/c1FThpZhjSSGPhLPew6DvzlUumThN/T9BOhCo7770mbUsT4PoJ/fxHOnjFIob5XEWexwILUURTCZ5GyKJSyaWrda8tjwWEY1KeGh1raEHkearbp3dv0LiNVolRx/K60YRhQPML89VV9FvusqbkiuhkG3SdMLijk8sJ8+xb97v2Kdsg0yKUJoVLWteZaY7HpjUnVWg7KnuIV7Qhv/sN5esSayT6tESEJmZYD4bGZmopLuyVvuGSLHmmrIkdFXzuKzJ2FTsKnlo/N1lhYSPcjk/Np2PbL2SnM4wNiel3V1dex+S6+0O48bNdrlKRb/TnBsBt46yehY7Ri/n6oJR5sG7f826SDXxF+R6tF6JveNGnFww8ZRfBFx6v8qgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Swiss cheese model of accident causation&quot;
+        title=&quot;&quot;
+        src=&quot;/static/474d0c1e04e5f136db263019c8f5e438/b9e4f/swiss_cheese_model_of_accident_causation.png&quot;
+        srcset=&quot;/static/474d0c1e04e5f136db263019c8f5e438/cf440/swiss_cheese_model_of_accident_causation.png 148w,
+/static/474d0c1e04e5f136db263019c8f5e438/d2d38/swiss_cheese_model_of_accident_causation.png 295w,
+/static/474d0c1e04e5f136db263019c8f5e438/b9e4f/swiss_cheese_model_of_accident_causation.png 590w,
+/static/474d0c1e04e5f136db263019c8f5e438/2a182/swiss_cheese_model_of_accident_causation.png 660w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;What I like about this approach is that it considers failure to be systemic as opposed to being the cause of one particular individual. In recent years, technologists have adopted a similar approach with the &lt;a href=&quot;https://codeascraft.com/2012/05/22/blameless-postmortems/&quot;&gt;blameless post-mortem&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you have spent more than a few minutes working in technology you know you are destined to encounter failure within in your systems be it due to your code, your colleagues’ code, third-party vendors’ code, network issues, some manual process that only one person knows how to perform, or one of the countless other points of failure.&lt;/p&gt;
+&lt;p&gt;Failure in software is part of the game and controlling for it represents a lot of what we do. That said, as technologists, we get to decide how we respond to failure. Do we blame the individual who happened to click the wrong button at the wrong time? Or, do we blame the system as a whole and analyze what enabled the person to click the wrong button in the first place?&lt;/p&gt;</content:encoded></item><item><title><![CDATA[TIL: Export Named Components]]></title><description><![CDATA[I set aside 30 minutes at the end of each work day to reflect on something that I learned or found interesting during the day. I am making…]]></description><link>http://chandlermoisen.com/til_export_named_components/</link><guid isPermaLink="false">http://chandlermoisen.com/til_export_named_components/</guid><pubDate>Wed, 29 Apr 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;I set aside 30 minutes at the end of each work day to reflect on something that I learned or found interesting during the day. I am making an attempt to write these down.&lt;/em&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;Came across the following tweet in my company’s frontend chat this morning:&lt;/p&gt;
 &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;If you write &amp;quot;export default () =&amp;gt; { ... }&amp;quot; to declare components, they:&lt;br&gt;&lt;br&gt;- will show up as Anonymous in stack traces&lt;br&gt;- will show up as Unknown in DevTools&lt;br&gt;- won&amp;#39;t be checked by React-specific lint rules&lt;br&gt;- won&amp;#39;t work with some features like Fast Refresh&lt;br&gt;&lt;br&gt;Give components names!&lt;/p&gt;&amp;mdash; Dan Abramov (@dan_abramov) &lt;a href=&quot;https://twitter.com/dan_abramov/status/1255229440860262400?ref_src=twsrc%5Etfw&quot;&gt;April 28, 2020&lt;/a&gt;&lt;/blockquote&gt;
