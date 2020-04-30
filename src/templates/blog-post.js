@@ -34,10 +34,20 @@ const BlogPostTemplate = ({
   location,
   pageContext,
 }) => {
-  const post = data.markdownRemark
+  const {
+    excerpt,
+    frontmatter: {
+      date,
+      description,
+      tags,
+      title,
+    },
+    html,
+  } = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
   const [scrolledHeader, setScrolledHeader] = useState(false)
+  const isTIL = tags.includes('TIL')
 
   useEffect(() => {
     const scrollEvent = window.addEventListener('scroll', () => {
@@ -54,16 +64,20 @@ const BlogPostTemplate = ({
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        title={title}
+        description={description || excerpt}
       />
-      <h1>{post.frontmatter.title}</h1>
+
+      <h1>{title}</h1>
+
       <ScrolledHeading render={scrolledHeader}>
         <ScrolledHomeLink to="/">
           ←
         </ScrolledHomeLink>
-        <ScrolledTitle>{post.frontmatter.title}</ScrolledTitle>
+
+        <ScrolledTitle>{title}</ScrolledTitle>
       </ScrolledHeading>
+
       <p
         style={{
           ...scale(-1 / 5),
@@ -72,9 +86,24 @@ const BlogPostTemplate = ({
           marginTop: rhythm(-1),
         }}
       >
-        {post.frontmatter.date}
+        {date}
       </p>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+
+      {isTIL && (
+        <>
+          <p>
+            <i>
+              I set aside 30 minutes at the end of each work day to reflect on
+              something that I learned or found interesting during the day.
+              I am making an attempt to write these down.
+            </i>
+          </p>
+          <hr />
+        </>
+      )}
+
+      <div dangerouslySetInnerHTML={{ __html: html }} />
+
       <hr
         style={{
           marginBottom: rhythm(1),
@@ -97,6 +126,7 @@ const BlogPostTemplate = ({
             </Link>
           )}
         </li>
+
         <li>
           {next && (
             <Link to={next.fields.slug} rel="next">
@@ -124,6 +154,7 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       html
       frontmatter {
+        tags
         title
         date(formatString: "MMMM DD, YYYY")
       }

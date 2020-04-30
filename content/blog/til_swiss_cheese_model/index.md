@@ -5,11 +5,6 @@ path: "swiss-cheese-model"
 tags: ["TIL"]
 ---
 
-_I set aside 30 minutes at the end of each work day to reflect on something that I learned or found interesting during the day. I am making an attempt to write these down._
-
-____
-
-
 Today I learned about the [Swiss cheese model of accident causation](https://en.wikipedia.org/wiki/Swiss_cheese_model).
 
 The idea is that you can analyze threats to a system by breaking the system into steps. While each step will undoubtedly have holes representing failures in that particular step of the system, because the next layer of the system does not have a hole in the same place, a threat is not able to pass beyond that  layer.

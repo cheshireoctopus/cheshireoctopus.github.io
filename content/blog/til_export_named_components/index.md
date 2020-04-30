@@ -5,9 +5,7 @@ path: "export-named-components"
 tags: ["TIL", "JavaScript"]
 ---
 
-_I set aside 30 minutes at the end of each work day to reflect on something that I learned or found interesting during the day. I am making an attempt to write these down._
-
-____
+Today I learned that you should export named components as opposed to anonymous functions.
 
 Came across the following tweet in my company's frontend chat this morning:
 
@@ -28,5 +26,3 @@ If you haven't come across how the browser console displays an anonymous functio
 would yield the following in your browser's console:
 
 ![anonymous function stack trace](./anonymous-function-stack-trace.png)
-
-TIL: Export Named Components
