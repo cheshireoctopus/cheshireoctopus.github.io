@@ -1,4 +1,49 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chandler Moisen]]></title><description><![CDATA[Chandler Moisen's Personal Blog]]></description><link>http://chandlermoisen.com</link><generator>RSS for Node</generator><lastBuildDate>Thu, 30 Apr 2020 23:07:27 GMT</lastBuildDate><item><title><![CDATA[TIL: The Swiss Cheese Model]]></title><description><![CDATA[Today I learned about the Swiss cheese model of accident causation.The idea is that you can analyze threats to a system by breaking the…]]></description><link>http://chandlermoisen.com/til_swiss_cheese_model/</link><guid isPermaLink="false">http://chandlermoisen.com/til_swiss_cheese_model/</guid><pubDate>Thu, 30 Apr 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I learned about the &lt;a href=&quot;https://en.wikipedia.org/wiki/Swiss_cheese_model&quot;&gt;Swiss cheese model of accident causation&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chandler Moisen]]></title><description><![CDATA[Chandler Moisen's Personal Blog]]></description><link>http://chandlermoisen.com</link><generator>RSS for Node</generator><lastBuildDate>Sat, 02 May 2020 00:42:26 GMT</lastBuildDate><item><title><![CDATA[TIL: HTTP Archive File]]></title><description><![CDATA[Today I learned about HTTP Archive (HAR) files.While attempting to replicate a bug, I asked the reporter to share her testing credentials so…]]></description><link>http://chandlermoisen.com/til_http_archive_file/</link><guid isPermaLink="false">http://chandlermoisen.com/til_http_archive_file/</guid><pubDate>Fri, 01 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I learned about HTTP Archive (HAR) files.&lt;/p&gt;
+&lt;p&gt;While attempting to replicate a bug, I asked the reporter to share her testing credentials so that I could replicate the bug and investigate the network traffic in my browser.&lt;/p&gt;
+&lt;p&gt;Another colleague suggested she simply share her network traffic with me by exporting a HAR file.&lt;/p&gt;
+&lt;p&gt;You can think of a HAR file as a snapshot or record of all network request between a browser and a server. Each time the browser makes an additional request, another entry is appended the HAR file. Each entry contains pertinent information one would need to debug a failed network requests:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;URL&lt;/li&gt;
+&lt;li&gt;method&lt;/li&gt;
+&lt;li&gt;request/response headers&lt;/li&gt;
+&lt;li&gt;cookie values&lt;/li&gt;
+&lt;li&gt;response HTTP status code&lt;/li&gt;
+&lt;li&gt;response content&lt;/li&gt;
+&lt;li&gt;and more&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If this list feels familiar that is because the network tab in Chrome developer tools is a UI layer on top of a HAR file!&lt;/p&gt;
+&lt;p&gt;To export/import a HAR file in Chrome, open developer tools and navigate to the “Network” tab and use the appropriate arrow:&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5642a00378f5a685c4f6897311d7239d/a5044/dev-tools-har-export.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 14.927536231884059%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAt0lEQVQI1x2Oy04CQRBF5/9/ymhYMAmRGCcCdsP0+0EzHQ0Gl8dyFndzK/fUGUpKhBBYescYQ86JW2s45+jSee+ptRJz5aQuXNtCjBE7z7RpT9mPhHFDT9I5z3B7eyXOF8L1GxfbCsu5MMvgH5ZzXh8dleFDWazPeJHowbGMz8TTgbJ94a4O9PsPw/EshvWL0n8ljzVpeQi8oLXmU2mUPjNN72ilVnNjBWwsbrdFb55wYui13ELkDyAF2lcHtU9PAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;developer tools har export&quot;
+        title=&quot;&quot;
+        src=&quot;/static/5642a00378f5a685c4f6897311d7239d/b9e4f/dev-tools-har-export.png&quot;
+        srcset=&quot;/static/5642a00378f5a685c4f6897311d7239d/cf440/dev-tools-har-export.png 148w,
+/static/5642a00378f5a685c4f6897311d7239d/d2d38/dev-tools-har-export.png 295w,
+/static/5642a00378f5a685c4f6897311d7239d/b9e4f/dev-tools-har-export.png 590w,
+/static/5642a00378f5a685c4f6897311d7239d/f9b6a/dev-tools-har-export.png 885w,
+/static/5642a00378f5a685c4f6897311d7239d/2d849/dev-tools-har-export.png 1180w,
+/static/5642a00378f5a685c4f6897311d7239d/a5044/dev-tools-har-export.png 1380w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[TIL: The Swiss Cheese Model]]></title><description><![CDATA[Today I learned about the Swiss cheese model of accident causation.The idea is that you can analyze threats to a system by breaking the…]]></description><link>http://chandlermoisen.com/til_swiss_cheese_model/</link><guid isPermaLink="false">http://chandlermoisen.com/til_swiss_cheese_model/</guid><pubDate>Thu, 30 Apr 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I learned about the &lt;a href=&quot;https://en.wikipedia.org/wiki/Swiss_cheese_model&quot;&gt;Swiss cheese model of accident causation&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The idea is that you can analyze threats to a system by breaking the system into steps. While each step will undoubtedly have holes representing failures in that particular step of the system, because the next layer of the system does not have a hole in the same place, a threat is not able to pass beyond that  layer.&lt;/p&gt;
 &lt;p&gt;Threats to a system thus arise when layer after layer has a hole in the same place:&lt;/p&gt;
 &lt;p&gt;&lt;a
