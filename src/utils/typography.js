@@ -31,6 +31,9 @@ oceanBeachTheme.overrideThemeStyles = () => ({
     borderRadius: '3px',
     margin: '0px',
   },
+  'li': {
+    marginBottom: '6px',
+  }
 })
 
 const typography = new Typography(oceanBeachTheme)
