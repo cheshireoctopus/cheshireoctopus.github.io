@@ -18,7 +18,7 @@ const Logo = styled.div`
 
 const StyledImg = styled(Img)`
   border-radius: 50%;
-  margin-right: ${({ theme }) => theme.space[2]}px;
+  margin-right: ${({ theme }) => theme.space[3]}px;
 `
 
 const Header = () => {

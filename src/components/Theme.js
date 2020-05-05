@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const fontSizes = [12, 14, 16, 20, 24, 32, 48, 56, 64]
+const fontSizes = [12, 14, 16, 20, 24, 32, 48, 56, 64, 72, 96]
 const space = [0, 4, 8, 16, 24, 32, 64, 72, 128, 256, 512]
 const breakpoints = ['425px', '769px', '1024px']
 
