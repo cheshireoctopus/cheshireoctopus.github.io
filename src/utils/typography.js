@@ -5,6 +5,7 @@ oceanBeachTheme.overrideThemeStyles = () => ({
   body: {
     fontSize: '16px',
     border: '3px solid #950451',
+    minHeight: '100vh',
   },
   'a.gatsby-resp-image-link': {
     backgroundImage: 'none',
