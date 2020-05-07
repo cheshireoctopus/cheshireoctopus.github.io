@@ -34,8 +34,6 @@ const Header = () => {
     }
   `)
 
-  console.log(data)
-
   return (
     <HeaderContainer>
       <h4 style={{ margin: 0 }}>

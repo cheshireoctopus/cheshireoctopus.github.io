@@ -68,7 +68,7 @@ const BlogPostTemplate = ({
         description={description || excerpt}
       />
 
-      <h1>{title}</h1>
+      <h1 style={{ marginTop: 0 }}>{title}</h1>
 
       <ScrolledHeading render={scrolledHeader}>
         <ScrolledHomeLink to="/">
