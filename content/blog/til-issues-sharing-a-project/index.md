@@ -12,5 +12,5 @@ Here are some of the challenges I have encountered during this shared-work saga:
 
 1. Communication - does the right hand know what the left is up to?
 2. Different team processes, standards, and conceptions lead to lack of alignment
-3. Working not with just more developers, but more designers, proudct people, and managers
+3. Working not with just more developers, but more designers, product people, and managers
 4. More pull requests to review and more VQA/UAT to perform

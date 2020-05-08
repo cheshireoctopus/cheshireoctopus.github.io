@@ -4,8 +4,8 @@ import kebabCase from 'lodash/kebabCase'
 
 const TagsRotator = ({ tags }) => {
   const formattedTags = tags
-    .filter(obj => obj.tag !== 'TIL')
-    .map(obj => obj.tag)
+    .filter(obj => obj.value !== 'TIL')
+    .map(obj => obj.value)
   const initialState = {
     index: 0,
     tag: formattedTags[0],

@@ -42,13 +42,14 @@ class BlogList extends React.Component {
 
   render() {
     const { data, location, pageContext } = this.props
+    const tags = data.tags.group
     const { title: siteTitle } = data.site.siteMetadata
     const isFirstPage = pageContext.currentPage === 1
 
     return (
       <Layout location={location} title={siteTitle}>
         <SEO title="All posts" />
-        {isFirstPage && <Bio tags={data.allMarkdownRemark.group} />}
+        {isFirstPage && <Bio tags={tags} />}
         {this.renderPosts()}
         <Pagination {...pageContext} />
       </Layout>
@@ -65,14 +66,16 @@ export const pageQuery = graphql`
         title
       }
     }
+    tags: allMarkdownRemark(limit: 2000) {
+      group(field: frontmatter___tags) {
+        value: fieldValue
+      }
+    }
     allMarkdownRemark(
       limit: $limit
       skip: $skip
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
-      group(field: frontmatter___tags) {
-        tag: fieldValue
-      }
       edges {
         node {
           excerpt
