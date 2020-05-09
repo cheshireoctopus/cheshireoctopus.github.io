@@ -5,8 +5,15 @@ const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
+
   body {
     margin: 0;
+  }
+
+  a {
+    background-image: none;
+    text-decoration: none;
+    text-shadow: none;
   }
 `
 
@@ -15,6 +22,9 @@ const space = [0, 4, 8, 16, 24, 32, 64, 72, 128, 256, 512]
 const breakpoints = ['425px', '769px', '1024px']
 
 const theme = {
+  colors: {
+    red: '#950451'
+  },
   mediaQueries: {
     small: `@media screen and (min-width: ${breakpoints[0]})`,
     medium: `@media screen and (min-width: ${breakpoints[1]})`,

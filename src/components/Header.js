@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
+import Hamburger from 'hamburger-react'
+
+import MobileNav from './MobileNav'
 
 const HeaderContainer = styled.header`
-  margin: ${({ theme }) => `${theme.space[4]}px ${theme.space[3]}px`};
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: ${({ theme }) => `${theme.space[3]}px`};
 
   ${({ theme }) => theme.mediaQueries.large} {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
     margin: ${({ theme }) => `${theme.space[5]}px ${theme.space[6]}px`};
   }
 `
@@ -21,23 +24,42 @@ const Logo = styled.div`
 
 const StyledImg = styled(Img)`
   border-radius: 50%;
-  margin-right: ${({ theme }) => theme.space[3]}px;
+  margin-right: ${({ theme }) => theme.space[2]}px;
 `
 
 const StyledLink = styled(Link)`
   background-image: none;
   font-weight: 600;
-  font-size: 18px;
   letter-spacing: 0.5px;
+  margin-left: ${({ theme }) => theme.space[4]}px;
   padding: 0 4px 2px;
   text-shadow: none;
+  text-transform: uppercase;
 
+  &.active,
   &:hover {
     border-bottom: 2px solid #950451;
   }
 `
 
+const Nav = styled.nav`
+  display: none;
+
+  ${({ theme }) => theme.mediaQueries.large} {
+    display: block;
+  }
+`
+
+const MobileNavIcon = styled.nav`
+  z-index: ${({ isShowingMenu }) => isShowingMenu && 1};
+
+  ${({ theme }) => theme.mediaQueries.large} {
+    display: none;
+  }
+`
+
 const Header = () => {
+  const [isShowingMenu, setIsShowingMenu] = useState(false)
   const data = useStaticQuery(graphql`
     query {
       chandler: file(relativePath: { eq: "chandler.png" }) {
@@ -49,6 +71,20 @@ const Header = () => {
       }
     }
   `)
+
+  const handleOnClick = () => {
+    setIsShowingMenu(isShowingMenu => {
+      return !isShowingMenu
+    })
+  }
+
+  useEffect(() => {
+    if (isShowingMenu) {
+      document.querySelector('body').style.overflow = 'hidden'
+    } else {
+      document.querySelector('body').style.overflow = ''
+    }
+  }, [isShowingMenu])
 
   return (
     <HeaderContainer>
@@ -67,9 +103,23 @@ const Header = () => {
           </Logo>
         </Link>
       </h4>
-      <div>
-        <StyledLink to="/til">Today I Learned</StyledLink>
-      </div>
+
+      <Nav>
+        <StyledLink activeClassName="active" to="/">Home</StyledLink>
+        <StyledLink activeClassName="active" to="/til">Today I Learned</StyledLink>
+      </Nav>
+
+      <MobileNavIcon isShowingMenu={isShowingMenu}>
+        <Hamburger
+          color={isShowingMenu ? '#FFF' : '#000'}
+          duration={0.55}
+          label="Show menu"
+          toggled={isShowingMenu}
+          toggle={handleOnClick}
+        />
+      </MobileNavIcon>
+
+      {isShowingMenu && <MobileNav />}
     </HeaderContainer>
   )
 }
