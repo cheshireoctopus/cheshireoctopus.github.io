@@ -1,60 +1,37 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Bio from '../components/Bio'
-import PostTags from '../components/PostTags'
 import Pagination from '../components/Pagination'
+import BlogPost from '../components/BlogPost'
 
-import { rhythm } from '../utils/typography'
+const BlogList = ({
+  data,
+  location,
+  pageContext,
+}) => {
+  const tags = data.tags.group
+  const { title: siteTitle } = data.site.siteMetadata
+  const isFirstPage = pageContext.currentPage === 1
+  const posts = data.allMarkdownRemark.edges
 
-class BlogList extends React.Component {
-  renderPosts() {
-    const { data } = this.props
-    const posts = data.allMarkdownRemark.edges
+  return (
+    <Layout location={location} title={siteTitle}>
+      <SEO title="All posts" />
 
-    return posts.map(({ node }) => {
-      const { slug } = node.fields
-      const { title, date, description, tags } = node.frontmatter
+      {isFirstPage && <Bio tags={tags} />}
 
-      return (
-        <div key={slug}>
-          <h3 style={{ marginBottom: rhythm(1 / 4) }}>
-            <Link style={{ boxShadow: 'none' }} to={slug}>
-              {title || slug}
-            </Link>
-          </h3>
-          <small>{date}</small>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: description || node.excerpt,
-            }}
-            style={{ marginBottom: rhythm(0.5) }}
-          />
-          <div>
-            <PostTags tags={tags} />
-          </div>
+      {posts.map(post => (
+        <div key={post.node.fields.slug}>
+          <BlogPost post={post.node} />
         </div>
-      )
-    })
-  }
+      ))}
 
-  render() {
-    const { data, location, pageContext } = this.props
-    const tags = data.tags.group
-    const { title: siteTitle } = data.site.siteMetadata
-    const isFirstPage = pageContext.currentPage === 1
-
-    return (
-      <Layout location={location} title={siteTitle}>
-        <SEO title="All posts" />
-        {isFirstPage && <Bio tags={tags} />}
-        {this.renderPosts()}
-        <Pagination {...pageContext} />
-      </Layout>
-    )
-  }
+      <Pagination {...pageContext} />
+    </Layout>
+  )
 }
 
 export default BlogList

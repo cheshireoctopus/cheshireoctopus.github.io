@@ -7,6 +7,9 @@ const HeaderContainer = styled.header`
   margin: ${({ theme }) => `${theme.space[4]}px ${theme.space[3]}px`};
 
   ${({ theme }) => theme.mediaQueries.large} {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
     margin: ${({ theme }) => `${theme.space[5]}px ${theme.space[6]}px`};
   }
 `
@@ -19,6 +22,19 @@ const Logo = styled.div`
 const StyledImg = styled(Img)`
   border-radius: 50%;
   margin-right: ${({ theme }) => theme.space[3]}px;
+`
+
+const StyledLink = styled(Link)`
+  background-image: none;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  padding: 0 4px 2px;
+  text-shadow: none;
+
+  &:hover {
+    border-bottom: 2px solid #950451;
+  }
 `
 
 const Header = () => {
@@ -51,6 +67,9 @@ const Header = () => {
           </Logo>
         </Link>
       </h4>
+      <div>
+        <StyledLink to="/til">Today I Learned</StyledLink>
+      </div>
     </HeaderContainer>
   )
 }

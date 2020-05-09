@@ -14,7 +14,7 @@ const Footer = () => (
     <div>
       <b>© 2013 - {new Date().getFullYear()}</b>
       <div>
-        Built with <a href="https://www.gatsbyjs.org">Gatsby</a> and <a href="https://netlify.com">Netlify</a>
+        Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
       </div>
     </div>
   </FooterContainer>

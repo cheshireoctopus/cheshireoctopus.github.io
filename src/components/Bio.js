@@ -1,5 +1,8 @@
 import React from 'react'
+
+import { PageHeading } from './styled-components'
 import TagsRotator from './TagsRotator'
+
 import styled from 'styled-components'
 
 const StyledH1 = styled.h1`
@@ -18,7 +21,7 @@ const StyledP = styled.p`
 
 const Bio = ({ tags }) => (
   <>
-    <StyledH1>Hello, I'm Chandler</StyledH1>
+    <PageHeading>Hello, I'm Chandler</PageHeading>
     <StyledP>
       I am a software developer in New York City working to reduce friction in healthcare
       delivery at <a href="https://ro.co">Ro</a>.

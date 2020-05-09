@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import { PageHeading } from '../components/styled-components'
 import { rhythm, scale } from '../utils/typography'
 
 const ScrolledHeading = styled.div`
@@ -68,7 +69,7 @@ const BlogPostTemplate = ({
         description={description || excerpt}
       />
 
-      <h1 style={{ marginTop: 0 }}>{title}</h1>
+      <PageHeading>{title}</PageHeading>
 
       <ScrolledHeading render={scrolledHeader}>
         <ScrolledHomeLink to="/">
