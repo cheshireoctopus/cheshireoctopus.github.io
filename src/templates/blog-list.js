@@ -51,7 +51,15 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: $limit
       skip: $skip
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: {
+        fields: [frontmatter___date],
+        order: DESC
+      }
+      filter: {
+        frontmatter: {
+          tags: { ne: "TIL" }
+        }
+      }
     ) {
       edges {
         node {
