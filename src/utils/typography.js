@@ -29,12 +29,12 @@ oceanBeachTheme.overrideThemeStyles = () => ({
     marginBottom: '1.58em',
   },
   'div.gatsby-highlight pre': {
-    borderRadius: '3px',
+    borderRadius: '5px',
     margin: '0px',
   },
   'li': {
     marginBottom: '6px',
-  }
+  },
 })
 
 const typography = new Typography(oceanBeachTheme)
