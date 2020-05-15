@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
@@ -45,10 +44,19 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  code {
-    &.language-text {
-      background: rgba(255, 229, 100, 0.2),
+  h2 {
+    &:not(pre) > code[class*="language-"] {
+      background: none;
+      color: #000000e6;
+      font-size: inherit;
+      padding: 0;
     }
+  }
+
+  :not(pre) > code[class*="language-"] {
+    background: #000000e6;
+    font-size: 14px;
+    padding: .1em .3em;
   }
 
   div.gatsby-highlight {
