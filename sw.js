@@ -35,17 +35,33 @@ self.__precacheManifest = [
     "url": "styles-2308ca4dc6b4477fbba0.js"
   },
   {
-    "url": "commons-8233d475d70f1de1d6a0.js"
+    "url": "commons-d0716cda7b5cb39ba3ef.js"
   },
   {
-    "url": "app-a3910dfadee535d7611a.js"
+    "url": "app-5d5688003cc314178238.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-e2650134bc80aeedcea5.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "8cc75225a8f2955387f0af992d97e2e9"
+    "revision": "c667bd96e039c89d4378622770242345"
+  },
+  {
+    "url": "google-fonts/s/opensans/v17/mem5YaGs126MiZpBA-UN7rgOUuhp.woff2",
+    "revision": "0edb76284a7a0f8db4665b560ee2b48f"
+  },
+  {
+    "url": "google-fonts/s/opensans/v17/mem6YaGs126MiZpBA-UFUK0Zdc0.woff2",
+    "revision": "b61a9055d92ac56c15cacf4271d4f072"
+  },
+  {
+    "url": "google-fonts/s/opensans/v17/mem8YaGs126MiZpBA-UFVZ0b.woff2",
+    "revision": "33543c5cc5d88f5695dd08c87d280dfd"
+  },
+  {
+    "url": "google-fonts/s/yesevaone/v14/OpNJno4ck8vc-xYpwWWxli1VWw.woff2",
+    "revision": "7a862e29ede310b5ba103d2a43e1b441"
   },
   {
     "url": "component---src-pages-404-js-a7fe603e83fb856d053f.js"
