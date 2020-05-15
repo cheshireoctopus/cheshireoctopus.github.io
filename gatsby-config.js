@@ -71,15 +71,29 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      options: {
+        fonts: [
+          {
+            family: 'Yeseva One',
+          },
+          {
+            family: 'Open Sans',
+            variants: ['400', '400i', '700',]
+          },
+        ],
+      },
+    },
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sass',
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-twitter',
     {
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: 'src/utils/typography',
       },
     },
-    'gatsby-plugin-sass',
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-twitter',
   ],
 }
