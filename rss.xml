@@ -1,4 +1,134 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chandler Moisen]]></title><description><![CDATA[Chandler Moisen's Personal Blog]]></description><link>http://chandlermoisen.com</link><generator>RSS for Node</generator><lastBuildDate>Fri, 15 May 2020 16:28:24 GMT</lastBuildDate><item><title><![CDATA[TIL: Testing Goals]]></title><description><![CDATA[Today I learned a simple yet thought-provoking question to ask when determining your testing strategy: “what errors are we hoping to catch…]]></description><link>http://chandlermoisen.com/til-testing-goals/</link><guid isPermaLink="false">http://chandlermoisen.com/til-testing-goals/</guid><pubDate>Thu, 14 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I learned a simple yet thought-provoking question to ask when determining your testing strategy: &lt;strong&gt;“what errors are we hoping to catch?”&lt;/strong&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chandler Moisen]]></title><description><![CDATA[Chandler Moisen's Personal Blog]]></description><link>http://chandlermoisen.com</link><generator>RSS for Node</generator><lastBuildDate>Fri, 15 May 2020 20:15:39 GMT</lastBuildDate><item><title><![CDATA[Google Fonts in Gatsby]]></title><description><![CDATA[There are a number of ways to use Google Fonts within a Gatsby application. In other platforms, we could simply add  tags to the  file and…]]></description><link>http://chandlermoisen.com/google-fonts-in-gatsby/</link><guid isPermaLink="false">http://chandlermoisen.com/google-fonts-in-gatsby/</guid><pubDate>Fri, 15 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;There are a number of ways to use &lt;a href=&quot;https://fonts.google.com/&quot;&gt;Google Fonts&lt;/a&gt; within a &lt;a href=&quot;https://www.gatsbyjs.org/&quot;&gt;Gatsby&lt;/a&gt; application. In other platforms, we could simply add &lt;code class=&quot;language-text&quot;&gt;&amp;lt;link&amp;gt;&lt;/code&gt; tags to the &lt;code class=&quot;language-text&quot;&gt;index.html&lt;/code&gt; file and call it day. However, as Gatsby generates the &lt;code class=&quot;language-text&quot;&gt;index.html&lt;/code&gt; during its build process, we are unable to modify the &lt;code class=&quot;language-text&quot;&gt;index.html&lt;/code&gt; file directly. As such, we have to find another way to inject Google Fonts.&lt;/p&gt;
+&lt;p&gt;A lot has already been written about &lt;a href=&quot;http://kyleamathews.github.io/typography.js/&quot;&gt;Typography.js&lt;/a&gt;, so this post will compare the pros and cons of three other approaches:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The Link tag and React Helmet&lt;/li&gt;
+&lt;li&gt;The &lt;code class=&quot;language-text&quot;&gt;gatsby-plugin-google-fonts&lt;/code&gt; package&lt;/li&gt;
+&lt;li&gt;The &lt;code class=&quot;language-text&quot;&gt;gatsby-plugin-prefetch-google-fonts&lt;/code&gt; package&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: this blog uses the third approach.&lt;/p&gt;
+&lt;h2&gt;1. The Link tag and React Helmet&lt;/h2&gt;
+&lt;p&gt;The most straight forward approach, and perhaps the approach most similar to placing the Google Font embed link within &lt;code class=&quot;language-text&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt;, is to place the embed into a &lt;a href=&quot;https://github.com/nfl/react-helmet&quot;&gt;React Helmet&lt;/a&gt; component.&lt;/p&gt;
+&lt;p&gt;React Helmet is a library for managing all of the tags that are rendered within the document head.&lt;/p&gt;
+&lt;p&gt;If you used a &lt;a href=&quot;https://www.gatsbyjs.org/starters/&quot;&gt;Gatsby starter&lt;/a&gt;, your project most likely already includes the &lt;code class=&quot;language-text&quot;&gt;gatsby-plugin-react-helmet&lt;/code&gt; library and you do not need to install React Helmet.&lt;/p&gt;
+&lt;p&gt;To implement this approach:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// layout.js&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Helmet &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react-helmet&apos;&lt;/span&gt;
+
+&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Helmet&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;link
+    href&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;https://fonts.googleapis.com/css2?family=Yeseva+One&amp;amp;display=swap&quot;&lt;/span&gt;
+    rel&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;link
+    href&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&amp;amp;display=swap&quot;&lt;/span&gt; rel&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;Helmet&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: place this component in a top-level container so that it gets included across the application&lt;/p&gt;
+&lt;h3&gt;Pros&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Straight-forward and familiar if you are new to Gatsby&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Cons&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Flash of Invisible Text (FOIT) as the external resource is loaded&lt;/li&gt;
+&lt;li&gt;Hard-codes fonts instead of relying on Gatsby’s configuration &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;2. &lt;code class=&quot;language-text&quot;&gt;gatsby-plugin-google-fonts&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;gatsby-plugin-google-fonts&lt;/code&gt; makes use of Gatsby’s plugin ecosystem and configuration to load Google Fonts. In other words, instead of hard-coding your &lt;code class=&quot;language-text&quot;&gt;link&lt;/code&gt; embeds as in the prior approach, you instead would set them within your &lt;code class=&quot;language-text&quot;&gt;gatsby-config.js&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// gatsby-config.js&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  resolve&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;gatsby-plugin-google-fonts&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  options&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    fonts&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;token string&quot;&gt;&apos;yeseva one&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token string&quot;&gt;&apos;open sans\:400,400i,700&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    display&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;swap&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: the syntax to load multiple font variants is interesting&lt;/p&gt;
+&lt;h3&gt;Pros&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Leverages Gatsby’s plugin ecosystem&lt;/li&gt;
+&lt;li&gt;Keeps configuration within the appropriate config file&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Cons&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;FOIT as the external resource is loaded &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;3. &lt;code class=&quot;language-text&quot;&gt;gatsby-plugin-prefetch-google-fonts&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Similar to previous approach, &lt;code class=&quot;language-text&quot;&gt;gatsby-plugin-prefetch-google-fonts&lt;/code&gt; also leverages Gatsby’s configuration settings, but, please be advised:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;THIS PLUGIN IS NO LONGER SUPPORTED BY ITS AUTHOR!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Which is quite unfortunate as it avoids the FOIT that both of the previous approaches suffer from.&lt;/p&gt;
+&lt;p&gt;The Flash of Invisible Text is the result of the browser waiting to load the external font resources while the page loads. While this issue can be mitigated using the &lt;code class=&quot;language-text&quot;&gt;font-display&lt;/code&gt; property, there will still be the slightest flicker as the browser’s fallback font is replaced with the Google font. To read more about FOIT and &lt;code class=&quot;language-text&quot;&gt;font-display&lt;/code&gt; go &lt;a href=&quot;https://fontsplugin.com/google-fonts-font-display-swap/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;That said, if you are comfortable using an unsupported library and want to avoid the flashing text issues, then this approach is for you. &lt;code class=&quot;language-text&quot;&gt;gatsby-plugin-prefetch-google-fonts&lt;/code&gt; works by prefetching the font resources during Gatsby’s build process and including these resources in your build.&lt;/p&gt;
+&lt;p&gt;To use the plugin, add it to your &lt;code class=&quot;language-text&quot;&gt;gatsby-config.js&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// gatsby-config.js&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  resolve&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;gatsby-plugin-prefetch-google-fonts&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  options&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    fonts&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        family&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Yeseva One&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        family&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Open Sans&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        variants&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;400&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;400i&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;700&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Build Errors&lt;/h3&gt;
+&lt;p&gt;Please note that you must correctly capitalize the font family in the configuration file otherwise your build will fail.&lt;/p&gt;
+&lt;p&gt;For example, comparing &lt;code class=&quot;language-text&quot;&gt;&amp;#39;Open Sans&amp;#39;&lt;/code&gt; vs. &lt;code class=&quot;language-text&quot;&gt;&amp;#39;Open sans&amp;#39;&lt;/code&gt; - the lower-cased &lt;code class=&quot;language-text&quot;&gt;sans&lt;/code&gt; will cause the prefetching to fail and the following error to show during the build:&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b89f695219e64f916da3767a69ab0d6f/c20f6/gatsby-google-font-error.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 50.66079295154186%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAABYUlEQVQoz5WSu07FMBBEHb/id+LcPCiAgpIvoadAAulCw/9/wrC2Q0KFdIujsbPxJOtZ9hIF3kaJ10FgUwJOCHRcgFc4hJCEqEgp931DSlVpdVnPsDiMSGNGIA1pQCLNOWMcR3jnEUKAtQ7OOXjvdw11nVJCjOmolfeYpwOyt9DGkRooY9veenT0dcbYbRjeYZICWcldCdmY6NlseihqiXUdun9gbOc5WXw/Jnw9zbjeD/h8zMSE68OE97uAD9LF6Fv+kmHIruJCDx8d4pBpHcFLy3TRUin0vYZSJyUMrftjzfcgmRAc40AmwZCWy4413VJsCbZElVJ7qvJI+2/9aJnTHcZoydBSor4mWNIyFI4lzI7Wupqexm19Gu4tlz9clkB4XKZEumLbNlwuM9Z1rfsyRs3w5LfdYlpqZRarYWlvWRIZJMxzJJ1ovgaaw1zN6mzRi6VNfgz8OfjH3dWWGX4ADAnbOgEvCRUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;gatsby google font build error&quot;
+        title=&quot;&quot;
+        src=&quot;/static/b89f695219e64f916da3767a69ab0d6f/b9e4f/gatsby-google-font-error.png&quot;
+        srcset=&quot;/static/b89f695219e64f916da3767a69ab0d6f/cf440/gatsby-google-font-error.png 148w,
+/static/b89f695219e64f916da3767a69ab0d6f/d2d38/gatsby-google-font-error.png 295w,
+/static/b89f695219e64f916da3767a69ab0d6f/b9e4f/gatsby-google-font-error.png 590w,
+/static/b89f695219e64f916da3767a69ab0d6f/f9b6a/gatsby-google-font-error.png 885w,
+/static/b89f695219e64f916da3767a69ab0d6f/2d849/gatsby-google-font-error.png 1180w,
+/static/b89f695219e64f916da3767a69ab0d6f/c20f6/gatsby-google-font-error.png 1362w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Pros&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Avoids the FOIT as resources are included in the Gatsby build&lt;/li&gt;
+&lt;li&gt;Leverages Gatsby’s plugin ecosystem&lt;/li&gt;
+&lt;li&gt;Keeps configuration withing the appropriate config file&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Cons&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Unsupported library&lt;/li&gt;
+&lt;li&gt;Potential for build errors&lt;/li&gt;
+&lt;li&gt;Unsupported library&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;If you made it this far, you just learned three approaches to loading Google Fonts within a Gatsby application.&lt;/p&gt;
+&lt;p&gt;The blog that you are reading this on uses the third approach as I like to include the the font resources in the build to avoid fetching them when the document loads causing flashing text.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[TIL: Testing Goals]]></title><description><![CDATA[Today I learned a simple yet thought-provoking question to ask when determining your testing strategy: “what errors are we hoping to catch…]]></description><link>http://chandlermoisen.com/til-testing-goals/</link><guid isPermaLink="false">http://chandlermoisen.com/til-testing-goals/</guid><pubDate>Thu, 14 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I learned a simple yet thought-provoking question to ask when determining your testing strategy: &lt;strong&gt;“what errors are we hoping to catch?”&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;A colleague with a deep background in automated test writing asked me this question while I was sharing a new test approach with him. When I commented on the quality of the question, he said that he asks it to learn if the tests are actually valuable.&lt;/p&gt;
 &lt;p&gt;It is a version of a question a previous director taught me to ask when contemplating a new feature: &lt;strong&gt;“what problem are we solving?”&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[TIL: TestCafe Request Hooks]]></title><description><![CDATA[Today I learned about intercepting HTTP requests using TestCafe request hooks.I have recently incorporated writing automated end-to-end…]]></description><link>http://chandlermoisen.com/til-testcafe-request-hooks/</link><guid isPermaLink="false">http://chandlermoisen.com/til-testcafe-request-hooks/</guid><pubDate>Wed, 13 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I learned about intercepting HTTP requests using &lt;a href=&quot;https://devexpress.github.io/testcafe/documentation/guides/advanced-guides/intercept-http-requests.html&quot;&gt;TestCafe request hooks&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I have recently incorporated writing automated end-to-end tests into my workflow using &lt;a href=&quot;https://devexpress.github.io/testcafe/&quot;&gt;TestCafe&lt;/a&gt;. When writing such tests (or any tests for that matter) you might find yourself in a situation where you need to mock an external service. TestCafe allows mocking of services via its &lt;a href=&quot;https://devexpress.github.io/testcafe/documentation/reference/test-api/requestmock/&quot;&gt;RequestMock class&lt;/a&gt;.&lt;/p&gt;
