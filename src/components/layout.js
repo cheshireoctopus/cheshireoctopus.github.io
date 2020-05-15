@@ -63,6 +63,7 @@ class Layout extends React.Component {
     return (
       <Theme>
         <Header />
+
         <div
           style={{
             marginLeft: 'auto',
@@ -73,6 +74,7 @@ class Layout extends React.Component {
         >
           <main>{children}</main>
         </div>
+
         <Footer />
       </Theme>
     )

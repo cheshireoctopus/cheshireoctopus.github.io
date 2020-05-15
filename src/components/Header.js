@@ -20,6 +20,10 @@ const HeaderContainer = styled.header`
 const Logo = styled.div`
   align-items: center;
   display: flex;
+
+  h4 {
+    margin: 0;
+  }
 `
 
 const StyledImg = styled(Img)`
@@ -29,8 +33,6 @@ const StyledImg = styled(Img)`
 
 const StyledLink = styled(Link)`
   background-image: none;
-  font-weight: 600;
-  letter-spacing: 0.5px;
   margin-left: ${({ theme }) => theme.space[4]}px;
   padding: 0 4px 2px;
   text-shadow: none;
@@ -99,7 +101,8 @@ const Header = () => {
           to={'/'}
         >
           <Logo>
-            <StyledImg fixed={data.chandler.childImageSharp.fixed} /> Chandler Moisen
+            <StyledImg fixed={data.chandler.childImageSharp.fixed} />
+            <h4>Chandler Moisen</h4>
           </Logo>
         </Link>
       </h4>

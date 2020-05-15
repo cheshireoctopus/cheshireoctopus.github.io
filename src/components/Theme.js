@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
@@ -7,13 +8,60 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    border: 3px solid ${({ theme }) => theme.colors.red};
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: normal;
+    font-family: 'Yeseva One', serif;
   }
 
   a {
     background-image: none;
     text-decoration: none;
     text-shadow: none;
+
+    &.gatsby-resp-image-link: {
+      background-image: none;
+    }
+  }
+
+  span {
+    &.tag {
+      border: 1px solid ${({ theme }) => theme.colors.red};
+      border-radius: 2px;
+      color: ${({ theme }) => theme.colors.red};
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      margin-right: 8px;
+      padding: 3px 12px;
+    }
+  }
+
+  code {
+    &.language-text {
+      background: rgba(255, 229, 100, 0.2),
+    }
+  }
+
+  div.gatsby-highlight {
+    margin-bottom: 1.58em;
+
+    pre {
+      border-radius: 5px;
+      margin: 0;
+    }
+  }
+
+  li {
+    margin-bottom: 6px;
   }
 `
 
@@ -36,10 +84,18 @@ const theme = {
 }
 
 const Theme = ({ children }) => (
-  <ThemeProvider theme={theme}>
-    <GlobalStyle />
-    {children}
-  </ThemeProvider>
+  <>
+    <Helmet>
+      <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+    </Helmet>
+
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+
+      {children}
+    </ThemeProvider>
+  </>
 )
 
 export default Theme

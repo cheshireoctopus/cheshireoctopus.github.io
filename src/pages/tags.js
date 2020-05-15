@@ -5,6 +5,7 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import { PageHeading } from '../components/styled-components'
 
 const TagsPage = ({
   data: {
@@ -17,7 +18,9 @@ const TagsPage = ({
 }) => (
   <Layout location={location} title={title}>
     <SEO title="All Tags" />
-    <h1>Tags</h1>
+
+    <PageHeading>Tags</PageHeading>
+
     <ul>
       {group.map(tag => (
         <li key={tag.fieldValue}>

@@ -8,6 +8,7 @@ const Activity = ({ location }) => {
   return (
     <Layout location={location}>
       <SEO title="Activity" />
+
       <PageHeading>Activity</PageHeading>
 
       <p>

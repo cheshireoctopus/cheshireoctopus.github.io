@@ -4,18 +4,18 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import { PageHeading } from '../components/styled-components'
 
 const Tags = ({ pageContext, data, location }) => {
   const { tag } = pageContext
-  const { edges, totalCount } = data.allMarkdownRemark
-  const tagHeader = `${totalCount} post${
-    totalCount === 1 ? '' : 's'
-    } tagged with "${tag}"`
+  const { edges } = data.allMarkdownRemark
 
   return (
-    <Layout location={location} title={tagHeader}>
-      <SEO title={tagHeader} />
-      <h1>{tagHeader}</h1>
+    <Layout location={location} title={tag}>
+      <SEO title={tag} />
+
+      <PageHeading>{tag}</PageHeading>
+
       <ul>
         {edges.map(({ node }) => {
           const { slug } = node.fields
@@ -27,6 +27,7 @@ const Tags = ({ pageContext, data, location }) => {
           )
         })}
       </ul>
+
       <Link to="/tags">All tags</Link>
     </Layout>
   )

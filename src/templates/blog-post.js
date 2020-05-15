@@ -99,6 +99,7 @@ const BlogPostTemplate = ({
               I am making an attempt to write these down.
             </i>
           </p>
+
           <hr />
         </>
       )}
