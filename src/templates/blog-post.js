@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { PageHeading } from '../components/styled-components'
-import { rhythm, scale } from '../utils/typography'
+import { rhythm } from '../utils/typography'
 
 const ScrolledHeading = styled.div`
   background: white;
@@ -20,15 +20,38 @@ const ScrolledHeading = styled.div`
   z-index: 1;
 `
 
-const ScrolledTitle = styled.div`
-  font-family: 'Roboto Slab',sans-serif;
+const ScrolledTitle = styled.h4`
   font-size: 1em;
+  margin: 0;
+  margin-top: ${({ theme }) => theme.space[1]}px;
 `;
 
 const ScrolledHomeLink = styled(Link)`
   background-image: none;
   margin-right: 16px;
 `;
+
+const BlogHeading = styled(PageHeading)`
+  text-align: center;
+
+  ${({ theme }) => theme.mediaQueries.xl} {
+    margin: 0 -2em;
+    margin-top: ${({ theme }) => theme.space[6]}px;
+    font-size: ${({ theme }) => theme.fontSizes[10]}px;
+  }
+`
+
+const StyledDate = styled.p`
+  font-size: ${({ theme }) => theme.fontSizes[3]}px;
+  margin-top: ${({ theme }) => theme.space[4]}px;
+  margin-bottom: ${({ theme }) => theme.space[5]}px;
+  text-align: center;
+
+  ${({ theme }) => theme.mediaQueries.medium} {
+    font-size: ${({ theme }) => theme.fontSizes[4]}px;
+    margin-bottom: ${({ theme }) => theme.space[8]}px;
+  }
+`
 
 const BlogPostTemplate = ({
   data,
@@ -69,8 +92,6 @@ const BlogPostTemplate = ({
         description={description || excerpt}
       />
 
-      <PageHeading>{title}</PageHeading>
-
       <ScrolledHeading render={scrolledHeader}>
         <ScrolledHomeLink to="/">
           ←
@@ -79,16 +100,11 @@ const BlogPostTemplate = ({
         <ScrolledTitle>{title}</ScrolledTitle>
       </ScrolledHeading>
 
-      <p
-        style={{
-          ...scale(-1 / 5),
-          display: 'block',
-          marginBottom: rhythm(1),
-          marginTop: rhythm(-1),
-        }}
-      >
+      <BlogHeading>{title}</BlogHeading>
+
+      <StyledDate>
         {date}
-      </p>
+      </StyledDate>
 
       {isTIL && (
         <>

@@ -26,6 +26,7 @@ To implement this approach:
 
 ```javascript
 // layout.js
+
 import Helmet from 'react-helmet'
 
 <Helmet>
@@ -34,7 +35,8 @@ import Helmet from 'react-helmet'
     rel="stylesheet"
   />
   <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet"
   />
 </Helmet>
 ```

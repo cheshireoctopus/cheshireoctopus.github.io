@@ -10,10 +10,10 @@ const HeaderContainer = styled.header`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin: ${({ theme }) => `${theme.space[3]}px`};
+  padding: ${({ theme }) => `${theme.space[3]}px`};
 
   ${({ theme }) => theme.mediaQueries.large} {
-    margin: ${({ theme }) => `${theme.space[5]}px ${theme.space[6]}px`};
+    padding: ${({ theme }) => `${theme.space[5]}px ${theme.space[6]}px`};
   }
 `
 
