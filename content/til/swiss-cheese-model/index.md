@@ -3,6 +3,7 @@ title: "TIL: The Swiss Cheese Model"
 date: "2020-04-30"
 path: "swiss-cheese-model"
 tags: ["TIL"]
+is_til: true
 ---
 
 Today I learned about the [Swiss cheese model of accident causation](https://en.wikipedia.org/wiki/Swiss_cheese_model).

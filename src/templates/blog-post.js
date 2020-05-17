@@ -63,7 +63,7 @@ const BlogPostTemplate = ({
     frontmatter: {
       date,
       description,
-      tags,
+      isTIL,
       title,
     },
     html,
@@ -71,7 +71,6 @@ const BlogPostTemplate = ({
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
   const [scrolledHeader, setScrolledHeader] = useState(false)
-  const isTIL = tags.includes('TIL')
 
   useEffect(() => {
     const scrollEvent = window.addEventListener('scroll', () => {
@@ -139,7 +138,10 @@ const BlogPostTemplate = ({
       >
         <li>
           {previous && (
-            <Link to={previous.fields.slug} rel="prev">
+            <Link
+              to={`${isTIL ? 'til' : ''}${previous.fields.slug}`}
+              rel="prev"
+            >
               ← {previous.frontmatter.title}
             </Link>
           )}
@@ -147,7 +149,10 @@ const BlogPostTemplate = ({
 
         <li>
           {next && (
-            <Link to={next.fields.slug} rel="next">
+            <Link
+              to={`${isTIL ? 'til' : ''}${next.fields.slug}`}
+              rel="next"
+            >
               {next.frontmatter.title} →
             </Link>
           )}
@@ -172,9 +177,9 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       html
       frontmatter {
-        tags
         title
         date(formatString: "MMMM DD, YYYY")
+        isTIL: is_til
       }
     }
   }

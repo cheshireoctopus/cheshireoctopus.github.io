@@ -2,6 +2,7 @@
 title: "TIL: Tesler's Law"
 date: "2020-05-11"
 tags: ["TIL"]
+is_til: true
 ---
 
 Today I learned [Tesler's Law](https://lawsofux.com/teslers-law), otherwise known as the law of conservation of complexity.

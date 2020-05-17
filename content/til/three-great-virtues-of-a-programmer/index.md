@@ -2,6 +2,7 @@
 title: "TIL: Three Great Virtues of a Programmer"
 date: "2020-05-08"
 tags: ["TIL"]
+is_til: true
 ---
 
 Today I learned that, according to Larry Wall, the creator of Perl, there are [three great virtues of a programmer](http://threevirtues.com/):

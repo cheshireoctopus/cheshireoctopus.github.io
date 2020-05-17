@@ -3,6 +3,7 @@ title: "TIL: Export Named Components"
 date: "2020-04-29"
 path: "export-named-components"
 tags: ["TIL", "JavaScript"]
+is_til: true
 ---
 
 Today I learned that you should export named components as opposed to anonymous functions.

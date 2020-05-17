@@ -3,6 +3,7 @@ title: "TIL: HTTP Archive File"
 date: "2020-05-01"
 path: "http-archive-file"
 tags: ["TIL"]
+is_til: true
 ---
 
 Today I learned about HTTP Archive (HAR) files.

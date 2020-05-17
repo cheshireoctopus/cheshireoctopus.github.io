@@ -52,7 +52,9 @@ export const pageQuery = graphql`
         fields: [frontmatter___date], order: DESC
       }
       filter: {
-        frontmatter: {tags: {eq: "TIL"}}
+        frontmatter: {
+          is_til: { eq: true }
+        }
       }
     ) {
       edges {
@@ -65,6 +67,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            isTIL: is_til
           }
         }
       }

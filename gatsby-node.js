@@ -9,11 +9,20 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const blogPostTemplate = path.resolve('src/templates/blog-post.js')
   const tagTemplate = path.resolve('src/templates/tags.js')
 
-  const result = await graphql(
+  // Fetch blog posts
+  const blogPostQuery = await graphql(
     `
       {
         postsRemark: allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
+          sort: {
+            fields: [frontmatter___date],
+            order: DESC
+          }
+          filter: {
+            frontmatter: {
+              is_til: { eq: null }
+            }
+          }
           limit: 1000
         ) {
           edges {
@@ -36,12 +45,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `
   )
 
-  if (result.errors) {
+  if (blogPostQuery.errors) {
     return reporter.panicOnBuild('Error while running GraphQL query.')
   }
 
   // Create blog posts pages.
-  const posts = result.data.postsRemark.edges
+  const posts = blogPostQuery.data.postsRemark.edges
   
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
@@ -59,7 +68,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   })
 
   // Create tags
-  const tags = result.data.tagsGroup.group
+  const tags = blogPostQuery.data.tagsGroup.group
 
   tags.forEach(tag => {
     createPage({
@@ -84,6 +93,59 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         numPages,
         currentPage: i + 1,
       }
+    })
+  })
+
+  // Fetch TIL posts
+  const tilPostsQuery = await graphql(
+    `
+      {
+        postsRemark: allMarkdownRemark(
+          sort: {
+            fields: [frontmatter___date],
+            order: DESC
+          }
+          filter: {
+            frontmatter: {
+              is_til: { eq: true }
+            }
+          }
+          limit: 1000
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+              }
+            }
+          }
+        }
+      }
+    `
+  )
+
+  if (tilPostsQuery.errors) {
+    return reporter.panicOnBuild('Error while running GraphQL query to fetch TIL posts.')
+  }
+
+  // Create blog posts pages.
+  const tilPosts = tilPostsQuery.data.postsRemark.edges
+
+  tilPosts.forEach((post, index) => {
+    const previous = index === tilPosts.length - 1 ? null : tilPosts[index + 1].node
+    const next = index === 0 ? null : tilPosts[index - 1].node
+
+    createPage({
+      path: `til${post.node.fields.slug}`,
+      component: blogPostTemplate,
+      context: {
+        slug: post.node.fields.slug,
+        previous,
+        next,
+      },
     })
   })
 

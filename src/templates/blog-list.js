@@ -57,7 +57,7 @@ export const pageQuery = graphql`
       }
       filter: {
         frontmatter: {
-          tags: { ne: "TIL" }
+          is_til: { eq: null }
         }
       }
     ) {
@@ -72,6 +72,7 @@ export const pageQuery = graphql`
             title
             description
             tags
+            isTil: is_til
           }
         }
       }

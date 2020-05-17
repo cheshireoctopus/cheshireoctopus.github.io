@@ -2,6 +2,7 @@
 title: "TIL: Challenges Sharing a Project"
 date: "2020-05-07"
 tags: ["TIL"]
+is_til: true
 ---
 
 Today I learned about challenges sharing a project across teams as a tech lead.
