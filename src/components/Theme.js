@@ -30,6 +30,10 @@ const GlobalStyle = createGlobalStyle`
     &.gatsby-resp-image-link: {
       background-image: none;
     }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   span {
@@ -70,6 +74,10 @@ const GlobalStyle = createGlobalStyle`
 
   li {
     margin-bottom: 6px;
+  }
+
+  twitter-widget {
+    margin: auto;
   }
 `
 

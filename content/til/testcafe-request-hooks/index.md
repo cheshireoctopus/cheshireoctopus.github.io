@@ -2,6 +2,7 @@
 title: "TIL: TestCafe Request Hooks"
 date: "2020-05-13"
 tags: ["TIL"]
+is_til: true
 ---
 
 Today I learned about intercepting HTTP requests using [TestCafe request hooks](https://devexpress.github.io/testcafe/documentation/guides/advanced-guides/intercept-http-requests.html).

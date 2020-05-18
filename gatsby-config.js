@@ -16,6 +16,13 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        name: 'til',
+        path: `${__dirname}/content/til`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
         name: 'assets',
         path: `${__dirname}/content/assets`,
       },

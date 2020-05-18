@@ -3,6 +3,7 @@ title: "TIL: Questions For Postmortems"
 date: "2020-05-05"
 path: "questions-for-postmortems"
 tags: ["TIL"]
+is_til: true
 ---
 
 Today I learned more questions to ask during a postmortem.

@@ -3,6 +3,7 @@ title: "TIL: Publish More Incident Reports"
 date: "2020-05-04"
 path: "publish-more-incident-reports"
 tags: ["TIL"]
+is_til: true
 ---
 
 Today I learned that developers should publish more incident reports.

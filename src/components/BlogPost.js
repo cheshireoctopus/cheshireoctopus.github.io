@@ -8,16 +8,14 @@ import { rhythm } from '../utils/typography'
 
 const BlogPost = ({ post }) => {
   const { slug } = post.fields
-  const { title, date, description, tags } = post.frontmatter
+  const { title, date, description, tags, isTIL } = post.frontmatter
+  const url = isTIL ? `til${slug}` : slug
 
   return (
     <div>
       <h2 style={{ marginBottom: rhythm(1 / 4) }}>
-        <Link
-          style={{ boxShadow: 'none', backgroundImage: 'none' }}
-          to={slug}
-        >
-          {title || slug}
+        <Link to={url}>
+          {title}
         </Link>
       </h2>
 

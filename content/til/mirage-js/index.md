@@ -2,6 +2,7 @@
 title: "TIL: Mirage.js"
 date: "2020-05-12"
 tags: ["TIL"]
+is_til: true
 ---
 
 Today I learned about [Mirage.js](https://miragejs.com) while building tooling to support acceptance tests for a new client-side application.
