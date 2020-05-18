@@ -9,7 +9,7 @@ import { rhythm } from '../utils/typography'
 const BlogPost = ({ post }) => {
   const { slug } = post.fields
   const { title, date, description, tags, isTIL } = post.frontmatter
-  const url = isTIL ? `til${slug}` : slug
+  const url = isTIL ? `til${slug}` : `writing${slug}`
 
   return (
     <div>

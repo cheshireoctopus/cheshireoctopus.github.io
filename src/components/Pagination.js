@@ -54,8 +54,8 @@ const Pagination = ({
 }) => {
   const isFirstPage = currentPage === 1
   const isLastPage = currentPage === numPages
-  const prevPage = currentPage - 1 === 1 ? "/" : (currentPage - 1).toString()
-  const nextPage = (currentPage + 1).toString()
+  const prevPage = currentPage - 1 === 1 ? '/writing' : `/writing/${(currentPage - 1).toString()}`
+  const nextPage = `/writing/${(currentPage + 1).toString()}`
 
   return (
     <Container>
@@ -70,7 +70,7 @@ const Pagination = ({
         {Array.from({ length: numPages }, (_, i) => (
           <PageNumber
             key={`pagination-number${i + 1}`}
-            to={`/${i === 0 ? '' : i + 1}`}
+            to={`/writing/${i === 0 ? '' : i + 1}`}
             bold={i === currentPage - 1}
             large={i === currentPage - 1}
             pushLeft={i !== 0}

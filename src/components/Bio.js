@@ -15,7 +15,7 @@ const StyledH1 = styled.h1`
 `
 
 const StyledP = styled.p`
-  font-size: ${({ theme }) => theme.fontSizes[3]}px;
+  font-size: ${({ theme }) => theme.fontSizes[4]}px;
   margin-top: 0;
   margin-bottom: ${({ theme }) => theme.space[3]}px;
 `

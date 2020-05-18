@@ -31,25 +31,14 @@ const ScrolledHomeLink = styled(Link)`
   margin-right: 16px;
 `;
 
-const BlogHeading = styled(PageHeading)`
-  text-align: center;
-
-  ${({ theme }) => theme.mediaQueries.xl} {
-    margin: 0 -2em;
-    margin-top: ${({ theme }) => theme.space[6]}px;
-    font-size: ${({ theme }) => theme.fontSizes[10]}px;
-  }
-`
-
-const StyledDate = styled.p`
+const Date = styled.p`
   font-size: ${({ theme }) => theme.fontSizes[3]}px;
-  margin-top: ${({ theme }) => theme.space[4]}px;
   margin-bottom: ${({ theme }) => theme.space[5]}px;
   text-align: center;
 
   ${({ theme }) => theme.mediaQueries.medium} {
     font-size: ${({ theme }) => theme.fontSizes[4]}px;
-    margin-bottom: ${({ theme }) => theme.space[8]}px;
+    margin-bottom: ${({ theme }) => theme.space[7]}px;
   }
 `
 
@@ -99,25 +88,11 @@ const BlogPostTemplate = ({
         <ScrolledTitle>{title}</ScrolledTitle>
       </ScrolledHeading>
 
-      <BlogHeading>{title}</BlogHeading>
+      <PageHeading>{title}</PageHeading>
 
-      <StyledDate>
-        {date}
-      </StyledDate>
-
-      {isTIL && (
-        <>
-          <p>
-            <i>
-              I set aside 30 minutes at the end of each work day to reflect on
-              something that I learned or found interesting during the day.
-              I am making an attempt to write these down.
-            </i>
-          </p>
-
-          <hr />
-        </>
-      )}
+      <Date>
+        <i>{date}</i>
+      </Date>
 
       <div dangerouslySetInnerHTML={{ __html: html }} />
 
@@ -139,7 +114,7 @@ const BlogPostTemplate = ({
         <li>
           {previous && (
             <Link
-              to={`${isTIL ? 'til' : ''}${previous.fields.slug}`}
+              to={`${isTIL ? 'til' : 'writing'}${previous.fields.slug}`}
               rel="prev"
             >
               ← {previous.frontmatter.title}
@@ -150,7 +125,7 @@ const BlogPostTemplate = ({
         <li>
           {next && (
             <Link
-              to={`${isTIL ? 'til' : ''}${next.fields.slug}`}
+              to={`${isTIL ? 'til' : 'writing'}${next.fields.slug}`}
               rel="next"
             >
               {next.frontmatter.title} →
