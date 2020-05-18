@@ -9,7 +9,7 @@ import Bio from '../components/Bio'
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 322px);
+  min-height: calc(100vh - 322px);
   justify-content: center;
 `
 
