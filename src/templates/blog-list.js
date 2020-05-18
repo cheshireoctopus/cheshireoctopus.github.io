@@ -3,9 +3,9 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import Bio from '../components/Bio'
 import Pagination from '../components/Pagination'
 import BlogPost from '../components/BlogPost'
+import { PageHeading } from '../components/styled-components'
 
 const BlogList = ({
   data,
@@ -19,9 +19,11 @@ const BlogList = ({
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="Writing" />
 
-      {isFirstPage && <Bio tags={tags} />}
+      {isFirstPage && (
+        <PageHeading>Writing</PageHeading>
+      )}
 
       {posts.map(post => (
         <div key={post.node.fields.slug}>
