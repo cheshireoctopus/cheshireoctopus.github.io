@@ -1,4 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chandler Moisen]]></title><description><![CDATA[Chandler Moisen's Personal Blog]]></description><link>http://chandlermoisen.com</link><generator>RSS for Node</generator><lastBuildDate>Wed, 20 May 2020 22:00:14 GMT</lastBuildDate><item><title><![CDATA[TIL: Mock Low, Assert High]]></title><description><![CDATA[Today I learned the concept of mocking low and asserting high.When it comes to testing software you are often weighing test-fidelity against…]]></description><link>http://chandlermoisen.com/mock-low-assert-high/</link><guid isPermaLink="false">http://chandlermoisen.com/mock-low-assert-high/</guid><pubDate>Wed, 20 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I learned the concept of &lt;strong&gt;mocking low and asserting high&lt;/strong&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chandler Moisen]]></title><description><![CDATA[Chandler Moisen's Personal Blog]]></description><link>http://chandlermoisen.com</link><generator>RSS for Node</generator><lastBuildDate>Thu, 21 May 2020 22:46:32 GMT</lastBuildDate><item><title><![CDATA[Neumorphism]]></title><description><![CDATA[Today I learned what neumorphism is.Well, rather, I finally learned what this design trend I have been seeing for months on my Muzli feed is…]]></description><link>http://chandlermoisen.com/neumorphism/</link><guid isPermaLink="false">http://chandlermoisen.com/neumorphism/</guid><pubDate>Thu, 21 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I learned what neumorphism is.&lt;/p&gt;
+&lt;p&gt;Well, rather, I finally learned what this design trend I have been seeing for months on my &lt;a href=&quot;https://muz.li/&quot;&gt;Muzli&lt;/a&gt; feed is called.&lt;/p&gt;
+&lt;p&gt;The term is a weak portmanteau of “new” and “skeuomorphism” - a design pattern where elements of a graphical user interface imitate their RL equivalent in either appearance or interaction.&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/24c6db1b6758aab76f2ba0cb70060a79/9fa68/skeuomorphism.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 56.21212121212121%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAQBAwX/xAAWAQEBAQAAAAAAAAAAAAAAAAADAQL/2gAMAwEAAhADEAAAAU5vYzUDUGL/xAAbEAACAgMBAAAAAAAAAAAAAAABAhEUAwQTIv/aAAgBAQABBQLxVMAMwYwK2cSmuo5f/8QAGBEAAgMAAAAAAAAAAAAAAAAAAAERE0H/2gAIAQMBAT8ByCtH/8QAGBEAAgMAAAAAAAAAAAAAAAAAAAERE0H/2gAIAQIBAT8B2S1n/8QAGxAAAwACAwAAAAAAAAAAAAAAAAERITFBkaH/2gAIAQEABj8CnIqpNlS8NLoTFg//xAAcEAACAgIDAAAAAAAAAAAAAAABEQAhMVFhobH/2gAIAQEAAT8hGhZ4iIw0F5AHEC9c/UEWF46jejNmf//aAAwDAQACAAMAAAAQiB//xAAYEQEBAAMAAAAAAAAAAAAAAAABABEhUf/aAAgBAwEBPxDKLqX3f//EABcRAQEBAQAAAAAAAAAAAAAAAAERAFH/2gAIAQIBAT8QIjhwJCb/xAAdEAACAwACAwAAAAAAAAAAAAABEQAhMUFRYXGh/9oACAEBAAE/EKScwrb79QtQIIN3UKF1IkQ+aI/iCtE2RWiDzdkWmf/Z&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;examples of skeuomorphism&quot;
+        title=&quot;&quot;
+        src=&quot;/static/24c6db1b6758aab76f2ba0cb70060a79/c739e/skeuomorphism.jpg&quot;
+        srcset=&quot;/static/24c6db1b6758aab76f2ba0cb70060a79/8ee9c/skeuomorphism.jpg 148w,
+/static/24c6db1b6758aab76f2ba0cb70060a79/ebbe7/skeuomorphism.jpg 295w,
+/static/24c6db1b6758aab76f2ba0cb70060a79/c739e/skeuomorphism.jpg 590w,
+/static/24c6db1b6758aab76f2ba0cb70060a79/9fa68/skeuomorphism.jpg 660w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Neumorphism is a visual design pattern where shadows are used to create the illusion of extruding shapes. These extrusions share the same coloring as their parent element.&lt;/p&gt;
+&lt;p&gt;You can see an example of this technique using this &lt;a href=&quot;https://neumorphism.io/#950451&quot;&gt;generator&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As I am but a fledging designer, I lack the vocabulary to accurately critique this pattern, but it reminds me of pressing a shape through one of those elastic exercise bands. While certainly eye-catching, I am not sure of its applications in UI design as it makes all elements resemble button and would likely confuse users on what exactly they are supposed to interact with.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[TIL: Mock Low, Assert High]]></title><description><![CDATA[Today I learned the concept of mocking low and asserting high.When it comes to testing software you are often weighing test-fidelity against…]]></description><link>http://chandlermoisen.com/mock-low-assert-high/</link><guid isPermaLink="false">http://chandlermoisen.com/mock-low-assert-high/</guid><pubDate>Wed, 20 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I learned the concept of &lt;strong&gt;mocking low and asserting high&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;When it comes to testing software you are often weighing test-fidelity against time spent writing and maintaining tests. In other words: how aggressive your tests are vs. how much time you have.&lt;/p&gt;
 &lt;p&gt;In an ideal world, we are able to write beautifully expansive end-to-end tests that cover each and every edge case and still have plenty of time left over to develop new features. For many of us, this ideal world remains beyond reach due to resourcing and the laws that govern space and time.&lt;/p&gt;
 &lt;p&gt;We are thus forced to make compromises. An approach to structuring your compromise can be found in the concept of mocking low and asserting high.&lt;/p&gt;
