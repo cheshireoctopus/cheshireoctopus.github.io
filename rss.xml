@@ -1,4 +1,46 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chandler Moisen]]></title><description><![CDATA[Chandler Moisen's Personal Blog]]></description><link>http://chandlermoisen.com</link><generator>RSS for Node</generator><lastBuildDate>Mon, 25 May 2020 16:49:34 GMT</lastBuildDate><item><title><![CDATA[Neumorphism]]></title><description><![CDATA[Today I learned what neumorphism is.Well, rather, I finally learned what this design trend I have been seeing for months on my Muzli feed is…]]></description><link>http://chandlermoisen.com/neumorphism/</link><guid isPermaLink="false">http://chandlermoisen.com/neumorphism/</guid><pubDate>Thu, 21 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I learned what neumorphism is.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chandler Moisen]]></title><description><![CDATA[Chandler Moisen's Personal Blog]]></description><link>http://chandlermoisen.com</link><generator>RSS for Node</generator><lastBuildDate>Mon, 25 May 2020 17:28:52 GMT</lastBuildDate><item><title><![CDATA[How to Give Box Shadow a Border Radius]]></title><description><![CDATA[Today I learned how easy it is to apply a border radius to an element’s box shadow: just add  to the element!Allan, my co-founder at Keming…]]></description><link>http://chandlermoisen.com/how-to-give-box-shadow-border-radius/</link><guid isPermaLink="false">http://chandlermoisen.com/how-to-give-box-shadow-border-radius/</guid><pubDate>Mon, 25 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I learned how easy it is to apply a border radius to an element’s box shadow: just add &lt;code class=&quot;language-text&quot;&gt;border-radius&lt;/code&gt; to the element!&lt;/p&gt;
+&lt;p&gt;Allan, my co-founder at &lt;a href=&quot;https://keming.io&quot;&gt;Keming&lt;/a&gt;, had recently overhauled the design our sign-up form to include box shadow with a border radius:&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1c85d90bd185638321ecb790a604e3a4/1002f/border-radius-box-shadow.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 85.51617873651772%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAABYlAAAWJQFJUiTwAAACQ0lEQVQ4y52TTU8TURSGRzFYI7bTaSHSuHQr4Qf4C1wb69fODboRMNG9CxJ17R9wa4LykZJIiLbVtlJmptMpSUlMTLSEWJEEBNrpdO7ruXeG2qHDoizenDlzz33OOfeeK+3UlsF+PAJq02C1KbL9yd0zSfYJmLUJ6cviQ9irElAaANPI6v1L7DNIlg4pn5pCWz0PmCNg5dgpFAfKCnZy4/izWYWUS00ScICACpgh02IEqIRdmRHXD5K3xowoxYagv3uA+be7fiAPaKoKttIJbH1KYK8Qh61HYKkyWporS9gIGsVh2Fq8k+DnynV8X6/0AvmmvYKCv1+jOFiVPfV+79N6W6fqytSVeQkbizegZr/1Ai1NQT07il+ZhLA8ga0HixkRARS2MgTYZhBQxm4+Jqrk8lcn+yptl+QOkJ8lOwgANtZiqGdGyUbpnBQcemoUyV+TfXK6gWUCHpq9t8yMIcocgmOE6JtsyVVLDaNJSZoEOlI3EASEHxijn2HKfAXbn8fxOzuGenoM22S539IuU0zYvYSu8WHcDwI6xgiwIeHjm6e4cxN4Ri/q1QzweAK4f4vi3yeB6hmqPuZ1Intze1KFNPUwL1I116DP3kNlPon1hdsw55Iozd6lC7oq1o8gPh0H2p0z5FN/QVSKape478HcG/1fIeu6FAHML02jrQ0SaFi8Sf42efvHxUQHiojxSZy9ZzkwMzcBqyDB0QdF66fTWTjaORobA1Ixn0I69Rz55ZfIfXjRv2hfdmkGRu414OzjH1zu5Au3oMSBAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;box shadow with border radius&quot;
+        title=&quot;&quot;
+        src=&quot;/static/1c85d90bd185638321ecb790a604e3a4/b9e4f/border-radius-box-shadow.png&quot;
+        srcset=&quot;/static/1c85d90bd185638321ecb790a604e3a4/cf440/border-radius-box-shadow.png 148w,
+/static/1c85d90bd185638321ecb790a604e3a4/d2d38/border-radius-box-shadow.png 295w,
+/static/1c85d90bd185638321ecb790a604e3a4/b9e4f/border-radius-box-shadow.png 590w,
+/static/1c85d90bd185638321ecb790a604e3a4/f9b6a/border-radius-box-shadow.png 885w,
+/static/1c85d90bd185638321ecb790a604e3a4/2d849/border-radius-box-shadow.png 1180w,
+/static/1c85d90bd185638321ecb790a604e3a4/1002f/border-radius-box-shadow.png 1298w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Initially I thought that this would require modifying the &lt;code class=&quot;language-text&quot;&gt;box-shadow&lt;/code&gt; value in some way, but, much to my surprise and delight, an element’s box shadow will respect and reflect its &lt;code class=&quot;language-text&quot;&gt;border-radius&lt;/code&gt; with no additional work required.&lt;/p&gt;
+&lt;p&gt;You can see this in the following CodePen:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://codepen.io/cheshireoctopus/pen/rNObGRP&quot;&gt;&lt;div&gt;&lt;iframe 
+        height=&apos;400&apos; 
+        scrolling=&apos;no&apos; 
+        src=&apos;//codepen.io/cheshireoctopus/embed/preview/rNObGRP/?height=400&amp;theme-id=dark&amp;default-tab=html,result&apos; 
+        frameborder=&apos;no&apos; 
+        allowtransparency=&apos;true&apos; 
+        allowfullscreen=&apos;true&apos; 
+        style=&apos;width: 100%;&apos;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Neumorphism]]></title><description><![CDATA[Today I learned what neumorphism is.Well, rather, I finally learned what this design trend I have been seeing for months on my Muzli feed is…]]></description><link>http://chandlermoisen.com/neumorphism/</link><guid isPermaLink="false">http://chandlermoisen.com/neumorphism/</guid><pubDate>Thu, 21 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I learned what neumorphism is.&lt;/p&gt;
 &lt;p&gt;Well, rather, I finally learned what this design trend I have been seeing for months on my &lt;a href=&quot;https://muz.li/&quot;&gt;Muzli&lt;/a&gt; feed is called.&lt;/p&gt;
 &lt;p&gt;The term is a weak portmanteau of “new” and “skeuomorphism” - a design pattern where elements of a graphical user interface imitate their RL equivalent in either appearance or interaction.&lt;/p&gt;
 &lt;p&gt;&lt;a
