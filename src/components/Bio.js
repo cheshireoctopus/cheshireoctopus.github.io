@@ -23,13 +23,20 @@ const StyledP = styled.p`
 const Bio = ({ tags }) => (
   <>
     <PageHeading>Hello, I'm Chandler</PageHeading>
+
     <StyledP>
-      I am a software developer in New York City working to reduce friction in healthcare
-      delivery at <a href="https://ro.co">Ro</a>.
+      I am a software developer, product designer, and technology educator living in New York City.
     </StyledP>
+
     <StyledP>
-      I am also working on reducing the friction in design hiring at <a href="https://keming.io">Keming.io</a>.
+      By day I work to reduce friction in healthcare delivery at <a href="https://ro.co">Ro</a>.
+      By night I work to reduce friction in digital design hiring at <a href="https://keming.io">Keming</a>.
     </StyledP>
+
+    <StyledP>
+
+    </StyledP>
+
     <StyledP>I write about <TagsRotator tags={tags} />.</StyledP>
   </>
 )

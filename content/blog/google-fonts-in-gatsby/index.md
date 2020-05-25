@@ -1,7 +1,7 @@
 ---
 title: "Google Fonts in Gatsby"
 date: "2020-05-15"
-tags: ["Gatsby", "JavaScript", "Tutorial"]
+tags: ["Gatsby", "JavaScript", "Tutorials"]
 ---
 
 There are a number of ways to use [Google Fonts](https://fonts.google.com/) within a [Gatsby](https://www.gatsbyjs.org/) application. In other platforms, we could simply add `<link>` tags to the `index.html` file and call it day. However, as Gatsby generates the `index.html` during its build process, we are unable to modify the `index.html` file directly. As such, we have to find another way to inject Google Fonts.

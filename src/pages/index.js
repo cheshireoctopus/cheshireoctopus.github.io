@@ -23,7 +23,7 @@ const IndexPage = ({
   return (
     <Layout location={location} title={siteTitle}>
       <Wrapper>
-        <SEO title="Home" />
+        <SEO />
 
         <Bio tags={tags} />
       </Wrapper>
