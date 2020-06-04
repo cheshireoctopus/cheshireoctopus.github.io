@@ -1,5 +1,5 @@
 ---
-title: "TIL: Another Styled Component Pattern"
+title: "Another Styled Component Pattern"
 date: "2020-05-19"
 path: "export-named-components"
 is_til: true

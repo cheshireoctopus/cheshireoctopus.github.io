@@ -1,8 +1,7 @@
 ---
-title: "TIL: Export Named Components"
+title: "Export Named Components"
 date: "2020-04-29"
 path: "export-named-components"
-tags: ["TIL", "JavaScript"]
 is_til: true
 ---
 

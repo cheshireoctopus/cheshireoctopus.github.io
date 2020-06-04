@@ -1,8 +1,7 @@
 ---
-title: "TIL: Call it 'Product Debt'"
+title: "Call it 'Product Debt'"
 date: "2020-05-06"
 path: "call-it-product-debt"
-tags: ["TIL"]
 is_til: true
 ---
 

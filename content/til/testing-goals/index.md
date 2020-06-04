@@ -1,7 +1,6 @@
 ---
-title: "TIL: Testing Goals"
+title: "Testing Goals"
 date: "2020-05-14"
-tags: ["TIL"]
 is_til: true
 ---
 

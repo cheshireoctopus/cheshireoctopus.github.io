@@ -1,7 +1,6 @@
 ---
-title: "TIL: Tesler's Law"
+title: "Tesler's Law"
 date: "2020-05-11"
-tags: ["TIL"]
 is_til: true
 ---
 

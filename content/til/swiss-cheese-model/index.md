@@ -1,8 +1,7 @@
 ---
-title: "TIL: The Swiss Cheese Model"
+title: "The Swiss Cheese Model"
 date: "2020-04-30"
 path: "swiss-cheese-model"
-tags: ["TIL"]
 is_til: true
 ---
 

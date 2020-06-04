@@ -2,7 +2,6 @@
 title: "How to Give Box Shadow a Border Radius"
 date: "2020-05-25"
 path: "http-archive-file"
-tags: ["TIL"]
 is_til: true
 ---
 

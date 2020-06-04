@@ -1,7 +1,6 @@
 ---
-title: "TIL: Three Great Virtues of a Programmer"
+title: "Three Great Virtues of a Programmer"
 date: "2020-05-08"
-tags: ["TIL"]
 is_til: true
 ---
 

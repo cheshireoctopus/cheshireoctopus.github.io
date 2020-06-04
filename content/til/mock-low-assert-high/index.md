@@ -1,5 +1,5 @@
 ---
-title: "TIL: Mock Low, Assert High"
+title: "Mock Low, Assert High"
 date: "2020-05-20"
 path: "mock-low-test-high"
 is_til: true

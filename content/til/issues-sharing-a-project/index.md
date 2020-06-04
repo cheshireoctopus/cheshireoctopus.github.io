@@ -1,7 +1,6 @@
 ---
-title: "TIL: Challenges Sharing a Project"
+title: "Challenges Sharing a Project"
 date: "2020-05-07"
-tags: ["TIL"]
 is_til: true
 ---
 

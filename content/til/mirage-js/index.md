@@ -1,7 +1,6 @@
 ---
-title: "TIL: Mirage.js"
+title: "Mirage.js"
 date: "2020-05-12"
-tags: ["TIL"]
 is_til: true
 ---
 

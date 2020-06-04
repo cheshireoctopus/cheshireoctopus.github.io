@@ -1,8 +1,7 @@
 ---
-title: "TIL: Questions For Postmortems"
+title: "Questions For Postmortems"
 date: "2020-05-05"
 path: "questions-for-postmortems"
-tags: ["TIL"]
 is_til: true
 ---
 

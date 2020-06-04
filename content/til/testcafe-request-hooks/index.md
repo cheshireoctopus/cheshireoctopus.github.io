@@ -1,7 +1,6 @@
 ---
-title: "TIL: TestCafe Request Hooks"
+title: "TestCafe Request Hooks"
 date: "2020-05-13"
-tags: ["TIL"]
 is_til: true
 ---
 
