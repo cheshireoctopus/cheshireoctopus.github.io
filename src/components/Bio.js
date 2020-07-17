@@ -25,7 +25,7 @@ const Bio = ({ tags }) => (
     <PageHeading>Hello, I'm Chandler</PageHeading>
 
     <StyledP>
-      I am a software developer, product designer, and technology educator living in New York City.
+      I am a software developer, product designer, and technology educator living in <del>New York City</del> Colorful Colorado.
     </StyledP>
 
     <StyledP>
