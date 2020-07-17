@@ -139,7 +139,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const next = index === 0 ? null : tilPosts[index - 1].node
 
     createPage({
-      path: `til${post.node.fields.slug}`,
+      path: `notes${post.node.fields.slug}`,
       component: blogPostTemplate,
       context: {
         slug: post.node.fields.slug,

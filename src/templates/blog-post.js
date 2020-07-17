@@ -114,7 +114,7 @@ const BlogPostTemplate = ({
         <li>
           {previous && (
             <Link
-              to={`${isTIL ? 'til' : 'writing'}${previous.fields.slug}`}
+              to={`${isTIL ? 'notes' : 'writing'}${previous.fields.slug}`}
               rel="prev"
             >
               ← {previous.frontmatter.title}
@@ -125,7 +125,7 @@ const BlogPostTemplate = ({
         <li>
           {next && (
             <Link
-              to={`${isTIL ? 'til' : 'writing'}${next.fields.slug}`}
+              to={`${isTIL ? 'notes' : 'writing'}${next.fields.slug}`}
               rel="next"
             >
               {next.frontmatter.title} →

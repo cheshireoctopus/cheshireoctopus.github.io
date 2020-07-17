@@ -6,7 +6,7 @@ import SEO from '../components/seo'
 import BlogPost from '../components/BlogPost'
 import { PageHeading } from '../components/styled-components'
 
-const TIL = ({ data, location }) => {
+const Notes = ({ data, location }) => {
   const { title: siteTitle } = data.site.siteMetadata
 
   const renderPosts = () => {
@@ -21,9 +21,9 @@ const TIL = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Today I Learned" />
+      <SEO title="Notes" />
 
-      <PageHeading>Today I Learned</PageHeading>
+      <PageHeading>Notes</PageHeading>
 
       <p>
         <i>
@@ -75,4 +75,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default TIL
+export default Notes

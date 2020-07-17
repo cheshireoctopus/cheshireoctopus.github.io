@@ -110,7 +110,7 @@ const Header = () => {
       <Nav>
         <StyledLink activeClassName="active" to="/">Home</StyledLink>
         <StyledLink activeClassName="active" to="/writing">Writing</StyledLink>
-        <StyledLink activeClassName="active" to="/til">Today I Learned</StyledLink>
+        <StyledLink activeClassName="active" to="/notes">Notes</StyledLink>
         <StyledLink activeClassName="active" to="/activity">Activity</StyledLink>
       </Nav>
 
