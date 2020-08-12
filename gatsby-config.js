@@ -2,10 +2,22 @@ module.exports = {
   siteMetadata: {
     title: 'Chandler Moisen',
     author: 'Chandler Moisen',
-    description: 'Chandler Moisen\'s Personal Blog',
-    siteUrl: 'http://chandlermoisen.com',
+    description: "Chandler Moisen's Personal Blog",
+    siteUrl: 'https://chandlermoisen.com',
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://chandlermoisen.com',
+        policy: [
+          {
+            userAgent: '*',
+            allow: '/',
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -75,7 +87,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Chandler Moisen\'s Personal Blog',
+        name: "Chandler Moisen's Personal Blog",
         short_name: 'Chandler Moisen',
         start_url: '/',
         background_color: '#ffffff',
@@ -94,7 +106,7 @@ module.exports = {
           },
           {
             family: 'Open Sans',
-            variants: ['400', '400i', '700',]
+            variants: ['400', '400i', '700'],
           },
         ],
       },

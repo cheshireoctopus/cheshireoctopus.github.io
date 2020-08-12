@@ -1,10 +1,10 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react'
+import { graphql } from 'gatsby'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import BlogPost from "../components/BlogPost"
-import { PageHeading } from "../components/styled-components"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import BlogPost from '../components/BlogPost'
+import { PageHeading } from '../components/styled-components'
 
 const Notes = ({ data, location }) => {
   const { title: siteTitle } = data.site.siteMetadata
