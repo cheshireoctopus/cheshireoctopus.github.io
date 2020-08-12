@@ -3,6 +3,7 @@
   "description": "Chandler Moisen's Personal Blog",
   "version": "1.0.0",
   "author": "Chandler Moisen",
+  "license": "MIT",
   "dependencies": {
     "@weknow/gatsby-remark-codepen": "^0.1.0",
     "babel-plugin-styled-components": "^1.10.7",

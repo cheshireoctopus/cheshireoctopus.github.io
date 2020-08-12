@@ -1,10 +1,10 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from "react"
+import { graphql } from "gatsby"
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import BlogPost from '../components/BlogPost'
-import { PageHeading } from '../components/styled-components'
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import BlogPost from "../components/BlogPost"
+import { PageHeading } from "../components/styled-components"
 
 const Notes = ({ data, location }) => {
   const { title: siteTitle } = data.site.siteMetadata
@@ -27,13 +27,13 @@ const Notes = ({ data, location }) => {
 
       <p>
         <i>
-          I set aside 30 minutes at the end of each work day to reflect on
-          something that I learned or found interesting during the day.
-          I am making an attempt to write these down.
+          In a perfect world I set aside 30 minutes at the end of each work day
+          to reflect on something that I learned or found interesting during the
+          day.
         </i>
       </p>
 
-      <hr style={{ marginBottom: 0 }}/>
+      <hr style={{ marginBottom: 0 }} />
 
       {renderPosts()}
     </Layout>
@@ -48,14 +48,8 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      sort: {
-        fields: [frontmatter___date], order: DESC
-      }
-      filter: {
-        frontmatter: {
-          is_til: { eq: true }
-        }
-      }
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { is_til: { eq: true } } }
     ) {
       edges {
         node {
