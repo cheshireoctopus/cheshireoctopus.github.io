@@ -1,8 +1,10 @@
 ---
-title: "On Culture"
-date: "2019-11-02"
-path: "on-culture"
-tags: ["Culture", "Leadership", "Startups"]
+title: 'On Culture'
+date: '2019-11-02'
+path: 'on-culture'
+tags: ['Culture', 'Leadership', 'Startups']
+redirects:
+  - /on-culture
 ---
 
 In a recent discussion between [Ben Horowitz and Tim Ferris](https://tim.blog/2019/10/24/ben-horowitz/), Horowitz, promoting his new book, [What You Do Is Who You Are](https://www.amazon.com/What-You-Do-Who-Are/dp/0062871331/), notes that:

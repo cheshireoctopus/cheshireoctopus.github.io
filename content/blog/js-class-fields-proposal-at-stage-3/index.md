@@ -1,9 +1,11 @@
 ---
 title: JS Class Fields Proposal Stage 3 Update, BabelJS, and Airbnb's JS Style Guide
-date: "2017-09-02"
-path: "/js-class-fields-proposal/"
+date: '2017-09-02'
+path: '/js-class-fields-proposal/'
 description: "In case you haven't heard the news, Daniel Ehrenberg and Jeff Morrison's <a href='https://github.com/tc39/proposal-class-fields'>ESnext class features for JavaScript</a> proposal was moved from <a href='https://github.com/tc39/proposal-class-fields/commit/5a4ff5fa4bf30885188279f6fb8070f2e1903c32'>stage-2 to stage-3</a>."
-tags: ["JavaScript"]
+tags: ['JavaScript']
+redirects:
+  - /js-class-fields-proposal-at-stage-3
 ---
 
 ![tc39 process](./tc39_process.jpg)
@@ -57,13 +59,10 @@ Simply add the `babel-eslint` parser - this allows you to use all valid Babel co
 Once installed, updated your `.eslintrc` file with the new parser:
 
 ```json
-	{
-		"extends": "airbnb",
-		"parser": "babel-eslint",
-	}
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint"
+}
 ```
 
 Happy JavaScripting.
-
-
-

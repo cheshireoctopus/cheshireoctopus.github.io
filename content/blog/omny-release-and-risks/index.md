@@ -1,8 +1,10 @@
 ---
-title: "OMNY Release, Risks, and UX Considerations"
-date: "2019-06-05"
-path: "omny-release-and-risks"
-tags: ["UX", "NYC"]
+title: 'OMNY Release, Risks, and UX Considerations'
+date: '2019-06-05'
+path: 'omny-release-and-risks'
+tags: ['UX', 'NYC']
+redirects:
+  - /omny-release-and-risks
 ---
 
 For those of us in the center of the universe, the New York City MTA has finally unveiled [support for contactless payments](https://techcrunch.com/2019/05/31/nycs-contactless-subway-turnstiles-open-today-with-apple-google-samsung-and-fitbit-pay-support/).

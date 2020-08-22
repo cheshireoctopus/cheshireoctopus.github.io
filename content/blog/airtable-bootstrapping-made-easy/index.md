@@ -1,8 +1,10 @@
 ---
-title: "Airtable: Bootstrapping Made Easy"
-date: "2019-12-21"
-path: "/airtable-bootstrapping-made-easy/"
+title: 'Airtable: Bootstrapping Made Easy'
+date: '2019-12-21'
+path: '/airtable-bootstrapping-made-easy/'
 tags: [Bootstrapping, JavaScript, Programming]
+redirects:
+  - /airtable-bootstrapping-made-easy
 ---
 
 ![airtable logo](./airtable-logo.png)
@@ -10,7 +12,7 @@ tags: [Bootstrapping, JavaScript, Programming]
 For a new side project, [Keming](https://keming.io), my partner and I needed to quickly validate interest in our product. To do so, we designed and built a landing page scoped to the following constraints:
 
 1. Allow users to submit interest and personal data
-2. Store this data safely, in an easily __accessible and manipulable__ format
+2. Store this data safely, in an easily **accessible and manipulable** format
 3. Retain control over all styling (no 3rd-party branding should be evident)
 4. No server-side code
 5. Completely static and easily deployable through [Netlify](https://www.netlify.com/)
@@ -32,27 +34,27 @@ Here is how easy it was to integrate [Airtable's npm package](https://www.npmjs.
 ```javascript
 // Form.js
 
-const {
-  REACT_APP_AIRTABLE_API_KEY,
-  REACT_APP_AIRTABLE_BASE_ID,
-} = process.env
+const { REACT_APP_AIRTABLE_API_KEY, REACT_APP_AIRTABLE_BASE_ID } = process.env
 
 const base = new Airtable({
   apiKey: REACT_APP_AIRTABLE_API_KEY,
 }).base(REACT_APP_AIRTABLE_BASE_ID)
 
 function onSubmit() {
-  base('MyTable').create({
+  base('MyTable').create(
+    {
       column1Title,
       column2Title,
       column3Title,
-  }, (error, record) => {
-    if (error) {
-      onError(error)
-    } else {
-      onSuccess()
+    },
+    (error, record) => {
+      if (error) {
+        onError(error)
+      } else {
+        onSuccess()
+      }
     }
-  })
+  )
 }
 ```
 

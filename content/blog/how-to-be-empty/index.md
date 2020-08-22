@@ -1,8 +1,10 @@
 ---
-title: "How To Be Empty"
-date: "2019-05-29"
-path: "/how-to-be-empty/"
-tags: ["Product", "UX"]
+title: 'How To Be Empty'
+date: '2019-05-29'
+path: '/how-to-be-empty/'
+tags: ['Product', 'UX']
+redirects:
+  - /how-to-be-empty
 ---
 
 In an effort to bring order to the chaos that is transferring medical records between doctors, I recently signed up for [Galileo Health](https://galileohealth.com/).

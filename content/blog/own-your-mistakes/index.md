@@ -1,8 +1,10 @@
 ---
-title: "Own Your Mistakes"
-date: "2019-06-22"
-path: "own-your-mistakes"
-tags: ["UX", "Product"]
+title: 'Own Your Mistakes'
+date: '2019-06-22'
+path: 'own-your-mistakes'
+tags: ['UX', 'Product']
+redirects:
+  - /own-your-mistakes
 ---
 
 I rely on [Pigeon](https://pigeon.area120.com/) to navigate the mess that is the New York City Subway.
@@ -19,9 +21,9 @@ Owning your mistakes - especially for something as insignificant as not sending 
 
 What comes to mind is more _forced_ corporate responsibility around product safety and PII breaches:
 
-* Equifax forced to [notify the authorities](https://www.ftc.gov/equifax-data-breach) about a massive data breach
-* Apple forced to [recall their 15-inch Macbook Pro](https://support.apple.com/15-inch-macbook-pro-battery-recall) due to battery fires
-* Facebook's forced to [apologize for privacy concerns](https://www.youtube.com/watch?v=Q4zd7X98eOs)
+- Equifax forced to [notify the authorities](https://www.ftc.gov/equifax-data-breach) about a massive data breach
+- Apple forced to [recall their 15-inch Macbook Pro](https://support.apple.com/15-inch-macbook-pro-battery-recall) due to battery fires
+- Facebook's forced to [apologize for privacy concerns](https://www.youtube.com/watch?v=Q4zd7X98eOs)
 
 While you could make the argument that Apple is taking active measures to ensure customer safety, both Equifax's and Facebook's ownership of mistakes come off as disingenuous and with misplaced intention.
 

@@ -111,6 +111,7 @@ module.exports = {
         ],
       },
     },
+    'gatsby-plugin-meta-redirect',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-sitemap',

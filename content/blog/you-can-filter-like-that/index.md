@@ -1,8 +1,10 @@
 ---
-title: "You Can Filter Like That?"
-date: "2019-12-20"
-path: "you-can-filter-like-that"
-tags: ["JavaScript", "Programming"]
+title: 'You Can Filter Like That?'
+date: '2019-12-20'
+path: 'you-can-filter-like-that'
+tags: ['JavaScript', 'Programming']
+redirects:
+  - /you-can-filter-like-that
 ---
 
 One of the joys of programming is stumbling across novel ways to solve common problems.
@@ -35,4 +37,3 @@ const filteredArray = array.filter(Boolean)
 ```
 
 Native _and_ not redundant!
-

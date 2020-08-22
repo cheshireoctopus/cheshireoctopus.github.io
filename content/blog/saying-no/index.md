@@ -1,8 +1,10 @@
 ---
-title: "Saying \"No\""
-date: "2019-12-23"
-path: "/saying-no/"
-tags: ["Engineering", "Leadership"]
+title: 'Saying "No"'
+date: '2019-12-23'
+path: '/saying-no/'
+tags: ['Engineering', 'Leadership']
+redirects:
+  - /saying-no
 ---
 
 When I began my career as a software engineer, I suffered the misconception that software development was a straight-forward, unidirectional, two-step system:

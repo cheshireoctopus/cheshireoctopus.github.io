@@ -3,7 +3,7 @@ const _ = require('lodash')
 const { createFilePath } = require('gatsby-source-filesystem')
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
 
   const blogList = path.resolve('src/templates/blog-list.js')
   const blogPostTemplate = path.resolve('src/templates/blog-post.js')
@@ -14,15 +14,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `
       {
         postsRemark: allMarkdownRemark(
-          sort: {
-            fields: [frontmatter___date],
-            order: DESC
-          }
-          filter: {
-            frontmatter: {
-              is_til: { eq: null }
-            }
-          }
+          sort: { fields: [frontmatter___date], order: DESC }
+          filter: { frontmatter: { is_til: { eq: null } } }
           limit: 1000
         ) {
           edges {
@@ -32,6 +25,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               }
               frontmatter {
                 title
+                redirects
               }
             }
           }
@@ -51,13 +45,26 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // Create blog posts pages.
   const posts = blogPostQuery.data.postsRemark.edges
-  
+
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
+    const path = `/writing${post.node.fields.slug}`
+    const { redirects } = post.node.frontmatter
+
+    if (redirects) {
+      redirects.forEach(fromPath => {
+        createRedirect({
+          fromPath,
+          toPath: path,
+          redirectInBrowser: true,
+          isPermanent: true,
+        })
+      })
+    }
 
     createPage({
-      path: `writing${post.node.fields.slug}`,
+      path,
       component: blogPostTemplate,
       context: {
         slug: post.node.fields.slug,
@@ -92,7 +99,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         skip: i * postsPerPage,
         numPages,
         currentPage: i + 1,
-      }
+      },
     })
   })
 
@@ -101,15 +108,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `
       {
         postsRemark: allMarkdownRemark(
-          sort: {
-            fields: [frontmatter___date],
-            order: DESC
-          }
-          filter: {
-            frontmatter: {
-              is_til: { eq: true }
-            }
-          }
+          sort: { fields: [frontmatter___date], order: DESC }
+          filter: { frontmatter: { is_til: { eq: true } } }
           limit: 1000
         ) {
           edges {
@@ -128,14 +128,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   )
 
   if (tilPostsQuery.errors) {
-    return reporter.panicOnBuild('Error while running GraphQL query to fetch TIL posts.')
+    return reporter.panicOnBuild(
+      'Error while running GraphQL query to fetch TIL posts.'
+    )
   }
 
   // Create blog posts pages.
   const tilPosts = tilPostsQuery.data.postsRemark.edges
 
   tilPosts.forEach((post, index) => {
-    const previous = index === tilPosts.length - 1 ? null : tilPosts[index + 1].node
+    const previous =
+      index === tilPosts.length - 1 ? null : tilPosts[index + 1].node
     const next = index === 0 ? null : tilPosts[index - 1].node
 
     createPage({

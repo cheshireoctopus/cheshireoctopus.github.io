@@ -1,7 +1,9 @@
 ---
-title: "Google Fonts in Gatsby"
-date: "2020-05-15"
-tags: ["Gatsby", "JavaScript", "Tutorials"]
+title: 'Google Fonts in Gatsby'
+date: '2020-05-15'
+tags: ['Gatsby', 'JavaScript', 'Tutorials']
+redirects:
+  - /google-fonts-in-gatsby
 ---
 
 There are a number of ways to use [Google Fonts](https://fonts.google.com/) within a [Gatsby](https://www.gatsbyjs.org/) application. In other platforms, we could simply add `<link>` tags to the `index.html` file and call it day. However, as Gatsby generates the `index.html` during its build process, we are unable to modify the `index.html` file directly. As such, we have to find another way to inject Google Fonts.
@@ -29,7 +31,7 @@ To implement this approach:
 
 import Helmet from 'react-helmet'
 
-<Helmet>
+;<Helmet>
   <link
     href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap"
     rel="stylesheet"
@@ -50,7 +52,7 @@ import Helmet from 'react-helmet'
 ### Cons
 
 1. Flash of Invisible Text (FOIT) as the external resource is loaded
-2. Hard-codes fonts instead of relying on Gatsby's configuration 
+2. Hard-codes fonts instead of relying on Gatsby's configuration
 
 ## 2. `gatsby-plugin-google-fonts`
 
@@ -80,7 +82,7 @@ import Helmet from 'react-helmet'
 
 ### Cons
 
-1. FOIT as the external resource is loaded 
+1. FOIT as the external resource is loaded
 
 ## 3. `gatsby-plugin-prefetch-google-fonts`
 
@@ -134,7 +136,6 @@ For example, comparing `'Open Sans'` vs. `'Open sans'` - the lower-cased `sans` 
 1. Unsupported library
 2. Potential for build errors
 3. Unsupported library
-
 
 ## Conclusion
 

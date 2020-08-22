@@ -10,11 +10,11 @@ import { rhythm } from '../utils/typography'
 const ScrolledHeading = styled.div`
   background: white;
   box-shadow: 1px 1px 3px black;
-  display: ${({ render }) => render ? 'flex' : 'none'};
+  display: ${({ render }) => (render ? 'flex' : 'none')};
   left: 0;
   padding: 16px;
   position: fixed;
-  opacity: ${({ render }) => render ? 1 : 0};
+  opacity: ${({ render }) => (render ? 1 : 0)};
   right: 0;
   top: 0;
   z-index: 1;
@@ -24,12 +24,12 @@ const ScrolledTitle = styled.h4`
   font-size: 1em;
   margin: 0;
   margin-top: ${({ theme }) => theme.space[1]}px;
-`;
+`
 
 const ScrolledHomeLink = styled(Link)`
   background-image: none;
   margin-right: 16px;
-`;
+`
 
 const Date = styled.p`
   font-size: ${({ theme }) => theme.fontSizes[3]}px;
@@ -42,19 +42,10 @@ const Date = styled.p`
   }
 `
 
-const BlogPostTemplate = ({
-  data,
-  location,
-  pageContext,
-}) => {
+const BlogPostTemplate = ({ data, location, pageContext }) => {
   const {
     excerpt,
-    frontmatter: {
-      date,
-      description,
-      isTIL,
-      title,
-    },
+    frontmatter: { date, description, isTIL, title },
     html,
   } = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
@@ -75,15 +66,10 @@ const BlogPostTemplate = ({
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO
-        title={title}
-        description={description || excerpt}
-      />
+      <SEO title={title} description={description || excerpt} />
 
       <ScrolledHeading render={scrolledHeader}>
-        <ScrolledHomeLink to="/">
-          ←
-        </ScrolledHomeLink>
+        <ScrolledHomeLink to="/">←</ScrolledHomeLink>
 
         <ScrolledTitle>{title}</ScrolledTitle>
       </ScrolledHeading>
@@ -114,7 +100,7 @@ const BlogPostTemplate = ({
         <li>
           {previous && (
             <Link
-              to={`${isTIL ? 'notes' : 'writing'}${previous.fields.slug}`}
+              to={`/${isTIL ? 'notes' : 'writing'}${previous.fields.slug}`}
               rel="prev"
             >
               ← {previous.frontmatter.title}
@@ -125,7 +111,7 @@ const BlogPostTemplate = ({
         <li>
           {next && (
             <Link
-              to={`${isTIL ? 'notes' : 'writing'}${next.fields.slug}`}
+              to={`/${isTIL ? 'notes' : 'writing'}${next.fields.slug}`}
               rel="next"
             >
               {next.frontmatter.title} →

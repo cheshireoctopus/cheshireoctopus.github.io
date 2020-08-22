@@ -1,9 +1,11 @@
 ---
 title: Roll Your Own Static Site
-date: "2017-06-12T22:12:03.284Z"
-path: "/roll-your-own-static-site/"
-description: "Recently I decided to rebuild my long neglected and dilapidated blog - previously powered by Octopress - using JavaScript."
-tags: ["JavaScript", "Tutorials"]
+date: '2017-06-12T22:12:03.284Z'
+path: '/roll-your-own-static-site/'
+description: 'Recently I decided to rebuild my long neglected and dilapidated blog - previously powered by Octopress - using JavaScript.'
+tags: ['JavaScript', 'Tutorials']
+redirects:
+  - /roll-your-own-static-site
 ---
 
 ![rolling on friday](./rolling.gif)
@@ -18,7 +20,7 @@ As a blog is a perfect use case for a static site generator, I first investigate
 
 See [https://www.staticgen.com/](https://www.staticgen.com/) for even more.
 
-While more than sufficient, I found these to be overkill as all I really needed was to __convert some markdown into HTML__.
+While more than sufficient, I found these to be overkill as all I really needed was to **convert some markdown into HTML**.
 
 Add a pinch of CSS, maybe your favorite frontend view layer, and that's it - you're cruising.
 
@@ -79,50 +81,55 @@ const PATH_TO_SRC = path.join(PATH_TO_ROOT, 'public', 'blog')
 
 const renderer = new marked.Renderer()
 renderer.code = (code, language) => {
-	const validLang = !!(language && highlightjs.getLanguage(language))
-	const highlighted = validLang ? highlightjs.highlight(language, code).value : code
-	return `<pre><code class="hljs ${language}">${highlighted}</code></pre>`
+  const validLang = !!(language && highlightjs.getLanguage(language))
+  const highlighted = validLang
+    ? highlightjs.highlight(language, code).value
+    : code
+  return `<pre><code class="hljs ${language}">${highlighted}</code></pre>`
 }
 renderer.image = (src, title, alt) => {
-	return `<div class="post-image-container"><img src="${src}" alt="${alt}"/></div>`
+  return `<div class="post-image-container"><img src="${src}" alt="${alt}"/></div>`
 }
 
 marked.setOptions({
-	renderer,
+  renderer,
 })
 
 fs.readdirAsync(PATH_TO_SRC)
-	.then(posts => {
-		return Promise.map(posts, postDir => {
-			const srcPostDir = `${PATH_TO_SRC}/${postDir}`
+  .then(posts => {
+    return Promise.map(posts, postDir => {
+      const srcPostDir = `${PATH_TO_SRC}/${postDir}`
 
-			return fs.readdirAsync(srcPostDir)
-				.then(files => {
-					const readJSON = fs.readFileAsync(`${srcPostDir}/data.json`, 'utf8')
-					const readMD = fs.readFileAsync(`${srcPostDir}/post.md`, 'utf8')
+      return fs.readdirAsync(srcPostDir).then(files => {
+        const readJSON = fs.readFileAsync(`${srcPostDir}/data.json`, 'utf8')
+        const readMD = fs.readFileAsync(`${srcPostDir}/post.md`, 'utf8')
 
-					return Promise.join(readJSON, readMD, (json, md, imgs) => {
-						const data = JSON.parse(json)
+        return Promise.join(readJSON, readMD, (json, md, imgs) => {
+          const data = JSON.parse(json)
 
-						return {
-							date: data.date,
-							topics: data.topics,
-							title: data.title,
-							urlTitle: postDir,
-							html: marked(md),
-						}
-					})
-				})
-		})
-	})
-	.then((postCollection) => {
-		postCollection = postCollection.sort((a, b) => {
-			return new Date(b.date) - new Date(a.date)
-		})
+          return {
+            date: data.date,
+            topics: data.topics,
+            title: data.title,
+            urlTitle: postDir,
+            html: marked(md),
+          }
+        })
+      })
+    })
+  })
+  .then(postCollection => {
+    postCollection = postCollection.sort((a, b) => {
+      return new Date(b.date) - new Date(a.date)
+    })
 
-		fs.writeFileAsync(`${PATH_TO_APP}/posts.json`, JSON.stringify(postCollection))
-			.then(() => console.log(`Congratulations - generated ${postCollection.length} posts.`))
-	})
+    fs.writeFileAsync(
+      `${PATH_TO_APP}/posts.json`,
+      JSON.stringify(postCollection)
+    ).then(() =>
+      console.log(`Congratulations - generated ${postCollection.length} posts.`)
+    )
+  })
 ```
 
 ## Bluebird's `.promisifyAll`
@@ -154,11 +161,11 @@ import marked from 'marked'
 const renderer = new marked.Renderer()
 
 renderer.image = (src, title, alt) => {
-	return `<div class="post-image-container"><img src="${src}" alt="${alt}"/></div>`
+  return `<div class="post-image-container"><img src="${src}" alt="${alt}"/></div>`
 }
 
 marked.setOptions({
-	renderer,
+  renderer,
 })
 ```
 
@@ -171,13 +178,15 @@ import highlightjs from 'highlight.js'
 const renderer = new marked.Renderer()
 
 renderer.code = (code, language) => {
-	const validLang = !!(language && highlightjs.getLanguage(language))
-	const highlighted = validLang ? highlightjs.highlight(language, code).value : code
-	return `<pre><code class="hljs ${language}">${highlighted}</code></pre>`
+  const validLang = !!(language && highlightjs.getLanguage(language))
+  const highlighted = validLang
+    ? highlightjs.highlight(language, code).value
+    : code
+  return `<pre><code class="hljs ${language}">${highlighted}</code></pre>`
 }
 
 marked.setOptions({
-	renderer,
+  renderer,
 })
 ```
 

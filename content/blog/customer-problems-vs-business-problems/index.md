@@ -1,8 +1,10 @@
 ---
-title: "Customer Problems vs. Business Problems"
-date: "2019-06-01"
-path: "/customer-problems-vs-business-problems/"
-tags: ["Product"]
+title: 'Customer Problems vs. Business Problems'
+date: '2019-06-01'
+path: '/customer-problems-vs-business-problems/'
+tags: ['Product']
+redirects:
+  - /customer-problems-vs-business-problems
 ---
 
 A notable takeaway from Dave Wascha's [20 Years of Product Management in 25 Minutes](https://www.youtube.com/watch?v=i69U0lvi89c&feature=share) is that companies often loose sight of their own mission and begin solving their own problems instead of solving their customers' problems.
@@ -15,7 +17,7 @@ What follows is an example of a firm prioritizing their own problems.
 
 ## Bespoke Post
 
-Earlier this year I signed up for [Bespoke Post](https://bespokepost.com) - a Birchbox-esque play aimed at men with an extra $60 to spend each month.
+Earlier this year I signed up for [Bespoke Post](https://bespokepost.com) - a Birchbox-esque play aimed at men with an extra \$60 to spend each month.
 
 ![bespoke post](./bespoke-post.jpg)
 
@@ -71,8 +73,8 @@ This stands as a case-study of solving your business problems instead of your cu
 
 Again, I understand Bespoke's need to reduce churn, but creating such a high level of friction in their UX does not help their customers. Such a strategy has an off-putting effect and makes it quite clear that Bespoke is putting their own interests in front of their customers' needs.
 
-As an alternative, Bespoke Post should make the cancellation process as smooth as possible and then weigh following up with re-targeting, reasons-for-churn survey, etc. 
+As an alternative, Bespoke Post should make the cancellation process as smooth as possible and then weigh following up with re-targeting, reasons-for-churn survey, etc.
 
 Still, I would be very curious to see an analysis between their current cancellation path and another path with less friction: one that allows users to easily cancel their subscription from within the UI (sans email thread with customer support).
 
-I would imagine that Bespoke's target users are not hurting for the $60/month fee and that they value the random box of materials good each month over the level of effort required to cancel.
+I would imagine that Bespoke's target users are not hurting for the \$60/month fee and that they value the random box of materials good each month over the level of effort required to cancel.

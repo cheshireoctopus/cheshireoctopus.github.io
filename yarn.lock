@@ -5439,6 +5439,13 @@ gatsby-plugin-manifest@^2.2.34:
     semver "^5.7.1"
     sharp "^0.23.4"
 
+gatsby-plugin-meta-redirect@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-meta-redirect/-/gatsby-plugin-meta-redirect-1.1.1.tgz#058e8e53edff38dc44d3bb6153109d01c910f863"
+  integrity sha512-Oc4qgU3SlDUM9qoxIMKO+re2bdMs3/a2KXrfL65gb8XMLsHylBbveWtXZRhgjd2QDL/49RX4S9SEykuadRju2w==
+  dependencies:
+    fs-extra "^7.0.0"
+
 gatsby-plugin-offline@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-2.1.1.tgz#8009b4f61189aa6a8fc9949d1e0020b91bf2a4f7"

@@ -1,8 +1,10 @@
 ---
-title: "What Seventh Graders Want to Know About Programming"
-date: "2019-12-11"
-path: "what-seventh-graders-want-to-know-about-programming"
-tags: ["Education", "Programming"]
+title: 'What Seventh Graders Want to Know About Programming'
+date: '2019-12-11'
+path: 'what-seventh-graders-want-to-know-about-programming'
+tags: ['Education', 'Programming']
+redirects:
+  - /what-seventh-graders-want-to-know-about-programming
 ---
 
 Today I had the opportunity to speak with a group of 7th grade students about programming and a career in software engineering.
@@ -36,4 +38,4 @@ I found it heart-warming that such young individuals could ask such poignant que
 19. How did you get into programming?
 20. Have you programmed any games, and how stressing is this process? (How much does this take a toll on your mental health?)
 21. Do you mainly do freelance web-design or do you professionally do it?
-Do you have any tips for me on how to improve my coding and typing skills?
+    Do you have any tips for me on how to improve my coding and typing skills?

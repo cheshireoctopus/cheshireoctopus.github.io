@@ -1,8 +1,10 @@
 ---
-title: "The ASS Rule"
-date: "2019-11-03"
-path: "own-your-mistakes"
-tags: ["Communication", "Leadership"]
+title: 'The ASS Rule'
+date: '2019-11-03'
+path: 'own-your-mistakes'
+tags: ['Communication', 'Leadership']
+redirects:
+  - /the-ass-rule
 ---
 
 A friend lent me [Elon Musk's biography](https://www.amazon.com/Elon-Musk-SpaceX-Fantastic-Future/dp/006230125X). The book details Musk's childhood through his education and successes at Zip2, PayPal, SpaceX, SolarCity, and Tesla. It was was written in 2015 so, unfortunately, there was no mention of Musk shooting his Tesla into space nor his interview with Joe Rogan.
@@ -13,7 +15,7 @@ My favorite parts of the book were the anecdotes regarding Musk's approach to bu
 >
 > That needs to stop immediately or I will take drastic action - I have given enough warning over the years. Unless an acronym is approved by me, it should not enter the SpaceX glossary. If there is an existing acronym that cannot reasonably be justified, it should be eliminated, as I have requested in the past.
 >
-> For example, there should be not "HTS" [horizontal test stand] or "VTS" [vertical test stand] designations for test stands. Those are particularly dumb, as they contain unnecessary words. A "stand" at our test site is obviously a *test* stand. VTS-3 is four syllables compared with "Tripod", which is two, so the bloody acronym version actually takes longer to say than the name!
+> For example, there should be not "HTS" [horizontal test stand] or "VTS" [vertical test stand] designations for test stands. Those are particularly dumb, as they contain unnecessary words. A "stand" at our test site is obviously a _test_ stand. VTS-3 is four syllables compared with "Tripod", which is two, so the bloody acronym version actually takes longer to say than the name!
 >
 > The key test for an acronym is to ask whether it helps or hurts communication. An acronym that most engineers outside of SpaceX already know, such as GUI, is fine to use. It is also ok to make up a few acronyms/contractions every now and again, assuming I have approved them, e.g. MVac and M9 instead of Merlin 1C-Vacuum or Merlin 1C-Sea Level, but those need to be kept to a minimum.
 
