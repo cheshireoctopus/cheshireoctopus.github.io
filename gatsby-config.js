@@ -19,6 +19,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: 'https://chandlermoisen.com',
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'blog',
