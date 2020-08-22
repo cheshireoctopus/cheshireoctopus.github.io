@@ -119,6 +119,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               }
               frontmatter {
                 title
+                redirects
               }
             }
           }
@@ -140,9 +141,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const previous =
       index === tilPosts.length - 1 ? null : tilPosts[index + 1].node
     const next = index === 0 ? null : tilPosts[index - 1].node
+    const path = `notes${post.node.fields.slug}`
+    const { redirects } = post.node.frontmatter
+
+    if (redirects) {
+      redirects.forEach(fromPath => {
+        createRedirect({
+          fromPath,
+          toPath: path,
+          redirectInBrowser: true,
+          isPermanent: true,
+        })
+      })
+    }
 
     createPage({
-      path: `notes${post.node.fields.slug}`,
+      path,
       component: blogPostTemplate,
       context: {
         slug: post.node.fields.slug,

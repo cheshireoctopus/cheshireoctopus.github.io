@@ -1,8 +1,10 @@
 ---
 title: "Call it 'Product Debt'"
-date: "2020-05-06"
-path: "call-it-product-debt"
+date: '2020-05-06'
+path: 'call-it-product-debt'
 is_til: true
+redirects:
+  - /call-it-product-debt
 ---
 
 Today I learned that we should call "technical debt" by another name: "product debt".

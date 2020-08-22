@@ -1,7 +1,9 @@
 ---
-title: "TestCafe Request Hooks"
-date: "2020-05-13"
+title: 'TestCafe Request Hooks'
+date: '2020-05-13'
 is_til: true
+redirects:
+  - /testcafe-request-hooks
 ---
 
 Today I learned about intercepting HTTP requests using [TestCafe request hooks](https://devexpress.github.io/testcafe/documentation/guides/advanced-guides/intercept-http-requests.html).

@@ -1,7 +1,9 @@
 ---
-title: "Mirage.js"
-date: "2020-05-12"
+title: 'Mirage.js'
+date: '2020-05-12'
 is_til: true
+redirects:
+  - /mirage-js
 ---
 
 Today I learned about [Mirage.js](https://miragejs.com) while building tooling to support acceptance tests for a new client-side application.
@@ -18,30 +20,30 @@ Here is a code example lifted from the docs:
 
 ```javascript
 // index.js
-import React from "react"
-import ReactDOM from "react-dom"
-import App from "./app"
-import { Server } from "miragejs"
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './app'
+import { Server } from 'miragejs'
 
 new Server({
   routes() {
-    this.namespace = "/api"
+    this.namespace = '/api'
 
-    this.get("/users", () => [
-      { id: "1", name: "Luke" },
-      { id: "2", name: "Leah" },
-      { id: "3", name: "Anakin" },
+    this.get('/users', () => [
+      { id: '1', name: 'Luke' },
+      { id: '2', name: 'Leah' },
+      { id: '3', name: 'Anakin' },
     ])
   },
 })
 
-ReactDOM.render(<App />, document.getElementById("root"))
+ReactDOM.render(<App />, document.getElementById('root'))
 ```
 
 Beyond mocking an API, and what really has me interested, is that Mirage also contains a mock database that stores data and can setup relationships between various data models. Again, lifted from the docs:
 
 ```javascript
-import { Server, Model, belongsTo } from "miragejs"
+import { Server, Model, belongsTo } from 'miragejs'
 
 new Server({
   models: {

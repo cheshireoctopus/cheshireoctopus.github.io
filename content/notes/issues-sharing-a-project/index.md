@@ -1,7 +1,9 @@
 ---
-title: "Challenges Sharing a Project"
-date: "2020-05-07"
+title: 'Challenges Sharing a Project'
+date: '2020-05-07'
 is_til: true
+redirects:
+  - /issues-sharing-a-project
 ---
 
 Today I learned about challenges sharing a project across teams as a tech lead.

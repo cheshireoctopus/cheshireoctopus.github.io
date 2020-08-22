@@ -1,8 +1,10 @@
 ---
-title: "Export Named Components"
-date: "2020-04-29"
-path: "export-named-components"
+title: 'Export Named Components'
+date: '2020-04-29'
+path: 'export-named-components'
 is_til: true
+redirects:
+  - /export-named-components
 ---
 
 Today I learned that you should export named components as opposed to anonymous functions.
@@ -17,8 +19,8 @@ Yet, I must admit, while I was aware that anonymous functions would show up as `
 
 If you haven't come across how the browser console displays an anonymous function's stack trace, you can easily demo this using an immediately-invoked function expression. Executing the following code:
 
-```javascript
-(function() {
+```js
+;(function() {
   throw new Error('Herp derp')
 })()
 ```

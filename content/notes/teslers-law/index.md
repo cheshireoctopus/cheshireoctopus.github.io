@@ -1,7 +1,9 @@
 ---
 title: "Tesler's Law"
-date: "2020-05-11"
+date: '2020-05-11'
 is_til: true
+redirects:
+  - /teslers-law
 ---
 
 Today I learned [Tesler's Law](https://lawsofux.com/teslers-law), otherwise known as the law of conservation of complexity.

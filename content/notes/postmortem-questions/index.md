@@ -1,8 +1,10 @@
 ---
-title: "Questions For Postmortems"
-date: "2020-05-05"
-path: "questions-for-postmortems"
+title: 'Questions For Postmortems'
+date: '2020-05-05'
+path: 'questions-for-postmortems'
 is_til: true
+redirects:
+  - /postmortem-questions
 ---
 
 Today I learned more questions to ask during a postmortem.
@@ -20,5 +22,3 @@ There were two other questions that I have not seen asked before:
 2. What were we wrong about?
 
 I really like these latter questions as they force the team to acknowledge the fragility of certain systems - to "turn over the rock" as we say at Ro - and to reconsider our understanding of systems, user behavior, etc.
-
-

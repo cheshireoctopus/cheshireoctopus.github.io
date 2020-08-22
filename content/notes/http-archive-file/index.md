@@ -1,8 +1,10 @@
 ---
-title: "HTTP Archive File"
-date: "2020-05-01"
-path: "http-archive-file"
+title: 'HTTP Archive File'
+date: '2020-05-01'
+path: 'http-archive-file'
 is_til: true
+redirects:
+  - /http-archive-file
 ---
 
 Today I learned about HTTP Archive (HAR) files.
@@ -13,13 +15,13 @@ Another colleague suggested she simply share her network traffic with me by expo
 
 You can think of a HAR file as a snapshot or record of all network request between a browser and a server. Each time the browser makes an additional request, another entry is appended the HAR file. Each entry contains pertinent information one would need to debug a failed network requests:
 
-* URL
-* method
-* request/response headers
-* cookie values
-* response HTTP status code
-* response content
-* and more
+- URL
+- method
+- request/response headers
+- cookie values
+- response HTTP status code
+- response content
+- and more
 
 If this list feels familiar that is because the network tab in Chrome developer tools is a UI layer on top of a HAR file!
 
