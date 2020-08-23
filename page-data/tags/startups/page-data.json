@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-tags-js","path":"/tags/startups/","result":{"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/on-culture/"},"frontmatter":{"title":"On Culture"}}}]}},"pageContext":{"tag":"Startups"}}}
+{"componentChunkName":"component---src-templates-tags-js","path":"/tags/startups/","result":{"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/on-culture/"},"frontmatter":{"title":"On Culture"}}}]}},"pageContext":{"tag":"Startups"}},"staticQueryHashes":["4173562750","63159454"]}
