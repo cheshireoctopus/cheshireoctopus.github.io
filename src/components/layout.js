@@ -1,8 +1,6 @@
 import React from 'react'
 
-import Theme from './Theme'
-import Header from './Header'
-import Footer from './Footer'
+import { Footer, Header, Theme } from '.'
 import { rhythm } from '../utils/typography'
 
 const Layout = ({ children }) => (
@@ -11,8 +9,7 @@ const Layout = ({ children }) => (
 
     <div
       style={{
-        marginLeft: 'auto',
-        marginRight: 'auto',
+        margin: 'auto',
         maxWidth: rhythm(26),
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}

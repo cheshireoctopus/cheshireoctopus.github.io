@@ -2,9 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Bio from '../components/Bio'
+import { Bio, Layout, SEO } from '../components'
 
 const Wrapper = styled.div`
   display: flex;
@@ -13,10 +11,7 @@ const Wrapper = styled.div`
   justify-content: center;
 `
 
-const IndexPage = ({
-  data,
-  location,
-}) => {
+const IndexPage = ({ data, location }) => {
   const tags = data.tags.group
   const { title: siteTitle } = data.site.siteMetadata
 

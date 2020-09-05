@@ -2,10 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import { PageHeading } from '../components/styled-components'
-import { rhythm } from '../utils/typography'
+import {
+  Appear,
+  BlogPostDate,
+  BlogPostDirectionalNavigation,
+  FullHeightContainer,
+  Layout,
+  PageHeading,
+  SEO,
+} from '../components'
 
 const ScrolledHeading = styled.div`
   background: white;
@@ -29,17 +34,6 @@ const ScrolledTitle = styled.h4`
 const ScrolledHomeLink = styled(Link)`
   background-image: none;
   margin-right: 16px;
-`
-
-const Date = styled.p`
-  font-size: ${({ theme }) => theme.fontSizes[3]}px;
-  margin-bottom: ${({ theme }) => theme.space[5]}px;
-  text-align: center;
-
-  ${({ theme }) => theme.mediaQueries.medium} {
-    font-size: ${({ theme }) => theme.fontSizes[4]}px;
-    margin-bottom: ${({ theme }) => theme.space[7]}px;
-  }
 `
 
 const BlogPostTemplate = ({ data, location, pageContext }) => {
@@ -68,57 +62,29 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title={title} description={description || excerpt} />
 
-      <ScrolledHeading render={scrolledHeader}>
-        <ScrolledHomeLink to="/">←</ScrolledHomeLink>
+      <FullHeightContainer>
+        <ScrolledHeading render={scrolledHeader}>
+          <ScrolledHomeLink to="/">←</ScrolledHomeLink>
 
-        <ScrolledTitle>{title}</ScrolledTitle>
-      </ScrolledHeading>
+          <ScrolledTitle>{title}</ScrolledTitle>
+        </ScrolledHeading>
 
-      <PageHeading>{title}</PageHeading>
+        <Appear>
+          <PageHeading>{title}</PageHeading>
 
-      <Date>
-        <i>{date}</i>
-      </Date>
+          <BlogPostDate>{date}</BlogPostDate>
 
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+          <div dangerouslySetInnerHTML={{ __html: html }} />
 
-      <hr
-        style={{
-          marginBottom: rhythm(1),
-        }}
-      />
+          <hr style={{ marginBottom: '30px' }} />
 
-      <ul
-        style={{
-          display: `flex`,
-          flexWrap: `wrap`,
-          justifyContent: `space-between`,
-          listStyle: `none`,
-          padding: 0,
-        }}
-      >
-        <li>
-          {previous && (
-            <Link
-              to={`/${isTIL ? 'notes' : 'writing'}${previous.fields.slug}`}
-              rel="prev"
-            >
-              ← {previous.frontmatter.title}
-            </Link>
-          )}
-        </li>
-
-        <li>
-          {next && (
-            <Link
-              to={`/${isTIL ? 'notes' : 'writing'}${next.fields.slug}`}
-              rel="next"
-            >
-              {next.frontmatter.title} →
-            </Link>
-          )}
-        </li>
-      </ul>
+          <BlogPostDirectionalNavigation
+            isTIL={isTIL}
+            next={next}
+            previous={previous}
+          />
+        </Appear>
+      </FullHeightContainer>
     </Layout>
   )
 }

@@ -1,18 +1,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Pagination from '../components/Pagination'
-import BlogPost from '../components/BlogPost'
-import { PageHeading } from '../components/styled-components'
+import {
+  Appear,
+  BlogPost,
+  PageHeading,
+  Pagination,
+  Layout,
+  SEO,
+} from '../components'
 
-const BlogList = ({
-  data,
-  location,
-  pageContext,
-}) => {
-  const tags = data.tags.group
+const BlogList = ({ data, location, pageContext }) => {
   const { title: siteTitle } = data.site.siteMetadata
   const isFirstPage = pageContext.currentPage === 1
   const posts = data.allMarkdownRemark.edges
@@ -21,17 +19,17 @@ const BlogList = ({
     <Layout location={location} title={siteTitle}>
       <SEO title="Writing" />
 
-      {isFirstPage && (
-        <PageHeading>Writing</PageHeading>
-      )}
+      <Appear>
+        {isFirstPage && <PageHeading>Writing</PageHeading>}
 
-      {posts.map(post => (
-        <div key={post.node.fields.slug}>
-          <BlogPost post={post.node} />
-        </div>
-      ))}
+        {posts.map(post => (
+          <div key={post.node.fields.slug}>
+            <BlogPost post={post.node} />
+          </div>
+        ))}
 
-      <Pagination {...pageContext} />
+        <Pagination {...pageContext} />
+      </Appear>
     </Layout>
   )
 }
@@ -53,15 +51,8 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: $limit
       skip: $skip
-      sort: {
-        fields: [frontmatter___date],
-        order: DESC
-      }
-      filter: {
-        frontmatter: {
-          is_til: { eq: null }
-        }
-      }
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { is_til: { eq: null } } }
     ) {
       edges {
         node {

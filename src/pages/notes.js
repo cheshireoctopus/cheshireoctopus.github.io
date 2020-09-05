@@ -1,10 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import BlogPost from '../components/BlogPost'
-import { PageHeading } from '../components/styled-components'
+import { Appear, BlogPost, Layout, PageHeading, SEO } from '../components'
 
 const Notes = ({ data, location }) => {
   const { title: siteTitle } = data.site.siteMetadata
@@ -23,19 +20,21 @@ const Notes = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="Notes" />
 
-      <PageHeading>Notes</PageHeading>
+      <Appear>
+        <PageHeading>Notes</PageHeading>
 
-      <p>
-        <i>
-          In a perfect world I set aside 30 minutes at the end of each work day
-          to reflect on something that I learned or found interesting during the
-          day.
-        </i>
-      </p>
+        <p>
+          <i>
+            In a perfect world I set aside 30 minutes at the end of each work
+            day to reflect on something that I learned or found interesting
+            during the day.
+          </i>
+        </p>
 
-      <hr style={{ marginBottom: 0 }} />
+        <hr style={{ marginBottom: 0 }} />
 
-      {renderPosts()}
+        {renderPosts()}
+      </Appear>
     </Layout>
   )
 }
