@@ -1,9 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled, { keyframes } from 'styled-components'
 
 const appear = keyframes`
   from {
-    margin-top: 0.5em;
+    margin-top: 1em;
     opacity: 0;
   }
 
@@ -13,9 +14,19 @@ const appear = keyframes`
   }
 `
 const Container = styled.div`
-  animation: ${appear} 0.2s ease-in-out;
+  animation: ${appear} ${({ duration }) => duration}s ease-in-out;
 `
 
-const Appear = ({ children }) => <Container>{children}</Container>
+const Appear = ({ animationDuration, children }) => (
+  <Container duration={animationDuration}>{children}</Container>
+)
+
+Appear.propTypes = {
+  animationDuration: PropTypes.number,
+}
+
+Appear.defaultProps = {
+  animationDuration: 0.2,
+}
 
 export default Appear
