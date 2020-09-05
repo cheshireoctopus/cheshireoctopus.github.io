@@ -31,7 +31,7 @@ To implement this approach:
 
 import Helmet from 'react-helmet'
 
-;<Helmet>
+<Helmet>
   <link
     href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap"
     rel="stylesheet"
