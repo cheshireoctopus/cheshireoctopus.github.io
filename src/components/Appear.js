@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components'
 
 const appear = keyframes`
   from {
-    margin-top: 1em;
+    margin-top: 0.5em;
     opacity: 0;
   }
 

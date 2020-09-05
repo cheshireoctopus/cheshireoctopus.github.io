@@ -6,6 +6,7 @@ import {
   Appear,
   BlogPostDate,
   BlogPostDirectionalNavigation,
+  FullHeightContainer,
   Layout,
   PageHeading,
   SEO,
@@ -61,27 +62,29 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title={title} description={description || excerpt} />
 
-      <ScrolledHeading render={scrolledHeader}>
-        <ScrolledHomeLink to="/">←</ScrolledHomeLink>
+      <FullHeightContainer>
+        <ScrolledHeading render={scrolledHeader}>
+          <ScrolledHomeLink to="/">←</ScrolledHomeLink>
 
-        <ScrolledTitle>{title}</ScrolledTitle>
-      </ScrolledHeading>
+          <ScrolledTitle>{title}</ScrolledTitle>
+        </ScrolledHeading>
 
-      <Appear>
-        <PageHeading>{title}</PageHeading>
+        <Appear>
+          <PageHeading>{title}</PageHeading>
 
-        <BlogPostDate>{date}</BlogPostDate>
+          <BlogPostDate>{date}</BlogPostDate>
 
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+          <div dangerouslySetInnerHTML={{ __html: html }} />
 
-        <hr style={{ marginBottom: '30px' }} />
+          <hr style={{ marginBottom: '30px' }} />
 
-        <BlogPostDirectionalNavigation
-          isTIL={isTIL}
-          next={next}
-          previous={previous}
-        />
-      </Appear>
+          <BlogPostDirectionalNavigation
+            isTIL={isTIL}
+            next={next}
+            previous={previous}
+          />
+        </Appear>
+      </FullHeightContainer>
     </Layout>
   )
 }

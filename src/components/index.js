@@ -5,6 +5,7 @@ export {
   default as BlogPostDirectionalNavigation,
 } from './BlogPostDirectionalNavigation'
 export { default as Footer } from './Footer'
+export { default as FullHeightContainer } from './FullHeightContainer'
 export { default as Header } from './Header'
 export { default as Layout } from './layout'
 export { default as Pagination } from './Pagination'
