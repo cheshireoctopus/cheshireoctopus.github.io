@@ -7,7 +7,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    border: 3px solid ${({ theme }) => theme.colors.red};
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
     margin: 0;
@@ -87,7 +86,8 @@ const breakpoints = ['425px', '769px', '1024px', '1280px']
 
 const theme = {
   colors: {
-    red: '#950451'
+    red: '#950451',
+    white: '#FFF',
   },
   mediaQueries: {
     small: `@media screen and (min-width: ${breakpoints[0]})`,
