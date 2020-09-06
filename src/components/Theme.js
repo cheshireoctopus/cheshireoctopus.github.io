@@ -7,11 +7,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    border: 3px solid ${({ theme }) => theme.colors.red};
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
     margin: 0;
-    min-height: 100vh;
   }
 
   h1,
@@ -85,9 +83,15 @@ const fontSizes = [12, 14, 16, 20, 24, 32, 48, 56, 64, 72, 96]
 const space = [0, 4, 8, 16, 24, 32, 64, 72, 128, 256, 512]
 const breakpoints = ['425px', '769px', '1024px', '1280px']
 
+function getSpace(multiplier = 1) {
+  return `${8 * multiplier}px`
+}
+
 const theme = {
   colors: {
-    red: '#950451'
+    black: '#000000e6',
+    red: '#950451',
+    white: '#FFF',
   },
   mediaQueries: {
     small: `@media screen and (min-width: ${breakpoints[0]})`,
@@ -97,6 +101,7 @@ const theme = {
   },
   breakpoints,
   fontSizes,
+  getSpace,
   space,
 }
 

@@ -1,8 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
+import styled from 'styled-components'
 
-import PostTags from './PostTags'
+import { PostTags } from '.'
+
+const PostTitle = styled.h2`
+  margin-bottom: ${({ theme }) => theme.getSpace(1)};
+`
 
 import { rhythm } from '../utils/typography'
 
@@ -13,9 +18,9 @@ const BlogPost = ({ post }) => {
 
   return (
     <div>
-      <h2 style={{ marginBottom: rhythm(1 / 4) }}>
+      <PostTitle>
         <Link to={url}>{title}</Link>
-      </h2>
+      </PostTitle>
 
       <div style={{ marginBottom: rhythm(1 / 3) }}>
         <b>{date}</b>

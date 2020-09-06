@@ -1,23 +1,32 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import { Footer, Header, Theme } from '.'
-import { rhythm } from '../utils/typography'
+
+const Border = styled.div`
+  border: 3px solid ${({ theme }) => theme.colors.red};
+  border-top: none;
+`
+
+const Container = styled.main`
+  margin: 83px auto 0;
+  max-width: 780px;
+  padding: 44px 20px;
+
+  ${({ theme }) => theme.mediaQueries.large} {
+    margin: 112px auto 0;
+  }
+`
 
 const Layout = ({ children }) => (
   <Theme>
     <Header />
 
-    <div
-      style={{
-        margin: 'auto',
-        maxWidth: rhythm(26),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
-    >
-      <main>{children}</main>
-    </div>
+    <Border>
+      <Container>{children}</Container>
 
-    <Footer />
+      <Footer />
+    </Border>
   </Theme>
 )
 

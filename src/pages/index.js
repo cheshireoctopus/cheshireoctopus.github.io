@@ -1,15 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import styled from 'styled-components'
 
-import { Bio, Layout, SEO } from '../components'
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: calc(100vh - 322px);
-  justify-content: center;
-`
+import { Bio, FullHeightContainer, Layout, SEO } from '../components'
 
 const IndexPage = ({ data, location }) => {
   const tags = data.tags.group
@@ -17,11 +9,11 @@ const IndexPage = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Wrapper>
+      <FullHeightContainer centerContent>
         <SEO />
 
         <Bio tags={tags} />
-      </Wrapper>
+      </FullHeightContainer>
     </Layout>
   )
 }

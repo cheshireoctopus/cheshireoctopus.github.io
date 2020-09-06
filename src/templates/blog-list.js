@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import {
   Appear,
   BlogPost,
+  FullHeightContainer,
   PageHeading,
   Pagination,
   Layout,
@@ -19,17 +20,19 @@ const BlogList = ({ data, location, pageContext }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="Writing" />
 
-      <Appear>
-        {isFirstPage && <PageHeading>Writing</PageHeading>}
+      <FullHeightContainer>
+        <Appear>
+          {isFirstPage && <PageHeading>Writing</PageHeading>}
 
-        {posts.map(post => (
-          <div key={post.node.fields.slug}>
-            <BlogPost post={post.node} />
-          </div>
-        ))}
+          {posts.map(post => (
+            <div key={post.node.fields.slug}>
+              <BlogPost post={post.node} />
+            </div>
+          ))}
 
-        <Pagination {...pageContext} />
-      </Appear>
+          <Pagination {...pageContext} />
+        </Appear>
+      </FullHeightContainer>
     </Layout>
   )
 }
