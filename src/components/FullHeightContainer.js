@@ -1,9 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const Container = styled.div`
-  min-height: calc(100vh - 322px);
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 317px);
+  display: ${({ center }) => center && 'flex'};
 `
 
 const FullHeightContainer = ({ centerContent, children }) => (

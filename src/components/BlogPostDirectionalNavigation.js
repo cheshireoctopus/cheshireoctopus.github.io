@@ -33,12 +33,13 @@ const BlogPostDirectionalNavigation = ({ isTIL, next, previous }) => (
 )
 
 BlogPostDirectionalNavigation.propTypes = {
-  isTIL: PropTypes.bool.isRequired,
+  isTIL: PropTypes.bool,
   next: PropTypes.object,
   previous: PropTypes.object,
 }
 
 BlogPostDirectionalNavigation.defaultProps = {
+  isTIL: false,
   next: undefined,
   previous: undefined,
 }

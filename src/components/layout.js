@@ -9,9 +9,13 @@ const Border = styled.div`
 `
 
 const Container = styled.main`
-  margin: 112px auto 0;
+  margin: 83px auto 0;
   max-width: 780px;
-  padding: 44px 24px;
+  padding: 44px 20px;
+
+  ${({ theme }) => theme.mediaQueries.large} {
+    margin: 112px auto 0;
+  }
 `
 
 const Layout = ({ children }) => (

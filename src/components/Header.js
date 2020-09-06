@@ -11,15 +11,21 @@ const HeaderContainer = styled.header`
   background: ${({ theme }) => theme.colors.white};
   border: 3px solid ${({ theme }) => theme.colors.red};
   border-bottom: none;
+  box-shadow: ${({ scrolled, theme }) => scrolled && `#000000e6 0 0 4px`};
   display: flex;
   justify-content: space-between;
   padding: ${({ theme }) => `${theme.space[3]}px`};
   position: fixed;
   top: 0;
+  transition: all 0.2s;
   width: calc(100%);
+  z-index: 1;
 
   ${({ theme }) => theme.mediaQueries.large} {
-    padding: ${({ theme }) => `${theme.space[5]}px ${theme.space[6]}px`};
+    padding: ${({ theme, scrolled }) =>
+      scrolled
+        ? `${theme.getSpace(2)}`
+        : `${theme.getSpace(4)} ${theme.getSpace(8)}`};
   }
 `
 
@@ -68,6 +74,7 @@ const MobileNavIcon = styled.nav`
 
 const Header = () => {
   const [isShowingMenu, setIsShowingMenu] = useState(false)
+  const [scrolledHeader, setScrolledHeader] = useState(false)
   const data = useStaticQuery(graphql`
     query {
       chandler: file(relativePath: { eq: "chandler.png" }) {
@@ -94,8 +101,20 @@ const Header = () => {
     }
   }, [isShowingMenu])
 
+  useEffect(() => {
+    const scrollEvent = window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        setScrolledHeader(true)
+      } else {
+        setScrolledHeader(false)
+      }
+    })
+
+    return () => window.removeEventListener('scroll', scrollEvent)
+  }, [])
+
   return (
-    <HeaderContainer>
+    <HeaderContainer scrolled={scrolledHeader}>
       <Logo to={'/'}>
         <StyledImg fixed={data.chandler.childImageSharp.fixed} />
         <h4>Chandler Moisen</h4>
