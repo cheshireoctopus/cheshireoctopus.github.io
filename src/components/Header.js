@@ -11,7 +11,8 @@ const HeaderContainer = styled.header`
   background: ${({ theme }) => theme.colors.white};
   border: 3px solid ${({ theme }) => theme.colors.red};
   border-bottom: none;
-  box-shadow: ${({ scrolled, theme }) => scrolled && `#000000e6 0 0 4px`};
+  box-shadow: ${({ scrolled, theme }) =>
+    scrolled && `${theme.colors.black} 0 0 4px`};
   display: flex;
   justify-content: space-between;
   padding: ${({ theme }) => `${theme.space[3]}px`};
