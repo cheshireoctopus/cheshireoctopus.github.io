@@ -89,6 +89,7 @@ function getSpace(multiplier = 1) {
 
 const theme = {
   colors: {
+    black: '#000000e6',
     red: '#950451',
     white: '#FFF',
   },

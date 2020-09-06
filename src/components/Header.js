@@ -52,7 +52,7 @@ const StyledLink = styled(Link)`
 
   &.active,
   &:hover {
-    border-bottom: 2px solid #950451;
+    border-bottom: 2px solid ${({ theme }) => theme.colors.red};
   }
 `
 
