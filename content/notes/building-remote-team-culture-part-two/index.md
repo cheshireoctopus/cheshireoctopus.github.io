@@ -4,7 +4,7 @@ date: '2020-12-01'
 is_til: true
 ---
 
-Following up on a previous [note](https://chandlermoisen.com/notes/building-remote-team-culture/), I came across this [post](https://vinko.substack.com/p/remote-work-1) listing a set a set of criteria for fairly comparing in-person and remote work. The criteria are:
+Following up on a previous [note](https://chandlermoisen.com/notes/building-remote-team-culture/), I came across this [post](https://vinko.substack.com/p/remote-work-1) listing a set of criteria for fairly comparing in-person and remote work. The criteria are:
 
 1. Belonging and cohesion
 2. Communication mode
