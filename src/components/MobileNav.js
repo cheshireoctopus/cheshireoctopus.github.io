@@ -27,7 +27,6 @@ const MobileNav = () => (
     <StyledLink to="/">Home</StyledLink>
     <StyledLink to="/writing">Writing</StyledLink>
     <StyledLink to="/notes">Notes</StyledLink>
-    <StyledLink to="/activity">Activity</StyledLink>
   </MobileNavContainer>
 )
 
