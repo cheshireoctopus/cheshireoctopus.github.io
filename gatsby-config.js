@@ -104,17 +104,10 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     {
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: [
-          {
-            family: 'Yeseva One',
-          },
-          {
-            family: 'Open Sans',
-            variants: ['400', '400i', '700'],
-          },
-        ],
+        display: 'swap',
+        fonts: ['Yeseva One', 'Open Sans:400,400i,700'],
       },
     },
     'gatsby-plugin-meta-redirect',
