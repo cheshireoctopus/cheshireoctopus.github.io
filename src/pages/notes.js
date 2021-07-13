@@ -22,17 +22,6 @@ const Notes = ({ data, location }) => {
 
       <Appear>
         <PageHeading>Notes</PageHeading>
-
-        <p>
-          <i>
-            In a perfect world I set aside 30 minutes at the end of each work
-            day to reflect on something that I learned or found interesting
-            during the day.
-          </i>
-        </p>
-
-        <hr style={{ marginBottom: 0 }} />
-
         {renderPosts()}
       </Appear>
     </Layout>

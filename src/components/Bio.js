@@ -24,9 +24,8 @@ const Bio = ({ tags }) => (
     </StyledP>
 
     <StyledP>
-      By night I work to improve digital product design education at{' '}
-      <a href="https://keming.io">Keming</a> and help founders with early-stage
-      technology decisions at <a href="https://foundation.codes">Foundation</a>.
+      By night I help founders with early-stage technology decisions at{' '}
+      <a href="https://foundation.codes">Foundation</a>.
     </StyledP>
 
     <StyledP>
