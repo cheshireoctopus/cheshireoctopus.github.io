@@ -128,9 +128,6 @@ const Header = () => {
         <StyledLink activeClassName="active" to="/writing">
           Writing
         </StyledLink>
-        <StyledLink activeClassName="active" to="/notes">
-          Notes
-        </StyledLink>
       </Nav>
 
       <MobileNavIcon isShowingMenu={isShowingMenu}>

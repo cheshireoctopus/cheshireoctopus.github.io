@@ -14,7 +14,7 @@ import {
 const BlogPostTemplate = ({ data, location, pageContext }) => {
   const {
     excerpt,
-    frontmatter: { date, description, isTIL, title },
+    frontmatter: { date, description, title },
     html,
   } = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
@@ -34,11 +34,7 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
 
           <hr style={{ marginBottom: '30px' }} />
 
-          <BlogPostDirectionalNavigation
-            isTIL={isTIL}
-            next={next}
-            previous={previous}
-          />
+          <BlogPostDirectionalNavigation next={next} previous={previous} />
         </Appear>
       </FullHeightContainer>
     </Layout>
@@ -62,7 +58,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        isTIL: is_til
       }
     }
   }

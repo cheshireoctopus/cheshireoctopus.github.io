@@ -55,7 +55,6 @@ export const pageQuery = graphql`
       limit: $limit
       skip: $skip
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { is_til: { eq: null } } }
     ) {
       edges {
         node {
@@ -68,7 +67,6 @@ export const pageQuery = graphql`
             title
             description
             tags
-            isTil: is_til
           }
         }
       }
