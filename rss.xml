@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chandler Moisen]]></title><description><![CDATA[Chandler Moisen's Personal Blog]]></description><link>https://chandlermoisen.com</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 27 Oct 2021 02:48:12 GMT</lastBuildDate><item><title><![CDATA[Untraditional Engineering Backgrounds and Mentorship]]></title><description><![CDATA[I was speaking with a colleague about a particular aspect of engineering culture at Ro that I treasure: mentorship. I am headed into my…]]></description><link>https://chandlermoisen.com/bootcamp-graduates-and-mentorship/</link><guid isPermaLink="false">https://chandlermoisen.com/bootcamp-graduates-and-mentorship/</guid><pubDate>Tue, 26 Oct 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I was speaking with a colleague about a particular aspect of engineering culture at &lt;a href=&quot;https://ro.co&quot;&gt;Ro&lt;/a&gt; that I treasure: mentorship.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Chandler Moisen]]></title><description><![CDATA[Chandler Moisen's Personal Blog]]></description><link>https://chandlermoisen.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 19 Nov 2021 23:47:26 GMT</lastBuildDate><item><title><![CDATA[Untraditional Engineering Backgrounds and Mentorship]]></title><description><![CDATA[I was speaking with a colleague about a particular aspect of engineering culture at Ro that I treasure: mentorship. I am headed into my…]]></description><link>https://chandlermoisen.com/bootcamp-graduates-and-mentorship/</link><guid isPermaLink="false">https://chandlermoisen.com/bootcamp-graduates-and-mentorship/</guid><pubDate>Tue, 26 Oct 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I was speaking with a colleague about a particular aspect of engineering culture at &lt;a href=&quot;https://ro.co&quot;&gt;Ro&lt;/a&gt; that I treasure: mentorship.&lt;/p&gt;
 &lt;p&gt;I am headed into my third year leading Ro’s Engineering Fellowship program and am astounded not just by how fast the program has grown (we started off with one fellow and are now looking to hire a dozen) but by how willing more senior members of the engineering team are to act as mentors to these fellows.&lt;/p&gt;
 &lt;p&gt;While marveling at this observation with my colleague and wondering at how is came to pass they suggested an interesting reason: that a non-significant number of our fellow engineers come from non-traditional backgrounds - the two of us included.&lt;/p&gt;
 &lt;p&gt;By “non-traditional” I mean anyone who came to the field of software development through a method other than higher-education - think self-taught, boot camps, or trade schools.&lt;/p&gt;
@@ -189,7 +189,7 @@ PS1&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&qu
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Besides being incredibly simple to setup and get going, the customization aspect via a &lt;code class=&quot;language-text&quot;&gt;.toml&lt;/code&gt; file &lt;/p&gt;
+&lt;p&gt;Besides being incredibly simple to setup and get going, the customization aspect via a &lt;code class=&quot;language-text&quot;&gt;.toml&lt;/code&gt; file&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;character&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
 symbol &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;➜&quot;&lt;/span&gt;
 
@@ -334,10 +334,10 @@ deleted &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span cla
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; styled &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;styled-components&apos;&lt;/span&gt;
 
 &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; Button &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; styled&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;button&lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`
-  color: #0974EC;
+  color: #0974ec;
 
   &amp;amp;:hover {
-    color: #EC2509;
+    color: #ec2509;
   }
 `&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;A great feature of styled-components is that you can wrap your application in a global theme provider and each styled component instance has access to:&lt;/p&gt;
@@ -555,13 +555,7 @@ ReactDOM&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span c
 &lt;li&gt;Different team processes, standards, and conceptions lead to lack of alignment&lt;/li&gt;
 &lt;li&gt;Working not with just more developers, but more designers, product people, and managers&lt;/li&gt;
 &lt;li&gt;More pull requests to review and more VQA/UAT to perform&lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Call it 'Product Debt']]></title><description><![CDATA[Today I learned that we should call “technical debt” by another name: “product debt”. While reading about shifting the framing of success as…]]></description><link>https://chandlermoisen.com/call-it-product-debt/</link><guid isPermaLink="false">https://chandlermoisen.com/call-it-product-debt/</guid><pubDate>Wed, 06 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I learned that we should call “technical debt” by another name: “product debt”.&lt;/p&gt;
-&lt;p&gt;While reading about &lt;a href=&quot;https://www.svese.de/impact-vs-backlog-frame-in-software-development&quot;&gt;shifting the framing of success as a developer&lt;/a&gt; I came across this provoking thought:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;I always wondered why it isn’t called “product debt” because product took the credit to get a feature faster and must pay back by investing the time to clean up. Technology is the bank that gave credit.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The author of the article is arguing that as the modern development teams are driven by their backlogs and that success is defined as clearing the log. As such, developers who are under pressure to ship end up creating technical debt - a term the author states developers made up “because it sounds better than cutting corners and with the hope it is repaid.”&lt;/p&gt;
-&lt;p&gt;What I like about this change in name is that it places the onus of responsibility on product to find the time in the backlog to repay the debt.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Questions For Postmortems]]></title><description><![CDATA[Today I learned more questions to ask during a postmortem. This afternoon I sat in on a postmortem for a production issue. This was my first…]]></description><link>https://chandlermoisen.com/postmortem-questions/</link><guid isPermaLink="false">https://chandlermoisen.com/postmortem-questions/</guid><pubDate>Tue, 05 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I learned more questions to ask during a postmortem.&lt;/p&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Questions For Postmortems]]></title><description><![CDATA[Today I learned more questions to ask during a postmortem. This afternoon I sat in on a postmortem for a production issue. This was my first…]]></description><link>https://chandlermoisen.com/postmortem-questions/</link><guid isPermaLink="false">https://chandlermoisen.com/postmortem-questions/</guid><pubDate>Tue, 05 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today I learned more questions to ask during a postmortem.&lt;/p&gt;
 &lt;p&gt;This afternoon I sat in on a postmortem for a production issue. This was my first postmortem with Ro since our site-reliability team had revamped the process.&lt;/p&gt;
 &lt;p&gt;Included in this process were two questions I am quite familiar with:&lt;/p&gt;
 &lt;ol&gt;
