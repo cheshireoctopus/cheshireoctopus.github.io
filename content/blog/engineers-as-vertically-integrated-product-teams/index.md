@@ -1,7 +1,7 @@
 ---
 title: 'Engineers as Vertically Integrated Product Teams'
 date: '2021-10-22'
-tags: ['Culture']
+tags: ['Culture', 'Engineering Teams']
 ---
 
 I have been thinking a lot about [generative engineering cultures](https://changelog.com/posts/how-to-build-a-generative-engineering-culture) - namely the benefits they yield and how they are implemented.

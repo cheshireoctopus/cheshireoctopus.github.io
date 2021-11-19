@@ -2,6 +2,7 @@
 title: 'Neumorphism'
 date: '2020-05-21'
 path: 'neumorphism'
+tags: ['Design']
 ---
 
 Today I learned what neumorphism is.

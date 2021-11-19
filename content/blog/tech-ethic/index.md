@@ -1,6 +1,7 @@
 ---
 title: 'Tech Ethic'
 date: '2020-08-11'
+tags: ['Ethics']
 ---
 
 ![Kant](./kant.jpg)

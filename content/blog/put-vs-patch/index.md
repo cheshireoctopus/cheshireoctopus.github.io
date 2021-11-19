@@ -2,6 +2,7 @@
 title: 'HTTP PUT vs PATCH'
 date: '2020-06-03'
 path: 'put-vs-patch'
+tags: ['HTTP']
 ---
 
 I so frequently forget the difference between HTTP's `PUT` and `PATCH` methods I figured I'd write it down so that I would have easy access next time I forget.

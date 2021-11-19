@@ -2,6 +2,7 @@
 title: 'Mock Low, Assert High'
 date: '2020-05-20'
 path: 'mock-low-test-high'
+tags: ['Testing']
 ---
 
 Today I learned the concept of **mocking low and asserting high**.

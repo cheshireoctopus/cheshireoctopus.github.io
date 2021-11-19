@@ -2,6 +2,7 @@
 title: 'How to Give Box Shadow a Border Radius'
 date: '2020-05-25'
 path: 'http-archive-file'
+tags: ['CSS']
 ---
 
 Today I learned how easy it is to apply a border radius to an element's box shadow: just add `border-radius` to the element!

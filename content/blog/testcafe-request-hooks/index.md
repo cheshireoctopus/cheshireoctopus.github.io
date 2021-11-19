@@ -1,7 +1,7 @@
 ---
 title: 'TestCafe Request Hooks'
 date: '2020-05-13'
-
+tags: ['Testing']
 redirects:
   - /testcafe-request-hooks
 ---

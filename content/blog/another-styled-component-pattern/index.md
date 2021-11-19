@@ -2,6 +2,7 @@
 title: 'Another Styled Component Pattern'
 date: '2020-05-19'
 path: 'export-named-components'
+tags: ['JavaScript', 'React', 'Styled Components']
 ---
 
 Today I learned yet another styled-components pattern.

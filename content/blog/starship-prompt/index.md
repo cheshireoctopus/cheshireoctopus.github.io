@@ -2,6 +2,7 @@
 title: 'Starship Prompt'
 date: '2020-07-16'
 path: 'starship-prompt'
+tags: ['Developer Tools']
 ---
 
 I have always wanted a tricked out command prompt, but have never invested much time in bash scripting aside from some simple functionality around git and slight modifications to my prompt:

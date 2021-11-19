@@ -1,6 +1,7 @@
 ---
 title: 'What Middle Schoolers Want to Know About Programming'
 date: '2020-12-10'
+tags: ['Education', 'Programming']
 ---
 
 Almost a year ago to the day I wrote about [What Seventh Graders Want to Know About Programming](/writing/what-seventh-graders-want-to-know-about-programming/). This year, I was given the same opportunity to speak to a group of middle school students from the same school about programming. Below are their unedited questions.

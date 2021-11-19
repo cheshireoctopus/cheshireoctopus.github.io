@@ -1,7 +1,7 @@
 ---
 title: 'Mirage.js'
 date: '2020-05-12'
-
+tags: ['JavaScript', 'Testing']
 redirects:
   - /mirage-js
 ---

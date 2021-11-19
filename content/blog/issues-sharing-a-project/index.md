@@ -1,7 +1,7 @@
 ---
 title: 'Challenges Sharing a Project'
 date: '2020-05-07'
-
+tags: ['Engineering Teams']
 redirects:
   - /issues-sharing-a-project
 ---

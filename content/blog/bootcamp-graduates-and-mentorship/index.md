@@ -1,6 +1,7 @@
 ---
 title: 'Untraditional Engineering Backgrounds and Mentorship'
 date: '2021-10-26'
+tags: ['Culture', 'Engineering Teams', 'Mentorship']
 ---
 
 I was speaking with a colleague about a particular aspect of engineering culture at [Ro](https://ro.co) that I treasure: mentorship.

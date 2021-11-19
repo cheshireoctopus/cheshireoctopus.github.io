@@ -1,6 +1,7 @@
 ---
 title: 'Building (Remote) Team Culture'
 date: '2020-08-13'
+tags: ['Culture', 'Engineering Teams', 'Remote Work']
 ---
 
 The nature of remote work is finally getting to me. Like my relationship with most things, I find remote work manageable in moderation. It's been on full-blast for nearly six-months.

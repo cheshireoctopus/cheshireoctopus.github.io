@@ -2,7 +2,7 @@
 title: 'Export Named Components'
 date: '2020-04-29'
 path: 'export-named-components'
-
+tags: ['JavaScript']
 redirects:
   - /export-named-components
 ---

@@ -2,7 +2,7 @@
 title: 'HTTP Archive File'
 date: '2020-05-01'
 path: 'http-archive-file'
-
+tags: ['HTTP']
 redirects:
   - /http-archive-file
 ---

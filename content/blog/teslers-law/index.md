@@ -1,7 +1,7 @@
 ---
 title: "Tesler's Law"
 date: '2020-05-11'
-
+tags: ['Design']
 redirects:
   - /teslers-law
 ---

@@ -1,6 +1,7 @@
 ---
 title: 'Building (Remote) Team Culture Pt. 2'
 date: '2020-12-01'
+tags: ['Culture', 'Engineering Teams', 'Remote Work']
 ---
 
 Following up on a previous [note](https://chandlermoisen.com/notes/building-remote-team-culture/), I came across this [post](https://vinko.substack.com/p/remote-work-1) listing a set of criteria for fairly comparing in-person and remote work. The criteria are:

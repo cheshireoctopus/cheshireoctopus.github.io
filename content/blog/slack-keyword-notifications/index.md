@@ -1,6 +1,7 @@
 ---
 title: 'Slack Keyword Notifications'
 date: '2020-08-12'
+tags: ['Communication']
 ---
 
 Today I learned about [keyword notifications](https://slack.com/help/articles/201398467-Set-up-keyword-notifications) in Slack. Today I also learned my Slack game is pretty weak.

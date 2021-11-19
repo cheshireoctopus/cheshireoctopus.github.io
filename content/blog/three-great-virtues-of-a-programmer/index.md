@@ -1,7 +1,7 @@
 ---
 title: 'Three Great Virtues of a Programmer'
 date: '2020-05-08'
-
+tags: ['Engineering']
 redirects:
   - /three-great-virtues-of-a-programmer
 ---

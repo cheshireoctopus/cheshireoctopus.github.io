@@ -2,7 +2,7 @@
 title: 'The Swiss Cheese Model'
 date: '2020-04-30'
 path: 'swiss-cheese-model'
-
+tags: ['Security']
 redirects:
   - /swiss-cheese-model
 ---
