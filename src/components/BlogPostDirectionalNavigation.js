@@ -10,22 +10,16 @@ const Container = styled.div`
     justifyEnd ? 'flex-end' : 'space-between'};
 `
 
-const BlogPostDirectionalNavigation = ({ isTIL, next, previous }) => (
+const BlogPostDirectionalNavigation = ({ next, previous }) => (
   <Container justifyEnd={!previous}>
     {previous && (
-      <Link
-        to={`/${isTIL ? 'notes' : 'writing'}${previous.fields.slug}`}
-        rel="prev"
-      >
+      <Link to={`/writing${previous.fields.slug}`} rel="prev">
         ← {previous.frontmatter.title}
       </Link>
     )}
 
     {next && (
-      <Link
-        to={`/${isTIL ? 'notes' : 'writing'}${next.fields.slug}`}
-        rel="next"
-      >
+      <Link to={`/writing${next.fields.slug}`} rel="next">
         {next.frontmatter.title} →
       </Link>
     )}
@@ -33,13 +27,11 @@ const BlogPostDirectionalNavigation = ({ isTIL, next, previous }) => (
 )
 
 BlogPostDirectionalNavigation.propTypes = {
-  isTIL: PropTypes.bool,
   next: PropTypes.object,
   previous: PropTypes.object,
 }
 
 BlogPostDirectionalNavigation.defaultProps = {
-  isTIL: false,
   next: undefined,
   previous: undefined,
 }
