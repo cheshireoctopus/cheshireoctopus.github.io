@@ -15,7 +15,7 @@ const Bio = ({ tags }) => (
 
     <StyledP>
       I am a software developer, product designer, and technology educator
-      living in <del>New York City</del> Colorful Colorado.
+      living in Colorful Colorado.
     </StyledP>
 
     <StyledP>
