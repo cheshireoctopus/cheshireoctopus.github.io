@@ -125,6 +125,9 @@ const Header = () => {
         <StyledLink activeClassName="active" to="/">
           Home
         </StyledLink>
+        <StyledLink activeClassName="active" to="/about">
+          About
+        </StyledLink>
         <StyledLink activeClassName="active" to="/writing">
           Writing
         </StyledLink>
