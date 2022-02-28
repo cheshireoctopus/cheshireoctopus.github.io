@@ -25,7 +25,7 @@ const StyledLink = styled(Link)`
 const MobileNav = () => (
   <MobileNavContainer>
     <StyledLink to="/">Home</StyledLink>
-    <StyledLink to="/">About</StyledLink>
+    <StyledLink to="/about">About</StyledLink>
     <StyledLink to="/writing">Writing</StyledLink>
   </MobileNavContainer>
 )
