@@ -22,3 +22,9 @@ export const BlogPostDate = styled.p`
     margin-bottom: ${({ theme }) => theme.space[7]}px;
   }
 `
+
+export const PageParagraph = styled.p`
+  font-size: ${({ theme }) => theme.fontSizes[4]}px;
+  margin-top: 0;
+  margin-bottom: ${({ theme }) => theme.space[3]}px;
+`
