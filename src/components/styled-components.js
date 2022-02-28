@@ -1,8 +1,13 @@
 import styled from 'styled-components'
 
 export const PageHeading = styled.h1`
+  font-size: ${({ theme }) => theme.fontSizes[5]}px;
   margin-top: 0;
   text-align: center;
+
+  ${({ theme }) => theme.mediaQueries.medium} {
+    font-size: ${({ theme }) => theme.fontSizes[8]}px;
+  }
 
   ${({ theme }) => theme.mediaQueries.xl} {
     margin: 0 -2em;
@@ -24,7 +29,11 @@ export const BlogPostDate = styled.p`
 `
 
 export const PageParagraph = styled.p`
-  font-size: ${({ theme }) => theme.fontSizes[4]}px;
+  font-size: ${({ theme }) => theme.fontSizes[3]}px;
   margin-top: 0;
   margin-bottom: ${({ theme }) => theme.space[3]}px;
+
+  ${({ theme }) => theme.mediaQueries.medium} {
+    font-size: ${({ theme }) => theme.fontSizes[4]}px;
+  }
 `

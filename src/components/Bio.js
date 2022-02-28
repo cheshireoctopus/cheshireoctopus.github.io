@@ -1,11 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
-
 import { Appear, PageHeading, PageParagraph, TagsRotator } from './'
 
 const Bio = ({ tags }) => (
   <Appear>
-    <PageHeading>Hello, I'm Chandler</PageHeading>
+    <PageHeading>👋 Hello, I'm Chandler</PageHeading>
 
     <PageParagraph>
       I am a software developer, product designer, and technology educator
