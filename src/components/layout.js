@@ -11,7 +11,12 @@ const Border = styled.div`
 const Container = styled.main`
   margin: 83px auto 0;
   max-width: 780px;
-  padding: 44px 20px;
+  padding: 44px 12px;
+
+  ${({ theme }) => theme.mediaQueries.medium} {
+    margin: 112px auto 0;
+    padding: 44px 0;
+  }
 
   ${({ theme }) => theme.mediaQueries.large} {
     margin: 112px auto 0;

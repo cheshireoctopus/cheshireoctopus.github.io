@@ -15,4 +15,4 @@ export { default as SEO } from './seo'
 export { default as TagsRotator } from './TagsRotator'
 export { default as Theme } from './Theme'
 
-export { BlogPostDate, PageHeading } from './styled-components'
+export { BlogPostDate, PageHeading, PageParagraph } from './styled-components'
