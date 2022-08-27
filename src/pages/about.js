@@ -63,11 +63,12 @@ const AboutPage = ({ location }) => {
 
           <PageParagraph>
             Beyond technology and startups, interests include: cycling, skiing,
-            surfing, sailing, overlanding, urban design, and woodworking.
+            surfing, sailing, overlanding, 35mm photography, urban design, and
+            woodworking.
           </PageParagraph>
 
           <PageParagraph>
-            If you are interested in getting touch, I can be reached at{' '}
+            Want to get in touch? I can be reached at{' '}
             <b>hello@chandlermoisen.com</b>.
           </PageParagraph>
         </Appear>

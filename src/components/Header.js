@@ -46,10 +46,12 @@ const StyledImg = styled(Img)`
 
 const StyledLink = styled(Link)`
   background-image: none;
+  font-size: ${({ theme }) => theme.fontSizes[3]}px;
   margin-left: ${({ theme }) => theme.space[4]}px;
   padding: 0 4px 2px;
   text-shadow: none;
-  text-transform: uppercase;
+  transition: border-bottom 500ms;
+  border-bottom: 2px solid white;
 
   &.active,
   &:hover {
